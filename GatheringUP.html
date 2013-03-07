@@ -1,0 +1,181 @@
+<html>
+<head>
+	<title>GatheringUP</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="css/styles2.css">
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+</head>
+<body>
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+          <a class="brand" href="GatheringUP.html">GatheringUP</a> 
+            <div class="nav-collapse collapse"> <!-- Elements inside will disappear when mobile -->
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="">What's Around</a></li>            
+                  <li><a href="">Events</a></li>             
+                  <li><a href="javascript:void(0);" onclick="loginpopup('/datebook')">Datebook</a></li>
+                  <li><a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a></li>          
+                </ul>
+            </div>
+         </div>
+      </div>
+    </div>    
+
+    <!-- Map Full Width -->    
+    
+    <div id="map_canvas">
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=40.781581,-73.963523&amp;spn=0.035843,0.075188&amp;t=m&amp;z=15&amp;output=embed">
+        </iframe>
+    </div>    
+
+    <!-- Nearby Column -->  
+
+    <div class="nearby_wrap">
+        <div id="nearby_box"> 
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>            
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>                        
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>    
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>                            
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>    
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>                
+        </div> 
+    </div>
+
+    <!-- Nav Listing Unit -->  
+
+    <div id="nearby_nav">
+        <div id="nav_features">
+            <div class="input-append">
+              <input placeholder="Find Something!"  id="Nearby_Search" type="text">
+              <button class="btn btn-green btn-large" type="button">Go!</button>
+            </div>
+            <select>
+              <option>Central Park</option>
+              <option>Highline Park</option>
+              <option>River Side Park</option>
+            </select>  
+            <div class="dividline"></div>
+        </div>      
+
+        <div id="nearby_catagories">
+    
+        
+
+    <!-- Accordion Listing Bootstrap -->            
+
+            <div class="accordion" id="accordion2">
+
+
+              <div class="accordion-group group_style" >
+                  <a class="accordion-toggle nav_cat" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Nearby Places</a>
+                <div id="collapseOne" class="accordion-body collapse in cat_style">
+                        <a href="#"><i class="icon-home"></i> Zoo</a></br>
+                        <a href="#"><i class="icon-home"></i> Music</a></br>
+                        <a href="#"><i class="icon-home"></i> Cultural</a></br>
+                        <a href="#"><i class="icon-home"></i> Sports</a></br>
+                        <a href="#"><i class="icon-home"></i> Zoo</a></br>
+                        <a href="#"><i class="icon-home"></i> Zoo</a></br>
+                        <a href="#"><i class="icon-home"></i> Music</a></br>
+                        <a href="#"><i class="icon-home"></i> Cultural</a></br>
+                        <a href="#"><i class="icon-home"></i> Sports</a></br>
+                        <a href="#"><i class="icon-home"></i> Zoo</a></br>                        
+                        <a href="#"><i class="icon-home"></i> Zoo</a></br>
+                        <a href="#"><i class="icon-home"></i> Music</a></br>
+                        <a href="#"><i class="icon-home"></i> Cultural</a></br>
+                        <a href="#"><i class="icon-home"></i> Sports</a></br>
+                        <a href="#"><i class="icon-home"></i> Zoo</a></br>                        
+                </div>
+              </div>
+
+            <div class="dividline"></div>
+        
+              <div class="accordion-group group_style">
+                  <a class="accordion-toggle nav_cat" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Nearby Dining</a>
+                <div id="collapseTwo" class="accordion-body collapse cat_style">
+                        <a href="#">Zoo</a></br>
+                        <a href="#">Music</a></br>
+                        <a href="#">Cultural</a></br>
+                        <a href="#">Sports</a></br>
+                        <a href="#">Zoo</a></br>                                             
+                        <a href="#">Music</a></br>
+                        <a href="#">Cultural</a></br>
+                        <a href="#">Sports</a></br>
+                        <a data-toggle="collapse" href="#Zoo">Zoo</a></br>
+                            <div id="Zoo" class="accordion-body collapse">
+                                <a href="Animals"></a>
+                                <a href="Birds"></a>
+                            </div>                            
+                </div>
+              </div>
+
+            <div class="dividline"></div>              
+
+              <div class="accordion-group group_style">
+                <a class="accordion-toggle nav_cat" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">Nearby Stores</a>
+                    <div id="collapseThree" class="accordion-body collapse cat_style">
+
+                        <a href="#">Zoo</a></br>
+                        <a href="#">Music</a></br>
+                        <a href="#">Cultural</a></br>
+                        <a href="#">Sports</a></br>
+                        <a href="#">Zoo</a></br>    
+                        <a href="#">Music</a></br>
+                        <a href="#">Cultural</a></br>
+                        <a href="#">Sports</a></br>
+                        <a href="#">Zoo</a></br>     
+                        <a href="#">Zoo</a></br>
+                        <a href="#">Music</a></br>
+                        <a href="#">Cultural</a></br>
+                        <a href="#">Sports</a></br>
+                        <a href="#">Zoo</a></br>                                               
+                </div>
+              </div>              
+            <div class="dividline"></div>
+
+            </div> 
+
+    <!-- Nav Listing Unit End -->          
+
+        </div>
+    </div>    
+
+
+
+    <!-- Javascripts -->
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+

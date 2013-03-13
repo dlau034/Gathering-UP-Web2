@@ -1,0 +1,170 @@
+<html>
+<head>
+	<title>GatheringUP - Perfect Outing</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="css/styles2.css">
+  <script src="http://code.jquery.com/jquery.js"></script>    
+  <script type="text/javascript" src="js/script.js"></script>
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+</head>
+<body>
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+          <a class="brand" href="GatheringUP.html">GatheringUP</a> 
+            <div class="nav-collapse collapse"> <!-- Elements inside will disappear when mobile -->
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="">What's Around</a></li>            
+                  <li><a href="">Events</a></li>             
+                  <li><a href="javascript:void(0);" onclick="loginpopup('/datebook')">Datebook</a></li>
+                  <li><a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a></li>          
+                </ul>
+            </div>
+         </div>
+      </div>
+    </div>    
+
+    <!-- Map Full Width -->    
+    
+    <div id="map_canvas">
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=40.781581,-73.963523&amp;spn=0.035843,0.075188&amp;t=m&amp;z=15&amp;output=embed">
+        </iframe>
+    </div>    
+
+    <!-- Nearby Column -->  
+
+    <div class="Out_nearby_wrap">
+        <div id="nearby_box"> 
+            <div class="nearby_item">
+                <div class="item_top_info">                
+                    <div class="item_text">
+                    <h4><a href="">1. American Musuem of Natural History</a></h4>
+                    <p>5th Ave. (btwn 59th & 65th St.)</br>200 Central Park West  New York, NY 10024</br>(212) 769-5400</br><a href="http://www.amnh.org/">www.amnh.org</a></p>
+                </div>
+                <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
+                <div class="item_tab"></div>
+                <div class="CTA_button">
+                    <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+                    <button class="btn btn-green btn-mini">
+                    Datebook</button>
+                </div>
+                </div>
+                <div class="item_content">
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
+                    </br>    
+                    </br>    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
+                    </br>    
+                    </br>                       
+                    Opening Hours</br>
+                    <dl class="dl-horizontal">
+                      <dt>Monday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Tuesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Wednesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Thursday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Friday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Saturday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Sunday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                    </dl>                    
+                    </p>       
+                </div>              
+            </div>
+            <div class="nearby_item">
+                <div class="item_top_info">                
+                    <div class="item_text">
+                    <h4><a href="">1. American Musuem of Natural History</a></h4>
+                    <p>5th Ave. (btwn 59th & 65th St.)</br>200 Central Park West  New York, NY 10024</br>(212) 769-5400</br><a href="http://www.amnh.org/">www.amnh.org</a></p>
+                </div>
+                <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
+                <div class="item_tab"></div>
+                <div class="CTA_button">
+                    <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+                    <button class="btn btn-green btn-mini">
+                    Datebook</button>
+                </div>
+                </div>
+                <div class="item_content">
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
+                    </br>    
+                    </br>    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
+                    </br>    
+                    </br>                       
+                    Opening Hours</br>
+                    <dl class="dl-horizontal">
+                      <dt>Monday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Tuesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Wednesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Thursday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Friday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Saturday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Sunday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                    </dl>                    
+                    </p>       
+                </div>              
+            </div>            
+            
+     
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>                        
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>    
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>                            
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>    
+            <div class="nearby_item">
+                <div class="item_tab"></div>
+            </div>                
+        </div> 
+    </div>
+
+    <!-- Nav Listing Unit -->  
+
+    <div id="Outing_frame">
+      
+    </div>    
+
+
+
+    <!-- Javascripts -->
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+

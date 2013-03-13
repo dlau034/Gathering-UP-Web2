@@ -1,9 +1,10 @@
 <html>
 <head>
-	<title>GatheringUP</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GatheringUP - Homepage</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+  <link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="css/bootstrap-mobile.css"/>
 	<link rel="stylesheet" href="css/styles2.css">
     <script src="http://code.jquery.com/jquery.js"></script>    
     <script type="text/javascript" src="js/script.js"></script>
@@ -20,15 +21,51 @@
     <div class="navbar navbar_container">
       <div class="navbar-inner nav_bar_style navbar-fixed-top">
         <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+
           <a class="brand" href="GatheringUP.html">GatheringUP</a> 
-            <div class="nav-collapse collapse"> <!-- Elements inside will disappear when mobile -->
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div class="nav-collapse collapse"> 
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
                   <li><a href="">What's Around</a></li>            
                   <li><a href="">Events</a></li>             
                   <li><a href="javascript:void(0);" onclick="loginpopup('/datebook')">Datebook</a></li>
-                  <li><a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a></li>          
+                  <li><a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp<i class="icon-circle-arrow-down icon-white"></i>&nbsp</a></li>
                 </ul>
+
+                    <!-- Dropdown -->                
+
+                  <div class="dropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        David Lau
+                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>                      
+                      </ul>
+                    </form>                      
+                  </div> 
+
+                    <!-- Not logged In --> 
+
+<!--                 <ul id="nav_cta" class="nav pull-right">
+                  <li><a href="">Register</a></li>            
+                  <li><a href="">Sign In</a></li>             
+                </ul>    -->         
+
             </div>
          </div>
       </div>
@@ -39,14 +76,14 @@
     <div class="featured_unit">
       <div class="container-module">
         <div id="featured_title">
-          <h1>Big Day Out in Central Park in New York City.</h1>
-          <h3>by David Lau</h3>
+          <h1>Big Day Out in Central Park in New York.</h1>
+          <h4>by David Lau</h4>
         </div>
       </div>
       <div class="container-module">
         <div class="featured_text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam perferendis harum nisi aliquid explicabo ullam repellat aperiam beatae magnam tempore eaque sit dicta ea eos odio officia et voluptate enim sed iste libero sunt ipsam itaque ... <a href="#">Read More</a>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam perferendis harum nisi aliquid explicabo aperiam beatae magnam  ullam repellat aperiam beatae magnam tempore eaque sit  enim sed iste ipsam itaque ... <a href="#">Read More</a>
           </p>
           <div class="featured_tag">
             <button class="btn btn-mini cat_tag">Active</button>
@@ -79,17 +116,21 @@
 
       <div class="filter_bar filter_bar_bottom">
           <div id="filter_btn_wrap">
-             <div  class="filter_btn"><a style="width:200px"href="#">Latest Outings</a></div>
-              <div  class="filter_btn"><a style="width:200px"href="#">Editor's Picks</a></div>
+             <div  class="filter_btn mobile"><a style="width:200px"href="#">Latest Outings</a></div>
+              <div  class="filter_btn mobile"><a style="width:200px"href="#">Editor's Picks</a></div>
               <div  class="filter_btn"><a style="width:434px"href="#">Create Your Own Perfect Outing!</a></div>
           </div>
       </div>             
+      
+      <div class="filter_bar filter_bar_bottom visible_phone">
+        <div  class="filter_btn" id="btn_mobile"><a href="#">Create Your Own Perfect Outing!</a></div>
+      </div>
   
 
     <!-- Pagination -->
   
   <div class="container-module">
-    <div class="pagination pagination-right" id="page1">
+    <div class="pagination pagination-right " id="page1">
       <ul>
         <li class="disabled"><a href="#">&#8249;</a></li>
         <li class="active"><a href="#">1</a></li>
@@ -105,7 +146,7 @@
 
     <!-- Module Unit -->
     <div class="container-module">
-      <div class="module_wrap">
+      <div class="module_wrap clearfix">
       <div class="module_unit">
         <div class="tape"></div>
         
@@ -118,16 +159,14 @@
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
           <!-- <div class="dividline"></div> -->
         </div>
-          <div class="featured_tag">
-            <button class="btn btn-mini cat_tag">Active</button>
-            <button class="btn btn-mini cat_tag">Social</button>
-            <button class="btn btn-mini cat_tag">Everybody</button>
-          </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>   
       </div>
 
       <div class="module_unit">
-  
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_bubbles.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -136,29 +175,33 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
       </div>
-      <div class="module_tag">
-            <button class="btn btn-mini cat_tag">Active</button>
-            <button class="btn btn-mini cat_tag">Social</button>
-            <button class="btn btn-mini cat_tag">Everybody</button>
-      </div>          
+        
 
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_horses.jpg)" class="module_image">
         </div>
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet sit amet ipsum dolor sit amet  ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>             
       </div>
 
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_run.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -167,11 +210,15 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>           
       </div>
                   
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_yoga.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -180,12 +227,17 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
       </div>
-    </div>
+
+   
       
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_soccer.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -194,11 +246,15 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
       </div>
 
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_bubbles.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -207,11 +263,15 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
       </div>
 
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_horses.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -220,11 +280,15 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
       </div>
 
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_run.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -233,11 +297,15 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
       </div>
                   
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_yoga.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -246,12 +314,15 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
       </div>
-    </div>
       
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_soccer.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -260,11 +331,15 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
       </div>      
 
       <div class="module_unit">
         <div class="tape"></div>
-        <p>Everybody</p>
         <div style="background-image:url(images/thumb_run.jpg)" class="module_image">
         </div>
         <div class="module_text">
@@ -273,25 +348,45 @@
           <div class="dividline"></div>
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
-      </div>      
-
-  </div>
+        <div class="module_tag">
+              <button class="btn btn-mini cat_tag">Active</button>
+              <button class="btn btn-mini cat_tag">Social</button>
+              <button class="btn btn-mini cat_tag">Everybody</button>
+        </div>          
+      </div>
 
     <!-- Pagination -->
-  
-  <div class="container-module">
-    <div class="pagination pagination-right" id="page1">
-      <ul>
-        <li class="disabled"><a href="#">&#8249;</a></li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&#8250;</a></li>
-      </ul>
+    <div class="container-module">
+      <div class="pagination pagination-right" id="page2">
+        <ul>
+          <li class="disabled"><a href="#">&#8249;</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">&#8250;</a></li>
+        </ul>
+      </div>
+    </div>          
+
+    <!-- Footer -->  
+    <div class="footer">
+      <p>Copyright Gathering Up Ltd. All rights reserved. Proudly made in New York City!</p>  
+      <p>
+        <a href="http://twitter.com">Follow Us on Twitter</a> | 
+        <a href="http://Facebook.com">Follow Us on Facebook</a><br>
+      </p> 
+      <p>  
+        <a href="/about">About Us</a>  |  
+        <a href="/about/termsofuse">Terms of Use</a>  |  
+        <a href="/about/privacy">Privacy Policy</a> | 
+        <a href="/about/contactusform">Contact Us</a>
+      </p>  
+    </div>    
+
     </div>
-  </div>    
+  </div>
 
     <!-- Javascripts -->
 

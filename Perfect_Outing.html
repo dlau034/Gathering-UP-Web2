@@ -3,9 +3,13 @@
 	<title>GatheringUP - Perfect Outing</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />  
 	<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
-	<link rel="stylesheet" href="css/styles2.css">
+  <link rel="stylesheet" href="css/styles2.css">
+	<link rel="stylesheet" href="icomoon/icomoon.css">
+  <!--[if lte IE 7]><script src="icomooon/lte-ie7.js"></script><![endif]-->
   <script src="http://code.jquery.com/jquery.js"></script>    
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 
 	<!-- Google Font -->
@@ -19,7 +23,7 @@
     <div class="navbar navbar_container">
       <div class="navbar-inner nav_bar_style navbar-fixed-top">
         <div class="container">
-          <a class="brand" href="GatheringUP.html">GatheringUP</a> 
+          <a class="brand" href="index.html">GatheringUP</a> 
             <div class="nav-collapse collapse"> <!-- Elements inside will disappear when mobile -->
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
@@ -44,70 +48,31 @@
 
     <div class="Out_nearby_wrap">
         <div id="nearby_box"> 
-            <div class="nearby_item">
-                <div class="item_top_info">                
-                    <div class="item_text">
+
+          <div class="nearby_item mini_item">
+            <div class="clearfix">
+                <div class="img_button clearfix">
+                  <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
+                  <!-- <div class="CTA_button_mini"> -->
+                  <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+                  <button class="btn btn-green btn-mini"><span data-icon="&#x23;" aria-hidden="true"></span>Datebook</button>
+                  <!-- </div> -->
+                </div>
+                <div class="item_top_info mini_box">                               
+                  <div class="mini_text">
                     <h4><a href="">1. American Musuem of Natural History</a></h4>
                     <p>5th Ave. (btwn 59th & 65th St.)</br>200 Central Park West  New York, NY 10024</br>(212) 769-5400</br><a href="http://www.amnh.org/">www.amnh.org</a></p>
+                  </div>
                 </div>
-                <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
-                <div class="item_tab"></div>
-                <div class="CTA_button">
-                    <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
-                    <button class="btn btn-green btn-mini">
-                    Datebook</button>
-                </div>
-                </div>
-                <div class="item_content">
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
-                    </br>    
-                    </br>    
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
-                    </br>    
-                    </br>                       
-                    Opening Hours</br>
-                    <dl class="dl-horizontal">
-                      <dt>Monday</dt>
-                      <dd>10:00 am - 4:30 pm</dd>
-                      <dt>Tuesday</dt>
-                      <dd>10:00 am - 4:30 pm</dd>
-                      <dt>Wednesday</dt>
-                      <dd>10:00 am - 4:30 pm</dd>
-                      <dt>Thursday</dt>
-                      <dd>10:00 am - 4:30 pm</dd>
-                      <dt>Friday</dt>
-                      <dd>10:00 am - 4:30 pm</dd>
-                      <dt>Saturday</dt>
-                      <dd>10:00 am - 4:30 pm</dd>
-                      <dt>Sunday</dt>
-                      <dd>10:00 am - 4:30 pm</dd>
-                    </dl>                    
-                    </p>       
-                </div>              
             </div>
-            <div class="nearby_item">
-                <div class="item_top_info">                
-                    <div class="item_text">
-                    <h4><a href="">1. American Musuem of Natural History</a></h4>
-                    <p>5th Ave. (btwn 59th & 65th St.)</br>200 Central Park West  New York, NY 10024</br>(212) 769-5400</br><a href="http://www.amnh.org/">www.amnh.org</a></p>
-                </div>
-                <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
-                <div class="item_tab"></div>
-                <div class="CTA_button">
-                    <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
-                    <button class="btn btn-green btn-mini">
-                    Datebook</button>
-                </div>
-                </div>
-                <div class="item_content">
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
-                    </br>    
-                    </br>    
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
-                    </br>    
-                    </br>                       
+            <div class="item_tab"></div>
+              <div class="item_content mini_text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
+                  </br>    
+                  </br>    
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
+                  </br>    
+                  </br>                       
                     Opening Hours</br>
                     <dl class="dl-horizontal">
                       <dt>Monday</dt>
@@ -125,39 +90,245 @@
                       <dt>Sunday</dt>
                       <dd>10:00 am - 4:30 pm</dd>
                     </dl>                    
-                    </p>       
-                </div>              
-            </div>            
+                  </p>       
+              </div>              
+            </div>
+
+          <div class="nearby_item mini_item">
+            <div class="clearfix">
+                <div class="img_button clearfix">
+                  <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
+                  <!-- <div class="CTA_button_mini"> -->
+                  <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+                  <button class="btn btn-green btn-mini">Datebook</button>
+                  <!-- </div> -->
+                </div>
+                <div class="item_top_info mini_box">                               
+                  <div class="mini_text">
+                    <h4><a href="">1. American Musuem of Natural History</a></h4>
+                    <p>5th Ave. (btwn 59th & 65th St.)</br>200 Central Park West  New York, NY 10024</br>(212) 769-5400</br><a href="http://www.amnh.org/">www.amnh.org</a></p>
+                  </div>
+                </div>
+            </div>
+            <div class="item_tab"></div>
+              <div class="item_content mini_text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
+                  </br>    
+                  </br>    
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
+                  </br>    
+                  </br>                       
+                    Opening Hours</br>
+                    <dl class="dl-horizontal">
+                      <dt>Monday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Tuesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Wednesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Thursday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Friday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Saturday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Sunday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                    </dl>                    
+                  </p>       
+              </div>              
+            </div>          
             
-     
-            <div class="nearby_item">
-                <div class="item_tab"></div>
+             <div class="nearby_item mini_item">
+            <div class="clearfix">
+                <div class="img_button clearfix">
+                  <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
+                  <!-- <div class="CTA_button_mini"> -->
+                  <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+                  <button class="btn btn-green btn-mini">Datebook</button>
+                  <!-- </div> -->
+                </div>
+                <div class="item_top_info mini_box">                               
+                  <div class="mini_text">
+                    <h4><a href="">1. American Musuem of Natural History</a></h4>
+                    <p>5th Ave. (btwn 59th & 65th St.)</br>200 Central Park West  New York, NY 10024</br>(212) 769-5400</br><a href="http://www.amnh.org/">www.amnh.org</a></p>
+                  </div>
+                </div>
             </div>
-            <div class="nearby_item">
-                <div class="item_tab"></div>
+            <div class="item_tab"></div>
+              <div class="item_content mini_text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
+                  </br>    
+                  </br>    
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
+                  </br>    
+                  </br>                       
+                    Opening Hours</br>
+                    <dl class="dl-horizontal">
+                      <dt>Monday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Tuesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Wednesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Thursday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Friday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Saturday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Sunday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                    </dl>                    
+                  </p>       
+              </div>              
+            </div> 
+
+          <div class="nearby_item mini_item">
+            <div class="clearfix">
+                <div class="img_button clearfix">
+                  <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
+                  <!-- <div class="CTA_button_mini"> -->
+                  <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+                  <button class="btn btn-green btn-mini">Datebook</button>
+                  <!-- </div> -->
+                </div>
+                <div class="item_top_info mini_box">                               
+                  <div class="mini_text">
+                    <h4><a href="">1. American Musuem of Natural History</a></h4>
+                    <p>5th Ave. (btwn 59th & 65th St.)</br>200 Central Park West  New York, NY 10024</br>(212) 769-5400</br><a href="http://www.amnh.org/">www.amnh.org</a></p>
+                  </div>
+                </div>
             </div>
-            <div class="nearby_item">
-                <div class="item_tab"></div>
-            </div>                        
-            <div class="nearby_item">
-                <div class="item_tab"></div>
+            <div class="item_tab"></div>
+              <div class="item_content mini_text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
+                  </br>    
+                  </br>    
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
+                  </br>    
+                  </br>                       
+                    Opening Hours</br>
+                    <dl class="dl-horizontal">
+                      <dt>Monday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Tuesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Wednesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Thursday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Friday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Saturday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Sunday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                    </dl>                    
+                  </p>       
+              </div>              
             </div>    
-            <div class="nearby_item">
-                <div class="item_tab"></div>
-            </div>                            
-            <div class="nearby_item">
-                <div class="item_tab"></div>
-            </div>    
-            <div class="nearby_item">
-                <div class="item_tab"></div>
-            </div>                
+
+          <div class="nearby_item mini_item">
+            <div class="clearfix">
+                <div class="img_button clearfix">
+                  <img class="thumbnail" src="images/museum.jpg" alt="thumbnail">
+                  <!-- <div class="CTA_button_mini"> -->
+                  <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+                  <button class="btn btn-green btn-mini">Datebook</button>
+                  <!-- </div> -->
+                </div>
+                <div class="item_top_info mini_box">                               
+                  <div class="mini_text">
+                    <h4><a href="">1. American Musuem of Natural History</a></h4>
+                    <p>5th Ave. (btwn 59th & 65th St.)</br>200 Central Park West  New York, NY 10024</br>(212) 769-5400</br><a href="http://www.amnh.org/">www.amnh.org</a></p>
+                  </div>
+                </div>
+            </div>
+            <div class="item_tab"></div>
+              <div class="item_content mini_text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora voluptatem cupiditate sit animi assumenda at blanditiis debitis laudantium voluptatibus sed. Dolorem aut incidunt rerum distinctio vero quod id eum deleniti similique quasi.
+                  </br>    
+                  </br>    
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempore.
+                  </br>    
+                  </br>                       
+                    Opening Hours</br>
+                    <dl class="dl-horizontal">
+                      <dt>Monday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Tuesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Wednesday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Thursday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Friday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Saturday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                      <dt>Sunday</dt>
+                      <dd>10:00 am - 4:30 pm</dd>
+                    </dl>                    
+                  </p>       
+              </div>              
+            </div>         
+
+    <!-- Nav Listing Unit -->  
+    <!-- Units End here -->  
+
         </div> 
     </div>
 
     <!-- Nav Listing Unit -->  
 
     <div id="Outing_frame">
-      
+      <div id="Outing_wrap">
+        <div class="alert alert-success">       
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <a href="">
+            &nbsp&nbsp&nbsp&nbsp Have an outing you want to share?
+            <strong></br>Create your own Perfect Outing!</strong> 
+          </a>          
+        </div> 
+        <img class="thumbn" src="images/central_img1.jpg" alt="">
+        <h1>Best Day Out Cycling In Central Park</h1>
+          <div class="Outing_detail clearfix">
+            <div class="author clearfix">
+              <img class="img-polaroid" src="images/headshot.jpg" alt="">
+              <h5>By John Smith</br>Written March 12th</h5>            
+            </div>
+            
+            <button class="btn btn-green btn_facebook" id="fb_outing"><span class="facebook_sm" data-icon="&#x23;" aria-hidden="true"></span>&nbsp Share to Facebook</button>   
+          </div>         
+          <div class="Outing_cat">
+            <button class="btn btn-mini cat_tag">Active</button>
+            <button class="btn btn-mini cat_tag">Social</button>
+            <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini cat_tag">Kid Friendly</button>
+          </div>           
+              <div class="dividline"></div>
+              <h4>Museum in the morning</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
+              </p>
+              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
+              <h4>Great fun checking out dinosours</h4>              
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt reiciendis 
+              </p>  
+              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
+              <h4>Walk in the park afterwards</h4>              
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
+              </p>                 
+              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
+              <h4>Lunch on the westside</h4>                  
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse reiciendis 
+              </p> 
+              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
+              <h4>Perfect end to a lovely day</h4>              
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
+              </p> 
+              <div class="dividline"></div>
+      </div>
     </div>    
 
 

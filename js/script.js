@@ -10,4 +10,6 @@ $(document).ready(function(){
 	});
 });
 
-
+$(document).ready(function(){
+	$("#Outing_frame").resizable();
+});

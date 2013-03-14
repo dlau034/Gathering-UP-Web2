@@ -31,6 +31,13 @@ h6 {
     font-size: 0.8em;
 }
 
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
     /* Repeating Elements
     -------------------------------------------------- */
 @media (max-width: 599px) {
@@ -320,14 +327,7 @@ h6 {
     font-weight: 100;
     border-radius: 2px !important;
 }
-.CTA_button button:nth-last-child(odd) {
-    background-image: url("../images/datebook.png");
-    background-repeat: no-repeat;
-    background-position-y:center; 
-    background-position-x:1px;
-    text-indent: 12px;
-    
-}
+
     /* Nav Listing Unit
     -------------------------------------------------- */
 
@@ -828,6 +828,16 @@ select:focus {
 
     /* Perfect Outing Page
     -------------------------------------------------- */    
+    /*Blog Unit*/
+
+#CTA_Create {
+    /*width: 100%;*/
+    left:50%;
+    margin-left: ;
+
+
+
+}
 
 #Outing_frame {   
     position: fixed;
@@ -835,108 +845,226 @@ select:focus {
     width: 40%;
     height: 100%;
     /*background-image: url("../images/bg_grey.jpg");*/
-    background-image: url("../images/kindajean.png");    
+    /*background-image: url("../images/kindajean.png");    */
+    background-color: white;
     border-collapse: collapse;
     z-index: 2;
-    box-shadow: 0em 0em 1em #333;
+    box-shadow: 0em 0em 2em #333;
+    /*margin-top: 100px;*/
+    overflow: auto;
 }
+#Outing_wrap {
+   margin: 60px 2em 4em 2em;
+   color: #666;
+}
+
+.Outing_detail {
+    margin-bottom: 10px;
+    /*background-color: red;*/
+}
+
+#Outing_top {
+    margin: 0.6em 0.1em 0.3em 0.1em;          
+}
+#Outing_wrap h1 {
+    line-height:1.2em;
+    /*text-shadow:0 2px 0 #ccc;*/
+    font-weight: 500;  
+    margin-top: 0.5em;
+}
+#Outing_wrap p {
+    color: #777;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin: 1em 0.3em 1em 0.3em;
+}
+#Outing_wrap h4 {
+    color: #777;
+    font-size: 1.3em;
+    line-height: 1em;
+    margin: 1em 0.3em 0em 0.3em;
+}
+.author {
+    margin-bottom: 1em;
+    width: 49%;
+    float: left;
+    /*background-color: red;*/
+}
+.author h5 {
+    display: inline-block;
+    margin-left: 0.5em;
+    color: #777;              
+    font-weight: 100;
+}
+.author img {
+    display: inline-block;
+}
+.share_cat {
+    float: right;
+    /*width: 40%;*/
+    /*background-color: blue;    */
+    margin-top: 0.5em;
+}
+.Outing_cat .cat_tag {
+    margin-bottom: 10px;
+    margin-left: 5px;
+
+    /*text-align: right;*/
+    /*float: right;*/
+}
+#fb_outing {
+    border-radius: 3px !important;
+    float: right;
+    text-indent: -8px;
+    
+}
+.facebook_sm {
+    font-size: 15px;
+}
+    /* Perfect Outing Page
+    -------------------------------------------------- */    
+    /*Right Nearby Unit*/
+
 .Out_nearby_wrap {
     width: 20em;
     /*margin-left: 60%;*/
     position: absolute;
     overflow: hidden;
-    right: 0;
+    right: 1.5em;
+    margin-top: -1em;
 }
-#Out_nearby_box {
-    /*background-color: red;*/
-    position: relative;
-    margin-top: 5em;
-    margin-bottom: 2em;
-    z-index: 3;
-}
-.Out_nearby_item {
-    min-height: 15em;
-    margin-top: 1.4em;
-    background-color: white;
-    box-shadow: 0 0 7px rgba(0,0,0,0.3);
-    width: 98%;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.3);
-}
-.Out_nearby_item:hover {
-    background-color: #f9f9f9;
-}
-.Out_item_tab {
-    background-color: #A3C86C; 
-    height: 1.2em;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    background-image: url("../images/open_arrow.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-}
-.Out_item_text {
-    padding: 0.2em 0.5em 0.5em 1em;
-    width: 18.5em;
-    float: left;
-    /*background-color: red;*/
-}
-.Out_item_content {
-    padding: 1em 1em 1.5em 1em;
-    margin-top: 0em;
-    display: none;
-}
-.Out_item_top_info {
-    min-height: 14em;
-    padding-top: 1px;
-}
-.Out_item_content dt {
-    text-align: left;
+.mini_item img {
     width: 80px;
-}
-.Out_item_content dd {
-    margin-left: 100px;
-}
-.Out_nearby_item img {
-    width: 10.4em;iteam
-    float: right;
-    margin: 10px 6px 0px 0px;
-    height: 10em;
-}
-.Out_nearby_item h4 {
+    height: auto; 
+    margin-left: 7px;
     float: left;
-    color: #F7931E;
-    line-height: 1.3em;
-    font-weight: 500;
-    text-shadow: 0px -1px 0px white;    
+    /*position: absolute;*/
 }
-.Out_nearby_item h4 a {
-    color: #F7931E;
+.mini_item {
+    min-height: 13em;
 }
-.Out_nearby_item p {
-    color: #808080;
+.mini_text h4 {
+    font-size: 1em;
+    line-height: 1.4em;    
 }
-/*.CTA_button {
-    /*background-color: red;*/
-    height: 30px;
+.mini_text p {
+    font-size: 0.9em;
+    line-height: 1.2em;
+}
+.mini_text dt {
+    font-size: 0.9em;
+    line-height: 1.3em;        
+}
+.mini_text dd {
+    font-size: 0.9em;
+    line-height: 1.3em;        
+}
+.mini_box {
+    width: 11em;
+    /*background-color: blue;*/
     float: right;
-    margin-right: 19px;
-    margin-top: 5px;
-    display: none;
-}*/
-
-/*.CTA_button button {
-    font-weight: 100;
+    min-height: 11em;
+    margin-right: 0.5em;
+}
+.CTA_button_mini {
+    float: left;
+}
+.CTA_button_mini button {
     border-radius: 2px !important;
-}*/
-/*.CTA_button button:nth-last-child(odd) {
-    background-image: url("../images/datebook.png");
-    background-repeat: no-repeat;
-    background-position-y:center; 
-    background-position-x:1px;
-    text-indent: 12px;
-}*/
+    float: left;
+    display: block;
+}
+.img_button {
+    /*background-color: red;*/
+    /*height: 200px;*/
+    width: 7.5em;
+    float: left;
+}
+.img_button button {
+    border-radius: 2px !important;
+    float: left;
+    display: block; 
+    width: 8.5em;   
+    margin-left:8px;  
+    margin-top:5px;
+}
+
+    /* Perfect Outing Create Page
+    -------------------------------------------------- */    
+    /* Create Outing Top */
+
+.create_frame {
+    margin-top: 80px;
+}
+.create_frame h1 {
+    text-align: center;
+}    
+.row {
+    /*background-color: red;*/
+}
+.span12 {
+    /*background-color: blue;*/
+}
+.full-width {
+    width: 100%;
+    /*float: left;*/
+    background-color: ;
+}
+
+.form_large {
+    font-size: 1.5em !important;
+    font-family: "ubuntu";
+    /*background-color: red;*/
+    height: 2em!important;
+    margin-bottom: 0px !important;
+    line-height: 1.5em !important;
+    width: 100%;
+}
+.form_normal {
+    font-size: 1.1em !important;
+    font-family: "ubuntu";
+    /*background-color: red;*/
+    height: 2em!important;
+    line-height: 1em!important;  
+    width: 100%;  
+    margin-bottom: 0px!important;
+}
+.area_normal {
+    font-size: 1.1em !important;
+    font-family: "ubuntu";
+    line-height: 1.0em!important; 
+    margin-bottom: 0px!important; 
+    width: 100%;      
+}
+.form_sizing {
+    margin-top: 1.5em;
+    /*margin-bottom: 1em;*/
+}
+.btn-upload {
+    margin-top: 1.5em;
+    border-radius: 3px;
+}
+.btn-add {
+    font-family: "ubuntu";
+    left: 50%;
+    margin-left: -5.5em;
+    /*height: 2em;*/
+    position: relative;
+    
+    /*display: block;*/
+}
+.create_frame .dividline {
+    margin-top: 1.5em;
+}
+.top_unit h5 {
+    color: black;
+    text-align: right;
+    margin-top: 1em;
+}
+
+@media (max-width: 767px) {
+    .create_container {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}

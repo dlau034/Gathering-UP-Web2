@@ -10,6 +10,6 @@ $(document).ready(function() {
 	});
 });
 
-$(document).ready(function(){
-	$("#Outing_frame").resizable();
-});
+// $(document).ready(function(){
+// 	$("#Outing_frame").resizable();
+// });

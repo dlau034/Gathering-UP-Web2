@@ -4,10 +4,20 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/bootstrap-responsive.css"/>
 	<link rel="stylesheet" href="css/bootstrap-mobile.css"/>
+  <!-- <link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.2.custom.css"/>    -->
+  <link rel="stylesheet" href="css/jquery_override.css">
   <link rel="stylesheet" href="css/styles2.css">
 	<link rel="stylesheet" href="icomoon/icomoon.css">
+  <link href="select/select2.css" rel="stylesheet"/>
   <!--[if lte IE 7]><script src="icomooon/lte-ie7.js"></script><![endif]-->
-  <script src="http://code.jquery.com/jquery.js"></script>    
+  <!-- <script src="http://code.jquery.com/jquery.js"></script> -->
+  <script src="js/jquery-1.9.1.js"></script>    
+  <script src="js/jquery-ui-1.10.2.custom.js"></script>    
+  <!-- <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script> -->
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="select/select2.js"></script>
+
+
 
 	<!-- Google Font -->
 
@@ -24,8 +34,8 @@
             <div class="nav-collapse collapse"> <!-- Elements inside will disappear when mobile -->
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
-                  <li><a href="">What's Around</a></li>            
-                  <li><a href="">Events</a></li>             
+                  <li><a href="index.html">Perfect Outings</a></li>
+                  <li><a href="Whats_around.html">What's Around</a></li>            
                   <li><a href="javascript:void(0);" onclick="loginpopup('/datebook')">Datebook</a></li>
                   <li><a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a></li>          
                 </ul>
@@ -39,87 +49,135 @@
     <div class="container create_container"> 
       <div class="create_frame">
         <h1>Create Your Perfect Outing</h1>
-        <div class="dividline"></div>
+        <div class="dividline"></div></br>
         <div class="row top_unit">
           <div class="span12 form_sizing">
             <input class="form_large" placeholder="What is your Perfect Day?" type="text">
           </div>
-          <div class="span4 form_sizing">
-            <input class="form_normal" placeholder="Date Written (Optional)" type="text">
+
+          <div class="span12 form_sizing">
+            <textarea class="area_normal" placeholder="Give us a brief description about your Perfect Outing?  (Minimum 20 Words)" name="content" id="" rows="3"></textarea>
+          </div>                
+
+          <div class="span3 form_sizing">
+            <span class="label_text">Publish Date</span>
+            <input class="form_normal" placeholder="Choose the date (Optional)" id="datepicker" type="text">
           </div>           
-          <div class="span1"><h5>Category:</h5></div>   
-          <div class="span6 form_sizing">
-            <select class="full-width">
-              <option>Everybody</option>
-              <option>Kids Friendly</option>
-              <option>Social</option>
-              <option>Active</option>
-              <option>Romantic</option>
-              <option>Budget</option>
-            </select>                     
-          </div>          
+          <div class="span6">
+            <div class="form_sizing">
+              <span class="label_text">Choose Catagories</span>
+              <select multiple="multiple" placeholder="What Category is your Perfect Outing?" id="e1" class="full-width">
+                <option value="Ac">Active</option>                
+                <option value="Ev">Everybody</option>
+                <option value="Fo">Foodie</option>
+                <option value="Ki">Kids Friendly</option>
+                <option value="Ro">Romantic</option>
+                <option value="So">Social</option>
+              </select>                     
+            </div> 
+          </div>
+          <div class="span3 form_sizing">
+            <span class="label_text">Upload Featured Image</span>          
+            <button class="btn btn-green btn-uploadhead">Upload Image &nbsp<i class="icon-picture icon-white"></i>  
+            </button>        
+          </div>                      
+        
         </div>      
-        <div class="dividline"></div>  
+
 
     <!-- Add New Module -->  
-         <!-- Module 1 -->           
-        
-        </br><button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>   
-      <div class="dividline"></div>                
+         
+      
+        </br><button id="addmodule" class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>
+        </br></br>
+           
 
-    <!-- Create Outing Top -->      
+         <!-- Module 1 -->  
+    <div class="content_btn">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
 
-          <div class="row content_unit">          
-          <div class="span12 form_sizing">
-            <input class="form_normal" placeholder="1. Subtitle (optional)" type="text">
-          </div>                   
-          <div class="span12 form_sizing">
-            <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="5"></textarea>
-          </div>      
+        <div class="span12 form_sizing">
+            <h4>Module 1</h4>
+            <input class="form_normal" placeholder="Subtitle (Optional)" type="text">
+        </div>                            
+            <div class="span12 form_sizing">
+              <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="4"></textarea>
+            </div>      
 
-          <div class="span9 form_sizing">
-            <input class="form_normal" placeholder="Where did you go?" type="text">
-          </div>            
-          <button class="span3 btn btn-green btn-upload">Upload Image &nbsp<i class="icon-picture icon-white"></i>  
-          </button>                 
-      </div>
+            <div class="span9 form_sizing">
+              <input class="form_normal" placeholder="Where did you go?" type="text">
+            </div>            
+            <button class="span3 btn btn-green btn-upload">Upload Image &nbsp<i class="icon-picture icon-white"></i>  
+            </button>                             
+        </div>
 
-      <div class="dividline"></div>   
+        </br>
+        <button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>      
+        </br>
+        </br>             
+    </div>     
+          
+         <!-- Module 2 -->  
+    <div class="content_btn">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
 
-    <!-- Add New Module -->        
-        
-        </br><button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>                 
-      <div class="dividline"></div>    
+        <div class="span12 form_sizing">
+            <h4>Module 2</h4>
+            <input class="form_normal" placeholder="Subtitle (Optional)" type="text">
+        </div>                            
+            <div class="span12 form_sizing">
+              <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="4"></textarea>
+            </div>      
 
-    <!-- Create Outing Top -->     
-         <!-- Module 2 --> 
-        
-          <div class="row content_unit">          
-          <div class="span12 form_sizing">
-            <input class="form_normal" placeholder="2. Subtitle (optional)" type="text">
-          </div>                   
-          <div class="span12 form_sizing">
-            <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="5"></textarea>
-          </div>      
+            <div class="span9 form_sizing">
+              <input class="form_normal" placeholder="Where did you go?" type="text">
+            </div>            
+            <button class="span3 btn btn-green btn-upload">Upload Image &nbsp<i class="icon-picture icon-white"></i>  
+            </button>                             
+        </div>
 
-          <div class="span9 form_sizing">
-            <input class="form_normal" placeholder="Where did you go?" type="text">
-          </div>            
-          <button class="span3 btn btn-green btn-upload">Upload Image &nbsp<i class="icon-picture icon-white"></i>  
-          </button>                 
-      </div>
+        </br>
+        <button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>      
+        </br>
+        </br>             
+    </div>       
 
-      <div class="dividline"></div>   
+         <!-- Module 3 -->  
+    <div class="content_btn">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
 
-    <!-- Add New Module -->        
-        
-        </br><button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>                 
-      <div class="dividline"></div>          
+        <div class="span12 form_sizing">
+            <h4>Module 3</h4>
+            <input class="form_normal" placeholder="Subtitle (Optional)" type="text">
+        </div>                            
+            <div class="span12 form_sizing">
+              <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="4"></textarea>
+            </div>      
 
+            <div class="span9 form_sizing">
+              <input class="form_normal" placeholder="Where did you go?" type="text">
+            </div>            
+            <button class="span3 btn btn-green btn-upload">Upload Image &nbsp<i class="icon-picture icon-white"></i>  
+            </button>                             
+        </div>
 
+        </br>
+        <button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>      
+        </br>
+        </br>             
+    </div>                 
+                
+    <div class="dividline"></div>     
 
-    </div> 
+    </br><button id="btn-publish" class="btn btn-large btn-green">Create It!</button>  
+    </br>            
+    </br>            
 
+  </div> 
+  
     <!-- Javascripts -->
 
     <script src="js/bootstrap.min.js"></script>

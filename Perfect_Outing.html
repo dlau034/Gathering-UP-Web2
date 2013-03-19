@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>GatheringUP - Perfect Outing</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
 	<link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />  
 	<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
@@ -16,9 +16,12 @@
 	<!-- Google Font -->
 
      <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
-     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+
     <!-- Navigations Unit -->
 
     <div class="navbar navbar_container">
@@ -80,7 +83,65 @@
         </iframe>
     </div>    
 
-    <!-- Nearby Column -->  
+    
+
+    <!-- Nav Listing Unit -->  
+
+
+    <div id="Outing_frame">
+      <div id="Outing_wrap">
+        <div class="alert alert-CTA">       
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <a href="create_outing.html">
+            &nbsp&nbsp&nbsp&nbsp Have an outing you want to share?
+            <strong></br>Create your own Perfect Outing!</strong> 
+          </a>          
+        </div> 
+        <div class="img-polaroid clearfix">
+          <img src="images/central_img1.jpg" alt=""> 
+        </div>
+        <h1>Best Day Out Cycling In Central Park</h1>
+          <div class="Outing_detail clearfix">
+            <div class="author clearfix">
+              <img class="img-polaroid" src="images/headshot.jpg" alt="">
+              <h5>By John Smith</br>Written March 12th</h5>            
+            </div>
+            
+            <button class="btn btn-green btn_facebook" id="fb_outing"><span class="facebook_sm" data-icon="&#x23;" aria-hidden="true"></span>&nbsp Share to Facebook</button>
+
+          </div>         
+          <div class="Outing_cat">
+            <button class="btn btn-mini cat_tag">Active</button>
+            <button class="btn btn-mini cat_tag">Social</button>
+            <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini cat_tag">Kid Friendly</button>
+          </div>      
+              <div class="dividline"></div>
+              <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora </h3>                   
+              <h4>Museum in the morning</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
+              </p>
+              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
+              <h4>Great fun checking out dinosours</h4>              
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt reiciendis 
+              </p>  
+              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
+              <h4>Walk in the park afterwards</h4>              
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
+              </p>                 
+              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
+              <h4>Lunch on the westside</h4>                  
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse reiciendis 
+              </p> 
+              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
+              <h4>Perfect end to a lovely day</h4>              
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
+              </p> 
+              <div class="dividline"></div>
+      </div>
+    </div>    
+
+<!-- Nearby Column -->  
 
     <div class="Out_nearby_wrap">
         <div id="nearby_box"> 
@@ -372,59 +433,6 @@
 
         </div> 
     </div>
-
-    <!-- Nav Listing Unit -->  
-
-    <div id="Outing_frame">
-      <div id="Outing_wrap">
-        <div class="alert alert-CTA">       
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <a href="create_outing.html">
-            &nbsp&nbsp&nbsp&nbsp Have an outing you want to share?
-            <strong></br>Create your own Perfect Outing!</strong> 
-          </a>          
-        </div> 
-        <img class="thumbn" src="images/central_img1.jpg" alt="">
-        <h1>Best Day Out Cycling In Central Park</h1>
-          <div class="Outing_detail clearfix">
-            <div class="author clearfix">
-              <img class="img-polaroid" src="images/headshot.jpg" alt="">
-              <h5>By John Smith</br>Written March 12th</h5>            
-            </div>
-            
-            <button class="btn btn-green btn_facebook" id="fb_outing"><span class="facebook_sm" data-icon="&#x23;" aria-hidden="true"></span>&nbsp Share to Facebook</button>   
-          </div>         
-          <div class="Outing_cat">
-            <button class="btn btn-mini cat_tag">Active</button>
-            <button class="btn btn-mini cat_tag">Social</button>
-            <button class="btn btn-mini cat_tag">Everybody</button>
-            <button class="btn btn-mini cat_tag">Kid Friendly</button>
-          </div>      
-              <div class="dividline"></div>
-              <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere laborum earum ab quod dicta commodi cumque tempora </h3>                   
-              <h4>Museum in the morning</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
-              </p>
-              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
-              <h4>Great fun checking out dinosours</h4>              
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt reiciendis 
-              </p>  
-              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
-              <h4>Walk in the park afterwards</h4>              
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
-              </p>                 
-              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
-              <h4>Lunch on the westside</h4>                  
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse reiciendis 
-              </p> 
-              <img class="img-polaroid" src="images/central_img1.jpg" alt="">  
-              <h4>Perfect end to a lovely day</h4>              
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum magni tempora at molestiae alias deserunt eius mollitia fugiat nesciunt possimus provident quidem assumenda officiis placeat distinctio. Repellat esse fugit magnam omnis quia consequuntur porro nostrum veritatis libero harum dignissimos eos aspernatur minus itaque suscipit accusamus aut! Architecto laborum obcaecati quo commodi corrupti optio tempora impedit neque ipsum. Inventore animi pariatur amet recusandae alias perspiciatis hic sequi quam quidem ad repellendus nobis reiciendis 
-              </p> 
-              <div class="dividline"></div>
-      </div>
-    </div>    
-
 
 
     <!-- Javascripts -->

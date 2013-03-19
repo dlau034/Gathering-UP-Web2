@@ -56,3 +56,8 @@ $(document).ready(function(){
 	});
 });
 
+// $(document.ready(function(){
+// 	$('.dropdown-menu').find('#signin_content').click(function(event) {
+// 	    event.stopPropagation();
+// 	});	
+// });

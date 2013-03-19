@@ -38,6 +38,18 @@ h6 {
    height: 0;
    clear: both;
 }
+input:focus {
+    border: 1px solid #8BB946!important;
+    -webkit-box-shadow:  0 0 4px #8BB946!important;
+     -moz-box-shadow: 0 0 4px #8BB946!important; 
+     box-shadow:  0 0 4px #8BB946!important;
+}
+textarea:focus {
+    border: 1px solid #8BB946!important;
+    -webkit-box-shadow:  0 0 4px #8BB946!important;
+     -moz-box-shadow: 0 0 4px #8BB946!important; 
+     box-shadow:  0 0 4px #8BB946!important; 
+}
     /* Repeating Elements
     -------------------------------------------------- */
 @media (max-width: 599px) {
@@ -59,7 +71,43 @@ h6 {
 .alert-CTA a{
     color: #555!important;
 }
+.img-polaroid {
+    padding: 2px;
+    margin-left: -3px; 
+}
 
+.btn-facebook {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background: #5b80bf; /* Old browsers */
+background: -moz-linear-gradient(top,  #5b80bf 0%, #3b5a9a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5b80bf), color-stop(100%,#3b5a9a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #5b80bf 0%,#3b5a9a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #5b80bf 0%,#3b5a9a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #5b80bf 0%,#3b5a9a 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #5b80bf 0%,#3b5a9a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b80bf', endColorstr='#3b5a9a',GradientType=0 ); /* IE6-9 */
+  /*border-color: #8BB946 #8BB946 #387038;*/
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  border-radius: 2px !important;
+  font-family: "ubuntu";
+}
+.btn-facebook:hover,
+.btn-facebook:focus,
+.btn-facebook:active,
+.btn-facebook.active,
+.btn-facebook.disabled,
+.btn-facebook[disabled] {
+  color: #ffffff;
+  background: #3B5A9A!important;
+}
+
+.btn-facebook:active,
+.btn-facebook.active {
+  background-color: #3b5a9a \9;
+}
 
     /* Button Styling
     -------------------------------------------------- */
@@ -108,8 +156,89 @@ h6 {
     border-bottom: 1px solid white;
     width: 100%;
 }
+    /* Modals    
+    -------------------------------------------------- */    
 
+#register_modal {
+    border-radius: 0px;
+    background-color: #f9f9f9;
+    padding: 1em 2em 2em 2em;    
+    overflow: auto;
+}
+#register_modal h1 {
+    font-weight: 400;
+    font-size: 2.1em;
+    text-align: center;
+    color: #555;
+}
 
+#register_modal input:nth-child(4) {
+    width: 49%;
+    float: left;
+}
+#register_modal input:nth-child(n+5) {
+    width: 49%;
+    float: right;
+}
+#catcha {
+    width: 49%;
+    float: left;
+    background-color: red;
+    height: 2.1em;
+    border: 1px solid #ccc;
+    background-image: url("../images/captcha.jpg");
+    margin-bottom: 10px;
+}
+#register_modal .btn-facebook {
+    width: 14em;
+}
+#register_modal {
+    text-align: center!important;
+}
+#register_modal h4 {
+    font-weight: 500;
+    margin: 10px auto;
+    color: #444;
+    text-shadow:0 -1px 0 white;
+}
+#register_modal .btn-green {
+    width: 14em;
+    border-radius: 3px!important;
+    margin: 0 auto;
+}
+.form_reg {    
+    font-size: 1.1em !important;
+    font-family: "ubuntu";    
+    height: 2em!important;
+    line-height: 1em!important;  
+    width: 100%;  
+}
+#fb_icon_reg {
+    color: white!important;
+    text-shadow:0 -1px 0 #333!important;
+    float: left!important;
+}
+#register_modal .dividline {
+    margin: 1em 0em 1em 0em;
+}
+@media (max-width: 479px) {
+    #register_modal .btn {
+        width: 100%!important;
+        padding-left:0; 
+        padding-right:0;
+    }
+    #register_modal input {
+        width: 100%!important;
+        float: auto!important;
+    }
+    #register_modal h1 {
+        font-weight: 400;
+        font-size: 1.6em;
+        text-align: center;
+        line-height: 1em;
+        color: #555;
+    }    
+}
     /* Navigations
     -------------------------------------------------- */
 
@@ -137,8 +266,28 @@ h6 {
     margin-left: 0px !important;
     margin-right: 2em;
 }
+/* Styles Searchbar */
 
-/*Styles Navigation Buttons*/
+#header_search {
+    font-size: 1.0em;
+    font-family: "ubuntu";
+    font-weight: 400;
+    height: 28px;
+    line-height: 1.2em;
+    margin-top: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    
+}
+#header_search:focus {
+    border: 1px solid #FF7F00!important;
+    -webkit-box-shadow:  0 0 4px #FF7F00!important;
+     -moz-box-shadow: 0 0 4px #FF7F00!important; 
+     box-shadow:  0 0 4px #FF7F00!important;    
+}
+
+/* Styles Navigation Buttons */
 #nav_items_group a {
     color: #f5f5f5;
     /*font-weight: 500;*/
@@ -186,24 +335,76 @@ h6 {
     border-bottom: none;
     border-top: none;
 }
-#nav_cta a {
-    color: white;
-    text-shadow: none;
+.btn_nav_cta {
+    color: white!important;
+    text-shadow: none !important;
     font-weight: 500;
     border: 2px solid #F7931E;
-    padding: 3px 13px 3px 13px;
+    padding: 3px 13px 3px 13px!important;
     border-radius: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
     margin-top: 5px;
 }
-#nav_cta a:hover {
-    background-color: #F7931E; 
+.btn_nav_cta:hover {
+    background-color: #F7931E!important;
+}
+.btn_nav_cta:active {
+    box-shadow: none!important;
 }
 #style_dp_text {
     color: #F7931E;
     font-weight: 500; 
 }
+
+/* Style Login Dropdown */
+
+.input_dp {
+    /*font-size: 1.1em !important;*/
+    font-family: "ubuntu";
+    height: 2em!important;
+    line-height: 1.0em;  
+    width: 100%;  
+    margin-bottom: 10px;
+    /*border:1px solid #999!important;*/
+}
+#signin_box {
+    background-color: #f9f9f9;
+    border-radius: 0px;
+    padding: 10px;
+    width: 16em;
+    margin-top: 5px;
+}
+#signin_box .dividline {
+    margin-top: 12px;    
+    margin-bottom: 12px;    
+}
+#signin_box .btn-green{
+    float: right;
+}
+#signin_content {
+    margin-bottom: 0px;
+}    
+#signin_content a{
+    margin-top: 20px!important;
+}
+.btn_facebookdp {
+    width: 100%; 
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.btn_facebookdp span {
+    float: left;
+    margin-top: 1px;
+    font-size: 1.2em;
+}
+#forgotpw {
+    float: left;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+/* Responsive */
+
 @media (max-width: 979px) {
     #dp_list {
         margin-top: 10px;
@@ -259,38 +460,7 @@ h6 {
     z-index: 3;
 }
 
-@media (max-width: 767px) and (min-width: 480px) {
-    .Out_nearby_wrap {
-        right: 0.5em!important;
-        display: none;
-    }
-    #Outing_frame {
-        width: 60%!important;
-        /*background-color: red;*/
-    }
-}    
-@media (max-width: 479px) {
-    .Out_nearby_wrap {
-        display: none;
-        margin-top: 1em!important;
-    }
-    #Outing_frame {
-        width: 100%!important;
-        position: relative!important;
-        overflow: auto;
-        height: auto!important;
-    }
-    #Outing_wrap {
-        margin-top: 25px!important;
-    }
-    .alert-CTA {
-        display: none!important;
-    }
-    #map_canvas iframe {
-        position: relative!important;
-        height: 17em;
-    }
-}
+
 .nearby_item {
     min-height: 15em;
     margin-top: 1.4em;
@@ -588,7 +758,6 @@ margin-left: -30px !important;
     /* Filter Bar
     -------------------------------------------------- */
 
-
 .filter_bar {
     height: 50px;
     position: relative;
@@ -621,7 +790,6 @@ margin-left: -30px !important;
     border-top: 1px solid #788b36;
     z-index: -1;
 }
-
 @media (max-width: 599px)  {
     .filter_bar h2 { 
         font-size: 1.16em !important;
@@ -638,7 +806,6 @@ margin-left: -30px !important;
         width: 150px !important;
     }
 }
-
 @media (max-width: 849px) and (min-width:600px) {
     .filter_bar_bottom {
         
@@ -651,7 +818,6 @@ margin-left: -30px !important;
         margin-top: -1.5px !important;
     }
 }
-
 .filter_bar h2 {
     display: inline-block;
     font-family: arvo;
@@ -869,6 +1035,8 @@ select:focus {
     bottom: -5px;
 }
 
+
+
     /* Footer
     -------------------------------------------------- */
 .footer {
@@ -1038,8 +1206,6 @@ select:focus {
     display: block;
 }
 .img_button {
-    /*background-color: red;*/
-    /*height: 200px;*/
     width: 7.5em;
     float: left;
 }
@@ -1050,6 +1216,84 @@ select:focus {
     width: 8.5em;   
     margin-left:8px;  
     margin-top:5px;
+}
+
+@media (max-width: 849px) and (min-width: 550px) {
+    .Out_nearby_wrap {
+        right: 0em!important;
+        position: relative;
+        background-image: url("../images/kindajean.png");
+        width: 60%;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        -webkit-box-shadow: 0 0 2em black;
+         -moz-box-shadow: 0 0 2em black;
+         box-shadow: 0 0 2em black; 
+    }
+    #nearby_box {
+        width: 20em;
+        margin: 0 auto;
+    }
+    #Outing_frame {
+        width: 60%!important;
+        position: relative;
+        height: auto!important;
+    }
+    .Outing_cat .cat_tag {
+        margin-left: 0px;
+    }    
+    #fb_outing {
+        float: left;
+        clear: both;
+    }    
+}    
+@media (max-width: 549px) {
+    .Out_nearby_wrap {
+        margin-top: :0em!important;
+        overflow: hidden;
+        position: relative;
+        right: 0;
+        margin: 0 auto;
+
+    }
+    #Outing_frame {
+        width: 100%!important;
+        position: relative!important;
+        overflow: auto;
+        height: auto!important;
+    }
+    #Outing_wrap {
+        margin-top: 14px!important;
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+    .alert-CTA {
+        display: none!important;
+    }
+    #map_canvas iframe {
+        position: relative!important;
+        height: 14em;
+    }
+    #Outing_wrap p {
+        font-size: 1.1em;
+    }
+    #Outing_wrap h1 {
+        font-size: 2.1em;
+    }    
+    #Outing_wrap h3 {
+        font-size: 1.4em;
+    }
+    .author h5 {
+        margin-left: 0;
+        margin-bottom: 0px;
+    }
+    .Outing_cat .cat_tag {
+        margin-left: 0px;
+    }
+    #fb_outing {
+        float: left;
+        clear: both;
+    }
 }
 
     /* Perfect Outing Create Page
@@ -1191,7 +1435,6 @@ select:focus {
         margin-right: -30px
     }    
 }
-
 @media (max-width: 767px) {
      .top_unit { 
         margin-right: -10px;
@@ -1208,13 +1451,10 @@ select:focus {
     .btn-destory {
         top: 10px;
     }
-}
-
-
-@media (max-width: 767px) {
     .create_container {
         margin-right: 20px;
         margin-left: 20px;
-    }
+    }    
 }
+
 

@@ -7,8 +7,32 @@
 	<link rel="stylesheet" href="css/bootstrap-mobile.css"/>
 	<link rel="stylesheet" href="css/styles2.css">
   <link rel="stylesheet" href="icomoon/icomoon.css">  
-    <script src="js/jquery-1.9.1.js"></script>    
-    <script type="text/javascript" src="js/script.js"></script>
+  <script src="js/jquery-1.9.1.js"></script>    
+  <script src="js/jquery.masonry.min.js"></script>
+  <script>
+
+  // $(document).ready(function(){
+  //   $('#module_wrap').masonry({
+  //     itemSelector: '.module_unit',
+  //     columnWidth: 0,
+  //     isFitWidth: true,       
+  //     isAnimated: true   
+  //   });    
+  // });
+
+    $(document).ready(function(){
+        var $container = $('#module_wrap');
+        $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.module_unit',
+              columnWidth: 0,
+              isFitWidth: true,       
+              isAnimated: true              
+            });
+        });       
+    });
+  </script>
+  <script type="text/javascript" src="js/script.js"></script>
 
 	<!-- Google Font -->
 
@@ -37,12 +61,12 @@
           <a class="brand" href="index.html">GatheringUP</a> 
 
           <!-- Elements inside will disappear when mobile -->          
-            <div class="nav-collapse collapse"> 
+            <div id="collapse_content" class="nav-collapse collapse"> 
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
                   <li><a href="Whats_around.html">What's Around</a></li>                      
                   </ul>
-                  <form class="navbar-search">
+                  <form id="header_search_wrap" class="navbar-search">
                     <input id="header_search" type="text" class=" span4 search-query" placeholder="Search for places, locations, dining etc . . .">
                   </form>
 
@@ -72,7 +96,7 @@
                         <b class="icon-chevron-down icon-white"></b>
                       </a>
                       <div id="signin_box" class="dropdown-menu">
-                        <form id="signin_content" method="post"action="login" accept-charset="UTF-8">
+                        <form class="clearfix" id="signin_content" method="post"action="login" accept-charset="UTF-8">
                           <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button>  
 
                           <div class="dividline"></div>  
@@ -103,12 +127,12 @@
       <div class="container-module">
         <div class="featured_text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam perferendis harum nisi aliquid explicabo aperiam beatae magnam  ullam repellat aperiam beatae magnam tempore eaque sit  enim sed iste ipsam itaque ... <a href="#">Read More</a>
+            Lorem ipsum dolor sit amet, consectetur ad. Veniam perferendis harum nisi aliquid explicabo aperiam ipisicing elit. Veniam perferendis harum nisi aliquid explicabo aperiam ... <a href="#">Read More</a>
           </p>
           <div class="featured_tag">
-            <button class="btn btn-mini cat_tag">Active</button>
-            <button class="btn btn-mini cat_tag">Social</button>
-            <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
           </div>
         </div>
       </div>
@@ -165,65 +189,59 @@
 
 
     <!-- Module Unit -->
-    <div class="container-module">
-      <div class="module_wrap clearfix">
+
+      <div id="module_wrap">
+
       <div class="module_unit">
-        <div class="tape"></div>
         
-        <div style="background-image:url(images/thumb_park.jpg)" class="module_image">
-        </div>
+        <img src="images/family.jpg" alt="">
         <div class="module_text">
           <a href="Perfect_outing.html"><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet sit amet ...</p>
           <!-- <div class="dividline"></div> -->
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>   
       </div>
 
       <div class="module_unit">
-        <div style="background-image:url(images/thumb_bubbles.jpg)" class="module_image">
-        </div>
+        <img src="images/bench.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit.consect adipisicing elit. Eaque consect adipisicing elit. Eaque consect adipisicing elit. Eaque consect adipisicing elit. Eaque  Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>
         
 
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_horses.jpg)" class="module_image">
-        </div>
+        <img src="images/bridge.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet sit amet ipsum dolor sit amet  ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing . Veniam perferendis harum nisi aliquid explicabo aperiam elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet sit amet ipsum dolor sit amet  ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>             
       </div>
 
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_run.jpg)" class="module_image">
-        </div>
+        <img src="images/flower.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
@@ -231,149 +249,134 @@
           <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>           
       </div>
                   
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_yoga.jpg)" class="module_image">
-        </div>
+        <img src="images/biking.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Veniam perferendis harum nisi aliquid explicabo aperiam . Veniam perferendis harum nisi aliquid explicabo aperiam . Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>
 
    
       
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_soccer.jpg)" class="module_image">
-        </div>
+        <img src="images/family.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque . Veniam perferendis harum nisi aliquid explicabo aperiam . Veniam perferendis harum nisi aliquid explicabo aperiam inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>
 
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_bubbles.jpg)" class="module_image">
-        </div>
+        <img src="images/bridge.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque. Veniam perferendis harum nisi aliquid explicabo aperiam  inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>
 
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_horses.jpg)" class="module_image">
-        </div>
+        <img src="images/biking.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit.consect adipisicing elit. Eaque consect adipisicing elit. Eaque  Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>
 
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_run.jpg)" class="module_image">
-        </div>
+        <img src="images/bridge.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. consect adipisicing elit. Eaque consect adipisicing elit. Eaque consect adipisicing elit. Eaque consect adipisicing elit. Eaque consect adipisicing elit. Eaque consect adipisicing elit. Eaque consect adipisicing elit. Eaque Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>
                   
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_yoga.jpg)" class="module_image">
-        </div>
+        <img src="images/bench.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. consect adipisicing elit. Eaque consect adipisicing elit. Eaque consect adipisicing elit. Eaque Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>
       
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_soccer.jpg)" class="module_image">
-        </div>
+        <img src="images/family.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit.consect adipisicing elit. Eaque  Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>      
 
       <div class="module_unit">
-        <div class="tape"></div>
-        <div style="background-image:url(images/thumb_run.jpg)" class="module_image">
-        </div>
+        <img src="images/flower.jpg" alt="">
         <div class="module_text">
           <a href=""><h5>Big Day Out In  Out In Central Park Central Park</h5></a>
           <h6>by David Lau</h6>
           <div class="dividline"></div>
-          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
+          <p>Lorem ipsum dolor sit amet, consect adipisicing elit. consect adipisicing elit. Eaque consect adipisicing elit. Eaque Eaque inventore eos aliquid ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet ...</p>
         </div>
         <div class="module_tag">
-              <button class="btn btn-mini cat_tag">Active</button>
-              <button class="btn btn-mini cat_tag">Social</button>
-              <button class="btn btn-mini cat_tag">Everybody</button>
+            <button class="btn btn-mini disabled cat_tag">Active</button>
+            <button class="btn btn-mini disabled cat_tag">Social</button>
+            <button class="btn btn-mini disabled cat_tag">Everybody</button>
         </div>          
       </div>
+    </div>
 
     <!-- Pagination -->
     <div class="container-module">
@@ -412,7 +415,7 @@
     </div>    
 
     </div>
-  </div>
+
 
     <!-- Registor Modal -->
 
@@ -426,14 +429,14 @@
           <input type="text" class="form_reg" placeholder="Last Name">
           <input type="text" class="form_reg" placeholder="Email">
           <input type="text" class="form_reg" placeholder="Password">
-          <input type="text" class="form_reg" placeholder="Re-enter Password">
+          <input type="text" class="form_reg" placeholder="Retype Password">
           <div id="catcha"></div>
           <input type="text" class="form_reg" placeholder="Enter Catcha">
         </div>  
       <div class="dividline"></div>
       <a href="#" class="btn btn-large btn-green">Register!</a>
       <h4>OR</h4>
-      <a href="#" class="btn btn-large btn-facebook">Register with Facebook</a>      
+      <a href="#" class="btn btn-large btn-facebook"><span id="fb_reg" data-icon="&#x23;" aria-hidden="true"></span>Register with Facebook</a>      
   </div>    
 
 

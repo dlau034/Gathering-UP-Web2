@@ -44,10 +44,6 @@ $(function() {
     });
 });
 
-$(document).ready(function() { 
-	$("#e1").select2(); 
-});
-
 $(document).ready(function(){
 	$(".btn-destory").click(function(){
 		$(this).closest(".content_btn").fadeOut("slow",function(){
@@ -56,8 +52,4 @@ $(document).ready(function(){
 	});
 });
 
-// $(document.ready(function(){
-// 	$('.dropdown-menu').find('#signin_content').click(function(event) {
-// 	    event.stopPropagation();
-// 	});	
-// });
+

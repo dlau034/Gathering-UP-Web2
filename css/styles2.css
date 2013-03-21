@@ -11,7 +11,7 @@ body {
     font-size: 14px;    
     padding: 0;
     background-image: url("../images/kindajean.png");
-    font-family: ubuntu;
+    font-family: "ubuntu";
 }
 a {
     color: #777;
@@ -103,7 +103,15 @@ textarea:focus {
 .disabled_green {
           
 }
-
+.icon-right {
+    float: right;
+    margin-right: 3px;
+    margin-top: 5px;
+}
+.icomoon-right {
+    float: right;
+    margin-top: 0.5em;
+}
 
     /* Button Styling
     -------------------------------------------------- */
@@ -141,6 +149,9 @@ textarea:focus {
   background-color: #408140 \9;
 }
 
+.btn-mini {
+    margin-bottom: 3px;
+}
     /* Other Repeating Elements
     -------------------------------------------------- */
 
@@ -516,16 +527,17 @@ textarea:focus {
     width: 100%;
     height: 100%;    
     position: fixed; 
-    right: 0;       
+    right: 0; 
+    margin-top: 3em;      
 }
 .nearby_wrap {
-    width: 32em;
-    margin-left: 30em;
+    width: 31em;
+    margin-left: 28em;
     position: relative;
     overflow: hidden;
     z-index: 3;
-    margin-top:3.5em;
-    margin-bottom: 2em;
+    padding-top:2.5em;
+    padding-bottom: 2em;
 }
 
 #nearby_box {
@@ -541,17 +553,17 @@ textarea:focus {
     -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
     -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
     box-shadow: 0 0 7px rgba(0,0,0,0.3);
-    width: 97%;
+    width: 93%;
     margin-right: auto;
     margin-left: auto;
     position: relative;
     border: 1px solid rgba(0,0,0,0.3);
 }
 .nearby_item:hover {
-    background-color: #f9f9f9;
-    -webkit-box-shadow:0 0 6px #A3C86C;  
-      -moz-box-shadow:0 0 6px #A3C86C;  
-      box-shadow:0 0 6px #A3C86C;    
+    /*background-color: #f9f9f9;*/
+    -webkit-box-shadow:0 0 12px #A3C86C;  
+      -moz-box-shadow:0 0 12px #A3C86C;  
+      box-shadow:0 0 12px #A3C86C;    
     border: 1px solid #A3C86C; 
 }
 .item_tab {
@@ -567,12 +579,23 @@ textarea:focus {
 }
 .item_text {
     padding: 0.2em 0.5em 0.5em 1em;
-    width: 16.5em;
+    width: 55%;
     float: left;
+
+    /*background-color: blue*/
+}
+.item_other {
+    width: 33%;
+    float: right;
+    position: relative;
+    margin: 10px 10px 0px 0px;       
+
+    /*background-color: red;*/
 }
 .item_content {
-    padding: 1em 1em 1.5em 1em;
+    padding: 0em 1em 1.5em 1em;
     margin-top: 0em;
+
     display: none;
 }
 .item_content .result_cat{
@@ -593,11 +616,14 @@ textarea:focus {
     background-color: #ccc;
     margin-bottom: 0.8em;
 }
-.nearby_item img {
-    width: 10.4em;
+.item_other img {
+    width: 100%;
+    /*height: auto;*/
     float: right;
-    margin: 10px 6px 0px 0px;
-    height: 10em;
+    /*margin: 10px 10px 0px 0px;   */
+}
+.item_other img.thumbnail{
+    margin-right: -4px;
 }
 .nearby_item h4 {
     float: left;
@@ -615,26 +641,22 @@ textarea:focus {
     font-size: 1em;
     font-weight: 100;
     line-height: 1.3em;
+    clear: both
 }
-.CTA_button {
-    height: 30px;
+.CTA_button {    
     float: right;
-    margin-right:8px;
+    width: 100%;
     margin-top: 5px;
-    display: none;
+    border-radius: 2px!important;
+    display: none;  /*toggles the hide function - default as display none*/
 }
 
-.CTA_button button {
-    font-weight: 100;
-    border-radius: 2px !important;
-}
+
 @media (max-width: 1100px) {
     .nearby_wrap {
         margin-left: 25em;
+        clear: both;
     }
-}
-@media (min-width: 1200px) {
-
 }
     /* Nav Listing Unit
     -------------------------------------------------- */
@@ -642,39 +664,81 @@ textarea:focus {
 #nearby_nav {   
     position: fixed;
     top: 0;
-    width: 40em;
+    width: 25em;
     height: 100%;
-    /*background-image: url("../images/bg_grey.jpg");*/
     background-image: url("../images/kindajean.png");    
     border-collapse: collapse;
-    z-index: 2;
+    z-index: 3;
+    -webkit-box-shadow: 0em 0em 1em #333;
+    -moz-box-shadow: 0em 0em 1em #333;
     box-shadow: 0em 0em 1em #333;
 }
 #nav_features {
-    margin-top: 5em;    
+    margin-top: 4em;    
     height: 100px;
-    margin-left: 3em;
+    margin-left: 2em;
     width: 21em;
 }  
+#nav_features .dividline {
+    margin-bottom: 10px;
+}
 .Pick_box {
     height: 5em;
-    background-color: red;
     z-index: 3;
     position: relative;
 }
 
-#nearby_catagories {
+#accordion {
     width: 21em;
-    margin-left: 3em;
-    margin-top: 1em;
-    /*text-align: right;*/
+    margin-left: 2em;
+    margin-top: 2em;
+}
+#accordion h3:hover {
+    cursor: pointer;
+    background: #f8a644; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f8a644 0%, #f7931e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8a644), color-stop(100%,#f7931e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f8a644 0%,#f7931e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8a644', endColorstr='#f7931e',GradientType=0 ); /* IE6-9 */
+
+}
+#accordion h3:focus {
+    outline: none;
+
+    box-shadow:none !important;    
+}
+#accordion h3 {
+    /*background-color: #A3C86C;*/
+    padding: 0px 10px;
+    color: white;
+    font-weight: 100;
+    font-size: 1.4em; 
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    border-left: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    background-color: #A3C86C;
+    background-image: -moz-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#8BB946));
+    background-image: -webkit-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);    
 }
 
 a.accordion-toggle.nav_cat {
     font-size: 1.4em !important;
     line-height: 2em;
-    /*background-color: red;*/
+    color: #F7931E;
+    text-shadow:0px 1px 0px #555;
 }
+
 .group_style {
     border: none !important;
     border-radius: 0px;
@@ -687,59 +751,26 @@ a.accordion-toggle.nav_cat {
     line-height: 1.2em; 
 }
 
-@media (max-width: 479px) {
-    
-    /*TOP*/
-
-    #nearby_catagories {
-
-    }
-    #nav_features {
-        background-color: red;
-    }    
-    #nearby_nav {
-        /*position: fixed;*/
-        height: 15em;
-        background: none;
-        background-color: red;
-    }
-    /*Middle*/
-    
-    #nearby_canvas {
-        position: relative;
-    }   
-
+@media (max-width: 480px) {
     /*Bottom*/  
     #nearby_box {
         margin-top: 0!important;
     }
     .nearby_wrap { 
-        position: relative;
+        /*position: relative;*/
         margin-left: 0!important;
         width: auto;
-        /*background-color: blue;*/
         padding: 10px;
-        z-index: -3;  
-        min-height: 10em; 
+        z-index: 1;  
+        min-height: 10em;
+        box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
     }  
-    #nearby_catagories {
-        display: none;
-    }
     .nearby_item {
         min-height: 13em;
+        margin-top: 1em;
     }
-    .nearby_item .thumbnail {
-        width: 27%;
-        height: auto;
-        float: right;
-        /*background-color: green;*/
-    }
-    .nearby_item .item_text {
-        width: 60%;
-        float: left;
-        /*background-color: red;*/
-        padding-left: 10px;
-
+    .item_other {
+        max-width: 125px;
     }
     .nearby_item h4 {
         font-size: 1.0em;
@@ -747,12 +778,91 @@ a.accordion-toggle.nav_cat {
     .nearby_item p {
         font-size: 0.8em;
         float: left;
+    }     
+}
+
+@media (max-width: 767px) {
+    #accordion {
+        display: none;
+    }    
+    /*TOP*/
+    
+    #nearby_nav {
+        height: 13em;
+        background-image: url("../images/kindajean.png"); 
+        top: -15;
+        border-bottom:1px solid #999;
+        width: 100%;
+    }
+    #nav_features {
+        /*margin: 0 auto;*/
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5em;         
+    }
+    #nearby_nav .dividline {
+        display: none;
+    }
+    .nearby_wrap {
+        margin-top: 0;
+        margin-bottom: 0;    
+    }
+
+    /*Middle*/    
+    #map_canvas.nearby_canvas {
+        position: relative;
+        margin-top: 9em;        
+    }   
+    .item_top_info {
+       min-height: 13.1em;
     }    
 }
-    /*Bottom Ends*/  
 
-@media (max-width: 767px) and (min-height: 480px) {
+@media (min-width: 768px) and (max-width: 980px) {
+    #nearby_nav {
+        width: 25em;       
+    }
+    .nearby_wrap {
+        margin-left: auto;    
+        padding-top: 0em;
+        margin-right: 8px;
+    }
+    #map_canvas.nearby_canvas iframe {
+        position: relative;
+        height: 35%;
+        box-shadow: 0 0 10px black;
+    }
 }
+@media (min-width: 481px) and (max-width: 767px) {
+    /*Bottom*/  
+    #nearby_box {
+        margin-top: 0!important;
+    }
+    .nearby_wrap { 
+        /*position: relative;*/
+        margin-left: 0!important;
+        width: auto;
+        padding: 10px;
+        z-index: 1;  
+        min-height: 10em;
+        background-image: url("../images/kindajean.png");
+        box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
+    }  
+
+    .nearby_item {
+        min-height: 13em;
+        margin-top: 1em;
+    }
+    .item_other {
+        max-width: 125px;
+    }
+    #map_canvas.nearby_canvas iframe {
+        position: relative;
+        height: 35%;
+        box-shadow: 0 0 10px black;
+    }         
+}
+
     /* Top Module of Nav Listing Unit
     -------------------------------------------------- */
 
@@ -770,7 +880,8 @@ a.accordion-toggle.nav_cat {
     border-radius: 0px!important;
     height: 2.5em;
     font-size: 1.1rem;
-    width: 100%;
+    /*width: 100%;*/
+    width: 292px;
     text-indent: 2px;
     padding: 10px 10px 10px 0px;
     color: #555;

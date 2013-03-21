@@ -1,0 +1,100 @@
+    #navigation {
+        width: 100%;
+        font-size: 1.1em;
+
+    }
+      #navigation ul {
+          margin: 0px;
+        
+    }
+      
+    ul.top-level { 
+        /*background: #666; */
+    }
+        
+    #navigation li { 
+        list-style: none; 
+    }
+            ul.top-level li {
+                margin-bottom: 0px;
+                background-color: #c5c5c5;
+                /*background-color: #BCE4A1;*/
+                width: 10em;
+
+                border-bottom: 1px solid #fff;
+
+            }
+          #navigation a {
+            color: white;
+            cursor: pointer;
+            display: block;
+            height:25px;
+            line-height: 25px;
+            text-indent: 10px;          
+            text-decoration:none;
+            width:100%;
+            padding: 1px 0px;
+            font-weight: 400;
+          }
+          #navigation a:hover{  
+            color: white;
+          }
+          #navigation li:hover {
+              background: #F9AE57;
+              position: relative;
+          }
+         #navigation li:focus {
+              background: #F9AE57;
+              position: relative;
+          }          
+            ul.sub-level { 
+              /*position: absolute;*/
+              display: none; 
+              width: 10em;
+              background-color:#F9AE57 !important;
+              /*border: 1px solid black;*/
+              margin-top: 0em!important; 
+              /*margin-left: 5em!important;                        */
+              margin-bottom: 3em;
+              width: 300px;
+              
+            }
+            ul.sub-level li {
+              /*width: 100%!important;  */
+              margin: 0;
+            }
+            ul.sub-level a { 
+              color: white!important;
+              font-size: 0.9em!important;
+              background-color: #F9AE57 !important;
+            }            
+            ul.sub-level a:hover {
+              background-color: #A3C86C!important;
+            }
+            li:hover .sub-level {
+                background: #999;
+                /*border: #fff solid;*/
+                border-width: 1px;
+                display: block;
+                position: absolute;
+                left: 155px;
+                top: 0px;
+            }
+            ul.sub-level li {
+                border: none;
+                float:left;
+                width:150px; 
+            }
+            ul.sub-level {
+              /*overflow: scroll;*/
+            }
+            .newline {
+                float: right;
+
+            }
+        #navigation .sub-level { background: #999; }
+        #navigation .sub-level .sub-level { background: #09C; }
+                
+      /*IE RESET HELPER*/
+      li:hover .sub-level .sub-level { display:none; }
+      .sub-level li:hover .sub-level { display:block; } 

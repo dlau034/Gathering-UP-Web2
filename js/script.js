@@ -53,3 +53,8 @@ $(document).ready(function(){
 });
 
 
+
+      $(function(){ 
+        $(".tier3").popover({container:'body',});  
+      });  
+         

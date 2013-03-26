@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 <head>
 	<title>GatheringUP - Perfect Outing</title>
@@ -10,10 +12,8 @@
 	<link rel="stylesheet" href="icomoon/icomoon.css">
   <link href="select/select2.css" rel="stylesheet"/>
   <!--[if lte IE 7]><script src="icomooon/lte-ie7.js"></script><![endif]-->
-  <!-- <script src="http://code.jquery.com/jquery.js"></script> -->
   <script src="js/jquery-1.9.1.js"></script>    
-  <script src="js/jquery-ui-1.10.2.custom.js"></script>    
-  <!-- <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script> -->
+  <script src="js/jquery-ui-1.10.2.custom.js"></script>   
   <script type="text/javascript" src="js/script.js"></script>
   <script src="select/select2.js"></script>
   <script>
@@ -83,8 +83,9 @@
           </div>
           <div class="span3 form_sizing">
             <span class="label_text">Upload Featured Image</span>          
-            <button class="btn btn-green btn-uploadhead">Upload Image &nbsp<i class="icon-picture icon-white"></i>  
-            </button>        
+            <input type="file" title="Upload Image">  
+               
+
           </div>                      
         
         </div>      
@@ -113,14 +114,13 @@
             <div class="span9 form_sizing">
               <input class="form_normal" placeholder="Where did you go?" type="text">
             </div>            
-            <button class="span3 btn btn-green btn-upload">Upload Image &nbsp<i class="icon-picture icon-white"></i>  
-            </button>                             
+            <input type="file" title="Upload Image">                         
         </div>
 
         </br>
         <button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>      
         </br>
-        </br>             
+        </br>         
     </div>     
           
          <!-- Module 2 -->  
@@ -183,8 +183,9 @@
 
   </div> 
   
-    <!-- Javascripts -->
+    <!-- Javascripts --> 
 
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.file-input.js"></script>
 </body>
 </html>

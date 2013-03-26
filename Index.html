@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 <head>
 	<title>GatheringUP - Homepage</title>
@@ -10,16 +12,7 @@
   <script src="js/jquery-1.9.1.js"></script>    
   <script src="js/jquery.masonry.min.js"></script>
   <script>
-
-  // $(document).ready(function(){
-  //   $('#module_wrap').masonry({
-  //     itemSelector: '.module_unit',
-  //     columnWidth: 0,
-  //     isFitWidth: true,       
-  //     isAnimated: true   
-  //   });    
-  // });
-
+  
     $(document).ready(function(){
         var $container = $('#module_wrap');
         $container.imagesLoaded(function(){
@@ -158,7 +151,7 @@
         </div>
       </div>     
 
-      <div class="filter_bar filter_bar_bottom">
+<!--       <div class="filter_bar filter_bar_bottom">
           <div id="filter_btn_wrap">
              <div  class="filter_btn mobile"><a style="width:200px"href="#">Latest Outings</a></div>
               <div  class="filter_btn mobile"><a style="width:200px"href="#">Editor's Picks</a></div>
@@ -168,8 +161,22 @@
       
       <div class="filter_bar filter_bar_bottom visible_phone">
         <div  class="filter_btn" id="btn_mobile"><a href="#">Create Your Own Perfect Outing!</a></div>
-      </div>
+      </div> -->
   
+<div class="navbar">
+  <div class="navbar-inner btn-filter-bg">
+     <div class="btn-group btn-full">
+      <button class="btn btn-filter">Latest Outings</button>
+      <button class="btn btn-filter">Most Popular</button>
+      <button class="btn btn-filter">Editor's Pick</button>    
+      <button class="btn btn-filter">Create Your Perfect Outing!</button>
+    </div>   
+    
+
+
+  
+  </div>
+</div>
 
     <!-- Pagination -->
   
@@ -443,5 +450,10 @@
     <!-- Javascripts -->
 
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('.dropdown-menu').click(function(event){
+           event.stopPropagation();
+       });
+    </script>
 </body>
 </html>

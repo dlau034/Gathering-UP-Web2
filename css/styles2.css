@@ -126,7 +126,7 @@ textarea:focus {
 }
 .icomoon-right {
     float: right;
-    margin-top: 0.5em;
+    /*margin-top: 0.5em;*/
 }
 
     /* Button Styling
@@ -878,12 +878,12 @@ a.accordion-toggle.nav_cat {
     /* Top Module of Nav Listing Unit
     -------------------------------------------------- */
 
-#nearby_search {
+.input-append input#Nearby_Search {
     border-radius: 0px;
-    height: 2.5em;
+    padding: 10px!important;
+    height: 2.5em!important;
     font-size: 1.1rem ;
     font-family: "ubuntu";
-    text-indent: 2px;
     width: 226px;
 }
 
@@ -894,7 +894,7 @@ a.accordion-toggle.nav_cat {
     font-size: 1.1rem;
     /*width: 100%;*/
     width: 292px;
-    text-indent: 2px;
+    text-indent: 4px;
     padding: 10px 10px 10px 0px;
     color: #555;
 }

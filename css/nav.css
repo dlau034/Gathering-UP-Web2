@@ -1,9 +1,9 @@
-    #navigation {
+    .navigation {
         width: 100%;
         font-size: 1.1em;
 
     }
-      #navigation ul {
+      .navigation ul {
           margin: 0px;
         
     }
@@ -12,7 +12,7 @@
         /*background: #666; */
     }
         
-    #navigation li { 
+    .navigation li { 
         list-style: none; 
     }
             ul.top-level li {
@@ -24,7 +24,7 @@
                 border-bottom: 1px solid #fff;
 
             }
-          #navigation a {
+          .navigation a {
             color: white;
             cursor: pointer;
             display: block;
@@ -36,14 +36,14 @@
             padding: 1px 0px;
             font-weight: 400;
           }
-          #navigation a:hover{  
+          .navigation a:hover{  
             color: white;
           }
-          #navigation li:hover {
+          .navigation li:hover {
               background: #F9AE57;
               position: relative;
           }
-         #navigation li:focus {
+         .navigation li:focus {
               background: #F9AE57;
               position: relative;
           }          
@@ -92,8 +92,8 @@
                 float: right;
 
             }
-        #navigation .sub-level { background: #999; }
-        #navigation .sub-level .sub-level { background: #09C; }
+        .navigation .sub-level { background: #999; }
+        .navigation .sub-level .sub-level { background: #09C; }
                 
       /*IE RESET HELPER*/
       li:hover .sub-level .sub-level { display:none; }

@@ -24,6 +24,12 @@
         });       
     });
   </script>
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script>
+  $(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+  });
+  </script>
   <script type="text/javascript" src="js/script.js"></script>
 
 	<!-- Google Font -->
@@ -88,14 +94,18 @@
                         <b class="icon-chevron-down icon-white"></b>
                       </a>
                       <div id="signin_box" class="dropdown-menu">
-                        <form class="clearfix" id="signin_content" method="post"action="login" accept-charset="UTF-8">
-                          <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button>  
-
-                          <div class="dividline"></div>  
-                      
-                          <input class="input_dp" placeholder="Username" id="username" type="text" name="username">
-                          <input class="input_dp" placeholder="Password" id="passowrd" type="text" name="password">
-                          <div id="forgotpw"><a href="">Forgot Password</a></div>
+                        <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button> 
+                          <form class="clearfix" id="signin_content" method="post"action="login" accept-charset="UTF-8">
+                          <div class="dividline"></div>                        
+                            <div class="control-group">                            
+                                <input class="input_dp" placeholder="Username" type="email" name="username">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="control-group">                              
+                                <input class="input_dp" placeholder="Password" type="password" name="password" required>
+                                <span class="help-block"></span>
+                            </div>
+                          <div id="forgotpw"><a href="#register_modal" data-toggle="modal">Forgot Password</a></div>
                           <button class="btn btn-green clearfix">Sign in</button>
                         </form>
                       </div>                
@@ -129,8 +139,6 @@
         </div>
       </div>
     </div>    
-
-
 
     <!-- Filter Unit -->          
 
@@ -168,7 +176,7 @@
       <!-- <button class="btn btn-filter">Latest Outings</button> -->
       <!-- <button class="btn btn-filter">Most Popular</button> -->
       <!-- <button class="btn btn-filter">Editor's Pick</button>     -->
-      <button class="btn btn-filter">Create Your Perfect Outing!</button>
+      <button  onClick="location.href='Create_Outing.html'" class="btn btn-filter">Create Your Perfect Outing!</button>
     </div>   
     
 
@@ -400,51 +408,112 @@
     </div>          
 
     <!-- Footer -->  
-    <div class="footer">
-      <p>Copyright Gathering Up Ltd. All rights reserved. Proudly made in New York City!</p>  
-      <p>
-        <a href="http://twitter.com">
-          <span class="facebook_sm" data-icon="&#x23;" aria-hidden="true"></span>
-          Follow Us on Twitter
-        </a> | 
-        <a href="http://Facebook.com">
-          <span class="facebook_sm" data-icon="&#x23;" aria-hidden="true"></span>
-          Follow Us on Facebook
-        </a><br>
-      </p> 
-      <p>  
-        <a href="/about">About Us</a>  |  
-        <a href="/about/termsofuse">Terms of Use</a>  |  
-        <a href="/about/privacy">Privacy Policy</a> | 
-        <a href="/about/contactusform">Contact Us</a>
-      </p>  
-    </div>    
-
+      <div class="footer">
+        <p>Copyright Gathering Up Ltd. All rights reserved. Proudly made in New York City!</p>  
+        <p>
+          <a href="http://twitter.com">
+            <span class="facebook_sm" data-icon="&#x23;" aria-hidden="true"></span>
+            Follow Us on Twitter
+          </a> | 
+          <a href="http://Facebook.com">
+            <span class="facebook_sm" data-icon="&#x23;" aria-hidden="true"></span>
+            Follow Us on Facebook
+          </a><br>
+        </p> 
+        <p>  
+          <a href="/about">About Us</a>  |  
+          <a href="/about/termsofuse">Terms of Use</a>  |  
+          <a href="/about/privacy">Privacy Policy</a> | 
+          <a href="/about/contactusform">Contact Us</a>
+        </p>  
+      </div>    
     </div>
 
-
-    <!-- Registor Modal -->
+  <!-- Register Modal -->
 
   <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
 
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       <h1>Register with GatheringUP!</h1>
       <div class="dividline"></div>
-        <div class="register_fields clearfix">
-          <input type="text" class="form_reg" placeholder="First Name">
-          <input type="text" class="form_reg" placeholder="Last Name">
-          <input type="text" class="form_reg" placeholder="Email">
-          <input type="text" class="form_reg" placeholder="Password">
-          <input type="text" class="form_reg" placeholder="Retype Password">
+        <form id="register_form">
+          <div class="clearfix">
+
+            <div class="control-group">
+              <div class="control">
+                <input class="form_reg" type="text" placeholder="First Name" required>
+                <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group">
+              <div class="control">
+                <input class="form_reg" type="text" placeholder="Last Name" required>
+                <p class="help-block"></p>                
+              </div>
+          </div>
+
+          <div class="control-group">
+              <div class="control">    
+                <input class="form_reg" type="email" placeholder="Email" required>
+                <p class="help-block"></p>    
+              </div>
+          </div>
+
+          <div class="control-group">
+              <div class="control">    
+                <input id="password1st" name="password1" class="form_reg" type="text" placeholder="Password" required>
+                    
+              </div>              
+          </div>              
+
+          <div class="control-group">
+              <div class="control">    
+                <input 
+                  id="password2nd"
+                  class="form_reg" 
+                  placeholder="Retype Password"
+                  type="text"
+                  name="password2"
+                  data-validation-match-match="password1"                   
+                  />
+                <p class="help-block"></p>    
+              </div>              
+          </div>       
+
           <div id="catcha"></div>
-          <input type="text" class="form_reg" placeholder="Enter Catcha">
-        </div>  
-      <div class="dividline"></div>
-      <a href="#" class="btn btn-large btn-green">Register!</a>
+            <div class="control-group">
+              <div class="control">                  
+                <input type="text" id="catcha2" class="form_reg" type="text" placeholder="Enter Catcha" required>
+                <p class="help-block"></p>                 
+              </div>
+            </div>
+
+          </div>
+
+          <div class="dividline"></div>
+          <button href="#" class="btn btn-large btn-green" type="submit">Register!</button>
+        </form>
       <h4>OR</h4>
-      <a href="#" class="btn btn-large btn-facebook"><span id="fb_reg" data-icon="&#x23;" aria-hidden="true"></span>Register with Facebook</a>      
+      <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" data-icon="&#x23;" aria-hidden="true"></span>Register with Facebook</button>      
   </div>    
 
+    <!-- Forgot Password Modal -->
+
+ <div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h1>Forgot Password?</h1>
+      <div class="dividline"></div>
+        <form class="forgot_fields clearfix">
+          <div class="control-group">
+            <div class="controls">
+              <input type="email" class="form_reg" placeholder="Enter Your Email">
+               <p class="help-block"></p>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-green">Forgot Password!</button>  
+        </form>  
+   </div>    
 
     <!-- Javascripts -->
 
@@ -454,5 +523,11 @@
            event.stopPropagation();
        });
     </script>
+    <script>
+      $("#forgotpw").click(function(){
+        $("#forgotpw_modal").modal("show");
+      });
+    </script>
+
 </body>
 </html>

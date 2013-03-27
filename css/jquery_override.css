@@ -155,3 +155,17 @@
     height: 29px;  
     margin-bottom: 0;  
 }  
+.ui-menu-item a {
+    color: #666;
+    font-family: "ubuntu"!important;
+    font-size: 0.8em;
+    border-radius: 0;
+}
+ui-corner-all {
+    border-radius: 0;
+}
+.ui-widget-content {
+    border: 1px solid #666;
+    background-color: #f9f9f9;
+    border-radius: 0px;
+}

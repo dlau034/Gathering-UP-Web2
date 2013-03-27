@@ -153,9 +153,14 @@ form {
     margin-bottom: 0;
 }
 .help-block li {
-    margin-bottom: 10px!important;
+    margin-bottom: 0px!important;
     list-style-type: none!important;
-    text-align: left;    
+    text-align: left;
+    font-size: 0.9em!important;    
+}
+.help-block ul {
+    margin: 0;
+    margin-bottom: 0px!important;
 }
 
     /* Button Styling
@@ -241,6 +246,7 @@ form {
 #password1st, #catcha2 {
     width: 49%;
     float: left;
+    /*margin-bottom: 0;*/
 }
 #password2nd {
     width: 49%;
@@ -325,6 +331,7 @@ form {
     /*white-space: nowrap;  */
     background-color: #f9f9f9;   
     left:50%!important;
+
 }
 #forgotpw_modal h1 {
     font-weight: 400;
@@ -373,22 +380,23 @@ form {
 /* Styles Searchbar */
 
 #header_search_wrap {
-    border-top:none;
-    border-bottom:none;
-    -webkit-box-shadow:none ;
-     -moz-box-shadow:none ;
-     box-shadow:none ; 
+    margin-top: 7px;
 }
-
+#header_search_wrap .input-append {
+    margin-bottom: 0;
+}
+#header_search_wrap .btn-green {
+    margin: 0!important;
+    padding: 4.7px 5px;
+    border-radius: 0px 8px 8px 0px!important;
+}
 #header_search {
     text-indent: 4px;
     font-family: "ubuntu";
     font-weight: 400;
-    line-height: 1.2em;
-    margin-top: 0px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    /*line-height: 1em;*/
     background-color: white;
+    border-radius: 8px 0px 0px 8px;
 }
 #header_search:focus {
     border: 1px solid #FF7F00!important;
@@ -743,6 +751,7 @@ form {
     -webkit-box-shadow: 0em 0em 1em #333;
     -moz-box-shadow: 0em 0em 1em #333;
     box-shadow: 0em 0em 1em #333;
+    /*overflow-y: auto;*/
 }
 #nav_features {
     margin-top: 4em;    
@@ -762,7 +771,7 @@ form {
 #accordion {
     width: 21em;
     margin-left: 2em;
-    margin-top: 2em;
+    /*margin-top: 2em;*/
 }
 #accordion h3:hover {
     cursor: pointer;
@@ -786,7 +795,8 @@ form {
     padding: 0px 10px;
     color: white;
     font-weight: 100;
-    font-size: 1.4em; 
+    line-height: 30px;
+    font-size: 1.25em; 
     text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
     border-right: 1px solid rgba(0, 0, 0, .2);
     border-left: 1px solid rgba(0, 0, 0, .2);
@@ -801,6 +811,8 @@ form {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);    
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 a.accordion-toggle.nav_cat {
@@ -949,12 +961,12 @@ a.accordion-toggle.nav_cat {
 #nav_features select{
     font-family:"ubuntu";
     border-radius: 0px!important;
-    height: 2.5em;
-    font-size: 1.1rem;
+    /*height: 2.5em;*/
+    font-size: 1.1em;
     /*width: 100%;*/
     width: 292px;
-    text-indent: 4px;
-    padding: 10px 10px 10px 0px;
+    /*text-indent: 4px;*/
+    /*padding: 10px 10px 10px 0px;*/
     color: #555;
 }
 
@@ -1118,7 +1130,7 @@ background-image: linear-gradient(white, #ccc);
     margin-top: 0px!important;
 }    
 .btn-filter {
-    padding: 7px 2em;
+    padding: 10px 2em;
     font-family: "arvo";
     font-weight: 400;    
     border-bottom: 0px;
@@ -1832,9 +1844,7 @@ span.file-input-name {
     margin-top: 1.5em;
 }
 .top_unit h5 {
-    /*color: black;*/
     text-align: right;
-    /*margin-top: 1em;*/
     line-height: 3.4em;
 }
 .top_unit {
@@ -1889,6 +1899,10 @@ span.file-input-name {
         margin-right: 20px;
         margin-left: 20px;
     }    
+    .create_frame h1 {
+        font-size: 2em;
+        line-height: 1em;
+    }        
 }
 
-
+    

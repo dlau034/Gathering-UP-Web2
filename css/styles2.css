@@ -131,18 +131,6 @@ form {
     float: right;
     /*margin-top: 0.5em;*/
 }
-/*.control-group.warning .help-block {
-    color:  #F7931E!important;
-    list-style: none!important;
-}
-.control-group.warning input {
-    border-color: #F7931E!important;
-}
-.control-group.warning input:focus {
-    -webkit-box-shadow: 0 0 4px #F7931E!important;
-     -moz-box-shadow: 0 0 4px #F7931E!important;
-     box-shadow: 0 0 4px #F7931E!important; 
-}*/
 .control-group {
     margin-bottom: 0;
 }
@@ -162,7 +150,9 @@ form {
     margin: 0;
     margin-bottom: 0px!important;
 }
-
+.typeahead {
+    background-color: #f9f9f9;
+}
     /* Button Styling
     -------------------------------------------------- */
 
@@ -381,14 +371,44 @@ form {
 
 #header_search_wrap {
     margin-top: 7px;
+    border: 0;
 }
 #header_search_wrap .input-append {
     margin-bottom: 0;
+    width: 100%;
 }
 #header_search_wrap .btn-green {
     margin: 0!important;
     padding: 4.7px 5px;
-    border-radius: 0px 8px 8px 0px!important;
+    border-radius: 8px 0px 0px 8px!important;
+}
+#header_search_wrap .btn-green:hover {
+    -webkit-box-shadow: 0 0 4px #FF7F00!important;
+    -moz-box-shadow: 0 0 4px #FF7F00!important;
+    box-shadow: 0 0 4px #FF7F00!important;    
+    background: none;
+    background-color: #faa732;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+    background-image: -webkit-linear-gradient(#fbb450, #f89406);
+    background-image: -moz-linear-gradient(#fbb450, #f89406);
+    background-image: -o-linear-gradient(#fbb450, #f89406);
+    background-image: linear-gradient(#fbb450, #f89406);
+    background-repeat: repeat-x;
+    border-color: #f89406 #f89406 #ad6704;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);   
+}
+
+ /* Bootstrap Overwrite */
+
+#header_search_wrap .active > a,
+#header_search_wrap .active > a:hover,
+#header_search_wrap .active > a:focus {
+  background: none;
+  font-family: "ubuntu";
+  background-color:#8BB946;
+  color:white!important; 
 }
 #header_search {
     text-indent: 4px;
@@ -396,7 +416,7 @@ form {
     font-weight: 400;
     /*line-height: 1em;*/
     background-color: white;
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 0px 8px 8px 0px;
 }
 #header_search:focus {
     border: 1px solid #FF7F00!important;
@@ -406,11 +426,26 @@ form {
 }
 @media (max-width: 979px) {
     #header_search {
-        width: 100%;        
+        width: 97%;        
+    }
+    #header_search_wrap {
+        background-color: #444;
+    }    
+}
+@media (max-width: 767px) {
+    #header_search_wrap .btn-green {
+        padding: 6.7px 7px;
+    }
+    #header_search_wrap .typeahead.dropdown-menu {
+        margin-top: 1em!important;
+    }    
+    #header_search {
+        width: 92%;        
     }
 }
 
 /* Styles Navigation Buttons */
+
 #nav_items_group a {
     color: #f5f5f5;
     /*font-weight: 500;*/
@@ -1729,10 +1764,12 @@ select:focus {
     /* Create Outing Top */
 
 .create_frame {
-    margin-top: 80px;
+    margin-top: 65px;
 }
 .create_frame h1 {
     text-align: center;
+    text-shadow: 0px 1px 0px white;
+    color: #444;    
 }    
 .row {
     /*background-color: red;*/
@@ -1747,27 +1784,24 @@ select:focus {
 }
 
 .form_large {
-    font-size: 1.5em !important;
+    font-size: 1.3em !important;
     font-family: "ubuntu";
     /*background-color: red;*/
     height: 2em!important;
     margin-bottom: 0px !important;
-    line-height: 1.5em !important;
+    
     width: 100%;
     border:1px solid #999!important;  
 }
 .form_normal {
     font-size: 1.1em !important;
     font-family: "ubuntu";
-    /*background-color: red;*/
-    /*height: 2em!important;*/
-    /*line-height: 1em!important;  */
     width: 100%;  
     margin-bottom: 0px!important;
     border:1px solid #999!important;      
 }
 .area_normal {
-    font-size: 1.1em !important;
+    font-size: 1em !important;
     font-family: "ubuntu";
     line-height: 1.3em!important; 
     margin-bottom: 0px!important; 
@@ -1777,6 +1811,12 @@ select:focus {
 .form_sizing {
     margin-top: 1.5em;
     /*margin-bottom: 1em;*/
+}
+.top_unit .select2-search-field input:focus {
+    border: none!important;
+    -webkit-box-shadow: none!important;
+     -moz-box-shadow: none!important;
+     box-shadow: none!important; 
 }
 .form_sizing h4 {
     margin-top: -5px !important;
@@ -1881,7 +1921,7 @@ span.file-input-name {
 }
 @media (max-width: 767px) {
      .top_unit { 
-        margin-right: -10px;
+        margin-right: 0px;
         padding-left: 10px;
         padding-bottom: 20px;
         padding-top: 0px;

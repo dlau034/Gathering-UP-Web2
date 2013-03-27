@@ -93,16 +93,3 @@ ul.sub-level {
 }
                 
     /*IE RESET HELPER*/
-
-li:hover .sub-level .sub-level { 
-    display:none; 
-}
-.sub-level li:hover .sub-level { 
-  display:block; 
-} 
-.expandup-level {
-    top: -5.2em!important;
-    position: absolute;
-    /*bottom: 0;*/
-    /*left: 200px;*/
-}

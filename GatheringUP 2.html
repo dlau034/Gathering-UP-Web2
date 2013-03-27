@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>GatheringUP - Homepage</title>
+  <title>GatheringUP - Homepage</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
     <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
     <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
 
-	<link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
   <link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
-	<link rel="stylesheet" href="/css/bootstrap-mobile.css"/>
-	<link rel="stylesheet" href="/css/styles2.css">
+  <link rel="stylesheet" href="/css/bootstrap-mobile.css"/>
+  <link rel="stylesheet" href="/css/styles2.css">
   <link rel="stylesheet" href="/css/icomoon.css">  
   <link rel="stylesheet" href="/css/smoothness/jquery-ui-1.10.2.custom.css">
   <link rel="stylesheet" href="css/jquery_override.css">
@@ -67,17 +67,17 @@
         "Scala",
         "Scheme"
       ];
-      $( "#header_search" ).autocomplete({
+      $( "#header_search" ).typeahead({
         source: availableTags
       });
     });
     </script>  
   <script type="text/javascript" src="/js/script.js"></script>
 
-	<!-- Google Font -->
+  <!-- Google Font -->
 
      <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
-     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>     
      <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 
 <script type="text/javascript" src="/js/gatheringup-registration.js"></script>
@@ -123,14 +123,14 @@
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
                   <li><a href="localize">What's Around</a></li>                      
-                  </ul>
+                </ul>
 
 <!-- Add in -->
 
                   <form id="header_search_wrap" class="navbar-search">
                     <div class="input-append">
+                      <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>                      
                       <input id="header_search" type="text" class="span4 search-query" placeholder="Search In and Around Central Park">
-                      <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
                     </div>
                   </form>
 
@@ -457,7 +457,7 @@ around Central Park.  Then create a story of your own and share it with the comm
         
 <div style="width: 400px;" class="breakline"></div> 
       </div>
-		<div style="padding-top: 2px;" class="modal-body">
+    <div style="padding-top: 2px;" class="modal-body">
             <form  id="registerform" action="#">
       <div id="RegistrationErrors"  class="form-large"  style="width:402px;" ></div>
               <div>
@@ -488,7 +488,7 @@ around Central Park.  Then create a story of your own and share it with the comm
                   <button type="button" value="Sign me up" class="btn btn-blue btn-large"  style="width:405px;"  onclick="register()"  tabindex="47">Register</button>
             <img src="/images/divider.png" style="margin-bottom:10px;margin-top: 14px;" alt=""> 
         <div  style="width:388px;height: 65px;">
-        	<div class="facebookbg2" >
+          <div class="facebookbg2" >
               <a href=""  id="fb_register" class="facebookurl"  >Sign In with Facebook        </a>
               </div>
         </div>
@@ -508,12 +508,12 @@ around Central Park.  Then create a story of your own and share it with the comm
           <p >Don't have an account? &nbsp;<a href="javascript:void(0);" onclick="registerpopup('')">Register Here!</a></p>
             <form  id="loginform" action="javascript:void(0);" class="form-horizontal">
             
-            		<input type="hidden" id="redirect" name="redirect" value="">
-					<input type="hidden" class="bbookmark" name="bbookmark" value="">
-					<input type="hidden" class="pbookmark" name="pbookmark" value="">
-					<input type="hidden" class="ebookmark" name="ebookmark" value="">
+                <input type="hidden" id="redirect" name="redirect" value="">
+          <input type="hidden" class="bbookmark" name="bbookmark" value="">
+          <input type="hidden" class="pbookmark" name="pbookmark" value="">
+          <input type="hidden" class="ebookmark" name="ebookmark" value="">
 
-            	<div id="LoginErrors"></div>
+              <div id="LoginErrors"></div>
                 <div class="SignInField_m">
                     <input id="poploginemail" name="email" style="width:256px;" type="text" class="squareCorners" placeholder="Email">
                 </div>
@@ -577,8 +577,9 @@ around Central Park.  Then create a story of your own and share it with the comm
     
 
       $(function(){
-    	  $("#regpassword").tooltip();
+        $("#regpassword").tooltip();
       });
     </script>
   </body>
 </html>
+

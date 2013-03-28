@@ -781,6 +781,7 @@ form {
     font-size: 1.1em;
     text-shadow: 0px -1px 0px white;    
     margin-bottom: 5px;
+    width: 100%;
 }
 .nearby_item h4 a {
     color: #F7931E;

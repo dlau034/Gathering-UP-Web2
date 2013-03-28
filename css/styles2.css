@@ -636,12 +636,18 @@ form {
     /* Nearby Page
     -------------------------------------------------- */
 
+@media (max-height:480) {
+    #map_canvas iframe {
+        margin-top: 4em!important;      
+    }
+}
+
 #map_canvas iframe {
     width: 100%;
     height: 100%;    
     position: fixed; 
     right: 0; 
-    margin-top: 3em;      
+    margin-bottom: -5px;     
 }
 .nearby_wrap {
     width: 31em;
@@ -659,8 +665,35 @@ form {
     margin-bottom: 2em;
     z-index: 3;
 }
+
+/* Small-modules */
+
+.nearby_item.sm_mod {
+    min-height: 6.5em;    
+} 
+.sm_mod img {
+    width: 4em;
+    float: right;
+    position: relative;
+    margin: 10px 10px 0px 0px;     
+}
+.sm_mod .item_text {
+    width: 74%;
+}
+
+/* Med-modules */
+
+.nearby_item.med_mod {
+    min-height: 13.7em;
+}
+.med_mod .item_top_info {
+    min-height: 13em;
+}
+
+/* Large-modules */
+
 .nearby_item {
-    min-height: 15em;
+    min-height: 14.5em;
     margin-top: 1.4em;
     background-color: white;
     -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
@@ -682,7 +715,6 @@ form {
 .item_tab {
     background-color: #A3C86C; 
     height: 1.2em;
-
     bottom: 0;
     position: absolute;
     width: 100%;
@@ -691,20 +723,23 @@ form {
     background-position: center;
     cursor: pointer;
 }
+.item_tab_bar {
+    background-color: #A3C86C; 
+    height: 0.3em;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
 .item_text {
     padding: 0.2em 0.5em 0.5em 1em;
     width: 55%;
     float: left;
-
-    /*background-color: blue*/
 }
 .item_other {
     width: 33%;
     float: right;
     position: relative;
     margin: 10px 10px 0px 0px;       
-
-    /*background-color: red;*/
 }
 .item_content {
     padding: 0em 1em 1.5em 1em;
@@ -715,9 +750,10 @@ form {
 .item_content .result_cat{
     margin-bottom: 8px;
 }
-.item_top_info {
+.item_top_info.clearfix{
     min-height: 14em;
     padding-top: 1px;
+    margin-bottom: 1em;
 }
 .item_content dt {
     text-align: left;
@@ -732,9 +768,7 @@ form {
 }
 .item_other img {
     width: 100%;
-    /*height: auto;*/
     float: right;
-    /*margin: 10px 10px 0px 0px;   */
 }
 .item_other img.thumbnail{
     margin-right: -4px;
@@ -746,13 +780,14 @@ form {
     font-weight: 500;
     font-size: 1.1em;
     text-shadow: 0px -1px 0px white;    
+    margin-bottom: 5px;
 }
 .nearby_item h4 a {
     color: #F7931E;
 }
 .nearby_item p {
     color: #666;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 100;
     line-height: 1.3em;
     clear: both
@@ -864,7 +899,6 @@ a.accordion-toggle.nav_cat {
     background: none;
 }
 .cat_style a {
-    /*background-color: red;*/
     font-size: 1.2em;
     line-height: 1.2em; 
 }
@@ -884,9 +918,12 @@ a.accordion-toggle.nav_cat {
         box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
     }  
     .nearby_item {
-        min-height: 13em;
         margin-top: 1em;
+        /*min-height: 13em;*/
     }
+    .item_top_info {
+       /*min-height: 13em!important;*/
+    }        
     .item_other {
         max-width: 125px;
     }
@@ -898,7 +935,13 @@ a.accordion-toggle.nav_cat {
         float: left;
     }     
 }
+@media (max-width: 380px) {
+    .nearby_item {
+        min-height: 13em;
+        margin-top: 1em;
+    }    
 
+}
 @media (max-width: 767px) {
     #accordion {
         display: none;
@@ -906,7 +949,7 @@ a.accordion-toggle.nav_cat {
     /*TOP*/
     
     #nearby_nav {
-        height: 13em;
+        height: 11em;
         background-image: url("../images/kindajean.png"); 
         top: -15;
         border-bottom:1px solid #999;
@@ -916,7 +959,7 @@ a.accordion-toggle.nav_cat {
         /*margin: 0 auto;*/
         margin-left: auto;
         margin-right: auto;
-        margin-top: 5em;         
+        margin-top: 4em;         
     }
     #nearby_nav .dividline {
         display: none;
@@ -929,11 +972,11 @@ a.accordion-toggle.nav_cat {
     /*Middle*/    
     #map_canvas.nearby_canvas {
         position: relative;
-        margin-top: 9em;        
+        margin-top: 11em;        
     }   
-    .item_top_info {
-       min-height: 13.1em;
-    }    
+    .nearby_item.med_mod {
+       min-height: 13.1em!important;
+    }        
 }
 
 @media (min-width: 768px) and (max-width: 980px) {
@@ -945,9 +988,12 @@ a.accordion-toggle.nav_cat {
         padding-top: 0em;
         margin-right: 8px;
     }
+    #map_canvas {
+        height: 25em;
+    }
     #map_canvas.nearby_canvas iframe {
         position: relative;
-        height: 35%;
+        /*height: 100%;*/
         box-shadow: 0 0 10px black;
     }
 }
@@ -966,9 +1012,8 @@ a.accordion-toggle.nav_cat {
         background-image: url("../images/kindajean.png");
         box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
     }  
-
     .nearby_item {
-        min-height: 13em;
+        min-height: 14em;
         margin-top: 1em;
     }
     .item_other {
@@ -976,7 +1021,7 @@ a.accordion-toggle.nav_cat {
     }
     #map_canvas.nearby_canvas iframe {
         position: relative;
-        height: 35%;
+        height: 15em;
         box-shadow: 0 0 10px black;
     }         
 }
@@ -1602,9 +1647,6 @@ select:focus {
 .mini_item img {
     width: 100%;
     height: auto; 
-    /*margin-left: 7px;*/
-    /*float: left;*/
-    /*position: absolute;*/
 }
 .mini_other {
     width: 33%;
@@ -1735,7 +1777,8 @@ select:focus {
     }
     #map_canvas iframe {
         position: relative!important;
-        height: 14em;
+        height: 12em;
+        margin-bottom: -5px;
     }
     #Outing_wrap p {
         font-size: 1.1em;
@@ -1756,6 +1799,14 @@ select:focus {
     #fb_outing {
         float: left;
         clear: both;
+    }
+}
+
+    /* Map Canvas on Perfect Outing */
+
+@media (max-width: 980px) and (min-width: 768px) {
+    #map_canvas {
+        height: auto;
     }
 }
 

@@ -81,7 +81,6 @@ ul.sub-level li {
 }
 ul.sub-level {
     /*overflow: scroll;*/
-}
 .newline {
     float: right;
 }
@@ -93,3 +92,5 @@ ul.sub-level {
 }
                 
     /*IE RESET HELPER*/
+
+}

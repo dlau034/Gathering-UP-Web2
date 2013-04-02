@@ -30,7 +30,7 @@ h1 {
     font-family: "arvo"
 }
 h4 {
-    font-size: 1.2em;
+    font-size: 1.2em; 
 }
 h6 {
     font-size: 0.8em;
@@ -153,6 +153,22 @@ form {
 .typeahead {
     background-color: #f9f9f9;
 }
+.down_arrow {
+    color: white;
+    text-shadow: 0px -1px 0px #999;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-top: -6px;
+    font-size: 2.3em!important;
+}
+.up_arrow {
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); /* IE 9 */
+    -moz-transform:rotate(180deg); /* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari and Chrome */
+    -o-transform:rotate(180deg); /* Opera */
+}
     /* Button Styling
     -------------------------------------------------- */
 
@@ -191,6 +207,23 @@ form {
 
 .btn-mini {
     margin-bottom: 3px;
+}
+.btn-disabled2 {
+    cursor: default;
+    background-image: none;
+    opacity: 0.70;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #bbb;
+    color: white;
+    font-family: ubuntu;
+    font-size: 0.9em;
+    font-weight: 400;
+    padding-top: 0px;
+    border-color: none;
+    text-shadow: none;
 }
     /* Other Repeating Elements
     -------------------------------------------------- */
@@ -381,6 +414,7 @@ form {
     margin: 0!important;
     padding: 4.7px 5px;
     border-radius: 8px 0px 0px 8px!important;
+    float: left;
 }
 #header_search_wrap .btn-green:hover {
     -webkit-box-shadow: 0 0 4px #FF7F00!important;
@@ -655,8 +689,9 @@ form {
     position: relative;
     overflow: hidden;
     z-index: 3;
-    padding-top:2.5em;
+    padding-top:1.2em;
     padding-bottom: 2em;
+    background-color: rgba(255,255,255,0.8);
 }
 
 #nearby_box {
@@ -713,15 +748,34 @@ form {
     border: 1px solid #A3C86C; 
 }
 .item_tab {
-    background-color: #A3C86C; 
-    height: 1.2em;
+    background-color: #A3C86C;
+    background-image: -moz-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#8BB946));
+    background-image: -webkit-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: linear-gradient(to bottom, #A3c86c, #8BB946),;
+
+/*    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#ccc));
+background-image: -webkit-linear-gradient(#A3c86c, #ccc);
+background-image: -moz-linear-gradient(#A3c86c, #ccc);
+background-image: -o-linear-gradient(#A3c86c, #ccc);
+background-image: linear-gradient(#A3c86c, #ccc);*/
+
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    height: 1.5em;
     bottom: 0;
     position: absolute;
     width: 100%;
-    background-image: url("../images/open_arrow.png");
+    /*background-image: url("../images/open_arrow.png");*/
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+}
+.item_tab:hover {
+    background: none;
+    background-color: #8BB946!important;
 }
 .item_tab_bar {
     background-color: #A3C86C; 
@@ -753,7 +807,7 @@ form {
 .item_top_info.clearfix{
     min-height: 14em;
     padding-top: 1px;
-    margin-bottom: 1em;
+    margin-bottom: 1.3em;
 }
 .item_content dt {
     text-align: left;
@@ -785,6 +839,12 @@ form {
 }
 .nearby_item h4 a {
     color: #F7931E;
+}
+.nearby_item span {
+    font-family: ubuntu;
+    font-size: 1.8em;
+    font-weight: 500;
+
 }
 .nearby_item p {
     color: #666;

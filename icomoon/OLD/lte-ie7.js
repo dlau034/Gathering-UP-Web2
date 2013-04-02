@@ -6,17 +6,12 @@ window.onload = function() {
 		el.innerHTML = '<span style="font-family: \'icomoon\'">' + entity + '</span>' + html;
 	}
 	var icons = {
-			'icon-datebookcaret-down' : '&#xf0d7;',
-			'icon-datebookcaret-up' : '&#xf0d8;',
-			'icon-datebookcaret-left' : '&#xf0d9;',
-			'icon-datebookcaret-right' : '&#xf0da;',
-			'icon-datebookDatebook' : '&#xe000;',
-			'icon-datebookDatebook2' : '&#xe001;',
-			'icon-datebooktumblr' : '&#xe002;',
-			'icon-datebookfacebook' : '&#xe003;',
-			'icon-datebookplus' : '&#xe004;',
-			'icon-datebookminus' : '&#xe005;',
-			'icon-datebookenvelope' : '&#xe006;'
+			'icon-datebookDatebook2' : '&#x22;',
+			'icon-datebookDatebook' : '&#x21;',
+			'icon-datebookfacebook' : '&#x23;',
+			'icon-datebookflag' : '&#xf024;',
+			'icon-datebookfacebook-sign' : '&#xf082;',
+			'icon-datebooktwitter-sign' : '&#xf081;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;

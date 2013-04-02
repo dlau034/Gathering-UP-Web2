@@ -25,9 +25,9 @@
 /*
 Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
-[class*="icon-datebook"] {
+[class*="icon-datebook"]:before {
 */
-.icon-datebookcaret-down, .icon-datebookcaret-up, .icon-datebookcaret-left, .icon-datebookcaret-right, .icon-datebookDatebook, .icon-datebookDatebook2, .icon-datebooktumblr, .icon-datebookfacebook, .icon-datebookplus, .icon-datebookminus, .icon-datebookenvelope {
+.icon-datebookDatebook2:before, .icon-datebookDatebook:before, .icon-datebookfacebook:before, .icon-datebookflag:before, .icon-datebookfacebook-sign:before, .icon-datebooktwitter-sign:before {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -37,36 +37,21 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-datebookcaret-down:before {
-	content: "\f0d7";
-}
-.icon-datebookcaret-up:before {
-	content: "\f0d8";
-}
-.icon-datebookcaret-left:before {
-	content: "\f0d9";
-}
-.icon-datebookcaret-right:before {
-	content: "\f0da";
+.icon-datebookDatebook2:before {
+	content: "\22";
 }
 .icon-datebookDatebook:before {
-	content: "\e000";
-}
-.icon-datebookDatebook2:before {
-	content: "\e001";
-}
-.icon-datebooktumblr:before {
-	content: "\e002";
+	content: "\21";
 }
 .icon-datebookfacebook:before {
-	content: "\e003";
+	content: "\23";
 }
-.icon-datebookplus:before {
-	content: "\e004";
+.icon-datebookflag:before {
+	content: "\f024";
 }
-.icon-datebookminus:before {
-	content: "\e005";
+.icon-datebookfacebook-sign:before {
+	content: "\f082";
 }
-.icon-datebookenvelope:before {
-	content: "\e006";
+.icon-datebooktwitter-sign:before {
+	content: "\f081";
 }

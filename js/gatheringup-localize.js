@@ -12,7 +12,7 @@ var maparray=[];
 
 function initialize() {
 	var mapOptions = {
-          center: new google.maps.LatLng(maparray[0].latitude, maparray[0].longitude),
+          center: new google.maps.LatLng(40.741,-73.98),
           zoom: 18,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };

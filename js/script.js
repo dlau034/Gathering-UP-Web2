@@ -13,6 +13,7 @@ $(document).ready(function(){
 $(document).ready(function() {
 	$(".item_tab").click(function() {
 		$(this).parent().siblings(".item_content").slideToggle();
+		$(this).children("span").toggleClass("up_arrow");
 	});
 });
 

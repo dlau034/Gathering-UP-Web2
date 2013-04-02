@@ -6,8 +6,12 @@
 
     /* GLOBAL STYLES
     -------------------------------------------------- */
+html {
+    height:100%;
+}
 
 body { 
+    height: 100%;
     font-size: 14px;    
     padding: 0;
     background-image: url("../images/kindajean.png");
@@ -163,6 +167,8 @@ form {
     font-size: 2.3em!important;
 }
 .up_arrow {
+    text-shadow: 0px 1px 0px #999;
+    margin-top: -4px;
     transform:rotate(180deg);
     -ms-transform:rotate(180deg); /* IE 9 */
     -moz-transform:rotate(180deg); /* Firefox */
@@ -208,11 +214,11 @@ form {
 .btn-mini {
     margin-bottom: 3px;
 }
-.btn-disabled2 {
+.btn-disabled {
     cursor: default;
     background-image: none;
-    opacity: 0.70;
-    filter: alpha(opacity=65);
+    opacity: 0.80;
+    filter: alpha(opacity=80);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -675,6 +681,11 @@ form {
         margin-top: 4em!important;      
     }
 }
+@media (min-height:979px) {
+    #map_canvas {
+        position: fixed!important;
+    }
+}
 
 #map_canvas iframe {
     width: 100%;
@@ -705,6 +716,8 @@ form {
 
 .nearby_item.sm_mod {
     min-height: 6.5em;    
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.15)
 } 
 .sm_mod img {
     width: 4em;
@@ -730,7 +743,7 @@ form {
 .nearby_item {
     min-height: 14.5em;
     margin-top: 1.4em;
-    background-color: white;
+    background-color: #f9f9f9;
     -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
     -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
     box-shadow: 0 0 7px rgba(0,0,0,0.3);
@@ -742,10 +755,10 @@ form {
 }
 .nearby_item:hover {
     /*background-color: #f9f9f9;*/
-    -webkit-box-shadow:0 0 12px #A3C86C;  
-      -moz-box-shadow:0 0 12px #A3C86C;  
-      box-shadow:0 0 12px #A3C86C;    
-    border: 1px solid #A3C86C; 
+    -webkit-box-shadow:0 0 15px #7CB02C;  
+      -moz-box-shadow:0 0 15px #7CB02C;  
+      box-shadow:0 0 15px #7CB02C;    
+    border: 1px solid #7CB02C; 
 }
 .item_tab {
     background-color: #A3C86C;

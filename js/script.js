@@ -34,7 +34,7 @@ $(function() {
         	dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
        });
 
-    $(".demo").scroll(function() {
+    $(".demo").scroll(function() { 
       datePicker.datepicker('hide');
       $('#datepicker').blur();  
     });

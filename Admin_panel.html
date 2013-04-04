@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  	<title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+  	<link rel="stylesheet" href="css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-responsive.css"/> -->
+  	<!-- <link rel="stylesheet" href="css/bootstrap-mobile.css"/> -->
+    <!-- <link rel="stylesheet" href="css/styles2.css"> -->
+  	<link rel="stylesheet" href="css/admin_panel.css">
+    <link rel="stylesheet" href="icomoon/icomoon.css">  
+
+    <script src="js/jquery-1.9.1.js"></script>    
+    <script>
+    $(function() {
+      var availableTags = [
+        "Chinese",
+        "Japanese",
+        "Mexican",
+        "Thai",
+        "American",
+        "Cafe",
+        "Bar",
+        "Juice Bar",
+        "Bakery",
+        "Sandwiches",
+        "Fast Food",
+        "Korean",
+        "Malaysian",
+        "Jamaican",
+        "Seafood",
+      ];
+      $( ".typeahead" ).typeahead({
+        source: availableTags
+      });
+    });
+    </script>      
+
+  	<!-- Google Font -->
+
+       <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+       <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  </head>
+<body>
+
+      <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+
+          <a class="brand" href="index.html">GatheringUP</a> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="Whats_around.html">What's Around</a></li>                      
+                  </ul>
+
+                    <!-- Not logged In --> 
+
+                <ul id="nav_cta" class="nav pull-right">
+                  <li><a class="btn_nav_cta" href="#register_modal" data-toggle="modal">Register</a></li>            
+                  <li>
+                      <a class="btn_nav_cta dropdown-toggle" href="#" id="style_dp_text" data-toggle="dropdown">
+                        Sign In
+                        <b class="icon-chevron-down icon-white"></b>
+                      </a>
+                      <div id="signin_box" class="dropdown-menu">
+                        <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button> 
+                          <form class="clearfix" id="signin_content" method="post"action="login" accept-charset="UTF-8">
+                          <div class="dividline"></div>                        
+                            <div class="control-group">                            
+                              <span class="help-block"></span>
+                                <input class="input_dp" placeholder="Email" type="email" name="Email" required>
+                            </div>
+                            <div class="control-group">                              
+                              <p class="help-block"></p>
+                                <input class="input_dp" placeholder="Password" type="password" name="password" required>                                
+                            </div>
+                          <div id="forgotpw"><a href="#register_modal" data-toggle="modal">Forgot Password</a></div>
+                          <button class="btn btn-green clearfix">Sign in</button>
+                        </form>
+                      </div>                
+                  </li>             
+                </ul>            
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+    <!-- Panel -->
+
+    <div class="container">
+      <div class="top_wrap">
+        <h2>Neighborhood Selection</h2>        
+        <div class="breakline"></div>
+        <select name="neighbors" id="neighbors">
+          <option>Central Park</option>
+          <option>Riverside Park</option>
+          <option>Highlines</option>
+          <option>Bryant Park</option>        
+        </select> 
+        <button class="btn btn-go">Go</button>
+
+        <div class="input-append offset1">
+          <input class="span3" id="appendedInputButton" placeholder="Add Your Own" type="text">
+          <button class="btn"  type="button">+ Add Neighborhood</button>
+        </div>
+        <div class="breakline"></div>
+      </div>
+
+
+
+      <h2>Central Park Database Table</h2>
+
+        <div id="add_catagory" class="input-append">
+          <input class="typeahead span3" id="appendedInputButton" placeholder="Add a New Catagory" type="text">
+          <button class="btn"  type="button">+ Add Catagory</button>
+        </div>
+
+
+      <div id="neighbor_table">
+        <table class="table table-hover">
+            <tr>
+              <th>Categories</th>
+              <th>ID</th>
+              <th>Actions</th>
+              <th>Remove</th>
+            </tr>
+
+            <tr>
+              <td>Hotspot</td>
+              <td>#Hotspot_ID</td>
+              <td>
+                <div class="input-append">
+                  <input class="typeahead span3" type="text" autocomplete="off" placeholder="Find or Add Tag">
+                  <button class="btn" type="button">+ Add Tags</button>
+                </div>
+                <div class="tag_list">
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>#Chinese
+                  </div> 
+                </div>                             
+              </td>
+              <td><button class="btn">Remove</button></td>
+            </tr>
+
+            <tr>
+              <td>Sports</td>
+              <td>#Sports_ID</td>
+              <td>
+                <div class="input-append">
+                  <input class="typeahead" type="text" autocomplete="off" placeholder="Find or Add Tag">
+                  <button class="btn" type="button">+ Add Tags</button>
+                </div>
+                <div class="tag_list">
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>#Chinese
+                  </div> 
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>#Japanese
+                  </div> 
+                </div>                             
+              </td>
+              <td><button class="btn">Remove</button></td>              
+            </tr> 
+
+            <tr>
+              <td>Asian</td>
+              <td>#Asian_ID</td>
+              <td>
+                <div class="input-append">
+                  <input class="typeahead" type="text" autocomplete="off" placeholder="Find or Add Tag">
+                  <button class="btn" type="button">+ Add Tags</button>
+                </div>
+                <div class="tag_list">
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>#Japanese
+                  </div> 
+                </div>                             
+              </td>
+              <td><button class="btn">Remove</button></td>              
+            </tr>  
+
+            <tr>
+              <td>Musuem</td>
+              <td>#Musuem_ID</td>
+              <td>
+                <div class="input-append">
+                  <input class="typeahead" type="text" autocomplete="off" placeholder="Find or Add Tag">
+                  <button class="btn" type="button">+ Add Tags</button>
+                </div>
+                <div class="tag_list">
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>#Chinese
+                  </div> 
+                  <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>#Japanese
+                  </div> 
+                </div>                             
+              </td>
+              <td><button class="btn">Remove</button></td>              
+            </tr>                                     
+
+        </table>        
+
+      </div>
+    </div>
+
+    <!-- Javascripts -->
+
+    <script src="js/bootstrap.min.js"></script>
+    </script>
+</body>
+</html>

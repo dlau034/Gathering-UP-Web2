@@ -1,47 +1,125 @@
-.container {
-	/*height: 100%;*/
-	/*width: 100%;*/
-}
+
+    /* GatheringUP - Admin Stylesheet
+    -------------------------------------------------- */
+    /* admin_panel.css */
+
 .top_wrap {
 	margin-top: 60px;
 	width: 100%;
 }
-.btn-go {
-	margin-bottom: 10px!important;
-}
-.alert {
-	padding: 2px 10px 2px 10px;
-	margin-bottom: 5px;
-	display: inline-block;
-	float: 
-}
-.alert .close {
-	right: -5px;
-}
-
 .table th, .table td {
 	vertical-align: middle!important;
 }
 .tag_list {
 	float: right;
 }
-
 .breakline {
 	height: 1px;
-	background-color: #aaa;
+	background-color: #ccc;
+	border-bottom: 1px solid white;
 	width: 100%;
-	margin-top: 1em;
-	margin-bottom: 1.8em;
+}
+.top_wrap .breakline {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+#neighbor_wrap .breakline {
+	margin-bottom: 1.5em;
 }
 .typeahead {
 	margin-top: 0px;
-	z-index: 100;
 }
 
 #add_catagory {
 	margin-top: 16px;
 	margin-bottom: 30px!important;
 }
-#neighbor_table .input-append {
-	margin-top: 10px;
+
+.tag_module {
+	float: right;
 }
+.btn-edit {
+	float: right;
+}
+input.typeahead {
+	z-index: 0;
+}
+ui.typeahead {
+	z-index: 1;
+}
+
+    /* Modals - Remove and Edit - Neigbhorhoods
+    -------------------------------------------------- */
+
+
+#neighbor_wrap th:last-child {
+	text-align: right;
+}
+.modal.remove_row_button, .modal.edit_row_button {
+	width: 24em;
+	margin-left: -12em
+}
+.edit_row_button .breakline {
+	margin-bottom: 1em;
+} 
+.edit_row_button input {
+	width: 19.15em;
+}
+.remove_row_button .modal-body h3 {
+	font-family: "ubuntu";
+}
+
+	/* Tags
+    -------------------------------------------------- */
+
+#example_length {
+	float: right;
+}
+#example_filter {
+	margin-bottom: 1.5em;
+}
+.top_wrap #tag_groups {
+	margin-right: 1em;
+	margin-left: 1em;
+}
+#Neigbhor_table_length {
+	float: right;
+}
+
+
+	/* Modals - Remove and Edit - Tags
+    -------------------------------------------------- */
+.edit_row_button #tag_groups {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+
+	/* DataTable Sorting
+    -------------------------------------------------- */
+.sorting_asc {
+	background: url('../images/sort_asc.png') no-repeat center right;
+}
+
+.sorting_desc {
+	background: url('../images/sort_desc.png') no-repeat center right;
+}
+
+.sorting {
+	background: url('../images/sort_both.png') no-repeat center right;
+}
+
+.sorting_asc_disabled {
+	background: url('../images/sort_asc_disabled.png') no-repeat center right;
+}
+
+.sorting_desc_disabled {
+	background: url('../images/sort_desc_disabled.png') no-repeat center right;
+}
+ 
+table.display thead th:active,
+table.display thead td:active {
+	outline: none;
+}
+
+

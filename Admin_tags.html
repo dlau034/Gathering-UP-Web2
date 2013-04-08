@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  	<title>Admin Tags Manager</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+  	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles_nav.css">
+  	<link rel="stylesheet" href="css/admin_panel.css">
+    <link rel="stylesheet" href="icomoon/icomoon.css">  
+     
+    <script src="js/jquery-1.9.1.js"></script>    
+    <script class="jsbin" src="http://datatables.net/download/build/jquery.dataTables.nightly.js"></script>   
+
+    <script>
+      $(document).ready(function() {
+        $('#example').dataTable();
+      } );  
+    </script>    
+
+    <script>
+    $(function() {
+      var availableTags = [
+        "Chinese",
+        "Japanese",
+        "Mexican",
+        "Thai",
+        "American",
+        "Cafe",
+        "Bar",
+        "Juice Bar",
+        "Bakery",
+        "Sandwiches",
+        "Fast Food",
+        "Korean",
+        "Malaysian",
+        "Jamaican",
+        "Seafood",
+      ];
+      $( ".typeahead" ).typeahead({
+        source: availableTags
+      });
+    });
+    </script>      
+
+  	<!-- Google Font -->
+
+       <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+       <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  </head>
+<body>
+
+      <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+
+          <a class="brand" href="index.html">GatheringUP - Admin</a> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                       <li><a href="Admin_Neighborhood.html">Neigbhorhoods</a></li>                      
+                       <li><a href="admin_tags.html">Tags</a></li>                      
+                       <li><a href="admin_places.html">Places</a></li>                      
+                  </ul>
+            </div>
+         </div>
+      </div>
+    </div>    
+
+    <div class="container">
+      <div class="top_wrap">
+        <h2>Tag Manager</h2>
+        <div class="breakline"></div>
+          <input class="span3 pull-left" id="appendedInputButton" placeholder="+ Add a New Tag" type="text">
+            <select name="Tag Groups" id="tag_groups">
+              <option value="Blank">Blank</option>    
+              <option value="Sports">Sports</option>    
+              <option value="Food Asian">Food - Asian</option>    
+              <option value="Food General">Food - General</option>    
+              <option value="Food American">Food - American</option>    
+              <option value="Arts & Culture">Arts & Culture</option>    
+              <option value="Public Ammenities">Public Ammenities</option>    
+            </select>
+            <button class="btn btn-success"  type="button">+ Add Tag</button>        
+          <div class="breakline"></div>
+        </div>
+
+        <div class="middle_wrap">
+
+      <!-- Table Start -->
+
+        <table class="display table table-hover" id="example">
+          <thead>
+            <tr>
+              <th>Tag</th>
+              <th>Tag Group</th>
+              <th>Items No.</th>
+              <th>Edit Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="">
+              <td>Museum</td>
+              <td>Art & Culture</td>
+              <td>0</td>
+              <td>
+                  <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Coffee Shop</td>
+              <td>Food - General</td>
+              <td>9</td>
+              <td>
+                  <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Chinese</td>
+              <td>Food - Asian</td>
+              <td>23</td>
+              <td>
+                  <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Japanese</td>
+              <td>Food - Asian</td>
+              <td>38</td>
+              <td>
+                  <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Basketball Court</td>
+              <td>Sports</td>
+              <td>12</td>
+              <td>
+                  <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Wifi</td>
+              <td>Public Ammenities</td>
+              <td>10</td>
+              <td>
+                  <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      <!-- Table End -->
+
+      </div>
+    </div>      
+
+    <!-- Edit Modal -->
+
+      <div class="modal hide fade edit_row_button" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Edit This Tag</h4>
+          <div class="breakline"></div>
+            <label for="">Tag Group</label>
+            <select name="Tag Groups" id="tag_groups">
+              <option value="Blank">Blank</option>    
+              <option value="Sports">Sports</option>    
+              <option value="Food Asian">Food - Asian</option>    
+              <option value="Food General">Food - General</option>    
+              <option value="Food American">Food - American</option>    
+              <option value="Arts & Culture">Arts & Culture</option>    
+              <option value="Public Ammenities">Public Ammenities</option>    
+            </select>  
+            <label for="">Tag Name</label>            
+          <input type="text">
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success">Save changes</button>
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>          
+          </div>
+      </div>
+
+    <!-- Remove Modal -->
+
+      <div class="modal hide fade remove_row_button" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Are you sure that you want to remove this tag?</h4>
+          <h3 id="dymanic">This Tag</h3>
+        </div>
+        <div class="modal-footer">          
+          <button class="btn btn-success"data-dismiss="modal" aria-hidden="true">Yes</button>
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
+          </div>
+      </div>
+
+
+    <!-- Javascripts -->
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>    

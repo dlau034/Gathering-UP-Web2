@@ -2,7 +2,7 @@
 
 <html>
   <head>
-  	<title>Admin Panel</title>
+  	<title>Admin Neighborhood</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
   	<link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles_nav.css">
@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="icomoon/icomoon.css">  
 
     <script src="js/jquery-1.9.1.js"></script>    
+    <script class="jsbin" src="http://datatables.net/download/build/jquery.dataTables.nightly.js"></script>   
+
+    <script>
+      $(document).ready(function() {
+        $('#Neigbhor_table').dataTable();
+      } );  
+    </script>    
+
     <script>
     $(function() {
       var availableTags = [
@@ -64,7 +72,7 @@
           <!-- Elements inside will disappear when mobile -->          
             <div id="collapse_content" class="nav-collapse collapse"> 
                 <ul id="nav_items_group" class="nav">
-                       <li><a href="admin_Neighborhood.html">Neigbhorhoods</a></li>                      
+                       <li><a href="Admin_Neighborhood.html">Neigbhorhoods</a></li>                      
                        <li><a href="admin_tags.html">Tags</a></li>                      
                        <li><a href="admin_places.html">Places</a></li>                      
                   </ul>
@@ -104,21 +112,24 @@
           <button class="btn"  type="button">+ Add Catagory</button>
         </div>
 
+      <div id="neighbor_wrap">
 
-      <div id="neighbor_table">
-        <table class="table table-hover">
+      <div class="breakline"></div>
+        
+        <table class="display table table-hover" id="Neigbhor_table">
+          <thead>
             <tr>
               <th>Categories</th>
               <th>ID</th>
               <th>Actions</th>
               <th>Edit Row</th>
             </tr>
-
-    <!-- Module Row -->
+          </thead>
+          <tbody>
 
             <tr>
-              <td>Hotspot</td>
-              <td>#Hotspot_ID</td>
+              <td>Chinese Food</td>
+              <td>#Chinese_Food_ID</td>
               <td>
                 <div class="input-append">
                   <input class="typeahead span3" type="text" autocomplete="off" placeholder="Find or Add Tag">
@@ -141,8 +152,8 @@
     <!-- Module Row -->
 
             <tr>
-              <td>Hotspot</td>
-              <td>#Hotspot_ID</td>
+              <td>Korean Food</td>
+              <td>#Korean_Food_ID</td>
               <td>
                 <div class="input-append">
                   <input class="typeahead span3" type="text" autocomplete="off" placeholder="Find or Add Tag">
@@ -185,8 +196,8 @@
                 <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove">Remove</button>
               </td>
             </tr>
-
-        </table>        
+          </tbody>
+        </table>               
 
       </div>
     </div>

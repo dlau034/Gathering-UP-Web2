@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GatheringUP - Homepage</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+    <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
+    <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
+
+<link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="/css/bootstrap-mobile.css"/>
+	<link rel="stylesheet" href="/css/styles2.css">
+  <link rel="stylesheet" href="/css/icomoon.css">  
+<link rel="stylesheet" href="/css/jquery_override.css">
+  <link href="/css/select2.css" rel="stylesheet"/>
+    
+  <script type="text/javascript" src="/js/underscore-min.js"></script>
+    <script src="/js/jquery-1.9.1.js"></script>    
+<!--   <script src="/js/jquery-ui-1.10.2.custom.js"></script>  -->   
+  <script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/gatheringup-story.js"></script>
+
+  <script src="/js/jqBootstrapValidation.js"></script>
+     <script src="/js/select2.js"></script>
+
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="/js/gatheringup-registration.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+    <body>
+  
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script>
+  $(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+  });
+
+  window.isloggedin = 1  ;
+  </script>
+
+<script type="text/html" id='loggedintemplate'>
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        <%=user["firstname"]%> <%=user["lastname"]%> 
+                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">Your Datebook</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+</script>
+
+
+<!-- Header + Navbar -->
+
+
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+
+          <a class="brand" href="/">GatheringUP</a> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="/localize">What's Around</a></li>                      
+                  </ul>
+                  <form id="header_search_wrap" class="navbar-search" action="/localize" method="post">
+                    <div class="input-append">
+                      <input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park">
+                      <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
+                    </div>                  
+                    </form>
+<span id="loggedinuserspan">
+                                   <!-- Dropdown -->                
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        David Lau                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">Your Datebook</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+
+                    <!-- Not logged In --> 
+               </span>
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+ <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
+
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Register with GatheringUP!</h1>
+     <div class="dividline"></div>
+       <form id="registerform">
+         <div class="clearfix">
+
+           <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>
+               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
+           </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>                  
+                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
+               </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <p class="help-block"></p>   
+                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
+             </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
+             </div>              
+         </div>              
+
+         <div class="control-group">
+             <div class="control">    
+
+               <input 
+                 id="password2nd"
+                 class="form_reg" 
+                 placeholder="Retype Password"
+                 type="password"
+                 name="passwordconf"
+                 data-validation-match-match="password1"    
+                 minlength="8" 
+                 data-validation-minlength-message="Minimum 8 Characters"              
+                 />
+               <p class="help-block"></p>    
+             </div>              
+         </div>       
+<div id="RegistrationErrors"></div>
+
+           <div class="control-group">
+             <div class="control">                  
+               <p class="help-block"></p>                                 
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" type="text" placeholder="Enter Catcha" required>
+               <div ><img src="/captcha"></div>                
+             </div>
+           </div>
+
+         </div>
+
+         <div class="dividline"></div>
+         <button class="btn btn-large btn-green" >Register!</button>
+       </form>
+     <h4>OR</h4>
+<a href=""  id="fb_register" class="facebookurl"  >
+     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" data-icon="&#x23;" aria-hidden="true"></span>Register with Facebook</button>      
+</a>
+ </div>    
+
+
+
+<!--Forgot Password Modal-->
+<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Forgot Password?</h1>
+     <div class="dividline"></div>
+       <form  id="forgotpasswordform" class="forgot_fields clearfix">
+         <div class="control-group">
+           <div class="controls">
+              <p class="help-block"></p>
+               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
+
+           </div>
+         </div>
+         <button type="submit" class="btn btn-green">Forgot Password!</button>  
+       </form>  
+  </div>
+  
+<style>
+/*
+**  "bootstrap.file-input" generated css for image upload button. Ripped out css so that we don't have to 
+**  use the plugin.  Plugin doesn't work well with dynamically generated content.
+*/
+.file-input-wrapper { overflow: hidden; position: relative; cursor: pointer; z-index: 1; }
+.file-input-wrapper input[type=file], .file-input-wrapper input[type=file]:focus, .file-input-wrapper input[type=file]:hover { position: absolute; top: 0; left: 0; cursor: pointer; opacity: 0; filter: alpha(opacity=0); z-index: 99; outline: 0; }
+.file-input-name { margin-left: 8px; }'+
+</style>
+
+<script type="text/html" id='idmodule'>
+        <br><br>
+    <div class="content_btn">
+<form  method="post"  action="javascript:void(0);" >
+<input type="hidden" name="arttest2" value="2">
+<input type="hidden" name="idsection" class="sequence" value="">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
+
+        <div class="group-control span12 form_sizing">
+          <div class="control">
+              <input class="form_normal" placeholder="Subtitle" type="text" value="" required>
+            </div>  
+        </div>                            
+            <div class="span12 form_sizing">
+              <textarea class="area_normal" placeholder="Tell us what you did first?" value="" name="content" id="" rows="4"></textarea>
+            </div>      
+
+            <div class="span9 form_sizing">
+              <input class="form_normal" placeholder="Where did you go?" type="text" value="">
+            </div>            
+<a class="file-input-wrapper span3 btn btn-upload btn-green">Upload Image<input title="Upload Image"  type="file">&nbsp <i class="icon-picture icon-white"></i> </a>        
+       <div class="span12 form_sizing">
+       <button onclick="savemodule(this)">Save</button>
+       </div> 
+        </div>
+</form>
+    </div>     
+          
+</script>
+<script type="text/html" id='idaddmodulebutton'>
+
+        <br>
+        <button class="btn btn-large btn-add btn-green" onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add New Module</button>      
+        <br>
+        <br>     
+</script>
+
+<script type="text/html" id='publishbutton'>
+    <div class="dividline"></div>     
+
+    <br><button id="btn-publish" type="submit" class="btn btn-large btn-green">Publish story!</button>  
+    <br>            
+    <br>            
+</script>
+
+
+
+    <!-- Create Outing Top -->
+
+    <div class="container create_container"> 
+      <div class="create_frame">
+        <h1>Share Your Central Park Experience</h1>
+        <div class="dividline"></div><br>
+        <div class="row top_unit">
+<form  method="post"  action="#"  id="article" accept-charset="utf-8" enctype="multipart/form-data" >
+<input type="hidden" name="arttest" value="1">
+
+          <div class="control-group span12 form_sizing">
+            <div class="control">
+              <p class="help-block"></p>
+              <input class="form_large" placeholder="What is your Perfect Day?" type="text" name="title" value="" required>
+            </div>
+          </div>
+          <div class="span12 form_sizing">
+            <textarea class="area_normal" placeholder="Give us a brief description about your Perfect Outing? (At least 20 words)" name="content" id="" rows="3"></textarea>
+          </div>                
+
+          <div class="span3 form_sizing">
+            <span class="label_text">Publish Date</span>
+            <input class="form_normal" name="eventdate" placeholder="Choose the date (Optional)" id="datepicker" value="" type="text">
+          </div>           
+          <div class="span6">
+            <div class="form_sizing">
+              <span class="label_text">Who's this for?</span>
+              <select multiple="multiple" name="category" placeholder="What Category is your Perfect Outing?"  id="e1" class="full-width" required>
+                <option value="Ac">Active</option>                
+                <option value="Ev">Everybody</option>
+                <option value="Fo">Foodie</option>
+                <option value="Ki">Kids Friendly</option>
+                <option value="Ro">Romantic</option>
+                <option value="So">Social</option>
+              </select>                     
+            </div> 
+          </div>
+          <div class="span3 form_sizing">
+            <span class="label_text">Upload Featured Image</span>          
+<a class="file-input-wrapper span3 btn btn-upload btn-green">Upload Image<input title="Upload Image"  name="storyfile" type="file">&nbsp <i class="icon-picture icon-white"></i> </a>        
+               
+
+          </div>                      
+       <div class="span12 form_sizing">
+       <input type="submit" onclick="savedarticle(this)" value="Save"></input>
+       </div> 
+       </form>
+        </div>      
+
+
+    <!-- Add New Module -->  
+         <!-- Module 1 -->  
+         <!-- 
+      
+        <br><br>
+    <div class="content_btn">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
+
+        <div class="group-control span12 form_sizing">
+          <div class="control">
+              <input class="form_normal" placeholder="Subtitle" type="text" required>
+            </div>  
+        </div>                            
+            <div class="span12 form_sizing">
+              <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="4"></textarea>
+            </div>      
+
+            <div class="span9 form_sizing">
+              <input class="form_normal" placeholder="Where did you go?" type="text">
+            </div>  
+<a class="file-input-wrapper span3 btn btn-upload btn-green">Upload Image<input title="Upload Image" type="file">&nbsp <i class="icon-picture icon-white"></i> </a>        
+       <div class="span12 form_sizing">
+       <button>Save</button>
+       </div> 
+</div>
+
+        <br>
+
+        <button class="btn btn-large btn-add btn-green"  onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add New Module</button>      
+        <br>
+        <br>         
+    </div>     
+          
+ -->
+                
+  </div> 
+  </div>
+  
+    <script>
+  $(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+    $("#e1").select2(); 
+  });
+  </script>
+  
+  
+
+  </body>
+</html>

@@ -1992,14 +1992,21 @@ select:focus {
     border: 1px solid #999;  
 }
 .form_sizing {
-    margin-top: 1.5em;
-    /*margin-bottom: 1em;*/
+    margin-top: 1.0em;
 }
 .top_unit .select2-search-field input:focus {
     border: none!important;
     -webkit-box-shadow: none!important;
      -moz-box-shadow: none!important;
      box-shadow: none!important; 
+}
+.top_unit .tutorial_1 {
+    color: #555;
+}
+.top_unit .tutorial_1 span{
+    font-family: arvo;
+    font-weight: 700;
+    font-size: 1.5em;
 }
 .form_sizing h4 {
     margin-top: -5px !important;
@@ -2057,6 +2064,14 @@ span.file-input-name {
     position: relative;
     /*display: block;*/
 }
+.btn-save {
+    margin-top: 2em;
+    padding-left: 2em!important;
+    padding-right: 2em!important;
+    float: right;
+    
+
+}
 .btn-destory {
     right: 10px;
     cursor: pointer;
@@ -2074,10 +2089,10 @@ span.file-input-name {
     background-color: rgba(139,185,70,0.6);
     border: 1px solid #999;
     margin-right: -20px;
-    padding-bottom: 20px;
+    padding-bottom: 20px!important;
     padding-right: 10px;
     border-radius: 8px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 30px;
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
      -moz-box-shadow: 0 0 10px rgba(0,0,0,0.4);

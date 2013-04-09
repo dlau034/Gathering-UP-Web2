@@ -1,5 +1,5 @@
 
-    /* GatheringUP - Admin Stylesheet
+    /* GatheringUP - Neigbhorhood Stylesheet
     -------------------------------------------------- */
     /* admin_panel.css */
 
@@ -18,6 +18,7 @@
 	background-color: #ccc;
 	border-bottom: 1px solid white;
 	width: 100%;
+	clear: both;
 }
 .top_wrap .breakline {
 	margin-top: 1.5em;
@@ -26,6 +27,13 @@
 #neighbor_wrap .breakline {
 	margin-bottom: 1.5em;
 }
+#Neigbhor_table thead tr th:last-child, #Neigbhor_table thead tr th:nth-of-type(3)  {
+	background: none;
+}
+#example thead tr th:last-child {
+	background: none;
+}
+
 .typeahead {
 	margin-top: 0px;
 }
@@ -48,7 +56,7 @@ ui.typeahead {
 	z-index: 1;
 }
 
-    /* Modals - Remove and Edit - Neigbhorhoods
+    /* Modals 
     -------------------------------------------------- */
 
 
@@ -67,6 +75,29 @@ ui.typeahead {
 }
 .remove_row_button .modal-body h3 {
 	font-family: "ubuntu";
+}
+#add_neighbor_form .add_left{
+	float: left;
+	margin-bottom: 7px;
+}
+#add_neighbor_form .add_right{
+	float: right;
+	margin-bottom: 7px;
+}
+.add_neighbor {
+	width: 37.5em;
+	background-color: #f9f9f9;	
+}
+.add_neighbor .modal-body {
+	max-height:600px!important;
+}
+
+#radio_button {
+	margin-left: 1.4em;
+}
+.add_neighbor .breakline {
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 	/* Tags
@@ -121,5 +152,4 @@ table.display thead th:active,
 table.display thead td:active {
 	outline: none;
 }
-
 

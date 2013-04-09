@@ -60,24 +60,23 @@
       <form class="create_frame">
         <h1>Create Your Perfect Outing</h1>
         <div class="dividline"></div></br>
-        <div class="row top_unit">
+        <div class="row top_unit ">
+          <div class="span3 tutorial_1">
+            <span>1. </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur dignissimos quis ipsam quos veniam soluta sed illum sit non. Animi velit libero cum aspernatur necessitatibus omnis dolorem laborum quam?
 
-          <div class="control-group span12 form_sizing">
+          </div>
+          <div class="control-group pull-right span9 form_sizing">
             <div class="control">
               <p class="help-block"></p>
               <input class="form_large" placeholder="What is your Perfect Day?" type="text" required>
             </div>
           </div>
 
-          <div class="span12 form_sizing">
-            <textarea class="area_normal" placeholder="Give us a brief description about your Perfect Outing? (At least 20 words)" name="content" id="" rows="3"></textarea>
+          <div class="span9 pull-right form_sizing">
+            <textarea class="area_normal" placeholder="Give us a brief description about your Perfect Outing? (At least 20 words)" name="content" id="" rows="6"></textarea>
           </div>                
 
-          <div class="span3 form_sizing">
-            <span class="label_text">Publish Date</span>
-            <input class="form_normal" placeholder="Choose the date (Optional)" id="datepicker" type="text">
-          </div>           
-          <div class="span6">
+          <div class="span6 pull-right">
             <div class="form_sizing">
               <span class="label_text">Who's this for?</span>
               <select multiple="multiple" placeholder="What Category is your Perfect Outing?" id="e1" class="full-width">
@@ -90,13 +89,13 @@
               </select>                     
             </div> 
           </div>
-          <div class="span3 form_sizing">
+          <div class="span3 pull-right form_sizing">
             <span class="label_text">Upload Featured Image</span>          
             <input type="file" title="Upload Image">  
-               
-
-          </div>                      
-        
+          </div>                    
+          <div class="">
+            <input type="submit" class="btn btn-large btn-danger btn-save" onclick="savedarticle(this)" value="Save">
+          </div>            
         </div>      
 
 
@@ -114,7 +113,6 @@
 
         <div class="group-control span12 form_sizing">
           <div class="control">
-              <h4>Module 1</h4>
               <input class="form_normal" placeholder="Subtitle" type="text" required>
             </div>  
         </div>                            
@@ -142,7 +140,6 @@
 
         <div class="group-control span12 form_sizing">
           <div class="control">
-              <h4>Module 2</h4>
               <input class="form_normal" placeholder="Subtitle" type="text" required>
             </div>  
         </div>                         
@@ -170,7 +167,6 @@
 
         <div class="group-control span12 form_sizing">
           <div class="control">
-              <h4>Module 3</h4>
               <input class="form_normal" placeholder="Subtitle" type="text" required>
             </div>  
         </div>                              

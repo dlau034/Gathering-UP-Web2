@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="icomoon/icomoon.css">  
 
     <script src="js/jquery-1.9.1.js"></script>    
-    <script class="jsbin" src="http://datatables.net/download/build/jquery.dataTables.nightly.js"></script>   
+    <script class="jsbin" src="js/jquery.dataTables.nightly.js"></script>   
 
     <script>
       $(document).ready(function() {
@@ -94,12 +94,10 @@
               <option>Highlines</option>
               <option>Bryant Park</option>        
             </select> 
-        <button class="btn btn-go">Go</button>
-
-        <div class="input-append offset1">
-          <input class="span3" id="appendedInputButton" placeholder="Add Your Own" type="text">
-          <button class="btn"  type="button">+ Add Neighborhood</button>
-        </div>
+        <button class="btn btn-go btn-success">Go</button>
+        <button class="btn btn-warning" data-toggle="modal" data-target=".add_neighbor" type="button">Edit</button>
+        <button data-target=".add_neighbor" data-toggle="modal" type="button" class="btn btn-success pull-right">+ Add Neighborhood</button>
+        
         <div class="breakline"></div>
       </div>
 
@@ -109,7 +107,7 @@
 
         <div id="add_catagory" class="input-append">
           <input class="span3" id="appendedInputButton" placeholder="Add a New Catagory" type="text">
-          <button class="btn"  type="button">+ Add Catagory</button>
+          <button class="btn btn-success" type="button">+ Add Catogory</button>
         </div>
 
       <div id="neighbor_wrap">
@@ -133,19 +131,19 @@
               <td>
                 <div class="input-append">
                   <input class="typeahead span3" type="text" autocomplete="off" placeholder="Find or Add Tag">
-                  <button class="btn" type="button">+ Add Tags</button>
+                  <button class="btn btn-success" type="button">+ Add Tags</button>
                 </div>
                   <div class="tag_module">
                    <select name="tags">
                      <option value="Chinese">Chinese</option>
                      <option value="Japanese">Japanese</option>
                    </select>      
-                   <button class="btn btn-mini">x</button>
+                   <button class="btn btn-danger btn-mini">x</button>
                  </div>
               </td>
               <td>
-                <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit">Edit</button>
-                <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove">Remove</button>
+                <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-warning btn-edit">Edit</button>
+                <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove">Remove</button>
               </td>
             </tr>
 
@@ -157,19 +155,19 @@
               <td>
                 <div class="input-append">
                   <input class="typeahead span3" type="text" autocomplete="off" placeholder="Find or Add Tag">
-                  <button class="btn" type="button">+ Add Tags</button>
+                  <button class="btn btn-success" type="button">+ Add Tags</button>
                 </div>
                   <div class="tag_module">
                    <select name="tags">
                      <option value="Chinese">Chinese</option>
                      <option value="Japanese">Japanese</option>
                    </select>      
-                   <button class="btn btn-mini">x</button>
+                   <button class="btn btn-danger btn-mini">x</button>
                  </div>
               </td>
               <td>
-                <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit">Edit</button>
-                <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove">Remove</button>
+                <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit btn-warning">Edit</button>
+                <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove">Remove</button>
               </td>
             </tr>
 
@@ -181,19 +179,19 @@
               <td>
                 <div class="input-append">
                   <input class="typeahead span3" type="text" autocomplete="off" placeholder="Find or Add Tag">
-                  <button class="btn" type="button">+ Add Tags</button>
+                  <button class="btn btn-success" type="button">+ Add Tags</button>
                 </div>
                   <div class="tag_module">
                    <select name="tags">
                      <option value="Chinese">Chinese</option>
                      <option value="Japanese">Japanese</option>
                    </select>      
-                   <button class="btn btn-mini">x</button>
+                   <button class="btn btn-danger btn-mini">x</button>
                  </div>
               </td>
               <td>
-                <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit">Edit</button>
-                <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-remove">Remove</button>
+                <button data-target=".edit_row_button" data-toggle="modal" class="btn btn-mini btn-edit btn-warning">Edit</button>
+                <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove">Remove</button>
               </td>
             </tr>
           </tbody>
@@ -227,10 +225,84 @@
           <h3 id="dymanic">This Tag</h3>
         </div>
         <div class="modal-footer">          
-          <button class="btn btn-success">Yes</button>
+          <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Yes</button>
           <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
           </div>
       </div>
+
+    <!-- Add Neighborhood Modal -->
+
+      <div class="modal hide fade add_neighbor" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          
+            <h4>Manage Neighborhood</h4>
+
+              <div class="breakline"></div>            
+
+              <form id="add_neighbor_form">
+                <div class="clearfix">
+                  <div class="add_left">
+                    <label for="">Neighborhood Name</label>
+                   <input placeholder="Neighborhood Name" type="text">
+                  </div>     
+                  <div class="add_right">
+                    <label for="">Place Navigation</label>
+                   <input placeholder="Place Navigation" type="text">
+                  </div>                               
+                  <div class="add_left">
+                    <label for="">City</label>
+                   <input class="typeahead" placeholder="City" type="text">                  
+                 </div>
+                  <div class="add_left" id="radio_button">
+                    <label for="">City</label>                    
+                      <div class="btn-group" data-toggle="buttons-radio">
+                        <button type="button" class="btn btn-success">Disable</button>
+                        <button type="button" class="btn btn-success">Active</button>
+                      </div>
+                  </div>
+                </div>                    
+
+                <div class="breakline"></div>
+
+                <div class="clearfix">
+                  <label for="">GPS Location 1</label>
+                    <div class="add_left">
+                      <input placeholder="Longitude" type="text">
+                    </div>
+                    <div class="add_right">
+                      <input placeholder="Latitude" type="text">
+                    </div>               
+                  <label for="">GPS Location 2</label>                                      
+                    <div class="add_left">
+                      <input placeholder="Longitude" type="text">
+                    </div>
+                    <div class="add_right">
+                      <input placeholder="Latitude" type="text">
+                    </div>     
+                  <label for="">GPS Location 3</label>                                      
+                    <div class="add_left">
+                      <input placeholder="Longitude" type="text">
+                    </div>
+                    <div class="add_right">
+                      <input placeholder="Latitude" type="text">
+                    </div>   
+                  <label for="">GPS Location 4</label>                                      
+                    <div class="add_left">
+                      <input placeholder="Longitude" type="text">
+                    </div>
+                    <div class="add_right">
+                      <input placeholder="Latitude" type="text">
+                    </div>                                            
+                </div>                         
+              </form>
+        </div>
+        <div class="modal-footer">          
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">+ Save Neighborhood</button>
+
+          </div>
+      </div>      
 
     <!-- Javascripts -->
 

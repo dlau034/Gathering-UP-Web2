@@ -86,7 +86,8 @@ ui.typeahead {
 }
 .add_neighbor {
 	width: 37.5em;
-	background-color: #f9f9f9;	
+	background-color: #f9f9f9;
+	margin-left: -245px;	
 }
 .add_neighbor .modal-body {
 	max-height:600px!important;
@@ -153,3 +154,33 @@ table.display thead td:active {
 	outline: none;
 }
 
+	/* Featured Ranking 
+    -------------------------------------------------- */
+.container_large {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.story_board {
+	margin-top: 60px;
+	width: 100%;
+}
+.story_board > .btn-group {
+	margin-top: 10px;
+}
+.story_item select {
+	width: 5em;
+}
+.story_item .table th, .table td {
+	min-width: 0em;
+}
+.story_item #example_filter {
+	margin-top: 1.5em;
+}
+.sorting {
+	cursor: pointer;
+}
+
+.story_item thead tr th:nth-of-type(n+5), .story_item thead tr th:nth-of-type(1) {
+	background: none;
+}

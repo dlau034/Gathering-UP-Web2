@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>GatheringUP - Perfect Outing</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="css/bootstrap-mobile.css"/>
+  <!-- <link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.2.custom.css"/>    -->
+  <link rel="stylesheet" href="css/jquery_override.css">
+  <link rel="stylesheet" href="css/styles2.css">
+	<link rel="stylesheet" href="icomoon/icomoon.css">
+  <link href="select/select2.css" rel="stylesheet"/>
+  <!--[if lte IE 7]><script src="icomooon/lte-ie7.js"></script><![endif]-->
+  <script src="js/jquery-1.9.1.js"></script>    
+  <script src="js/jquery-ui-1.10.2.custom.js"></script>   
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script>
+  $(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+  });
+  </script>
+
+  <script src="select/select2.js"></script>
+  <script>
+    $(document).ready(function() { 
+      $("#e1").select2(); 
+    }); 
+  </script>
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+</head>
+<body>
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+          <a class="brand" href="index.html">Create Outing</a> 
+            <div class="nav-collapse collapse"> <!-- Elements inside will disappear when mobile -->
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="index.html">Perfect Outings</a></li>
+                  <li><a href="Whats_around.html">What's Around</a></li>            
+                  <li><a href="javascript:void(0);" onclick="loginpopup('/datebook')">Datebook</a></li>
+                  <li><a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a></li>          
+                </ul>
+            </div>
+         </div>
+      </div>
+    </div>    
+
+    <!-- Create Outing Top -->
+
+    <div class="container create_container"> 
+      <form class="create_frame">
+        <h1>Create Your Perfect Outing</h1>
+        <div class="dividline"></div></br>
+
+        <div class="row top_unit ">
+          <div class="control-group fullwidth form_sizing">
+            <div class="control">
+              <p class="help-block"></p>
+              <input class="form_large" placeholder="What is your Perfect Day?" type="text" required>
+            </div>
+          </div>
+
+          <div class="pull-right fullwidth form_sizing">
+            <textarea class="area_normal" placeholder="Give us a brief description about your Perfect Outing? (At least 20 words)" name="content" id="" rows="7"></textarea>
+          </div>                
+
+          <div class="span6 pull-right">
+            <div class="form_sizing">
+              <span class="label_text">Who's this for?</span>
+              <select multiple="multiple" placeholder="What Category is your Perfect Outing?" id="e1" class="full-width">
+                <option value="Ac">Active</option>                
+                <option value="Ev">Everybody</option>
+                <option value="Fo">Foodie</option>
+                <option value="Ki">Kids Friendly</option>
+                <option value="Ro">Romantic</option>
+                <option value="So">Social</option>
+              </select>                     
+            </div> 
+          </div>
+          <div class="span3 pull-right form_sizing">
+            <span class="label_text">Upload Featured Image</span>          
+            <input type="file" title="Upload Image">  
+          </div>                    
+          <div>
+            <input type="submit" class="btn btn-large btn-danger btn-save" onclick="savedarticle(this)" value="Save">
+          </div>  
+          <input type="submit" onclick="savedarticle(this)" value="Save">                    
+        </div>      
+
+
+    <!-- Add New Module -->  
+         
+      
+        </br><button id="addmodule" class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>
+        </br></br>
+           
+
+         <!-- Module 1 -->  
+    <div class="content_btn">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
+
+        <div class="group-control span12 form_sizing">
+          <div class="control">
+              <input class="form_normal" placeholder="Subtitle" type="text" required>
+            </div>  
+        </div>                            
+            <div class="span12 form_sizing">
+              <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="4"></textarea>
+            </div>      
+
+            <div class="span9 form_sizing">
+              <input class="form_normal" placeholder="Where did you go?" type="text">
+            </div>            
+            <input type="file" title="Upload Image">                         
+        </div>
+
+        </br>
+        <button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>      
+        </br>
+        </br>         
+    </div>     
+          
+
+         <!-- Module 2 -->  
+    <div class="content_btn">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
+
+        <div class="group-control span12 form_sizing">
+          <div class="control">
+              <input class="form_normal" placeholder="Subtitle" type="text" required>
+            </div>  
+        </div>                         
+            <div class="span12 form_sizing">
+              <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="4"></textarea>
+            </div>      
+
+            <div class="span9 form_sizing">
+              <input class="form_normal" placeholder="Where did you go?" type="text">
+            </div>            
+            <input type="file" title="Upload Image">                         
+        </div>
+
+        </br>
+        <button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>      
+        </br>
+        </br>         
+    </div>     
+
+
+         <!-- Module 3 -->  
+    <div class="content_btn">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
+
+        <div class="group-control span12 form_sizing">
+          <div class="control">
+              <input class="form_normal" placeholder="Subtitle" type="text" required>
+            </div>  
+        </div>                              
+            <div class="span12 form_sizing">
+              <textarea class="area_normal" placeholder="Tell us what you did first?" name="content" id="" rows="4"></textarea>
+            </div>      
+
+            <div class="span9 form_sizing">
+              <input class="form_normal" placeholder="Where did you go?" type="text">
+            </div>            
+            <input type="file" title="Upload Image">                         
+        </div>
+
+        </br>
+        <button class="btn btn-large btn-add btn-green"><i class="icon-plus icon-white"></i>&nbspAdd New Module</button>      
+        </br>
+        </br>         
+    </div>               
+                
+    <div class="dividline"></div>     
+
+    </br><button id="btn-publish" type="submit" class="btn btn-large btn-green">Create It!</button>  
+    </br>            
+    </br>            
+
+  </form> 
+  
+    <!-- Javascripts --> 
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.file-input.js"></script>
+</body>
+</html>

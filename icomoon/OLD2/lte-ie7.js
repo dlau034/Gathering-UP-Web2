@@ -16,18 +16,12 @@ window.onload = function() {
 			'icon-datebookfacebook' : '&#xe003;',
 			'icon-datebookplus' : '&#xe004;',
 			'icon-datebookminus' : '&#xe005;',
-			'icon-datebookenvelope' : '&#xe006;',
-			'icon-datebookpencil' : '&#xe007;',
-			'icon-datebookpen-alt-fill' : '&#xe008;',
-			'icon-datebookpen' : '&#xe009;'
+			'icon-datebookenvelope' : '&#xe006;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
-	for (i = 0; ; i += 1) {
+	for (i = 0; i < els.length; i += 1) {
 		el = els[i];
-		if(!el) {
-			break;
-		}
 		attr = el.getAttribute('data-icon');
 		if (attr) {
 			addIcon(el, attr);

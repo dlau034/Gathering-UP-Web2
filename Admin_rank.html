@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  	<title>Admin Tags Manager</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+  	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles_nav.css">
+  	<link rel="stylesheet" href="css/admin_panel.css">
+    <link rel="stylesheet" href="icomoon/icomoon.css">  
+     
+    <script src="js/jquery-1.9.1.js"></script>    
+    <script class="jsbin" src="js/jquery.dataTables.nightly.js"></script>   
+
+    <script>
+      $(document).ready(function() {
+        $('#example').dataTable();
+      } );  
+    </script>       
+
+  	<!-- Google Font -->
+
+       <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+       <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  </head>
+<body>
+
+      <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+
+          <a class="brand" href="index.html">GatheringUP - Admin</a> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                       <li><a href="Admin_Neighborhood.html">Neigbhorhoods</a></li>
+                       <li><a href="admin_tags.html">Tags</a></li>                      
+                       <li><a href="admin_places.html">Places</a></li>                      
+                       <li><a href="admin_rank.html">Featured Ranking</a></li>   
+                  </ul>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    </div>      
+
+    <div class="container_large">
+      <div class="story_board">
+        <h2>Featured Story Ranking</h2>
+
+        <div class="breakline clearfix"></div>  
+
+        <div class="btn-group clearfix" data-toggle="buttons-radio">
+          <button type="button" class="btn btn-success">All Stories</button>
+          <button type="button" class="btn btn-success">Latest Stories</button>
+          <button type="button" class="btn btn-success">Ranked Stories</button>
+        </div>
+        
+        <div class="story_item">
+
+      <!-- Table Start -->
+
+        <table class="display table table-hover" id="example">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Title</th>
+              <th>Categories</th>
+              <th>Date Publish</th>
+              <th>Display Status</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>
+                <select name="ranking" id="ranking">
+                  <option value="1">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </td>
+              <td><a href="">My Best Day Out in Central Park Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+              <td>Everybody, Social</td>
+              <td>4/10/13</td>
+              <td>
+                <div class="btn-group" data-toggle="buttons-radio">
+                  <button type="button" class="btn btn-mini btn-success">Disable</button>
+                  <button type="button" class="btn btn-mini btn-success">Active</button>
+                </div>                
+              </td>    
+              <td>
+                  <button data-target=".remove_story" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>          
+              </td>          
+            </tr>
+
+            <tr>
+              <td>
+                <select name="ranking" id="ranking">
+                  <option value="1">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </td>
+              <td><a href="">Biking guide for New York City</a></td>
+              <td>Active, Social</td>
+              <td>3/14/13</td>
+              <td>
+                <div class="btn-group" data-toggle="buttons-radio">
+                  <button type="button" class="btn btn-mini btn-success">Disable</button>
+                  <button type="button" class="btn btn-mini btn-success">Active</button>
+                </div>                
+              </td>    
+              <td>
+                  <button data-target=".remove_story" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>           
+              </td>          
+            </tr>         
+
+
+            <tr>
+              <td>
+                <select name="ranking" id="ranking">
+                  <option value="1">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </td>
+              <td><a href="">Gone Jogging!</a></td>
+              <td>Active</td>
+              <td>1/21/13</td>
+              <td>
+                <div class="btn-group" data-toggle="buttons-radio">
+                  <button type="button" class="btn btn-mini btn-success">Disable</button>
+                  <button type="button" class="btn btn-mini btn-success">Active</button>
+                </div>                
+              </td>    
+              <td>
+                  <button data-target=".remove_story" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>              
+              </td>          
+            </tr>                       
+
+
+          </tbody>
+        </table>
+
+      <!-- Table End -->
+      </div>
+      </div>
+    </div>   
+
+    <!-- Remove Modal -->
+
+    <div class="modal hide fade remove_story" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- <div class="modal hide fade remove" tabindex="-1" role="dialog" aria-hidden="true"> -->
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Are you sure that you want to remove this story?</h4>
+          <h3 id="story_row">This Story</h3>
+        </div>
+
+        <div class="modal-footer">          
+          <button class="btn btn-success"data-dismiss="modal" aria-hidden="true">Yes</button>
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
+          </div>
+      </div>
+
+
+        <!-- Javascripts -->
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>    

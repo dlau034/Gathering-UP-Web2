@@ -33,7 +33,15 @@
     $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
   });
   </script>
+    <script>
+      $(document).ready(function) {
+        $("#float_tab").mouseover(function(){
+          $("#tab_head").hide();
+        });
+      });
+    </script>  
   <script type="text/javascript" src="js/script.js"></script>
+
 
 	<!-- Google Font -->
 
@@ -71,21 +79,7 @@
                     <input id="header_search" type="text" class=" span4 search-query" placeholder="Search for places, locations, dining etc . . .">
                   </form>
 
-                    <!-- Dropdown -->                
-<!-- 
-                  <div class="dropdown">
-                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
-                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
-                        David Lau
-                        <b class="caret dp_caret"></b>
-                      </a>
-                      <ul class="dropdown-menu" id="dp_list">
-                        <li><a href="/preferences/changepasswd">Your Datebook</a></li>
-                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
-                        <li><a href="/user/logout">Log Out</a></li>
-                      </ul>
-                    </form>                      
-                  </div>  -->
+                    <!-- Dropdown -->               
 
                     <!-- Not logged In --> 
 
@@ -105,7 +99,7 @@
                                 <input class="input_dp" placeholder="Email" type="email" name="Email" required>
                             </div>
                             <div class="control-group">                              
-                              <p class="help-block"></p>
+                              <p class="help-block"></
                                 <input class="input_dp" placeholder="Password" type="password" name="password" required>                                
                             </div>
                           <div id="forgotpw"><a href="#register_modal" data-toggle="modal">Forgot Password</a></div>
@@ -397,21 +391,24 @@
         </div>          
       </div>
     </div>
+</div>
 
-    <!-- Pagination -->
-    <div class="container-module">
-      <div class="pagination pagination-right" id="page2">
-        <ul>
-          <li class="disabled2"><a href="#">&#8249;</a></li>
-          <li class="active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">&#8250;</a></li>
-        </ul>
-      </div>
-    </div>          
+<div id="float_tab">
+  <p id="tab_head">Feedback</p>
+    <div class="float_box">
+      <h4>Help Make Us Better! <br> We love your Feedback!</h4>
+      <div class="dividline"></div>
+      <form action="">
+        <textarea name="" rows="8" placeholder="Tell Us What you think?"></textarea>
+        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Your Email">
+        <input type="text" placeholder="Enter Code">
+        <img src="images/captcha.jpg">
+        <input type="Submit" class="btn btn-green">
+      </form>
+  </div>
+</div>
+   
 
     <!-- Footer -->  
       <div class="footer">

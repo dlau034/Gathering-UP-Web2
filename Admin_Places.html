@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  	<title>Admin Places</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+  	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles_nav.css">
+  	<link rel="stylesheet" href="css/admin_panel.css">
+    <link rel="stylesheet" href="icomoon/icomoon.css">  
+
+    <script src="js/jquery-1.9.1.js"></script>    
+    <script class="jsbin" src="js/jquery.dataTables.nightly.js"></script>   
+
+    <script>
+      $(document).ready(function() {
+        $('#Places_table').dataTable();
+      } );  
+    </script>    
+
+    <script>
+    $(function() {
+      var availableTags = [
+        "Musuem of Modern Arts",
+        "American Natural History Musuem",
+        "Mexican",
+        "Thai",
+        "American",
+        "Cafe",
+        "Bar",
+        "Juice Bar",
+        "Bakery",
+        "Sandwiches",
+        "Fast Food",
+        "Korean",
+        "Malaysian",
+        "Jamaican",
+        "Seafood",
+      ];
+      $( ".typeahead" ).typeahead({
+        source: availableTags
+      });
+    });
+    </script>      
+
+  	<!-- Google Font -->
+
+       <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+       <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  </head>
+<body>
+
+      <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+
+          <a class="brand" href="index.html">GatheringUP - Admin</a> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                       <li><a href="Admin_Neighborhood.html">Neigbhorhoods</a></li>                      
+                       <li><a href="admin_tags.html">Tags</a></li>                      
+                       <li><a href="admin_places.html">Places</a></li>
+                       <li><a href="admin_rank.html">Featured Ranking</a></li>                      
+                  </ul>
+            </div>
+         </div>
+      </div>
+    </div>    
+
+    <!-- Place Management Panel -->
+
+    <div class="container_large_2">
+      <div class="top_wrap">
+        <h2>Place Manager</h2>
+      </div>
+        <div id="add_place" class="input-append">
+          <input class="span3 typeahead" id="appendedInputButton" placeholder="Find a Place" type="text">
+          <button class="btn btn-success" type="button">Find Place</button>
+        </div>
+      <div id="place_table">
+
+      <div class="breakline"></div>
+
+        <table class="display table table-bordered table-hover" id="Places_table">
+          <thead>
+            <tr>
+              <th>Place</th>
+              <th>Address</th>
+              <th>Zip</th>
+              <th>Phone</th>
+              <th>Tier</th>
+              <th>Image</th>
+              <th>URL</th>
+              <th class="description">Description</th>
+              <th>Tags</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+
+        <!-- Module One -->
+
+            <tr>
+              <td>American Museum of Natural History</td>              
+              <td>200 Central Park West</td>              
+              <td>10024</td>              
+              <td>212-769-5100</td>              
+              <td>3</td>              
+              <td>image.jpg</td>              
+              <td>www.amnh.org</td>              
+              <td class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, sed, dolores, esse reprehenderit cum nulla quam eaque hic molestiae dicta modi aut nisi! Voluptates, dignissimos a nemo quisquam odit alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, aut iure optio tempora ab facilis totam vero unde minus numquam.</td>              
+              <td>Musuem, Arts & Culture, Hotspot</td>              
+              <td>
+                  <button data-target=".edit_place_button" data-toggle="modal" class="btn btn-mini btn-warning btn-edit">Edit</button>
+                  <button data-target=".remove_place_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove">Remove</button>
+              </td>
+            </tr>
+
+        <!-- Module One -->
+
+            <tr>
+              <td>Metropolitan Musuem of Art</td>              
+              <td>1000 5th Ave</td>              
+              <td>10028</td>              
+              <td>212-535-7710</td>              
+              <td>3</td>              
+              <td>image.jpg</td>              
+              <td>www.metmuseum.org</td>              
+              <td class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, sed, dolores, esse reprehenderit cum nulla quam eaque hic molestiae dicta modi aut nisi! Voluptates, dignissimos a nemo quisquam odit alias. </td>              
+              <td>Musuem, Arts & Culture, Hotspot</td>              
+              <td>
+                  <button data-target=".edit_place_button" data-toggle="modal" class="btn btn-mini btn-warning btn-edit">Edit</button>
+                  <button data-target=".remove_place_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove">Remove</button>
+              </td>
+            </tr>            
+
+
+        <!-- Module One -->
+
+            <tr>
+              <td>American Museum of Natural History</td>              
+              <td>200 Central Park West</td>              
+              <td>10024</td>              
+              <td>212-769-5100</td>              
+              <td>3</td>              
+              <td>image.jpg</td>              
+              <td>www.amnh.org</td>              
+              <td class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, sed, dolores, esse reprehenderit cum nulla quam eaque hic molestiae dicta modi aut nisi! Voluptates, dignissimos a nemo quisquam odit alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, aut iure optio tempora ab facilis totam vero unde minus numquam.</td>              
+              <td>Musuem, Arts & Culture, Hotspot</td>              
+              <td>
+                  <button data-target=".edit_place_button" data-toggle="modal" class="btn btn-mini btn-warning btn-edit">Edit</button>
+                  <button data-target=".remove_place_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove">Remove</button>
+              </td>
+            </tr>
+
+        <!-- Module One -->
+
+            <tr>
+              <td>Metropolitan Musuem of Art</td>              
+              <td>1000 5th Ave</td>              
+              <td>10028</td>              
+              <td>212-535-7710</td>              
+              <td>3</td>              
+              <td>image.jpg</td>              
+              <td>www.metmuseum.org</td>              
+              <td class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, sed, dolores, esse reprehenderit cum nulla quam eaque hic molestiae dicta modi aut nisi! Voluptates, dignissimos a nemo quisquam odit alias. </td>              
+              <td>Musuem, Arts & Culture, Hotspot</td>              
+              <td>
+                  <button data-target=".edit_place_button" data-toggle="modal" class="btn btn-mini btn-warning btn-edit">Edit</button>
+                  <button data-target=".remove_place_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove">Remove</button>
+              </td>
+            </tr>            
+
+        
+
+          </tbody>
+        </table>               
+
+      </div>
+    </div>
+
+        <!-- Remove Modal -->
+
+    <div class="modal hide fade remove_place_button" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Are you sure that you want to remove this Place?</h4>
+          <h3 id="place_row">American Natural History Musuem</h3>
+        </div>
+
+        <div class="modal-footer">          
+          <button class="btn btn-success"data-dismiss="modal" aria-hidden="true">Yes</button>
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
+          </div>
+      </div>
+
+        <!-- Edit Place Modal -->
+
+    <div class="modal hide fade edit_place_button" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- <div class="modal-body"> -->
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Edit Place Detail</h4>
+          <div class="breakline"></div>
+        <!-- </div> -->
+        <form id="edit_place_form">
+          <div class="clearfix">
+              <div class="span6 span-fix">
+                <label>Place Name</label>
+                <input class="span6"type="text" placeholder="Place Name">
+              </div>
+          </div>    
+          <div class="clearfix">
+              <div class="span3 span-fix">
+                <label>Address</label>
+                <input class="span3"type="text" placeholder="Address">
+              </div>
+              <div class="span2">
+                <label>Borough</label>
+                <select name="Borough" class="span-fix span2">
+                  <option value="Manhattan">Manhattan</option>
+                  <option value="Brooklyn">Brooklyn</option>
+                  <option value="Queens">Queens</option>
+                  <option value="Staten Island">Staten Island</option>
+                  <option value="Bronx">Bronx</option>
+                </select>
+              </div>
+              <div class="span1">
+                <label>State</label>
+                <input type="text" class="span1" placeholder="State">
+              </div>
+            </div>
+            <div class="clearfix">
+              <div class="span2 span-fix">
+                <label>City</label>
+                <input type="text" class="span2" placeholder="City">
+              </div>        
+              <div class="span2">
+                <label>Zip</label>
+                <input type="text" class="span2" placeholder="Zip">
+              </div>           
+            </div>     
+            <div class="clearfix">
+              <div class="span3 span-fix">
+                <label>GPS</label>
+                <input type="text" class="span3" placeholder="Longitude">
+              </div>        
+              <div class="span3">
+                <label>&nbsp</label>
+                <input type="text" class="span3" placeholder="Latidute">
+              </div>           
+            </div>                  
+            <div class="clearfix">
+              <div class="span3 span-fix">
+                <label>URL</label>
+                <input type="text" class="span3" placeholder="URL">
+              </div> 
+              <div class="span2">
+                <label>Phone</label>
+                <input type="text" class="span2" placeholder="123-456-7890">
+              </div>
+              <div class="span2">
+                <label>Cost</label>
+                <input type="text" class="span2" placeholder="Cost">
+              </div>   
+            </div>
+            <div class="breakline"></div>  
+              <div class="clearfix">
+                <div class="span4 input-append span-fix">
+                  <label>Search Tag</label>
+                  <input class="span3 typeahead" autocomplete="off" id="appendedInputButton" placeholder="Search for Tags" type="text">
+                  <button class="btn btn-success" type="button">Add</button>
+                </div>                              
+     
+                <div class="span3 span-fix">
+                  <label>Tags</label>
+                  <select class="span3 span-fix">
+                    <option value="Hotspots">Hotspots</option>
+                    <option value="Musuem">Musuem</option>
+                    <option value="Arts & Culture">Arts & Culture</option>
+                    <option value="Exhibition">Exhibition</option>
+                  </select>        
+                </div>  
+                <div>
+                  <label>&nbsp</label>
+                  <button id="remove_tag_btn" class="btn btn-danger">X</button>
+                </div>
+                <div class="clearfix">
+                  <div class="span1 span-fix">
+                    <label>Tier</label>
+                    <select class="span1 span-fix">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </div>  
+                  <div class="span4">
+                    <label>Upload Image</label>
+                    <input type="file">
+                  </div>
+                </div>
+
+              </div>              
+            
+            
+          <div class="breakline"></div>                                  
+            <div class="clearfix">
+              <label>Description</label>
+              <textarea name="description" placeholder="Place Description" rows="5"></textarea>
+              <label>Notes</label>
+              <textarea name="Notes" class="span3" placeholder="Notes" rows="2"></textarea>              
+              <label>Status</label>
+              <textarea name="Status" placeholder="Status" rows="2"></textarea>                            
+              <label>Hours</label>
+              <textarea name="Hours" placeholder="Open Hours" rows="4"></textarea>    
+            </div>
+        </form>  
+
+        <div class="modal-footer">          
+          <button class="btn btn-success"data-dismiss="modal" aria-hidden="true">Save</button>
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+          </div>
+      </div>
+
+
+    <!-- Javascripts -->
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

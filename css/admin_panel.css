@@ -24,6 +24,13 @@
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 }
+#Neigbhor_table {
+	margin-top: 2em;
+}
+#Neigbhor_table .table th, .table td {
+	vertical-align: middle;
+	padding: 4px;
+}
 #neighbor_wrap .breakline {
 	margin-bottom: 1.5em;
 }
@@ -32,6 +39,9 @@
 }
 #example thead tr th:last-child {
 	background: none;
+}
+#example td.sorting_1 {
+	font-weight: bold;
 }
 
 .typeahead {
@@ -42,7 +52,10 @@
 	margin-top: 16px;
 	margin-bottom: 30px!important;
 }
-
+#add_place {
+	margin-top: 16px;
+	margin-bottom: 30px!important;
+}
 .tag_module {
 	float: right;
 }
@@ -58,7 +71,6 @@ ui.typeahead {
 
     /* Modals 
     -------------------------------------------------- */
-
 
 #neighbor_wrap th:last-child {
 	text-align: right;
@@ -117,6 +129,16 @@ ui.typeahead {
 #Neigbhor_table_length {
 	float: right;
 }
+table#Neigbhor_table td {
+	vertical-align: middle!important;
+}
+
+#edit_place_form .add_right{
+	float: right;
+}
+#edit_place_form .add_left{
+	float: left;
+}
 
 
 	/* Modals - Remove and Edit - Tags
@@ -160,7 +182,16 @@ table.display thead td:active {
 	width: 1100px;
 	margin: 0 auto;
 }
-
+.container_large_2 {
+	width: 1199px;
+	margin: 0 auto;
+	font-size: 12px;
+}
+@media (min-width: 1280px) {
+	.container_large_2 {
+		width: 1399px;
+	}
+}
 .story_board {
 	margin-top: 60px;
 	width: 100%;
@@ -180,7 +211,68 @@ table.display thead td:active {
 .sorting {
 	cursor: pointer;
 }
-
 .story_item thead tr th:nth-of-type(n+5), .story_item thead tr th:nth-of-type(1) {
+	background: none;
+}
+
+	/* Place Manager
+    -------------------------------------------------- */
+
+#place_table .breakline {
+	margin-bottom: 1.5em;
+}
+#place_table .table th, .table td {
+	vertical-align: top!important;
+	padding: 4px;
+}
+td.description {
+	width: 300px!important;
+	line-height: 1.4em!important;
+	font-size: 0.9em;
+}
+#Places_table .btn-remove {
+	float: right;
+}
+#Places_table .btn-edit {
+	margin-left: 1px;
+	margin-bottom: 1px;
+}
+#Places_table_length {
+	float: right;
+}
+#Places_table_filter {
+	margin-bottom: 1.5em;
+}
+.edit_place_button {
+	padding: 1.5em 1.5em 1.5em 1.5em;
+	background-color: #f9f9f9;
+	position: absolute;
+	top: 2%!important;
+	margin-bottom: 2em;
+}
+.span-fix {
+	margin: 0!important;
+}
+#edit_place_form textarea {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#edit_place_form .clearfix{
+	margin-bottom: 1em;
+	margin-top:0.7em;
+}
+#remove_tag_btn {
+	margin-left: 2px;
+}
+.edit_place_button .modal-footer {
+	background: none!important;
+	padding: 1em 0 0 0;
+}
+#edit_place_form {
+	margin:0;
+}
+#Places_table thead tr th:last-child {
 	background: none;
 }

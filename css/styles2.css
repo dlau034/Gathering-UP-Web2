@@ -744,10 +744,9 @@ form {
     width: 31em;
     margin-left: 28em;
     position: relative;
-    /*overflow: hidden;*/
     z-index: 3;
     height: 100%;
-    background-color: rgba(255,255,255,0.5);
+    /*background-color: rgba(255,255,255,0.5);*/
 }
 
 #nearby_box {
@@ -787,7 +786,7 @@ form {
 
 .nearby_item {
     min-height: 14.5em;
-    margin-top: 1.4em;
+    margin-top: 1em;
     background-color: #f5f5f5;
     -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
     -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
@@ -799,9 +798,15 @@ form {
     border: 1px solid rgba(0,0,0,0.3);
 }
 .nearby_item:nth-of-type(1) {
-    margin-top: 55px;
+    margin-top: 22px;
 }
-
+.bg_wrap {
+    background-color: rgba(255,255,255,0.5);
+    position: fixed;
+    height: 100%;
+    width: 31em;
+    margin-left: 28em;
+}
 @media(max-width: 979px) {
         .nearby_item:nth-of-type(1) {
         margin-top: 25px!important;

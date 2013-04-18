@@ -500,6 +500,7 @@ disabled look for disabled choices in the results dropdown
     cursor: default;
     border: 1px solid #aaaaaa;
     font-weight: 500;
+    text-shadow:none;
 
     -webkit-border-radius: 3px;
        -moz-border-radius: 3px;

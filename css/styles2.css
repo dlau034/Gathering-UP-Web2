@@ -270,6 +270,21 @@ form {
     border-top: 2px solid white;
     border-bottom: 2px solid white;
 }
+@media (max-height: 800px) {
+    .img_crop {
+        max-height: 400px;
+    }
+}
+@media (max-height: 600px) {
+    .img_crop {
+        max-height: 300px;
+    }
+}
+@media (max-height: 500px) {
+    .img_crop {
+        max-height: 200px;
+    }
+}
 .img_header {
     margin-top: -3em;
     bottom: 0;
@@ -1676,8 +1691,8 @@ select:focus {
 @media (max-width:549px) {
     .map_outing {
         position: relative!important;
-        height: 35%!important;
-        margin-top: 40px;        
+        height: 32%!important;
+        margin-top: 58px;        
     }
 }
 
@@ -1835,6 +1850,12 @@ select:focus {
     width: 100%;
     margin-bottom: 1em;
     margin-left: -1px;
+    display: block;
+}
+@media (max-width:479px) {
+    .btn_cta {
+        display: none;
+    }
 }
 .CTA_button_mini {
     float: left;

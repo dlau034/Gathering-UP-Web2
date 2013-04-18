@@ -1851,6 +1851,19 @@ select:focus {
     margin-bottom: 1em;
     margin-left: -1px;
     display: block;
+    border-radius: 4px!important;
+    font-weight: 500;
+
+    background-color: #A3C86C;
+    background-image: -moz-linear-gradient(top, #A3c86c, #87B63F);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#87B63F));
+    background-image: -webkit-linear-gradient(top, #A3c86c, #87B63F);
+    background-image: -o-linear-gradient(top, #A3c86c, #87B63F);
+    background-image: linear-gradient(to bottom, #A3c86c, #87B63F);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 @media (max-width:479px) {
     .btn_cta {

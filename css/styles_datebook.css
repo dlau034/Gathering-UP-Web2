@@ -1,3 +1,371 @@
-.datebook_wrap {
-	margin-top: 60px;
+/* Wrap Elements & Content Locationing*/
+
+.wrapper {
+  height: 100%;
+}
+.footer {
+  margin-top: 8em;
+}
+
+
+
+/*Pushes the container down - will need custom ID*/
+
+.wrapper .container .row {
+  margin-top: 70px;
+}
+
+
+/* Need change .btn-blue to green - will need html change
+
+- Get rid of inline: 100%
+
+*/
+
+.btn-blue {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #A3C86C;
+  background-image: -moz-linear-gradient(top, #A3c86c, #8BB946);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#8BB946));
+  background-image: -webkit-linear-gradient(top, #A3c86c, #8BB946);
+  background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
+  background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  border-radius: 0px !important;
+  font-family: ubuntu
+}
+
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active,
+.btn-blue.disabled,
+.btn-blue[disabled] {
+  color: #ffffff;
+  background-color: #8BB946;
+  *background-color: #499249;
+}
+
+.btn-blue:active,`
+.btn-blue.active {
+  background-color: #408140 \9;
+}
+
+.datebook button:first-child{
+  width: 83%!important;
+} 
+
+/* --------------------------------------- */
+
+.datebook .tab-content {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+@media (max-height: 659px) {
+  .datebook .tab-content {
+    height: 437px; 
+  }   
+}
+@media (min-height: 660px) {
+  .datebook .tab-content {
+    height: 530px;
+  }
+}
+
+#calendarButton {
+  float: right;
+  background-image: url("../images/calendar.png");
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.tutorialbox h4 span:nth-of-type(1) {
+  font-size: 1.5em!important;
+}
+
+/* ------------ Side Nav tab ------------ */
+
+.datebook li.tab-pane a {
+  border-radius: 0;
+  margin-top: 10px;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-width: 1px;
+  border-style: solid;
+  background-color: #A3C86C;
+}
+.datebook li.tab-pane a:focus {
+  background-color: #FBB03B;
+}
+.datebook li.active > a {
+  background-color: #FBB03B!important;
+}
+
+.datebook li.tab-pane h4 {
+  font-weight: 400;
+  text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: white;
+}
+
+.datebook li.pill_width a {
+  background-color: #A3C86C;
+}
+.datebook li.tab-pane a:hover {
+  background-color: #FBB03B;
+}
+.datebook li.tab-pane {
+  width: 49%;  
+}
+.datebook li.tab-pane:nth-of-type(2) {
+  float: right;
+}
+.datebook li.tab-pane .caret {
+  border-top-color: white;
+  margin-top: 0.56em;
+}
+
+.pill_bookmarks ul{
+  background-color: #f9f9f9;
+} 
+.pill_bookmarks ul a{
+  background-color: #f9f9f9!important;
+  border: none!important;
+  margin-top: 0!important;
+  padding: 5px!important;
+  font-weight: 500;
+  color: #555;
+} 
+.pill_bookmarks ul a:hover {
+  background: none;
+  background-color: #FBB03B!important;
+}
+.pill_bookmarks .active a {
+  background: none;
+  background-color: #FBB03B!important;
+}
+.pill_bookmarks .active a:hover {
+  background: none;
+  background-color: #FBB03B!important;
+}
+
+/* ------------ Side Nav Content ------------ */
+
+.eventbox {
+  background-color: #f9f9f9;
+  padding: 1em;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid white;
+}
+.eventbox:hover {
+  background-color: white;
+}
+.eventbox a {
+  font-weight: 500; 
+}
+.eventbox:last-child {
+  border-bottom:none;
+}
+.event_datebox {
+  background-color: #4d4d4d;
+  width: 60px;
+  height: 60px;
+  color: white;
+  text-align: center;
+  font-family: "arvo";
+  line-height: 1.2em;
+  float: left;
+  margin-right: 10px;
+  padding-top: 2px;
+}
+.event_summary {
+  margin-left: 5em;
+}
+
+/* ------------ FullCalendar.css Override ------------ */
+
+.fc-content {
+  background-color: white;
+  margin-top: 2em;
+}
+.fc-state-highlight {
+  background: #FDDA9F!important;
+}
+.fc-event-skin {
+  background-color: #FBB03B!important;
+  border: none!important;
+  cursor: pointer;
+}
+.fc-header-title h2 {
+  color: #666;
+  text-shadow: 0px 1px 0px white;
+  font-family: arvo;
+}
+.fc-content .popover {
+  min-width: 200px!important;
+  border-radius: 0px;
+  color: #666;
+}
+.fc-content .popover .popover-title {
+  /*background: none!important;*/
+  background-color: #FBB03B;
+  border-radius:0!important;
+  border-size: 0!important;
+  color:white;
+}
+
+
+/* ------------ FullCalendar.css Override ------------ */
+
+.chzn-container-multi .chzn-choices {
+  padding:0px!important;
+}
+.chzn-choices .search-field input {
+  box-shadow: none!important;
+  font-size: 100%!important;
+  margin:0px!important;
+}
+#friendadd_chzn chzn-choices
+/* ------------ Event Screen ------------ */
+
+.blue_bar ,.breakline_msg{
+  height: 1px;
+  background-color: white;
+  border-top: 1px solid #ccc;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  clear: both;
+}
+.event_info h3 {
+  font-family: arvo;
+  color: #666;
+  font-weight: 500;
+  text-shadow: 0px 1px 0px white;
+}
+.event_info .dl-horizontal dt{
+  width: 70px;
+}
+.event_info .dl-horizontal dd{
+  margin-left: 80px;
+}
+
+#new_message {
+  width: 100%;
+  font-family: ubuntu;
+  padding: 7px!important;
+}
+.message_entry img.thumbnail_profile {
+  float: left;
+  position: absolute;
+  height: 5em;
+}
+.text_entry {
+  float: left;
+  margin-left: 6em;
+  margin-top: -0.5em;
+}
+
+/* ------------ Invited bar ------------ */
+.namespanel img {
+  margin-left: 7px;
+  margin-bottom: 1em;
+  height: 5em;  
+}
+.namespanel {
+  -webkit-box-shadow: -1px 0px 0px #ccc!important;
+   -moz-box-shadow: -1px 0px 0px #ccc!important;
+   box-shadow: -1px 0px 0px #ccc!important; 
+  /*min-height: 25em;*/
+  padding-bottom: 2em;
+}
+
+/* ------------- Create Event Modal ------------- */
+
+#CreateEvent {
+  margin-top: -30px;
+  margin-left: -315px;
+}
+
+#emailModal {
+  display: none;
+  position: absolute;
+  background-color: white;
+  margin-left: 40em;
+  width: 14em;
+  top: 0;
+  height: 40.5em;
+  background-color: #f9f9f9;
+}
+
+#emailModal .modal-header {
+  border-bottom: none;
+  padding:1em;
+}
+#emailModal #done_button {
+  margin-right: 8px;
+  margin-top: 10px;
+}
+#emailModal .modal-header h4 {
+  margin-top: 1.3em;
+  margin-bottom: 0.3em;
+  color: #555;
+  font-weight: 500;
+  text-shadow: 0px 1px 0px white;
+}
+#emailModal .modal-body input {
+  width: 100%;
+}
+#emailModal .modal-footer{
+  display: none;
+}
+#emailModal #emailerrormsg {
+  margin-left: 1em;
+
+}
+#CreateEvent {
+  border-radius: 0;
+  background-color: #f5f5f5;
+  height: 40.5em;
+}
+
+.friends_module .Friends {
+  margin-bottom: 0.6em;
+  margin-top: 0.6em;
+}
+
+.modal-event .modal-header {
+  border-bottom: none;
+}
+
+#modal-event .modal-header {
+  border-bottom: none;
+}
+
+#myModalLabel {
+  text-align: center;
+  color: #555;
+  font-weight: 500;
+  font-family: arvo;
+  text-shadow: 0px 1px 0px white;
+}
+
+.eventForm input, .eventForm textarea{
+  font-family: ubuntu;
+}
+
+.eventForm .squareCorners:nth-of-type(1), .eventForm .squareCorners:nth-of-type(5), .eventForm textarea {
+  width: 100%!important;
+}
+#friendadd_chzn {
+  padding-bottom: 0px;
+  padding-top: 17px
+}
+.invitebox #add_button {
+  float: right;
+  margin-top: 6px;
+  font-weight: 500;
 }

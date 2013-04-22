@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/jquery_override.css">
   <link rel="stylesheet" href="css/styles2.css">
   <link rel="stylesheet" href="icomoon/icomoon.css">
+  <!-- <link rel="stylesheet" href="icomoon2/icomoon.css"> -->
   <link href="select/select2.css" rel="stylesheet"/>
   <!--[if lte IE 7]><script src="icomooon/lte-ie7.js"></script><![endif]-->
   <script src="js/jquery-1.9.1.js"></script>    
@@ -48,7 +49,9 @@
     <div class="navbar navbar_container">
       <div class="navbar-inner nav_bar_style navbar-fixed-top">
         <div class="container">
-          <a class="brand" href="index.html">Create Outing</a> 
+          <div class="brand_fix">
+            <a class="brand" href="index.html">Create Outing</a> 
+          </div>
             <div class="nav-collapse collapse"> <!-- Elements inside will disappear when mobile -->
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
@@ -70,13 +73,22 @@
         <h1>Create Your Perfect Outing</h1>
         <div class="dividline"></div></br>
         <div class="row top_unit btn-green">
+          <h2><span id="icon-pen" data-icon="&#xe008;" aria-hidden="true">&nbsp</span>Step A</h2>
+          <div class="dividline"></div>
           <div class="form_sizing">
-            <input class="form_large" placeholder="What is your Perfect Day?" type="text">
+            <label>
+              <span class="icon-num icon-number-10" aria-hidden="true"></span>
+              <span class="clearfix label_text">&nbsp&nbspHEADLINE</span>        
+            </label>    
+            <input class="form_large" placeholder="HEADLINE" type="text">
           </div>
 
-            <div class="form_sizing">
-              <span class="label_text">Choose Catagories</span>
-              <select multiple="multiple" placeholder="What Category is your Perfect Outing?" id="e1" class="full-width">
+          <div class="form_sizing">
+            <label>
+              <span class="icon-num icon-number-11" aria-hidden="true"></span>
+              <span class="clearfix label_text">&nbsp&nbspCATEGORIES</span>  
+            </label>
+              <select multiple="multiple" placeholder="CATEGORIES" id="e1" class="full-width">
                 <option value="Ac">Active</option>                
                 <option value="Ev">Everybody</option>
                 <option value="Fo">Foodie</option>
@@ -86,8 +98,12 @@
               </select>                     
             </div> 
 
-          <div class="form_sizing">
-            <textarea class="area_normal" placeholder="Give us a brief description about your Perfect Outing?" name="content" id="" rows="14"></textarea>
+          <div class="form_sizing form_description">                 
+            <label>
+              <span class="icon-num icon-number-12" aria-hidden="true"></span>
+              <span class="clearfix label_text">&nbsp&nbspDESCRIPTION</span>  
+            </label>             
+            <textarea class="area_normal" placeholder="DESCRIPTION" name="content" id="" rows="13"></textarea>
           </div>                        
           
             <div class="form_sizing">
@@ -114,17 +130,22 @@
 
          <!-- Module 1 -->  
     <div class="content_btn">
-
         <div class="row content_unit">          
           <span class="btn-destory icon-remove"></span>   
-
-        <div class="form_sizing">
-  
-            <input class="form_normal" placeholder="Subtitle (Optional)" type="text">
-        </div>                            
+          <div class="form_sizing">
+            <h2><span id="icon-pen" data-icon="&#xe008;" aria-hidden="true">&nbsp</span>Step B</h2>
+            <div class="dividline"></div>
+                  <label>
+                    <span class="icon-num icon-number-15" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp&nbspSUBTITLE</span>  
+                  </label>                   
+            <input class="form_normal" placeholder="SUBTITLE" type="text"></div>                            
             <div class="form_sizing">
-              <input class="form_normal" placeholder="Where did you go?" type="text">
-            </div>     
+                  <label>
+                    <span class="icon-num icon-number-16" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp&nbspLOCATION</span>  
+                  </label>                     
+            <input class="form_normal" placeholder="LOCATION" type="text"></div>     
             <div class="form_sizing">
                 <div class="image_unit">
                     <div class="placeholder_box img-polaroid">
@@ -135,7 +156,14 @@
                     <input type="file" title="Upload Image">   
                   <br><span>bookmarks_list_add.png</span>                                 
                 </div>
-              <textarea class="area_normal textarea_form" placeholder="Tell us what you did first?" name="content" rows="14"></textarea>
+                <div class="form_description">
+                  <label>
+                    <span class="icon-num icon-number-17" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp&nbspCONTENT</span>  
+                  </label>       
+                  <textarea class="area_normal textarea_form" placeholder="CONTENT" name="content" rows="14"></textarea>    
+                </div>
+              
             </div>                  
             <input class="btn btn-danger" type="submit" onclick="savedarticle(this)" value="Save">                        
         </div>
@@ -149,17 +177,22 @@
           
          <!-- Module 1 -->  
     <div class="content_btn">
-
         <div class="row content_unit">          
           <span class="btn-destory icon-remove"></span>   
-
-        <div class="form_sizing">
-  
-            <input class="form_normal" placeholder="Subtitle (Optional)" type="text">
-        </div>                            
+          <div class="form_sizing">
+            <h2><span id="icon-pen" data-icon="&#xe008;" aria-hidden="true">&nbsp</span>Step B</h2>
+            <div class="dividline"></div>
+                  <label>
+                    <span class="icon-num icon-number-15" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp&nbspSUBTITLE</span>  
+                  </label>                   
+            <input class="form_normal" placeholder="SUBTITLE" type="text"></div>                            
             <div class="form_sizing">
-              <input class="form_normal" placeholder="Where did you go?" type="text">
-            </div>     
+                  <label>
+                    <span class="icon-num icon-number-16" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp&nbspLOCATION</span>  
+                  </label>                     
+            <input class="form_normal" placeholder="LOCATION" type="text"></div>     
             <div class="form_sizing">
                 <div class="image_unit">
                     <div class="placeholder_box img-polaroid">
@@ -170,7 +203,14 @@
                     <input type="file" title="Upload Image">   
                   <br><span>bookmarks_list_add.png</span>                                 
                 </div>
-              <textarea class="area_normal textarea_form" placeholder="Tell us what you did first?" name="content" rows="14"></textarea>
+                <div class="form_description">
+                  <label>
+                    <span class="icon-num icon-number-17" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp&nbspCONTENT</span>  
+                  </label>       
+                  <textarea class="area_normal textarea_form" placeholder="CONTENT" name="content" rows="14"></textarea>    
+                </div>
+              
             </div>                  
             <input class="btn btn-danger" type="submit" onclick="savedarticle(this)" value="Save">                        
         </div>
@@ -180,7 +220,7 @@
 
         </br>
         </br>         
-    </div>        
+    </div>    
 
     <div class="dividline"></div>     
 
@@ -192,23 +232,21 @@
     <div class="tutorialwrap span4">
       <div class="tutscreen" id="tutscreen_1">
         <h2><span id="icon-pen" data-icon="&#xe008;" aria-hidden="true">&nbsp</span>Step A</h2>
-        <p><b>1. </b> Start building your <b>Perfect Day</b> by filling in the placeholder textboxes in the module on the right.</p>
-        <p>
-        <b>2. </b>You can choose the categories that your <b>Perfect Day</b> belongs to.</p>
-        <p>
-        <b>3. </b>Upload a Featured Image. The Featured Image will be displayed on the featured page with the description.
-        </p>
+        <div class="dividline"></div>
+        <p>Fill in the <b>Header Unit</b> of your Perfect Outing. Your <b>Featured Image</b> will display on the homepage.</p>
         <img src="images/tut1.jpg" class="img-polaroid">   
       </div> 
       <div class="tutscreen span4" id="tutscreen_2">
         <h2><span id="icon-pen" data-icon="&#xe008;" aria-hidden="true">&nbsp</span>Step B</h2>
-        <p><b>4. </b> Your story is split up into sections. You can add a <b>Subtitle, Text</b> and a <b>Picture</b> to each section. Once you are finish with each section, be sure you click <b>"Save"</b></p> 
+        <div class="dividline"></div>
+        <p>Your story is split up into sections. Once you are finish with each section, be sure you click <b>Save</b></p> 
 
         <img src="images/tut2.jpg" class="img-polaroid">
         <div class="tutscreen" id="tutscreen_3">
           <h2><span id="icon-pen" data-icon="&#xe008;" aria-hidden="true">&nbsp</span>Step C</h2>
-          <b>5. </b>Add a new section by clicking <b>"Add New Module".</b>
-          Once you are done with writing your Perfect Story, go ahead and click on <b>"Publish Story!"</b>
+          <div class="dividline"></div>
+          <p>Add a new section by clicking </br><b>+ Add New Module</b></p>
+          <p>Once you are done with writing your Perfect Outing, go ahead and click on </br><b>Publish Story!</b></p>
 
         </div>                 
       </div>     

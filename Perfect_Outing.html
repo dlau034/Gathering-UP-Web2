@@ -24,6 +24,14 @@
 
     <script type="text/javascript" src="js/gatheringup-localize.js"></script>
     <script type="text/javascript" src="js/script.js"></script>    
+    <script>
+    $(function(){
+      $(".CTA_button").click(function(){
+          $(this).addClass("btn-orange");
+          $(this).text("Bookmarked");
+      });
+    });
+    </script>
 </head>
 <body onload="initialize()">
 
@@ -43,9 +51,9 @@
         </a>
 
           <!-- Change Out the Logo -->          
-
-          <a class="brand" href="index.html">GatheringUP</a> 
-
+          <div class="brand_fix">
+            <a class="brand" href="index.html">GatheringUP</a> 
+          </div>
           <!-- Elements inside will disappear when mobile -->          
             <div class="nav-collapse collapse"> 
                 <ul id="nav_items_group" class="nav">
@@ -156,7 +164,7 @@
               <div class="clearfix">                
                   <div class="mini_other">
                     <img class="img-polaroid" src="images/museum.jpg" alt="thumbnail">
-                    <button class="btn btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+                    <button class="btn CTA_button btn-green btn-mini"><i class="icon-bookmark icon-white"></i>Bookmark</button>
                   </div>  
 
                   <div class="mini_text">

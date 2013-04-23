@@ -942,6 +942,12 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     position: relative;
     margin: 10px 10px 0px 0px;       
 }
+.item_other button.btn-mini {
+    float: right;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 4px!important;
+}
 .item_content {
     padding: 0em 1em 1.5em 1em;
     margin-top: 0em;
@@ -1282,6 +1288,7 @@ a.accordion-toggle.nav_cat {
     position: relative;
     margin-top: 40px;
     width: 100%;
+    background-size: 100%;
 }
 
 @media (max-height: 710px) {
@@ -1298,16 +1305,20 @@ margin-left: -30px !important;
 #featured_title { 
     /*width: auto;*/
     max-width: 45em;
-    margin-top: 70px;
+    margin-top: 10px;
     float: left;
     margin-left: 1.5em;
 }
 #featured_title h1 {
-    background-color: rgba(122,201,67,0.8);
     color: white;
     padding: 7px 10px 7px 10px;
     line-height: 1.2em;
+    text-shadow: 0px 2px 0px rgba(0,0,0,0.7),0px 0px 4px rgba(0,0,0,1);
+    font-weight: 700;
     word-wrap:break-word;
+    font-size: 3em;
+}    
+ 
 }
 #featured_title h4 {
     background-color: rgba(122,201,67,0.8);
@@ -1318,18 +1329,32 @@ margin-left: -30px !important;
     font-style: italic;
 }
 .featured_text {
-    background-color: rgba(122,201,67,0.8);
     float: right;
     margin-right: 2em;
-    margin-top: 80px;
-    width: 20em;
+    margin-top: 20px;
+    width: 30em;
+    text-align: right;
+}
+@media (max-width: 1350px) {
+    .featured_text {
+        width: 21em;
+    }
+    .featured_text h1 {
+        margin-top: 5em;
+    }
+}
+@media (max-width: 480px) {
+    .featured_text {
+        text-align: left;
+    }
 }
 .featured_text p {
     color: white;
-    /*font-size: 1.1em;*/
+    font-size: 1.3em;
     padding: 1em 1em 1em 1em;
-    line-height: 1.4em;
-    font-weight: 100;
+    line-height: 1.5em;
+    font-weight: 400;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.6), 0px 0px 5px black;
 }
 .featured_text p a {
     color: white;
@@ -1369,15 +1394,24 @@ margin-left: -30px !important;
     }
     #featured_title {
         margin-left: 0em;        
+        margin-top: 4em;
     }
     .featured_unit {
         margin-top: 40px;
     }    
     .featured_text {
-        margin: 35px 10px 0px 10px;
-        margin-top: 35px;
+        margin: 5px 10px 0px 10px;
         width: auto;
+    }
+    .featured_text p{
+        font-size: 1.1em;
     }    
+}
+@media (max-width: 1299px) {
+    .featured_unit {
+        background-size: auto 300px;
+        
+    }
 }
     /* Filter Bar
     -------------------------------------------------- */

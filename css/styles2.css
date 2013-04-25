@@ -25,6 +25,8 @@ a:hover {
     color:  #F7931E;
 }
 a:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
 }
 p {
@@ -173,6 +175,7 @@ form {
 .up_arrow {
     text-shadow: 0px 1px 0px #999;
     margin-top: -4px;
+
     transform:rotate(180deg);
     -ms-transform:rotate(180deg); /* IE 9 */
     -moz-transform:rotate(180deg); /* Firefox */
@@ -185,6 +188,7 @@ form {
 .btn-green {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
   background-color: #A3C86C;
   background-image: -moz-linear-gradient(top, #A3c86c, #8BB946);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#8BB946));
@@ -195,8 +199,9 @@ form {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+
   border-radius: 0px !important;
-  font-family: ubuntu
+  font-family: ubuntu;
 }
 
 .btn-green:hover,
@@ -258,9 +263,11 @@ form {
     background-image: none;
     opacity: 0.80;
     filter: alpha(opacity=80);
+
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+
     background-color: #bbb;
     color: white;
     font-family: ubuntu;
@@ -567,6 +574,8 @@ form {
 #nav_items_group a:hover {
     color: white;
     background-color: #A3C86C;
+    -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
 }
 
@@ -620,7 +629,9 @@ form {
     background-color: #F7931E!important;
 }
 .btn_nav_cta:active {
-    box-shadow: none!important;
+    -webkit-box-shadow: none!important; 
+    -moz-box-shadow: none!important; 
+    box-shadow: none!important; 
 }
 #style_dp_text {
     color: #F7931E;
@@ -751,6 +762,92 @@ form {
         margin-left: -90px !important;
     }
 }
+
+    /* Notification Icon
+    -------------------------------------------------- */
+
+#note_on {
+    position: absolute;
+    margin-left: 5em;
+    margin-top: 10px;
+    width: 2em;
+    color: #F7931E;
+    font-size: 1.1em;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    text-decoration: none;
+    background-image: url("../images/flag_on.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+#note_off {
+    position: absolute;
+    margin-left: 5em;
+    margin-top: 10px;
+    width: 2em;
+    color: #3D413D;
+    font-size: 1.1em;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    text-decoration: none;
+    background-image: url("../images/flag_off.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+}    
+@media (max-width: 979px) {
+    #note_off, #note_on {
+        display: none;
+    }
+}
+
+.navbar .notifications {
+    border-radius: 0;
+    background-color: #f5f5f5;
+    text-shadow: 0px 1px 0px white;
+    
+    width: 20em;
+    padding: 1em 1em 0em 1em;
+    top: 3em;
+    right: 0;
+    left: auto;
+}
+@media (min-width: 1350px){
+    .navbar .notifications {
+        right: 12em;
+    }
+}
+.navbar .notifications a {
+    font-weight: 500;
+    /*color: #222;*/
+}
+.notifications .imagebox {
+    width: 3.5em;
+    float: left;
+    clear: both;
+}
+.notifications .imagebox img {
+    width: 100%;
+    margin-left: 0;
+}
+.notifications .note {
+    float: right;
+    width: 215px;
+    margin-bottom: 0.8em;
+}
+.notifications .roundedbox {
+    clear: both;
+}
+.notifications .breakline_note {
+    height:1px;
+    background-color: #ccc;
+    -webkit-box-shadow: 0px 1px 0px white;
+     -moz-box-shadow: 0px 1px 0px white;
+     box-shadow: 0px 1px 0px white; 
+    width: 100%;
+    margin-bottom: 0.8em;
+}
+.notifications .note a:nth-of-type(1){
+    margin-bottom: 5px;
+}
+
     /* Nearby Page
     -------------------------------------------------- */
 
@@ -764,40 +861,44 @@ form {
 @media (min-width:980px) and (max-width: 1249px) {
     .map_around {
         position: fixed!important;
-        margin-left:350px;
+        margin-left: 350px;    
     }
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
     .map_around {
         position: fixed!important;
-        height: 22em!important;
+        height: 19em!important;
         margin-left: 0;
-        width: 65%;
-        -webkit-box-shadow:0px 3px 10px rgba(0,0,0,0.4);;
-         -moz-box-shadow:0px 3px 10px rgba(0,0,0,0.4);;
-         box-shadow:0px 3px 10px rgba(0,0,0,0.4);; 
+        width: 65%!important;
+        margin-top: 3em;
+        right: 0;
+        z-index: 1;
+
+        -webkit-box-shadow:0px 3px 10px rgba(0,0,0,0.4);
+         -moz-box-shadow:0px 3px 10px rgba(0,0,0,0.4);
+         box-shadow:0px 3px 10px rgba(0,0,0,0.4);
     }
 }
-@media (max-width: 767px) and (min-width: 480px) {
+@media (max-width: 767px) {
     .map_around {
-        height: 40%!important;
+        height: 30%!important;
+        margin-top: 7em;
+        min-height: 13em!important;
+
+        -webkit-box-shadow:0px 3px 10px rgba(0,0,0,0.3);
+         -moz-box-shadow:0px 3px 10px rgba(0,0,0,0.3);
+         box-shadow:0px 3px 10px rgba(0,0,0,0.3);         
     }
 }
 @media (max-width: 479px ) {
     .map_around {
-        height: 60%!important;
+        height: 40%!important;
+        min-height: 13em!important;
     }
+
 }
 
-/*#map_canvas iframe {
-    width: 100%;
-    height: 100%;    
-    position: fixed; 
-    right: 0; 
-    margin-bottom: -5px;     
-}
-*/
 @media (max-width: 1199px) and (min-width:979px) {
     .nearby_wrap {
         margin-left: 25em!important;
@@ -825,6 +926,8 @@ form {
 
 .nearby_item.sm_mod {
     min-height: 6.5em;    
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
     border: 1px solid rgba(0,0,0,0.15)
 } 
@@ -959,7 +1062,7 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
 .item_top_info.clearfix{
     min-height: 14em;
     padding-top: 1px;
-    margin-bottom: 1.3em;
+    margin-bottom: 1.2em;
 }
 .item_content dt {
     text-align: left;
@@ -1062,8 +1165,10 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
 
 }
 #accordion h3:focus {
-    outline: none;©
+    outline: none;
 
+    -webkit-box-shadow:none !important;     
+    -moz-box-shadow:none !important;    
     box-shadow:none !important;    
 }
 #accordion h3 {
@@ -1120,7 +1225,9 @@ a.accordion-toggle.nav_cat {
         padding: 10px;
         z-index: 1;  
         min-height: 10em;
-        box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
+        -webkit-box-shadow:  inset 0px 4px 7px rgba(0,0,0,0.3);                   
+        -moz-box-shadow:  inset 0px 4px 7px rgba(0,0,0,0.3);                   
+        box-shadow:  inset 0px 4px 7px rgba(0,0,0,0.3);                   
         height: auto;
     }  
     .nearby_item {
@@ -1134,7 +1241,7 @@ a.accordion-toggle.nav_cat {
     }
     .nearby_item p {
         font-size: 0.8em;
-        float: left;
+        /*float: left;*/
     }     
 }
 @media (max-width: 380px) {
@@ -1151,7 +1258,7 @@ a.accordion-toggle.nav_cat {
     /*TOP*/
     
     #nearby_nav {
-        height: 11em;
+        height: 7em;
         background-image: url("../images/kindajean.png"); 
         top: -15;
         border-bottom:1px solid #999;
@@ -1161,7 +1268,7 @@ a.accordion-toggle.nav_cat {
         /*margin: 0 auto;*/
         margin-left: auto;
         margin-right: auto;
-        margin-top: 4em;         
+        margin-top: 3.5em;     
     }
     #nearby_nav .dividline {
         display: none;
@@ -1173,13 +1280,12 @@ a.accordion-toggle.nav_cat {
         background: none;
         margin: 0 auto;
         overflow: hidden;
+        padding-top: 0;
+        clear: both;
     }
 
     /*Middle*/    
-/*    #map_canvas.nearby_canvas {
-        position: relative;
-        margin-top: 11em;        
-    }   */
+
     .nearby_item.med_mod {
        min-height: 13.1em!important;
     }        
@@ -1195,15 +1301,9 @@ a.accordion-toggle.nav_cat {
         margin-right: 8px;
         background: none;
         height: auto;
-        z-index: -1;
+        z-index: 0;
         width: 29em!important;
     }
-
-/*    #map_canvas.nearby_canvas iframe {
-        position: relative;
-        /*height: 100%;*/
-        /*box-shadow: 0 0 10px black;*/
-    }*/
 }
 @media (min-width: 481px) and (max-width: 767px) {
     /*Bottom*/  
@@ -1217,8 +1317,11 @@ a.accordion-toggle.nav_cat {
         padding: 10px;
         z-index: 1;  
         min-height: 10em;
+        clear: both;
         background-image: url("../images/kindajean.png");
-        box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
+        -webkit-box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
+         -moz-box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
+         box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                    
     }  
     .nearby_item {
         min-height: 14em;
@@ -1227,11 +1330,6 @@ a.accordion-toggle.nav_cat {
     .item_other {
         max-width: 125px;
     }
-/*    #map_canvas.nearby_canvas iframe {
-        position: relative;
-        height: 15em;
-        box-shadow: 0 0 10px black;
-    }         */
 }
 
     /* Top Module of Nav Listing Unit
@@ -1252,6 +1350,11 @@ a.accordion-toggle.nav_cat {
     font-size: 1.1em;
     width: 292px;
     color: #555;
+}
+@media (max-width: 768px) {
+    #nav_features select {
+        display: none;
+    }
 }
 
     /* Index Home Page
@@ -1762,7 +1865,9 @@ select:focus {
     -------------------------------------------------- */
 .footer {
     border-top: 1px solid white;
-    box-shadow: 0 -1px 0 #ccc;
+    -webkit-box-shadow: 0 -1px 0 #ccc;
+     -moz-box-shadow: 0 -1px 0 #ccc;
+     box-shadow: 0 -1px 0 #ccc; 
     padding-top: 15px;
     padding-bottom: 20px;
     text-align: center;
@@ -1789,7 +1894,7 @@ select:focus {
     .map_outing {
         position: relative!important;
         height: 32%!important;
-        margin-top: 58px;        
+        margin-top: 42px;        
     }
 }
 
@@ -1801,7 +1906,9 @@ select:focus {
     background-color: white;
     border-collapse: collapse;
     z-index: 2;
-    box-shadow: 0em 0em 2em #333;
+    -webkit-box-shadow:  0em 0em 2em #333;
+    -moz-box-shadow:  0em 0em 2em #333;
+    box-shadow:  0em 0em 2em #333;
     overflow: auto;
 }
 #Outing_wrap {
@@ -2011,8 +2118,10 @@ select:focus {
         position: relative;
         background-image: url("../images/kindajean.png");
         width: 60%;
-        padding-top: 3em;
+        /*padding-top: 3em;*/
+        margin: 0px;
         padding-bottom: 3em;
+        
         -webkit-box-shadow: 0 0 2em black;
          -moz-box-shadow: 0 0 2em black;
          box-shadow: 0 0 2em black; 
@@ -2491,10 +2600,6 @@ span.file-input-name {
     -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 
-/*    -webkit-box-shadow: 0 0 0.6em rgba(0,0,0,0.4);
-    -moz-box-shadow: 0 0 0.6em rgba(0,0,0,0.4);
-    box-shadow: 0 0 0.6em rgba(0,0,0,0.4);
-*/        
 }
 
 #float_tab p{
@@ -2618,7 +2723,3 @@ span.file-input-name {
     margin-top: 3em;
     margin-bottom: 3em;
 }
-
-    /* Float Tab 
-    -------------------------------------------------- */    
-    /* Featured Page - Float Tab */

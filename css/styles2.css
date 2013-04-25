@@ -775,7 +775,7 @@ form {
     font-size: 1.1em;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
     text-decoration: none;
-    background-image: url("../images/flag_on.png");
+    background-image: url("http://siteimages.gatheringup.com/flag_on.png");
     background-repeat: no-repeat;
     background-position: center right;
 }
@@ -788,7 +788,7 @@ form {
     font-size: 1.1em;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
     text-decoration: none;
-    background-image: url("../images/flag_off.png");
+    background-image: url("http://siteimages.gatheringup.com/flag_off.png");
     background-repeat: no-repeat;
     background-position: center right;
 }    
@@ -1879,6 +1879,14 @@ select:focus {
     -------------------------------------------------- */    
     /*Blog Unit*/
 
+    /* TWITTER */
+
+.Outing_detail .twitter-share-button.twitter-count-horizontal {
+    float: left;
+}    
+
+    /* TWITTER */
+
 #CTA_Create {
     /*width: 100%;*/
     left:50%;
@@ -2121,7 +2129,7 @@ select:focus {
         /*padding-top: 3em;*/
         margin: 0px;
         padding-bottom: 3em;
-        
+
         -webkit-box-shadow: 0 0 2em black;
          -moz-box-shadow: 0 0 2em black;
          box-shadow: 0 0 2em black; 
@@ -2542,7 +2550,6 @@ span.file-input-name {
     margin-bottom: 1em;
 }
 #tutscreen_2 {
-    opacity: 0;
     margin: 0;
 }
 #tutscreen_3 {

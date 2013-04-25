@@ -6,6 +6,9 @@
 .footer {
   margin-top: 8em;
 }
+.footer a {
+  color: #222;
+}
 
 
 
@@ -64,10 +67,12 @@
 .datebook .tab-content {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
+  /*border-top: none;*/
 }
+
 @media (max-height: 659px) {
   .datebook .tab-content {
-    height: 437px; 
+    height: 401px;
   }   
 }
 @media (min-height: 660px) {
@@ -116,7 +121,7 @@
   background-color: #A3C86C;
 }
 .datebook li.tab-pane a:hover {
-  background-color: #FBB03B;
+  /*background-color: #FBB03B;*/
 }
 .datebook li.tab-pane {
   width: 49%;  
@@ -158,8 +163,9 @@
 .eventbox {
   background-color: #f9f9f9;
   padding: 1em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc!important;
   border-top: 1px solid white;
+  box-shadow: 0px 1px 0px white;
 }
 .eventbox:hover {
   background-color: white;
@@ -369,3 +375,39 @@
   margin-top: 6px;
   font-weight: 500;
 }
+.BookmarkTitles {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid #999;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #FBB03B;
+  font-family: arvo;
+  color: white;
+  font-size: 1.2em;
+  padding: 0.4em 0.6em 0.3em 0.6em;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+}
+.yourBookmarks .eventbox button.close {
+  width: auto!important;
+}
+#description {
+  line-height: 1.3em;
+}
+#CreateEvent #modal-event .modal-body {
+    padding-top: 0px;
+}
+#CreateEvent #modal-event .modal-footer {
+    border: none;
+    box-shadow: none;
+    padding-top:0px!important;
+    background-color: transparent!important;
+}
+#CreateEvent #emailModal .modal-body {
+  padding-top: 3px;  
+}
+#CreateEvent #emailerrormsg {
+  color: red;
+}
+
+

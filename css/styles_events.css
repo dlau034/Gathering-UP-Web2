@@ -89,7 +89,7 @@
   font-size: 0.9em;
 }
 .eventmain .eventbody {
-  /*display: none;*/
+  display: none;
 }
 .eventmain {
   width: 100%;

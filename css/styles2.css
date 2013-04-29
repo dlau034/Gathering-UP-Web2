@@ -298,6 +298,7 @@ form {
 .img-polaroid {
     padding: 2px;
     margin-left: -3px; 
+    display: block;
 }
 .img_crop {
     max-height: 500px;
@@ -390,6 +391,7 @@ form {
     color: white!important;
     text-shadow:0 -1px 0 #333!important;
     float: left!important;
+    margin-top: 0px;
 }
 #register_modal .dividline {
     margin: 1em 0em 1em 0em;
@@ -768,7 +770,7 @@ form {
 
 #note_on {
     position: absolute;
-    margin-left: 5em;
+    margin-left: 16em;
     margin-top: 10px;
     width: 2em;
     color: #F7931E;
@@ -778,6 +780,7 @@ form {
     background-image: url("http://siteimages.gatheringup.com/flag_on.png");
     background-repeat: no-repeat;
     background-position: center right;
+    right: 9em;
 }
 #note_off {
     position: absolute;
@@ -811,7 +814,7 @@ form {
 }
 @media (min-width: 1350px){
     .navbar .notifications {
-        right: 12em;
+        right: 0em;
     }
 }
 .navbar .notifications a {
@@ -1146,6 +1149,14 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     z-index: 3;
     position: relative;
 }
+
+#nav_features .active > a, #nav_features .active > a:hover, #nav_features .active > a:focus {
+    background: none;
+    font-family: "ubuntu";
+    background-color: #8BB946;
+    color: white!important;
+}
+
 
 #accordion {
     width: 21em;
@@ -1854,9 +1865,6 @@ select:focus {
     background-color: #f0f0f0;
     padding: 0.3em 1em 0.3em 1em;
     border-top: 1px solid #ccc;
-    /*position: absolute;*/
-    /*height: 100%;*/
-    /*bottom: -5px;*/
 }
 
 
@@ -1868,12 +1876,66 @@ select:focus {
     -webkit-box-shadow: 0 -1px 0 #ccc;
      -moz-box-shadow: 0 -1px 0 #ccc;
      box-shadow: 0 -1px 0 #ccc; 
-    padding-top: 15px;
-    padding-bottom: 20px;
+
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
     text-align: center;
-    font-weight: 500;
-    background-color: #F2F0F0;
+    font-weight: 400;
+    background-color: #e1e1e1;
+    position: fixed; 
+    width: 100%;
+    bottom: 0;
+    margin-bottom: -40px;
 }
+.footer a {
+    color: #444;
+}
+.footer a:hover {
+    color: #FF7F00;
+}
+@media (max-width: 680px) {
+    .footer p{
+        width: 80%;
+        margin: 0 auto;
+        font-size: 0.8em!important;
+        line-height: 1em;
+    }
+}
+@media (max-width: 480px){
+    .footer {
+        display: none;
+    }
+}
+.footer p {
+    margin-bottom: 3px;
+    font-size: 0.90em;
+    text-shadow:0px 1px 0px white;
+}
+.footer_bold {
+    font-weight: 500;
+}
+.footer2 {
+    border-top: 1px solid white;
+    -webkit-box-shadow: 0 -1px 0 #ccc;
+     -moz-box-shadow: 0 -1px 0 #ccc;
+     box-shadow: 0 -1px 0 #ccc; 
+
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
+    text-align: center;
+    font-weight: 400;
+    background-color: #e1e1e1;
+    position: fixed; 
+    width: 100%;
+    bottom: 0;
+    /*margin-bottom: -40px;*/
+}
+.footer2 p {
+    margin-bottom: 3px;
+    font-size: 0.90em;
+    text-shadow:0px 1px 0px white;
+}
+
 
     /* Perfect Outing Page
     -------------------------------------------------- */    
@@ -1953,11 +2015,11 @@ select:focus {
     line-height: 1.5em;
 }
 #Outing_wrap h3 {
-    color: #777;
-    font-size: 1.5em;
-    line-height: 1.2em;
+    color: #555;
+    font-size: 1.4em;
+    line-height: 1.3em;
+    margin: 0.5em 0.3em 1em 0.3em;
     font-weight: 100;
-    margin: 0.5em 0.3em 0.6em 0.3em;
 }
 .author {
     margin-bottom: 1em;
@@ -2730,3 +2792,53 @@ span.file-input-name {
     margin-top: 3em;
     margin-bottom: 3em;
 }
+
+    /* Change Password Page
+    -------------------------------------------------- */
+
+.pwpage {
+    margin-top: 2.5em;
+}
+@media (min-width: 769px) {
+    .pwpage {
+        width: 400px;
+    }
+}
+@media (max-width: 768px) {
+    .pwpage {
+        margin-right: 2em;
+        margin-left: 2em;
+    }
+}
+.reset_container h2 {
+    text-shadow: 0px 1px 0px white;
+    text-align: center;
+}
+.form-large2 {
+    font-size: 1.1em!important;
+    font-family: "ubuntu";
+    height: 2em!important;
+    clear: both;
+    border: 1px solid #999!important;
+    float: left;
+    width: 100%;
+}
+@media (max-width:480px) {
+    .form-large2 {
+        width: 100%;
+    }
+}
+.pwpage #passwordchange p {
+    clear: both;
+}
+.pwpage input.btn-green {
+    margin-bottom: 1em;
+    padding-left: 1em!important;
+    padding-right: 1em!important;
+}
+.pwpage #Errors font {
+    float: left;
+    margin-bottom: 1em;
+}
+
+

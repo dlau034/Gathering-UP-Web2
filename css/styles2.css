@@ -770,7 +770,6 @@ form {
 
 #note_on {
     position: absolute;
-    margin-left: 10em;
     margin-top: 10px;
     width: 2em;
     color: #F7931E;
@@ -784,7 +783,6 @@ form {
 }
 #note_off {
     position: absolute;
-    margin-left: 10em;
     margin-top: 10px;
     width: 2em;
     color: #3D413D;
@@ -795,7 +793,12 @@ form {
     background-repeat: no-repeat;
     background-position: center right;
 }    
-@media (min-width: 1200px) {
+@media (min-width: 1350px) {
+    #note_off, #note_on {
+        margin-left: 10em;
+    }
+}
+@media (max-width: 1349px) and (min-width: 980px) {
     #note_off, #note_on {
         margin-left: 2em;
     }
@@ -864,6 +867,7 @@ form {
     .map_around {
         position: fixed!important;
         margin-left: 350px;
+        bottom: 0em!important;
     }
 }
 
@@ -871,6 +875,7 @@ form {
     .map_around {
         position: fixed!important;
         margin-left: 350px;    
+        bottom: 0em!important;
     }
 }
 
@@ -879,10 +884,12 @@ form {
         position: fixed!important;
         height: 19em!important;
         margin-left: 0;
-        width: 65%!important;
-        margin-top: 3em;
+        width: 65%!important;8
+        margin-top: 1.5em;
         right: 0;
         z-index: 1;
+        top: 3em!important;
+
 
         -webkit-box-shadow:0px 3px 10px rgba(0,0,0,0.4);
          -moz-box-shadow:0px 3px 10px rgba(0,0,0,0.4);
@@ -892,7 +899,7 @@ form {
 @media (max-width: 767px) {
     .map_around {
         height: 30%!important;
-        margin-top: 7em;
+        margin-top: 5.5em;
         min-height: 13em!important;
 
         -webkit-box-shadow:0px 3px 10px rgba(0,0,0,0.3);
@@ -922,7 +929,7 @@ form {
     position: relative;
     z-index: 3;
     height: 100%;
-    padding-top: 2.5em;
+    padding-top: 1em;
 }
 
 #nearby_box {
@@ -1995,6 +2002,9 @@ select:focus {
     width: 100%;
     /*background-color: red;*/
 }
+#Outing_wrap .btn_cta {
+    margin-top: 1em;
+}
 
 .Outing_detail {
     margin-bottom: 10px;
@@ -2511,7 +2521,7 @@ span.file-input-name {
 .btn-add {
     font-family: "ubuntu";
     left: 50%;
-    margin-left: -5.5em;
+    margin-left: -4.5em;
     position: relative;
 }
 .btn-save {

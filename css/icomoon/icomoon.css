@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
+	src:url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon.eot');
+	src:url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon.woff') format('woff'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon.ttf') format('truetype'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -82,11 +82,11 @@ you can use the generic selector below, but it's slower:
 
 @font-face {
 	font-family: 'brankic1979';
-	src:url('fonts/brankic1979.eot');
-	src:url('fonts/brankic1979.eot?#iefix') format('embedded-opentype'),
-		url('fonts/brankic1979.woff') format('woff'),
-		url('fonts/brankic1979.ttf') format('truetype'),
-		url('fonts/brankic1979.svg#brankic1979') format('svg');
+	src:url('http://siteimages.gatheringup.com/css/icomoon/fonts/brankic1979.eot');
+	src:url('http://siteimages.gatheringup.com/css/icomoon/fonts/brankic1979.eot?#iefix') format('embedded-opentype'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/brankic1979.woff') format('woff'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/brankic1979.ttf') format('truetype'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/brankic1979.svg#brankic1979') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -163,15 +163,21 @@ you can use the generic selector below, but it's slower:
 
 @font-face {
 	font-family: 'icomoon2';
-	src:url('fonts/icomoon2.eot');
-	src:url('fonts/icomoon2.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon2.woff') format('woff'),
-		url('fonts/icomoon2.ttf') format('truetype'),
-		url('fonts/icomoon2.svg#icomoon') format('svg');
+	src:url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon2.eot');
+	src:url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon2.eot?#iefix') format('embedded-opentype'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon2.woff') format('woff'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon2.ttf') format('truetype'),
+		url('http://siteimages.gatheringup.com/css/icomoon/fonts/icomoon2.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
 .icon-twitter, .icon-wordpress {
 	font-family: 'icomoon2';
 	speak: none;
@@ -183,8 +189,8 @@ you can use the generic selector below, but it's slower:
 	-webkit-font-smoothing: antialiased;
 }
 .icon-twitter:before {
-	content: "\e000";
+	content: "\e010";
 }
 .icon-wordpress:before {
-	content: "\e001";
+	content: "\e011";
 }

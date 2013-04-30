@@ -173,7 +173,7 @@ you can use the generic selector below, but it's slower:
 }
 
 .icon-twitter, .icon-wordpress {
-	font-family: 'icomoon2';
+	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -183,8 +183,8 @@ you can use the generic selector below, but it's slower:
 	-webkit-font-smoothing: antialiased;
 }
 .icon-twitter:before {
-	content: "\e000";
+	content: "\e0020";
 }
 .icon-wordpress:before {
-	content: "\e001";
+	content: "\e0019";
 }

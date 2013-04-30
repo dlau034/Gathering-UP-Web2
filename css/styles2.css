@@ -605,6 +605,7 @@ form {
     color: #777;
     padding: 0.5em;
     padding-left: 1em;
+    padding-right: 1em;
 }
 #dp_list a:hover {
     background: none;

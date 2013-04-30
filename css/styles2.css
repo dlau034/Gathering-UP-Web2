@@ -14,7 +14,7 @@ body {
     height: 100%;
     font-size: 14px;    
     padding: 0;
-    background-image: url("../images/kindajean.png");
+    background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");
     font-family: "ubuntu";
 }
 a {
@@ -361,7 +361,7 @@ form {
     background-color: red;
     height: 2.1em;
     border: 1px solid #ccc;
-    background-image: url("../images/captcha.jpg");
+    background-image: url("http://siteimages.gatheringup.com/images/captcha.jpg");
     background-size: 100% 100%;
     margin-bottom: 10px;
 }
@@ -473,7 +473,7 @@ form {
   /*height: 40px;*/
 }
 .brand {
-    background-image: url("../images/GU_logo.png");
+    background-image: url("http://siteimages.gatheringup.com/images/gu_logo.png");
     background-repeat: no-repeat;
     text-indent: -999px;
     width: 10em;
@@ -770,7 +770,7 @@ form {
 
 #note_on {
     position: absolute;
-    margin-left: 16em;
+    margin-left: 10em;
     margin-top: 10px;
     width: 2em;
     color: #F7931E;
@@ -784,7 +784,7 @@ form {
 }
 #note_off {
     position: absolute;
-    margin-left: 5em;
+    margin-left: 10em;
     margin-top: 10px;
     width: 2em;
     color: #3D413D;
@@ -795,6 +795,12 @@ form {
     background-repeat: no-repeat;
     background-position: center right;
 }    
+@media (min-width: 1200px) {
+    #note_off, #note_on {
+        margin-left: 2em;
+    }
+}
+
 @media (max-width: 979px) {
     #note_off, #note_on {
         display: none;
@@ -1127,7 +1133,7 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     top: 0;
     width: 25em;
     height: 100%;
-    background-image: url("../images/kindajean.png");    
+    background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");    
     border-collapse: collapse;
     z-index: 4;
     -webkit-box-shadow: 0em 0em 1em #333;
@@ -1270,7 +1276,7 @@ a.accordion-toggle.nav_cat {
     
     #nearby_nav {
         height: 7em;
-        background-image: url("../images/kindajean.png"); 
+        background-image: url("http://siteimages.gatheringup.com/images/kindajean.png"); 
         top: -15;
         border-bottom:1px solid #999;
         width: 100%;
@@ -1329,7 +1335,7 @@ a.accordion-toggle.nav_cat {
         z-index: 1;  
         min-height: 10em;
         clear: both;
-        background-image: url("../images/kindajean.png");
+        background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");
         -webkit-box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
          -moz-box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                   
          box-shadow: inset 0px 4px 7px rgba(0,0,0,0.3);                    
@@ -1984,12 +1990,14 @@ select:focus {
 #Outing_wrap {
    margin: 60px 2em 4em 2em;
    color: #666;
-   /*text-shadow: 0px 1px 0px white;*/
+}
+#Outing_wrap .img-content{
+    width: 100%;
+    /*background-color: red;*/
 }
 
 .Outing_detail {
     margin-bottom: 10px;
-    /*background-color: red;*/
 }
 
 #Outing_top {
@@ -2186,7 +2194,7 @@ select:focus {
     .Out_nearby_wrap {
         right: 0em!important;
         position: relative;
-        background-image: url("../images/kindajean.png");
+        background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");
         width: 60%;
         /*padding-top: 3em;*/
         margin: 0px;
@@ -2758,7 +2766,7 @@ span.file-input-name {
 .staff_img {
     width: 170px;
     height: 170px;
-    background-image: url("../images/david_head_bw.jpg");
+    background-image: url("http://siteimages.gatheringup.com/images/david_head_bw.jpg");
     margin: 0 auto;
     border: 8px solid #f9f9f9;
     -webkit-box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
@@ -2785,7 +2793,7 @@ span.file-input-name {
     margin: 0 auto;    
 }
 .staff_img:hover{
-    background-image: url("../images/david_head.jpg");    background-color: blue;
+    background-image: url("http://siteimages.gatheringup.com/images/david_head.jpg");    background-color: blue;
     border-color: #F7931E;
 }
 .about_team .span4 {
@@ -2840,5 +2848,21 @@ span.file-input-name {
     float: left;
     margin-bottom: 1em;
 }
-
-
+.story_header {
+    text-shadow: 0px 1px 0px white;    
+}
+.story_header h1 {
+    float: left;
+}
+.story_header .btn-green {
+    float: right;
+} 
+.story_header .dividline {
+    clear: both;
+    margin-bottom: 2em;
+}
+.story_header #story_pen {
+    margin-right: 0.5em;
+    margin-top: 2px;
+    margin-left: -8px;
+}

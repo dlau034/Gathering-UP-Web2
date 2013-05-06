@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GatheringUP - Homepage</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+    <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
+    <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
+
+<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-mobile.css"/>
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles2.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/icomoon/icomoon.css">  
+<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/jquery_override.css">
+  <link href="http://siteimages.gatheringup.com/css/select2.css" rel="stylesheet"/>
+    
+  <script type="text/javascript" src="/js/underscore-min.js"></script>
+    <script src="/js/jquery-1.7.2.min.js"></script>    
+<!--   <script src="/js/jquery-ui-1.10.2.custom.js"></script>  -->   
+  <script src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/gatheringup-published.js"></script>
+<script type="text/javascript" src="/js/gatheringup-bookmark.js"></script>
+
+     <script src="/js/select2.js"></script>
+     <script src="/js/script.js"></script>
+
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>
+
+<script type="text/javascript" src="/js/gatheringup-registration.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+    <body onload="initialize()">
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <script src="/js/jqBootstrapValidation.js"></script>
+<script type="text/javascript">
+function invitedecline(idinvite)
+{
+	$.get("/invitation/decline?idinvite="+idinvite);
+	$("#"+idinvite+"invl").remove();
+	$("#"+idinvite+"inv").remove();
+	$("#"+idinvite+"invn").remove();
+	$invites=$("#note_on>b").html();
+	$invites=$invites-1;
+	if($invites<=0){
+		$("#note_on").attr('id',"note_off");
+	}
+	$invites=$("#note_on>b").html($invites);
+}
+
+jQuery(document).ready(function() {
+
+$( "#header_search" ).typeahead({
+	source: function (query, process) {
+          return $.get('/bit/localize/search', { search: query }, function (data) {
+      		var name = jQuery.parseJSON(data);
+
+            return process(name);
+        });
+      },
+      updater: function(item) {
+          this.$element[0].value = item;
+          this.$element[0].form.submit();
+          return item;
+      },
+      minLength: 2});
+});
+      
+$(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+  });
+
+  window.isloggedin = 0  ;
+  </script>
+
+<script type="text/html" id='loggedintemplate'>
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        <%=user["firstname"]%> <%=user["lastname"]%> 
+                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+</script>
+
+
+<!-- Header + Navbar -->
+
+
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+		<div class="brand_fix">
+          <a class="brand" href="/">GatheringUP</a>
+        </div> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="/localize">What's Around</a></li>                      
+                  </ul>
+                  <form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
+                    <div class="input-append">
+                      <input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park" value="" autocomplete="off">
+                      <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
+                    </div>                  
+                    </form>
+											<a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a>
+																	
+<span id="loggedinuserspan">
+                               <ul id="nav_cta" class="nav pull-right">
+                  <li><a class="btn_nav_cta" href="javascript:void(0)" data-toggle="modal"  onclick="registerpopup()">Register</a></li>            
+                  <li>
+                      <a class="btn_nav_cta dropdown-toggle" href="#" id="style_dp_text" data-toggle="dropdown">
+                        Sign In
+                        <b class="icon-chevron-down icon-white"></b>
+                      </a>
+                      <div id="signin_box" class="dropdown-menu">
+                        <span id="logindropdownspan">
+                        <a href="" class="facebookurl">
+                          <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button>  
+                        </a>
+                          <div class="dividline"></div>  
+     <div id="SideDropLoginErrors"></div>
+                        <form class="clearfix" id="signin_content" method="post"  action="#" accept-charset="UTF-8">
+                          <input class="input_dp" placeholder="Username" id="droploginemail" type="text" name="username">
+                          <input class="input_dp" placeholder="Password" id="droploginpassword" type="password" name="password">
+                          <div id="forgotpw"><a  onclick="logintoforget()">Forgot Password</a></div>
+                          <button class="btn btn-green clearfix">Sign in</button>
+                          </span>
+                        </form>
+                      </div>                
+                  </li>             
+                </ul>            
+               </span>
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+ <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
+
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Register with GatheringUP!</h1>
+     <div class="dividline"></div>
+       <form id="registerform">
+         <div class="clearfix">
+
+           <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>
+               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
+           </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>                  
+                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
+               </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <p class="help-block"></p>   
+                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
+             </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
+             </div>              
+         </div>              
+
+         <div class="control-group">
+             <div class="control">    
+
+               <input 
+                 id="password2nd"
+                 class="form_reg" 
+                 placeholder="Retype Password"
+                 type="password"
+                 name="passwordconf"
+                 data-validation-match-match="password1"    
+                 minlength="8" 
+                 data-validation-minlength-message="Minimum 8 Characters"              
+                 />
+               <p class="help-block"></p>    
+             </div>              
+         </div>       
+<div id="RegistrationErrors"></div>
+
+           <div class="control-group">
+             <div class="control">                  
+               <p class="help-block"></p>                                 
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" type="text" placeholder="Enter Catcha" required>
+               <div ><img src="/captcha"></div>                
+             </div>
+           </div>
+
+         </div>
+
+         <div class="dividline"></div>
+         <button class="btn btn-large btn-green" >Register!</button>
+       </form>
+     <h4>OR</h4>
+<a href=""  id="fb_register" class="facebookurl"  >
+     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
+</a>
+ </div>    
+
+
+
+<!--Forgot Password Modal-->
+<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Forgot Password?</h1>
+     <div class="dividline"></div>
+       <form  id="forgotpasswordform" class="forgot_fields clearfix">
+         <div class="control-group">
+           <div class="controls">
+              <p class="help-block"></p>
+               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
+
+           </div>
+         </div>
+         <button type="submit" class="btn btn-green">Forgot Password!</button>  
+       </form>  
+  </div>
+  
+
+<script type="text/javascript">
+//var bookmarks={};
+var bookmarks = {};
+		
+</script>
+
+    <div id="map_canvas" class="map_outing" style="height: 100%; width:100%; position: fixed;">
+    </div>    
+
+    
+
+    <!-- Nav Listing Unit -->  
+
+    <div id="Outing_frame">
+      <div id="Outing_wrap">
+        <div class="img-polaroid img_crop">
+          <img src="http://images.gatheringup.com/images/large/517edc425a3b0.jpg" class="img_header img-content" alt="">
+        </div>
+        <h1>Walking tour through the Upper East Side</h1>
+          <div class="Outing_detail clearfix">
+            <div class="author clearfix">
+                        <img class="img-polaroid img-circle" src="http://graph.facebook.com/902555095/picture" alt="thumbnail">
+            
+              <h5>By David Lau</br> Published 2013-04-29 17:16:12</h5>            
+            </div>
+            <div class="fb-like" data-href="http://www.gatheringup.com/story?articleid=293" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true"></div>
+<a href="https://twitter.com/share" class="twitter-share-button">tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+          </div>         
+          <div class="Outing_cat">
+<button class="btn btn-mini cat_tag">Active</button>
+<button class="btn btn-mini cat_tag">Everybody</button>
+          </div>      
+              <div class="dividline"></div>
+              
+              <h3>Had some free time last Friday, so i decided to go for a walkabout in the Upper East Side that Morning.</h3>
+                                 
+                            <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517edc90befb6.JPG" alt="">
+                
+              <h4>Beautiful Architecture</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut purus ut libero porta interdum dignissim at quam. Vivamus et sem tortor, vitae accumsan magna. Etiam vitae dui sed augue volutpat vehicula iaculis ut dui. Vivamus congue porta feugiat. 
+</br>
+</br>
+Vestibulum imperdiet mattis erat vel convallis. Mauris aliquet pellentesque nisl, id consequat mi commodo eget. Nunc sagittis nulla sed massa cursus sed vehicula velit. 
+              </p>
+                            <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517ee2ebd4aee.JPG" alt="">
+                
+              <h4>Photographing weird stuff that morning</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut purus ut libero porta interdum dignissim at quam. 
+</br>
+</br>
+Vestibulum imperdiet mattis erat vel convallis. Mauris aliquet pellentesque nisl, id consequat mi commodo eget. Nunc sagittis nulla sed massa cursus sed vehicula velit.
+</br>
+</br>
+Vestibulum imperdiet mattis erat vel convallis. Mauris aliquet pellentesque nisl, id consequat mi commodo eget. Nunc sagittis nulla sed massa cursus sed vehicula velit. 
+              </p>
+                            <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517edcf47a042.JPG" alt="">
+                
+              <h4>Searching for a place for lunch</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut purus ut libero porta interdum dignissim at quam. Vivamus et sem tortor, vitae accumsan magna. Etiam vitae dui sed augue volutpat vehicula iaculis ut dui. Vivamus congue porta feugiat. 
+</br>
+</br>
+Vestibulum imperdiet mattis erat vel convallis. Mauris aliquet pellentesque nisl, id consequat mi commodo eget. Nunc sagittis nulla sed massa cursus sed vehicula velit. 
+              </p>
+                            <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517edd7be6053.JPG" alt="">
+                
+              <h4>Nom nom nom....cheese steak sandwich</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut purus ut libero porta interdum dignissim at quam. Vivamus et sem tortor, vitae accumsan magna. Etiam vitae dui sed augue volutpat vehicula iaculis ut dui. Vivamus congue porta feugiat. 
+</br>
+</br>
+Vestibulum imperdiet mattis erat vel convallis. Mauris aliquet pellentesque nisl, id consequat mi commodo eget.
+</br>
+</br>
+Nunc sagittis nulla sed massa cursus sed vehicula velit. 
+              </p>
+                            <div class="dividline"></div>
+<button onClick="location.href='/storycreate'" class="btn btn-green btn-large btn_cta">Create your own Perfect Outing!</button>
+      </div>
+    </div>    
+
+<!-- Nearby Column -->  
+
+    <div class="Out_nearby_wrap">
+        		<script type="text/javascript">
+    		setgmapmarker(40.78540259000005, -73.95718705799993, "Jewish Museum", "22602226");
+    		</script>
+    		        <div id="nearby_box"> 
+
+          <div class="nearby_item mini_item">
+              <div class="clearfix" id="22602226" gid="">                
+                  <div class="mini_other">
+                  	<img class="img-polaroid" src="http://siteimages.gatheringup.com/images/places.jpg" alt="thumbnail">						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(22602226, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						    				
+                  </div>  
+
+                  <div class="mini_text">
+                    <h4><a href="/localize?search=Jewish+Museum"><span>1</span>.&nbsp;Jewish Museum</a></h4>
+                    <p>1109 Fifth Ave</br>
+                    New York, NY 10128<br>
+(212) 423-3200<br>
+<a href="http://www.thejewishmuseum.org/index.php" target="_blank">http://www.thejewishmuseum.org/index.php</a>
+                    </p>
+                   <div class="result_cat">
+                   <button class="btn btn-mini cat_tag_mini disabled">Museums</button>
+                    </div>                       
+                  </div>
+
+              </div>       
+            <div class="item_tab">
+            <span class="down_arrow" aria-hidden="true" data-icon="&#xf0d8;"></span>
+            </div>                
+            <div class="item_content">
+              <div class="dividline"></div>                      
+                  <p>                  </br>    
+                                    </br>                       
+                                  </div>
+            </div>              
+          </div>
+              		<script type="text/javascript">
+    		setgmapmarker(40.78216100000000, -73.95365800000000, "Burger One", "2255678");
+    		</script>
+    		
+          <div class="nearby_item mini_item med_mod_2 clearfix">
+              <div class="clearfix" id="2255678" gid="">                
+                  <div class="mini_other">
+                  	<img class="img-polaroid" src="http://siteimages.gatheringup.com/images/places.jpg" alt="thumbnail">						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(2255678, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						                  </div>  
+
+                  <div class="mini_text">
+                    <h4><a href="/localize?search=Burger+One"><span>2</span>.&nbsp;Burger One</a></h4>
+                    <p>1364 Lexington Avenue<br>
+                    New York, NY 10128<br>
+2127225055<br>                    </p>
+                   <div class="result_cat">
+                   <button class="btn btn-mini cat_tag_mini disabled">Spanish</button>
+                    </div>                           
+                  </div>
+
+              </div>                    
+            <div class="item_content">
+              <div class="dividline"></div>
+                  
+              </div>
+            </div> 
+
+		    		<script type="text/javascript">
+    		setgmapmarker(40.77525900000000, -73.95869300000000, "Burger One Nyc", "2246182");
+    		</script>
+    		
+          <div class="nearby_item mini_item med_mod_2 clearfix">
+              <div class="clearfix" id="2246182" gid="">                
+                  <div class="mini_other">
+                  	<img class="img-polaroid" src="http://siteimages.gatheringup.com/images/places.jpg" alt="thumbnail">						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(2246182, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						                  </div>  
+
+                  <div class="mini_text">
+                    <h4><a href="/localize?search=Burger+One+Nyc"><span>3</span>.&nbsp;Burger One Nyc</a></h4>
+                    <p>1150 Lexington Ave<br>
+                    New York, NY 10075<br>
+2127370095<br>                    </p>
+                   <div class="result_cat">
+                   <button class="btn btn-mini cat_tag_mini disabled">American (New)</button>
+                    </div>                           
+                  </div>
+
+              </div>                    
+            <div class="item_content">
+              <div class="dividline"></div>
+                  
+              </div>
+            </div> 
+
+		
+    <!-- Module End -->         
+
+          </div>
+
+  </body>
+</html>

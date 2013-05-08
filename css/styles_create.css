@@ -942,7 +942,6 @@ form {
         clear: both;
         width: 27em!important;
     }
-
 }
 .nearby_wrap {
     width: 31em;
@@ -1003,7 +1002,7 @@ form {
     border: 1px solid rgba(0,0,0,0.3);
 }
 .nearby_item:nth-of-type(1) {
-    margin-top: 22px;
+    margin-top: 43px;
 }
 
 @media(min-width:979px) {
@@ -2363,8 +2362,7 @@ select:focus {
     /* Create Outing Top */
 
 .create_frame {
-    /*margin-top: 65px;*/
-    /*float: right;*/
+    float: left;
     background-color: white;
     margin: 0;
     box-shadow: 0em 0em 2em #333;
@@ -2386,36 +2384,48 @@ select:focus {
     /*float: left;*/
 }
 .image_unit .btn-upload {
-    position: absolute;
-    top: 28.5em;
-    left: 14em;
+    margin-top: -6em;
+    margin-left: 1em!important;
 }
-.form_sizing h1 {
-    
+.input_reset {
+    outline: none;
+     -webkit-box-shadow:  none!important;
+     -moz-box-shadow:  none!important;
+     box-shadow:  none!important;
+    border: none!important;
+    margin: 0!important;
+    line-height: normal!important;
+    border-radius: 0px!important;
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
 }
-.form_large {
-    font-size: 1.3em !important;
-    font-family: "ubuntu";
-    height: 2em!important;
-    margin-bottom: 0px !important;
-    
+.headline_input {
+    font-family: "arvo"!important;
+    font-size: 2.4em!important;
     width: 100%;
-    border:1px solid #999!important;  
-}
+    margin-top: -0.2em!important;
+    border:1px dashed #ccc!important;
+    margin-bottom: 0.3em!important;
+}    
 .form_normal {
     font-size: 1.1em !important;
     font-family: "ubuntu";
     width: 100%;  
-    margin-bottom: 0px!important;
-    border:1px solid #999!important;      
+    margin-top: 1em!important;
+    margin-bottom: 0em!important;
+    border: 1px dashed #ccc!important;
+    border-radius: 0px!important;
+    background: none!important;
 }
 .area_normal {
-    font-size: 1em !important;
+    font-size: 1.3em !important;
     font-family: "ubuntu";
-    line-height: 1.3em!important; 
+    line-height: 1.4em!important; 
     margin-bottom: 0px!important; 
-    width: 100%;    
-    border: 1px solid #999;  
+    width: 100%;  
+    font-weight: 100; 
+    border:1px dashed #ccc!important; 
 }
 .form_sizing {
     margin-top: 1.0em;
@@ -2423,10 +2433,29 @@ select:focus {
 .content_unit .form_sizing .btn-upload {
     margin-bottom: 1em;
 }
-.form_description {
-    width: 57%;
-    float: right;
+.description_text {
+    font-size: 1.2em !important;
+    font-family: "ubuntu";
+    line-height: 1.4em!important;
+    margin-bottom: 0px!important;
+    width: 100%;
+    font-weight: 100;
+    border: 1px dashed #ccc!important;
+    margin-top: 0.4em!important;
 }
+.caption_text {
+    font-size: 1.2em !important;
+    font-family: "ubuntu";
+    line-height: 1.4em!important;
+    margin-bottom: 0px!important;
+    width: 100%;
+    font-weight: 400;
+    border: 1px dashed #ccc!important;
+}
+.form_description {
+    margin-top: 0.6em;
+}
+
 @media (max-width: 480px) {
     .form_description {
         width: 100%;
@@ -2454,7 +2483,7 @@ select:focus {
 }
 @media (max-width: 1349px) {
     .top_unit .btn-danger {
-        margin-top: 1em;
+        /*margin-top: 1em;*/
     }
 }
 .create_frame .top_unit h2 {
@@ -2489,19 +2518,11 @@ select:focus {
 }
 .label_text_thumb {
     float: right;
-    /*font-weight: 700;*/
     margin-top: 1.2em;
-    /*text-indent: 5px;*/
     color: #444
 }
 #btn-publish {
-    /*width: 200px;*/
-    left: 50%;
-    margin-left: -4.5em;
-    position: relative;
-    font-size: 2em;
-    font-weight: 700;
-    padding: 1.3em;
+    position: relative;    
 }
 .btn-uploadhead {
     /*margin-top: 1.5em;*/
@@ -2509,17 +2530,18 @@ select:focus {
     width: 100%;
 }
 .form_sizing a.btn-upload {
-    border-radius: 3px;
-    margin-left: 0px;
-    clear: both;
-    padding:4px 0px 4px 0px;
-    width: 100%;
-
+    /*border-radius: 3px;*/
+    /*margin-left: 0px;*/
+    /*clear: both;*/
+    /*padding:4px 0px 4px 0px;*/
+    /*width: 100%;*/
+    margin-top: -12em;
 }
 .image_unit span {
-    /*float: right;*/
     font-size: 0.8em;
-    /*margin-top: 1em;*/
+    margin-top: 0.4em;
+    padding-bottom: 1.5em;
+    float: right;   
 }
 
 /* WORKING on preview image positioning */
@@ -2528,9 +2550,9 @@ select:focus {
 
 .content_unit textarea, .top_unit textarea {
 
-    -webkit-box-sizing: content-box!important;
-    -moz-box-sizing: content-box!important;
-    box-sizing: content-box!important;
+    /*-webkit-box-sizing: content-box!important;*/
+    /*-moz-box-sizing: content-box!important;*/
+    /*box-sizing: content-box!important;*/
     /*width: 58%;*/
     
 }
@@ -2540,10 +2562,12 @@ select:focus {
 }   
 
 .placeholder_box {
-    width: 100%;
+    width: 100%
     margin-bottom: 1em;
 }
-
+.preview_img {
+    width: 100%!important;
+}
 @media (max-width:480px){
     .content_unit textarea, .top_unit textarea {
         width: 100%!important;
@@ -2556,9 +2580,6 @@ select:focus {
         margin-top: 1em;
     }
     .image_unit {
-        width: 100%!important;
-    }
-    .preview_img {
         width: 100%!important;
     }
 } 
@@ -2595,13 +2616,13 @@ span.file-input-name {
 @media (max-width: 767px) {
     .top_unit input.btn-danger{
         width: 100%;
-        margin-top: 1em;
+        margin-top: 0em;
     }
 }
 .btn-add {
     font-family: "ubuntu";
-    left: 50%;
-    margin-left: -4.5em;
+    /*left: 50%;*/
+    /*margin-left: -4.5em;*/
     position: relative;
 }
 .btn-save {
@@ -2616,13 +2637,13 @@ span.file-input-name {
     position: absolute;
 }
 .create_frame .dividline {
-    /*margin-top: 1.5em;*/
+    margin-top: 1em;
     margin-bottom: 1em;
     background-color: #777;
 }
 .top_unit h5 {
-    text-align: right;
-    line-height: 3.4em;
+    /*text-align: right;*/
+    /*line-height: 3.4em;*/
 }
 .top_unit {
     /*background-color: rgba(139,185,70,0.8);*/
@@ -2631,7 +2652,7 @@ span.file-input-name {
     margin-right: 0px!important;
     margin-left: 0px!important;
 
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 05px;
@@ -2643,19 +2664,17 @@ span.file-input-name {
 
 .content_btn
 .content_unit span.btn-destory {
-    margin-top: 10px;
+    top: 4px;
+    right: 4px;
 }
 .content_unit {
     position: relative;
-    background-color: rgba(0,0,0,0.1);
-    margin-right: 0px;
-    margin-left: 0px;
-    border-radius: 8px;
-
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
-    margin-bottom: 1em;
+    padding-top: 30px;
+    margin: 1em;
+    border: 2px dashed #c9c9c9;
 }
 .content_unit .form_sizing h2 {
     font-family: arvo;
@@ -2675,12 +2694,13 @@ span.file-input-name {
         padding-top: 0px;
     }   
     .create_container {
-        margin-right: 20px;
-        margin-left: 20px;
+        /*margin-right: 20px;*/
+        /*margin-left: 20px;*/
     }    
     .create_frame h1 {
         font-size: 2em;
         line-height: 1em;
+        margin-top: 2.5em;
     }        
 }
 .tutorialwrap {
@@ -2726,6 +2746,10 @@ span.file-input-name {
     .tutorialwrap {
         display: none;
     }
+}
+.progress_buttons {
+    text-align: center;
+    margin-bottom: 1em;
 }
 
     /* Float Tab 

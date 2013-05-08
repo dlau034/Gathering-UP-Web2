@@ -1003,7 +1003,7 @@ form {
     border: 1px solid rgba(0,0,0,0.3);
 }
 .nearby_item:nth-of-type(1) {
-    margin-top: 22px;
+    margin-top: 43px;
 }
 
 @media(min-width:979px) {

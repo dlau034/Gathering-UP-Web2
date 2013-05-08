@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GatheringUP - Homepage</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+    <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
+    <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
+
+<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-mobile.css"/>
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles_create.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/icomoon/icomoon.css">  
+<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/jquery_override.css">
+  <link href="http://siteimages.gatheringup.com/css/select2.css" rel="stylesheet"/>
+    
+  <script type="text/javascript" src="http://localhost/js/underscore-min.js"></script>
+  <script src="http://localhost/js/jquery-1.7.2.min.js"></script>    
+<!--   <script src="http://localhost/js/jquery-ui-1.10.2.custom.js"></script>  -->   
+  <script src="http://localhost/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://localhost/js/gatheringup-story.js"></script>
+
+     <script src="http://localhost/js/select2.js"></script>
+
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="http://localhost/js/gatheringup-registration.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+    <body>
+  
+  <script src="http://localhost/js/jqBootstrapValidation.js"></script>
+<script type="text/javascript">
+function invitedecline(idinvite)
+{
+	$.get("/invitation/decline?idinvite="+idinvite);
+	$("#"+idinvite+"invl").remove();
+	$("#"+idinvite+"inv").remove();
+	$("#"+idinvite+"invn").remove();
+	$invites=$("#note_on>b").html();
+	$invites=$invites-1;
+	if($invites<=0){
+		$("#note_on").attr('id',"note_off");
+	}
+	$invites=$("#note_on>b").html($invites);
+}
+
+jQuery(document).ready(function() {
+
+$( "#header_search" ).typeahead({
+	source: function (query, process) {
+          return $.get('/bit/localize/search', { search: query }, function (data) {
+      		var name = jQuery.parseJSON(data);
+
+            return process(name);
+        });
+      },
+      updater: function(item) {
+          this.$element[0].value = item;
+          this.$element[0].form.submit();
+          return item;
+      },
+      minLength: 2});
+});
+      
+$(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+  });
+
+  window.isloggedin = 1  ;
+  </script>
+
+<script type="text/html" id='loggedintemplate'>
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        <%=user["firstname"]%> <%=user["lastname"]%> 
+                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+</script>
+
+
+<!-- Header + Navbar -->
+
+
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+		<div class="brand_fix">
+          <a class="brand" href="/">GatheringUP</a>
+        </div> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="/localize">What's Around</a></li>                      
+                  </ul>
+                  <form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
+                    <div class="input-append">
+                      <input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park" value="" autocomplete="off">
+                      <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
+                    </div>                  
+                    </form>
+											<a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a>
+																	
+<span id="loggedinuserspan">
+                                   <!-- Dropdown -->                
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        David Lau                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+
+                    <!-- Not logged In --> 
+               </span>
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+ <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
+
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Register with GatheringUP!</h1>
+     <div class="dividline"></div>
+       <form id="registerform">
+         <div class="clearfix">
+
+           <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>
+               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
+           </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>                  
+                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
+               </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <p class="help-block"></p>   
+                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
+             </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
+             </div>              
+         </div>              
+
+         <div class="control-group">
+             <div class="control">    
+
+               <input 
+                 id="password2nd"
+                 class="form_reg" 
+                 placeholder="Retype Password"
+                 type="password"
+                 name="passwordconf"
+                 data-validation-match-match="password1"    
+                 minlength="8" 
+                 data-validation-minlength-message="Minimum 8 Characters"              
+                 />
+               <p class="help-block"></p>    
+             </div>              
+         </div>       
+<div id="RegistrationErrors"></div>
+
+           <div class="control-group">
+             <div class="control">                  
+               <p class="help-block"></p>                                 
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" type="text" placeholder="Enter Catcha" required>
+               <div ><img src="/captcha"></div>                
+             </div>
+           </div>
+
+         </div>
+
+         <div class="dividline"></div>
+         <button class="btn btn-large btn-green" >Register!</button>
+       </form>
+     <h4>OR</h4>
+<a href=""  id="fb_register" class="facebookurl"  >
+     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
+</a>
+ </div>    
+
+
+
+<!--Forgot Password Modal-->
+<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Forgot Password?</h1>
+     <div class="dividline"></div>
+       <form  id="forgotpasswordform" class="forgot_fields clearfix">
+         <div class="control-group">
+           <div class="controls">
+              <p class="help-block"></p>
+               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
+
+           </div>
+         </div>
+         <button type="submit" class="btn btn-green">Forgot Password!</button>  
+       </form>  
+  </div>
+  
+
+
+<style>
+/*
+**  "bootstrap.file-input" generated css for image upload button. Ripped out css so that we don't have to 
+**  use the plugin.  Plugin doesn't work well with dynamically generated content.
+*/
+.file-input-wrapper { overflow: hidden; position: relative; cursor: pointer; z-index: 1; }
+.file-input-wrapper input[type=file], .file-input-wrapper input[type=file]:focus, .file-input-wrapper input[type=file]:hover { position: absolute; top: 0; left: 0; cursor: pointer; opacity: 0; filter: alpha(opacity=0); z-index: 99; outline: 0; }
+.file-input-name { margin-left: 8px; }'+
+</style>
+
+<script>
+$(document).ready(function(){
+// see gatheringup-story.js
+	window.publishready = 0;
+	window.articleid = 0;
+	
+});
+</script>
+
+<script type="text/html" id='idmodule'>
+        <br><br>
+    <div class="content_btn">
+			<form method="post" action="javascript:void(0);" enctype="multipart/form-data">
+				<input type="hidden" name="articleid" value="<%=articleid%>"> 
+				<input type="hidden" name="idsection" class="sequence"	value="">
+        <div class="row content_unit">          
+          <span class="btn-destory icon-remove"></span>   
+
+        <div class="form_sizing">
+            <h2><span id="icon-pen" data-icon="&#xe008;" aria-hidden="true">&nbsp</span>Step 2</h2>
+            <div class="dividline"></div>
+                  <label>
+                    <span class="icon-num icon-number-15" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp;&nbsp;SUBHEADER</span>  
+                  </label>                   
+            <input class="form_normal" placeholder="SUBHEADER" name="title" type="text"	value="" required>
+        </div>                            
+            <div class="form_sizing">
+                  <label>
+                    <span class="icon-num icon-number-16" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp&nbspLOCATION</span>  
+                  </label>                     
+            <input class="form_normal locationsearch" placeholder="LOCATION" name="place"  type="text" autocomplete="off" value="">
+            </div>     
+            <div class="form_sizing">
+                <div class="image_unit">
+                    <div class="placeholder_box img-polaroid">
+          				<img src="http://siteimages.gatheringup.com/images/placeholder_img.jpg" class="preview_img" alt="">
+                    </div>
+<a class="file-input-wrapper btn btn-upload btn-green">
+Upload Image
+					<input title="Upload Image" type="file"  name="storyitemfile" value="" onchange="uploadimage(this)" >
+<i class="icon-picture icon-white"></i>
+</a>
+                  <br><span></span>                                 
+                </div>
+                <div class="form_description">
+                  <label>
+                    <span class="icon-num icon-number-17" aria-hidden="true"></span>
+                    <span class="clearfix label_text">&nbsp;&nbsp;DESCRIPTION</span>  
+                  </label>       
+                  <textarea class="area_normal textarea_form" placeholder="DESCRIPTION" name="content" id="" rows="14"></textarea>    
+                </div>
+            </div>
+			<input class="btn btn-danger"  type="submit"  onclick="savemodule(this)"  value="Save">       
+        </div>
+			</form>                 
+</div>
+
+</script>
+<script type="text/html" id='idaddmodulebutton'>
+
+        <br>
+        <button class="btn btn-large btn-add btn-green" onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add Location</button>      
+        <br>
+        <br>     
+</script>
+
+<script type="text/html" id='publishbutton'>
+    <div class="dividline"></div>     
+
+    <br><button id="btn-publish" type="submit" class="btn btn-large btn-green" onclick="publishstory()">Publish story!</button>  
+    <br>            
+    <br>            
+</script>
+
+
+    <!-- Create Outing Top -->
+
+    <div class="container create_container"> 
+      <div class="create_frame span7">
+        <h1>Share Your Story</h1>
+        <div class="row top_unit">
+          <form  method="post"  action="#"  id="article" accept-charset="utf-8" enctype="multipart/form-data" >
+            <div class="image_unit">
+              <div class="placeholder_box img-polaroid">
+                  <img src="http://siteimages.gatheringup.com/images/placeholder_img2.jpg" class="preview_img" alt="">
+              </div>
+              <a class="file-input-wrapper btn btn-upload btn-green">Upload Image
+              <input title="Upload Image"  name="storyfile" type="file" value="" onchange="uploadimage(this)">
+              <i class="icon-picture icon-white"></i>
+              </a>
+              <br><span></span>                                 
+            </div>            
+        <input type="hidden" name="articleid" value="0">
+          <!-- <div class="form_sizing"> -->
+            <label>
+              <!-- <span class="icon-num icon-number-10" aria-hidden="true"></span> -->
+              <h1 class="clearfix label_text">HEADLINE</h1>        
+            </label>    
+            <input class="form_large" placeholder="HEADLINE" name="title" type="text" value="" required >
+          <!-- </div> -->
+            <div class="form_sizing">
+           <label>
+              <span class="icon-num icon-number-11" aria-hidden="true"></span>
+              <span class="clearfix label_text">&nbsp;&nbsp;CATEGORIES</span>  
+            </label>
+              <select multiple="multiple" name="category[]" placeholder="CATEGORIES"  value=' ' id="e1" class="full-width">
+<option value="7">Local Residents</option>
+<option value="8">Visitors</option>
+              </select>                     
+          <div class="form_sizing form_description"> 
+                 
+            <label>
+              <span class="icon-num icon-number-12" aria-hidden="true"></span>
+              <span class="clearfix label_text">&nbsp;&nbsp;SUMMARY</span>  
+            </label>             
+            <textarea class="area_normal" placeholder="SUMMARY" name="content" id="" rows="13"></textarea>
+            &nbsp;
+          </div>                        
+          
+            <div class="form_sizing">
+
+            </div>  
+            </div>
+          <input class="btn btn-danger" type="submit" onclick="savedarticle(this)" value="Save">
+       </form>
+        </div>      
+
+  
+    <script>
+  $(function(){ 
+    $("#e1").select2(); 
+    $("input,textarea").not("[type=submit]").jqBootstrapValidation(); 
+	initlocationsearch();
+  });
+  </script>
+  <script src="http://localhost/js/bootstrap.min.js"></script>
+  </body>
+</html>

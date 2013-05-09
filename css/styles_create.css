@@ -2897,6 +2897,22 @@ span.file-input-name {
 .about_unit {
     margin-left: 16em;
 }
+@media (max-width: 580px) {
+    .about_unit {
+        margin-left: auto;
+        clear: both;
+    }
+    .staff_img {
+        float: none!important;
+        margin: 0 auto;
+    }
+    .about_wrap h2 {
+        text-align: center;
+    }
+    .team_member h4 {
+        text-align: center;
+    }    
+}
 .team_member {
     margin-top: 2em;
     margin-bottom: 3em;
@@ -2907,10 +2923,8 @@ span.file-input-name {
     background-image: url("http://siteimages.gatheringup.com/images/david_head_bw.jpg");
     /*margin: 0 auto;*/
     float: left;
-    border: 8px solid #f9f9f9;
-    -webkit-box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
-    -moz-box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
-    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
+    border: 5px solid #f1f1f1;
+    box-shadow: inset 0px 2px 5px rgba(0,0,0,0.8),0px 2px 6px rgba(0,0,0,0.6);
 }
 .about_team .span4 h4{
     text-align: center;

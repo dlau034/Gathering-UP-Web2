@@ -286,6 +286,13 @@ form {
     border-bottom: 1px solid white;
     width: 100%;
 }
+.dashedline {
+    background: none;
+    border-bottom: 2px dashed #ccc;
+    clear: both;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 .alert-CTA {
     background-color: rgba(247,147,30,0.4);
     border: none !important;
@@ -2441,7 +2448,7 @@ select:focus {
     width: 100%;
     font-weight: 100;
     border: 1px dashed #ccc!important;
-    margin-top: 0.4em!important;
+    margin-top: 0.9em!important;
 }
 .caption_text {
     font-size: 1.2em !important;
@@ -2454,6 +2461,12 @@ select:focus {
 }
 .form_description {
     margin-top: 0.6em;
+}
+.added_unit {
+    border: 2px dashed #ccc;
+    margin: 0em 1em 2em 1em!important;
+    padding-top: 1em;
+    padding-bottom: 0!important;
 }
 
 @media (max-width: 480px) {
@@ -2530,12 +2543,7 @@ select:focus {
     width: 100%;
 }
 .form_sizing a.btn-upload {
-    /*border-radius: 3px;*/
-    /*margin-left: 0px;*/
-    /*clear: both;*/
-    /*padding:4px 0px 4px 0px;*/
-    /*width: 100%;*/
-    margin-top: -12em;
+    margin-top: -5em;
 }
 .image_unit span {
     font-size: 0.8em;
@@ -2577,7 +2585,7 @@ select:focus {
         box-sizing: border-box!important;        
     }
     .placeholder_box {
-        margin-top: 1em;
+        /*margin-top: 1em;*/
     }
     .image_unit {
         width: 100%!important;
@@ -2605,6 +2613,7 @@ span.file-input-name {
     padding-left:2em!important;
     padding-right:2em!important;
     margin-top: 1em;
+    margin-bottom: 1em;
     clear: both;
 }
 
@@ -2640,19 +2649,12 @@ span.file-input-name {
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: #777;
-}
-.top_unit h5 {
-    /*text-align: right;*/
-    /*line-height: 3.4em;*/
+    clear: both;
 }
 .top_unit {
-    /*background-color: rgba(139,185,70,0.8);*/
-    /*border: 1px solid #999;*/
-    /*border-radius: 8px;*/
     margin-right: 0px!important;
     margin-left: 0px!important;
 
-    /*padding-bottom: 20px;*/
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 05px;
@@ -2669,12 +2671,10 @@ span.file-input-name {
 }
 .content_unit {
     position: relative;
-    padding-right: 20px;
-    padding-bottom: 20px;
     padding-left: 20px;
-    padding-top: 30px;
-    margin: 1em;
-    border: 2px dashed #c9c9c9;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin: auto;
 }
 .content_unit .form_sizing h2 {
     font-family: arvo;
@@ -2690,7 +2690,7 @@ span.file-input-name {
 @media (max-width: 767px) {
      .top_unit { 
         margin-right: 0px;
-        padding-bottom: 20px;
+        /*padding-bottom: 20px;*/
         padding-top: 0px;
     }   
     .create_container {
@@ -2749,7 +2749,7 @@ span.file-input-name {
 }
 .progress_buttons {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
     /* Float Tab 
@@ -2860,16 +2860,33 @@ span.file-input-name {
     margin-top: 5em;
     padding-left: 2em;
     padding-right: 2em;
+    text-shadow:0px 1px 0px white;
 }
 .about_wrap h2{
     color: #555;
     text-shadow:0px 1px 0px white;
     font-family: arvo;
+    font-weight: 400;
+}
+.about_text h3 {
+    /*color: red;*/
+    font-weight: 100;
+    line-height: 1.3em;
+    margin-bottom: 1em;
+    font-size: 1.6em;
+
+}
+.team_member h4 {
+    color: #F7931E;
+    text-shadow:0px 1px 0px white;
 }
 .about_wrap p{
-    font-size: 1.1em;
+    /*font-size: 0.9em;*/
     line-height: 1.5em;
     text-shadow:0px 1px 0px white;   
+}
+.team_member p {
+    font-size: 0.9em;
 }
 .about_wrap .dividline {
     margin-bottom: 1em;
@@ -2877,11 +2894,19 @@ span.file-input-name {
 .about_text,.about_team {
     margin-bottom: 3em;
 }
+.about_unit {
+    margin-left: 16em;
+}
+.team_member {
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
 .staff_img {
     width: 170px;
     height: 170px;
     background-image: url("http://siteimages.gatheringup.com/images/david_head_bw.jpg");
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    float: left;
     border: 8px solid #f9f9f9;
     -webkit-box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
     -moz-box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
@@ -2906,10 +2931,10 @@ span.file-input-name {
     width: 90%;
     margin: 0 auto;    
 }
-.staff_img:hover{
+/*.staff_img:hover{
     background-image: url("http://siteimages.gatheringup.com/images/david_head.jpg");    background-color: blue;
     border-color: #F7931E;
-}
+}*/
 .about_team .span4 {
     margin-top: 3em;
     margin-bottom: 3em;

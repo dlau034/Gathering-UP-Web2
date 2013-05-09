@@ -151,7 +151,7 @@ form {
 }
 .help-block li {
     margin-bottom: 0px!important;
-    list-style-type: none!important;
+    list-style-type: none!important;d
     text-align: left;
     font-size: 0.9em!important; 
     color: #F7931E;
@@ -164,18 +164,12 @@ form {
     background-color: #f9f9f9;
 }
 .down_arrow {
-    color: white;
-    text-shadow: 0px -1px 0px #999;
     text-align: center;
     margin: 0 auto;
     display: block;
-    margin-top: -6px;
-    font-size: 2.3em!important;
+    margin-top: 3px;
 }
 .up_arrow {
-    text-shadow: 0px 1px 0px #999;
-    margin-top: -4px;
-
     transform:rotate(180deg);
     -ms-transform:rotate(180deg); /* IE 9 */
     -moz-transform:rotate(180deg); /* Firefox */
@@ -888,7 +882,7 @@ form {
     .map_around {
         position: fixed!important;
         margin-left: 350px;
-        bottom: 2em!important;
+        bottom: 1.9em!important;
     }
 }
 
@@ -896,7 +890,7 @@ form {
     .map_around {
         position: fixed!important;
         margin-left: 350px;    
-        bottom: 0em!important;
+        bottom: 1.9em!important;
     }
 }
 

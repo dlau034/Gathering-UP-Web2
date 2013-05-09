@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GatheringUP - Homepage</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+    <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
+    <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
+
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-mobile.css"/>
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles2.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/icomoon/icomoon.css">  
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/nav.css">  
+  
+  <script type="text/javascript" src="/js/underscore-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
+  <script src="js/jquery-ui-1.10.2.custom.js"></script>   
+  <script src="/js/bootstrap.min.js"></script>
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>
+  
+  
+  
+  <!--  Google maps -->
+  <script type="text/javascript">
+
+    $(function() {
+        
+      $( "#accordion" ).accordion({
+        heightStyle: "content"
+      });
+    });
+  </script>
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="/js/gatheringup-registration.js"></script>
+<script type="text/javascript" src="/js/gatheringup-localize.js"></script>
+<script type="text/javascript" src="/js/gatheringup-bookmark.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+    <body onload="initialize()">
+  
+  <script src="/js/jqBootstrapValidation.js"></script>
+<script type="text/javascript">
+function invitedecline(idinvite)
+{
+	$.get("/invitation/decline?idinvite="+idinvite);
+	$("#"+idinvite+"invl").remove();
+	$("#"+idinvite+"inv").remove();
+	$("#"+idinvite+"invn").remove();
+	$invites=$("#note_on>b").html();
+	$invites=$invites-1;
+	if($invites<=0){
+		$("#note_on").attr('id',"note_off");
+	}
+	$invites=$("#note_on>b").html($invites);
+}
+
+jQuery(document).ready(function() {
+
+$( "#header_search" ).typeahead({
+	source: function (query, process) {
+          return $.get('/bit/localize/search', { search: query }, function (data) {
+      		var name = jQuery.parseJSON(data);
+
+            return process(name);
+        });
+      },
+      updater: function(item) {
+          this.$element[0].value = item;
+          this.$element[0].form.submit();
+          return item;
+      },
+      minLength: 2});
+});
+      
+$(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+  });
+
+  window.isloggedin = 0  ;
+  </script>
+
+<script type="text/html" id='loggedintemplate'>
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        <%=user["firstname"]%> <%=user["lastname"]%> 
+                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+</script>
+
+
+<!-- Header + Navbar -->
+
+
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+		<div class="brand_fix">
+          <a class="brand" href="/">GatheringUP</a>
+        </div> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="/localize">What's Around</a></li>                      
+                  </ul>
+                  <form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
+                    <div class="input-append">
+                      <input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park" value="" autocomplete="off">
+                      <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
+                    </div>                  
+                    </form>
+											<a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a>
+																	
+<span id="loggedinuserspan">
+                               <ul id="nav_cta" class="nav pull-right">
+                  <li><a class="btn_nav_cta" href="javascript:void(0)" data-toggle="modal"  onclick="registerpopup()">Register</a></li>            
+                  <li>
+                      <a class="btn_nav_cta dropdown-toggle" href="#" id="style_dp_text" data-toggle="dropdown">
+                        Sign In
+                        <b class="icon-chevron-down icon-white"></b>
+                      </a>
+                      <div id="signin_box" class="dropdown-menu">
+                        <span id="logindropdownspan">
+                        <a href="" class="facebookurl">
+                          <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button>  
+                        </a>
+                          <div class="dividline"></div>  
+     <div id="SideDropLoginErrors"></div>
+                        <form class="clearfix" id="signin_content" method="post"  action="#" accept-charset="UTF-8">
+                          <input class="input_dp" placeholder="Username" id="droploginemail" type="text" name="username">
+                          <input class="input_dp" placeholder="Password" id="droploginpassword" type="password" name="password">
+                          <div id="forgotpw"><a  onclick="logintoforget()">Forgot Password</a></div>
+                          <button class="btn btn-green clearfix">Sign in</button>
+                        </form>
+                          </span>
+                      </div>                
+                  </li>             
+                </ul>            
+               </span>
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+ <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
+
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Register with GatheringUP!</h1>
+     <div class="dividline"></div>
+       <form id="registerform">
+         <div class="clearfix">
+
+           <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>
+               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
+           </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>                  
+                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
+               </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <p class="help-block"></p>   
+                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
+             </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
+             </div>              
+         </div>              
+
+         <div class="control-group">
+             <div class="control">    
+
+               <input 
+                 id="password2nd"
+                 class="form_reg" 
+                 placeholder="Retype Password"
+                 type="password"
+                 name="passwordconf"
+                 data-validation-match-match="password1"    
+                 minlength="8" 
+                 data-validation-minlength-message="Minimum 8 Characters"              
+                 />
+               <p class="help-block"></p>    
+             </div>              
+         </div>       
+<div id="RegistrationErrors"></div>
+
+           <div class="control-group">
+             <div class="control">                  
+               <p class="help-block"></p>                                 
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" type="text" placeholder="Enter Catcha" required>
+               <div ><img src="/captcha"></div>                
+             </div>
+           </div>
+
+         </div>
+
+         <div class="dividline"></div>
+         <button class="btn btn-large btn-green" >Register!</button>
+       </form>
+     <h4>OR</h4>
+<a href=""  id="fb_register" class="facebookurl"  >
+     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
+</a>
+ </div>    
+
+
+
+<!--Forgot Password Modal-->
+<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Forgot Password?</h1>
+     <div class="dividline"></div>
+       <form  id="forgotpasswordform" class="forgot_fields clearfix">
+         <div class="control-group">
+           <div class="controls">
+              <p class="help-block"></p>
+               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
+
+           </div>
+         </div>
+         <button type="submit" class="btn btn-green">Forgot Password!</button>  
+       </form>  
+  </div>
+  
+<<script type="text/javascript">
+
+$( "#Nearby_Search" ).typeahead({
+	source: function (query, process) {
+          return $.get('/bit/localize/search', { search: query }, function (data) {
+      		var name = jQuery.parseJSON(data);
+
+            return process(name);
+        });
+      },
+      updater: function(item) {
+          console.log("working");
+          this.$element[0].value = item;
+          this.$element[0].form.submit();
+          return item;
+      },
+      minLength: 2});
+ </script>
+
+    <div id="nearby_nav">
+        <div id="nav_features">
+            <div class="input-append">
+                  <form  action="/localize" method="get">
+              <input placeholder="Find Something!"  id="Nearby_Search"  name="search" type="text" value=""  autocomplete="off">
+              <button class="btn btn-green btn-large" type="submit">Go!</button>
+              </form>
+            </div>
+            <div class="dividline"></div>            
+            <select>
+              <option>Central Park</option>
+              <option>Highline Park</option>
+              <option>River Side Park</option>
+            </select>  
+        </div>      
+
+        <!-- <div id="nearby_catagories"> -->
+    
+    <div id="accordion">
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Hot Spots</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                <li><a href="/localize">Editor's Picks</a></li>                        
+                <li><a href="#">Cheap Eats</a> </li>
+                <li><a href="#">Local Favorites</a></li>
+                <li><a href="#">Family Friendly</a></li>
+                <li><a href="#">Visitors</i></a></li>                        
+            </ul>
+      </div>
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Food</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                <li><a href="#">Musuems <i class="icon-right icon-play icon-white"></i></a>
+                    <ul class="sub-level">
+                      <li><a class="newline" href="#">Food</a></li>
+                      <li><a href="#">Dining</a></li>
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>
+                      <li><a href="#">Food</a></li>
+                      <li><a href="#">Dining</a></li>
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>  
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>
+                      <li><a href="#">Food</a></li>
+                      <li><a href="#">Dining</a></li></br>          
+                      <li><a class="newline" href="#">Dining</a></li>
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>  
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>
+                      <li><a href="#">Food</a></li>
+                      <li><a href="#">Dining</a></li>                       
+            </ul>
+                </li>
+                <li><a href="#">Cinema</a></li>
+                <li><a href="#">Art Galleries<i class="icon-right icon-play icon-white"></i></a></li>                        
+                <li><a href="#">Cinema</a></li>                     
+                <li><a href="#">Art Galleries</a></li>                        
+                <li><a href="#">Cinema</a></li>
+                <li><a href="#">Art Galleries</a></li>                        
+            </ul>
+      </div>
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Landmarks</h3>
+      <div>
+        <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+      </div> 
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Civic buildings</h3>
+      <div>
+        <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+      </div> 
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Transportation</h3>
+      <div>
+        <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+      </div> 
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Active Lifestyle</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                <li><a href="#">Musuems <i class="icon-right icon-play icon-white"></i></a>
+                    <ul class="sub-level">
+                      <li><a class="newline" href="#">Food</a></li>
+                      <li><a href="#">Dining</a></li>
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>
+                      <li><a href="#">Food</a></li>
+                      <li><a href="#">Dining</a></li>
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>  
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>
+                      <li><a href="#">Food</a></li>
+                      <li><a href="#">Dining</a></li></br>          
+                      <li><a class="newline" href="#">Dining</a></li>
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>  
+                      <li><a href="#">Restuarants</a></li>
+                      <li><a href="#">Delis</a></li>
+                      <li><a href="#">Food</a></li>
+                      <li><a href="#">Dining</a></li>                       
+            </ul>
+                </li>
+                <li><a href="#">Cinema</a></li>
+                <li><a href="#">Art Galleries<i class="icon-right icon-play icon-white"></i></a></li>                        
+                <li><a href="#">Cinema</a></li>                     
+                <li><a href="#">Art Galleries</a></li>                        
+                <li><a href="#">Cinema</a></li>
+                <li><a href="#">Art Galleries</a></li>                        
+            </ul>
+      </div>
+        
+
+    <!-- Nav Listing Unit End -->          
+
+        </div>
+    </div>    
+<script type="text/html" id='locations'>
+<% var max = (((page+1)*numentries)>outdata.length) ? outdata.length:((page+1)*numentries); %>
+<% for(index=(page*numentries); index<max; index++){ %>
+<% item=outdata[index] %>
+	<% if(item.tier == 1){ %>
+            <div class="nearby_item sm_mod clearfix">
+                    <div class="item_text" id="<%= (index+1)%>" gid="">
+                      <h4><a href="javascript:void(0)"><span><%= (index+1)%></span>.&nbsp;<%= item.localname%></a></h4><br>
+                      <div class="result_cat">
+                    <%
+                    	var categories = item.category.split(', ');
+//console.log(categories);
+                    	for(var i = 0; i<categories.length; i++){
+					%>
+                    		<button class="btn btn-mini cat_tag_mini disabled"><%=categories[i]%></button>
+					<%
+                    	}
+                    %>
+                    </div>                          
+                    </div>
+<% var imageurl =  (item.imageurl) ? (item.imageurl):('http://siteimages.gatheringup.com/images/places.jpg') %>
+                      <img class="thumbnail" src="<%=imageurl%>" alt="thumbnail">
+            </div>
+	<% }else if(item.tier == 2){ %>
+            <div class="nearby_item med_mod clearfix">
+                    <div class="item_text" id="<%= (index+1)%>" gid="">
+                      <h4><span><%= (index+1)%></span>.&nbsp;<a href="javascript:void(0)"><%= item.localname %></a></h4>
+                      <p><%= item.address1 %><br>
+                      	<%= item.address2 %><br> 
+						<%= item.city %>, <%= item.statecode %> <%= item.zip %><br>
+						<%= item.phone %><br>
+						<a href="<%= item.url %>" target="_blank"><%= item.url %></a></p>
+                        <div class="result_cat">
+                    <%
+                    	var categories = item.category.split(', ');
+//console.log(categories);
+                    	for(var i = 0; i<categories.length; i++){
+					%>
+                    		<button class="btn btn-mini cat_tag_mini disabled"><%=categories[i]%></button>
+					<%
+                    	}
+                    %>
+                        </div>
+                    </div>
+                    <div class="item_other">
+					<% var imageurl =  (item.imageurl) ? (item.imageurl):('http://siteimages.gatheringup.com/images/places.jpg') %>
+                      <img class="thumbnail" src="<%=imageurl%>" alt="thumbnail">
+						<% if(bookmarks[item.idlocalize]){%>
+						<button class="btn-orange btn btn-green btn-mini"  onclick="toggleplace(<%=item.idlocalize%>, this)">Bookmarked</button>
+						<% }else{ %>
+						<button class="CTA_button btn btn-green btn-mini"  onclick="toggleplace(<%=item.idlocalize%>, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						<% } %>
+                    </div>
+            </div>
+	<% }else{ %>
+            <div class="nearby_item">
+                <div class="item_top_info clearfix">                
+                    <div class="item_text" id="<%= (index+1)%>" gid="">
+                      <h4><a href="javascript:void(0)"><span><%= (index+1)%></span>.&nbsp;<%= item.localname %></a></h4>
+                      <p><%= item.address1 %><br>
+                      	<%= item.address2 %><br> 
+						<%= item.city %>, <%= item.statecode %> <%= item.zip %><br>
+						<%= item.phone %><br>
+						</p>
+                    <div class="result_cat">
+                    <%
+                    	var categories = item.category.split(', ');
+//console.log(categories);
+                    	for(var i = 0; i<categories.length; i++){
+					%>
+                    		<button class="btn btn-mini cat_tag_mini disabled"><%=categories[i]%></button>
+					<%
+                    	}
+                    %>
+                    </div>     
+                                          
+                    </div>
+                    <div class="item_other">
+<% var imageurl =  (item.imageurl) ? (item.imageurl):('http://siteimages.gatheringup.com/images/places.jpg') %>
+                      <img class="thumbnail" src="<%=imageurl%>" alt="thumbnail">
+						<% if(bookmarks[item.idlocalize]){%>
+						<button class="btn-orange btn btn-green btn-mini"  onclick="toggleplace(<%=item.idlocalize%>, this)">Bookmarked</button>
+						<% }else{ %>
+						<button class="CTA_button btn btn-green btn-mini"  onclick="toggleplace(<%=item.idlocalize%>, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						<% } %>
+                    </div>   
+<div class="item_tab"><span class="down_arrow" aria-hidden="true" data-icon="&#xf0d8;"></span></div>   
+                </div>
+                <div class="item_content">
+                    <div class="dividline"></div>
+                    <a href="<%= item.url %>" target="_blank"><%= item.url %></a>
+                    <p><%= item.directions %>
+                    <br>    
+                    <br>    
+                    <%= item.description %>
+                    <br>    
+                    <br>                       
+                    Opening Hours<br>
+                    <%= item.phone%>
+                    </p>       
+                </div>              
+            </div>
+<%
+	}
+}
+%>
+</script>
+
+<script type="text/javascript">
+//var bookmarks={};
+var bookmarks = {};
+		
+</script>
+
+    <div id="map_canvas" class="map_around" style="height: 100%; width:100%; float: left; position: fixed;">
+<!--         <iframe  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=google+map+zoom+buttons&amp;aq=f&amp;ie=UTF8&amp;hl=en&amp;hq=zoom+buttons&amp;hnear=New+York&amp;t=m&amp;ll=40.770954,-73.975067&amp;spn=0.011375,0.018239&amp;z=15&amp;output=embed">
+</iframe> -->
+    </div>    
+    <div class="bg_wrap"></div>
+    <div class="nearby_wrap">
+        <!-- <div id="nearby_box">  -->
+
+</div> 
+    <!-- Nearby Column -->  
+<script type="text/javascript">
+window.tierhidden;
+window.tierdisplay;
+
+function displayresults(){
+	window.template = $('#locations').html();
+	var temp1 = _.template(template, {outdata : window.tierdisplay, page: window.searchpage, numentries: window.searchshow});
+	//	$( temp1 ).appendTo("#nearby_wrap");
+	$( ".nearby_wrap" ).append(temp1);
+	
+	window.searchpage++;	
+	
+	jQuery.each(window.tierdisplay, function(index, value){
+		var count = index+1;
+		setgmapnumbermarker(value.latitude, value.longitude, value.destname, count);
+	//	console.log("count: "+count+", shownum: "+window.searchshow);
+		if(count== window.searchshow){
+	//		console.log("counts equal");
+			return false;
+		}
+	});
+}
+
+$(function() {
+	var getgeo = 0;
+
+
+	if(getgeo){
+    	window.postdata={latitude: 40.768169, longitude: -73.981132, latrange: 0.002, lonrange: 0.002};
+	    navigator.geolocation.getCurrentPosition(function (position){
+		    window.postdata={latitude: position.coords.latitude, longitude: position.coords.longitude, latrange: 0.002, lonrange: 0.002};
+	    } );
+
+	    $.ajax({
+	        type: "POST",
+	        url: "/localize/getnearbyplacesgps",
+	        data: window.postdata,
+	        dataType: 'json',
+	        success: function(data){
+	        	if(data.status=="true"){
+	    			window.tierhidden = data.tierhidden;
+	    			jQuery.each(window.tierhidden, function(index, value){
+//	    				console.log("index: "+index+"value:"+value.latitude+", "+value.longitude);
+	    				setgmapiconmarker(value.latitude,value.longitude, value.category, value.imageurl);
+	    			});
+	    			window.tierdisplay = data.tierdisplay;
+	    			window.searchmax = window.tierdisplay.length;
+
+	    			displayresults();
+	        	}else{
+		        	
+	        	}
+	        	
+	        },
+	        error: function(errMsg, ajaxOptions, thrownError) {
+        		console.log(errMsg);
+	        }
+		}
+		);
+		
+	}else{
+			window.tierhidden = [];
+			jQuery.each(window.tierhidden, function(index, value){
+//				console.log("index: "+index+"value:"+value.latitude+", "+value.longitude);
+				setgmapiconmarker(value.latitude,value.longitude, value.category, value.imageurl);
+			});
+			window.tierdisplay = [{"idlocalize":"22602181","entityid":null,"destname":"American Museum of Natural History","altname":null,"localname":"American Museum of Natural History","desttype":"Culture","destsubtype":"Museum","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":"Central Park West at 79th Street","address2":"","zip":"10024","latitude":"40.78082656700008","longitude":"-73.97364816499993","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"(212) 769-5100","cost":null,"url":"http:\/\/www.amnh.org\/","imageurl":null,"tier":"3","importance":null,"category":"Editor's Picks"},{"idlocalize":"22602235","entityid":null,"destname":"Metropolitan Museum of Art (Met)","altname":null,"localname":"Metropolitan Museum of Art (Met)","desttype":"Culture","destsubtype":"Museum","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":"1000 Fifth Avenue","address2":"","zip":"10028","latitude":"40.77942387500008","longitude":"-73.96345111099993","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"(212) 535-7710","cost":null,"url":"http:\/\/www.metmuseum.org\/","imageurl":null,"tier":"3","importance":null,"category":"Editor's Picks"}];
+			window.searchmax = window.tierdisplay.length;
+			displayresults();
+
+	}
+	
+	$(window).scroll(function(){  
+        if($(window).scrollTop() >= $(document).height() - ($(window).height()+120)){  
+    		if((window.searchpage*window.searchshow + 1)<window.searchmax){
+	        	var temp1 = _.template(window.template, {outdata : window.tierdisplay, page: window.searchpage, numentries: window.searchshow});
+	//        	$( temp1 ).appendTo("#nearby_wrap");
+	        	$( ".nearby_wrap" ).append(temp1);
+//	        	console.log("page: "+ window.searchpage+", numshow:"+window.searchshow+", max: "+window.searchmax);
+
+	        	jQuery.each(window.tierdisplay, function(index, value){
+	        		var count = index+1;
+//	        		console.log("count: "+count+", shownum: "+window.searchshow+", page:"+window.searchpage);
+	        		if(count>=(window.searchpage*window.searchshow) && count < ((window.searchpage+1)*window.searchshow)){
+
+	                  	var myLatlng = new google.maps.LatLng(value.latitude,value.longitude);
+//		        		console.log("lat: "+value.latitude+", lon: "+value.longitude);
+	                  	
+	                	window.marker[count] = new google.maps.Marker({
+	                	    position: myLatlng,
+	                	    title: value.destname,
+	                	    animation: google.maps.Animation.DROP,
+	                  	    icon: 'http://siteimages.gatheringup.com/mapsicon/'+count+'.png'
+//	                  	    icon: 'https://chart.googleapis.com/chart?chst=d_map_spin&chld=.6%7C0%7C44dBbC%7C11%7Cb%7C'+count
+	                	});
+	                	window.marker[count].setMap(window.mapgathering );
+
+	    	        	var divnum = document.getElementById(count);
+//	    	    		$(divnum).attr("gid", i);
+	    	    		google.maps.event.addDomListener(divnum, 'click', function(e) {
+	    	        		count = $(this).attr("id");
+	    	    			toggleBounce(count);
+	    	   			});
+
+//		        		console.log("count: "+count+", shownum: "+window.searchshow);
+	        		}
+	        		if(count == ((window.searchpage+1)*window.searchshow)){
+//	        			console.log("counts equal");
+	        			return false;
+		        	}
+	        	});
+
+	        	// Reset event handlers because we reloaded new data.
+	        	$(".item_tab").unbind('click');
+	        	$(".nearby_item").off('mouseenter mouseleave');
+	        	
+	        	$(".item_tab").click(function() {
+//	        		console.log("parent");
+	        		$(this).parent().siblings(".item_content").slideToggle();
+	        	});
+	        	$(".nearby_item").hover(function(){
+//	        		console.log("CTA_button2");
+	        		$(this).find(".CTA_button").toggle();
+	        	});
+	        	window.searchpage++;	
+    		}
+        }  
+	});   
+	
+	$(".nearby_item").hover(function(){
+//		console.log("CTA_button2");
+		$(this).find(".CTA_button").toggle();
+	});
+
+	$(".item_tab").click(function(){
+		$(this).parent().siblings(".item_content").slideToggle();
+		$(this).children("span").toggleClass("up_arrow");
+	});
+});
+</script>
+    
+  <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -965,8 +965,9 @@ form {
 .sm_mod img {
     width: 4em;
     float: right;
-    position: relative;
-    margin: 10px 10px 0px 0px;     
+    position: absolute;
+    right: 0;
+    margin: 10px 6px 0px 0px;     
 }
 .sm_mod .item_text {
     width: 70%;

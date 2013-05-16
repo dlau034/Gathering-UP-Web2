@@ -1836,7 +1836,7 @@ select:focus {
     -------------------------------------------------- */
 
 /*Creates Top Offset;*/
-
+ 
 #module_wrap {
     margin-top: 1em;
     /*background-color: red;*/
@@ -2081,7 +2081,6 @@ select:focus {
 }
 #Outing_wrap .img-content{
     width: 100%;
-    /*background-color: red;*/
 }
 #Outing_wrap .btn_cta {
     margin-top: 1em;
@@ -2157,6 +2156,9 @@ select:focus {
 }
 .facebook_sm {
     font-size: 15px;
+}
+#map_canvas_create {
+    z-index: -1;
 }
 
     /* Perfect Outing Page
@@ -2429,7 +2431,7 @@ select:focus {
     font-size: 1.3em !important;
     font-family: "ubuntu";
     line-height: 1.4em!important; 
-    margin-bottom: 0px!important; 
+    margin-bottom: 1em!important; 
     width: 100%;  
     font-weight: 100; 
     border:1px dashed #ccc!important; 
@@ -2857,7 +2859,7 @@ span.file-input-name {
     /* */
 
 .about_wrap {
-    margin-top: 5em;
+    margin-top: 1.2em;
     padding-left: 2em;
     padding-right: 2em;
     text-shadow:0px 1px 0px white;
@@ -2953,7 +2955,19 @@ span.file-input-name {
     margin-top: 3em;
     margin-bottom: 3em;
 }
-
+.about_img {
+    width: 100%;
+    margin-top: 1em;
+}
+@media (max-width: 768px) {
+    .about_img {
+        height: 200px;    
+        max-width: none!important;
+        width: auto;
+        margin-left: -5em;
+        
+    }
+}
     /* Change Password Page
     -------------------------------------------------- */
 

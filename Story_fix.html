@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>GatheringUP - Homepage</title>
+	        <title>GatheringUp - Walking tour through the Upper East Side</title>
     <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
-    <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
-    <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="description" content="GatheringUp is a webapp that allows you to create and share location based picture stories.">
+    <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Central Park, Fun, stories, neighborhood, upper west side, upper east side, uws, ues">
+
+<meta property="fb:app_id"          content="444845832200364" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Walking tour through the Upper East Side"/>
+<meta property="og:url" content="http://www.gatheringup.com/story?articleid=293"/>
+<meta property="og:image" content="http://images.gatheringup.com/images/large/517edc425a3b0.jpg"/>
+<meta property="og:site_name" content="GatheringUp"/>
+<meta property="og:description" content="Had some free time last Friday, so i decided to go for a walkabout in the Upper East Side that Morning."/>
+
 
 <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
   <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-responsive.css"/>
 	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-mobile.css"/>
 	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles2.css">
   <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/icomoon/icomoon.css">  
-<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/jquery_override.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/jquery_override.css">
   <link href="http://siteimages.gatheringup.com/css/select2.css" rel="stylesheet"/>
     
   <script type="text/javascript" src="/js/underscore-min.js"></script>
-    <script src="/js/jquery-1.7.2.min.js"></script>    
-<!--   <script src="/js/jquery-ui-1.10.2.custom.js"></script>  -->   
-  <script src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/gatheringup-published.js"></script>
-<script type="text/javascript" src="/js/gatheringup-bookmark.js"></script>
-
-     <script src="/js/select2.js"></script>
-     <script src="/js/script.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>    
+  <script src="/js/jquery-ui-1.10.2.custom.js"></script>    
+  <script type="text/javascript" src="/js/gatheringup-published.js"></script>
+  <script type="text/javascript" src="/js/gatheringup-bookmark.js"></script>
+  <script src="/js/select2.js"></script>
+  <script src="/js/script.js"></script>
 
 
 	<!-- Google Font -->
 
-     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
-     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
-     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+  <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>
 
 <script type="text/javascript" src="/js/gatheringup-registration.js"></script>
 <script type="text/javascript">
@@ -55,7 +62,7 @@
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=444845832200364";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   <script src="/js/jqBootstrapValidation.js"></script>
@@ -96,7 +103,7 @@ $(function(){
     $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
   });
 
-  window.isloggedin = 0  ;
+  window.isloggedin = 1  ;
   </script>
 
 <script type="text/html" id='loggedintemplate'>
@@ -144,7 +151,7 @@ $(function(){
             <div id="collapse_content" class="nav-collapse collapse"> 
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
-                  <li><a href="/localize">What's Around</a></li>                      
+                  <li><a href="/localize"><img src="http://siteimages.gatheringup.com/images/around.png" alt="">What's Around</a></li>                      
                   </ul>
                   <form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
                     <div class="input-append">
@@ -152,35 +159,43 @@ $(function(){
                       <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
                     </div>                  
                     </form>
-											<a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a>
-																	
-<span id="loggedinuserspan">
-                               <ul id="nav_cta" class="nav pull-right">
-                  <li><a class="btn_nav_cta" href="javascript:void(0)" data-toggle="modal"  onclick="registerpopup()">Register</a></li>            
-                  <li>
-                      <a class="btn_nav_cta dropdown-toggle" href="#" id="style_dp_text" data-toggle="dropdown">
-                        Sign In
-                        <b class="icon-chevron-down icon-white"></b>
-                      </a>
-                      <div id="signin_box" class="dropdown-menu">
-                        <span id="logindropdownspan">
-                        <a href="" class="facebookurl">
-                          <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button>  
-                        </a>
-                          <div class="dividline"></div>  
-     <div id="SideDropLoginErrors"></div>
-                        <form class="clearfix" id="signin_content" method="post"  action="#" accept-charset="UTF-8">
-                          <input class="input_dp" placeholder="Username" id="droploginemail" type="text" name="username">
-                          <input class="input_dp" placeholder="Password" id="droploginpassword" type="password" name="password">
-                          <div id="forgotpw"><a  onclick="logintoforget()">Forgot Password</a></div>
-                          <button class="btn btn-green clearfix">Sign in</button>
-                          </span>
-                        </form>
-                      </div>                
-                  </li>             
-                </ul>            
-               </span>
+											<a id="note_on" class="dropdown-toggle"	data-toggle="dropdown"  href=""><b>1</b></a>
+	
+                      	<ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
+                        <div style="max-height: 21em; overflow-y: auto;" class="note_box">
+																		<div class="roundedbox" id="345inv">
+                            <div class="breakline_note" id="345invl"></div>
 
+                                <div class="imagebox" >
+						<img class="img-polaroid" src="http://graph.facebook.com/kenneth.su.505/picture" title="Kenneth Su" width="37"><br>						                                </div>
+							<div class="note" id="345invn">Kenneth Su has invited you to join gathering( <a href="/datebook?idinvite=345">
+								Art Exhibit: Fish & Crushed Can Story- Mixed Media </a>)<br>
+								<a href="/invitation/accept?idinvite=345">Accept</a> | 
+								<a href="javascript:void(0);" onclick="invitedecline(345)">Decline</a>
+							</div>
+						</div>
+						                            </div>                                    
+                        </ul>
+											
+<span id="loggedinuserspan">
+                                   <!-- Dropdown -->                
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        David Lau                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+
+                    <!-- Not logged In --> 
+               </span>
             </div>
          </div>
       </div>
@@ -242,7 +257,7 @@ $(function(){
            <div class="control-group">
              <div class="control">                  
                <p class="help-block"></p>                                 
-               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" type="text" placeholder="Enter Catcha" required>
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" type="text" placeholder="Enter Captcha" required>
                <div ><img src="/captcha"></div>                
              </div>
            </div>
@@ -301,9 +316,9 @@ var bookmarks = {};
             <div class="author clearfix">
                         <img class="img-polaroid img-circle" src="http://graph.facebook.com/902555095/picture" alt="thumbnail">
             
-              <h5>By David Lau</br> Published 2013-04-29 17:16:12</h5>            
+              <h5>By David Lau</br> Published 2013-05-16 17:16:21</h5>            
             </div>
-            <div class="fb-like" data-href="http://www.gatheringup.com/story?articleid=293" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true"></div>
+<div class="fb-like" data-href="http://www.gatheringup.com/story?articleid=293" data-send="true" data-layout="button_count" data-width="280" data-show-faces="true"></div>
 <a href="https://twitter.com/share" class="twitter-share-button">tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
@@ -312,12 +327,13 @@ var bookmarks = {};
 <button class="btn btn-mini cat_tag">Active</button>
 <button class="btn btn-mini cat_tag">Everybody</button>
           </div>      
-              <!-- <div class="dividline"></div> -->
+              <div class="dividline"></div>
               
-            
+              <h3>Had some free time last Friday, so i decided to go for a walkabout in the Upper East Side that Morning.</h3>
                                  
-              <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517edc90befb6.JPG" alt="">
-              <!-- <h4>Beautiful Architecture</h4> -->
+                            <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517edc90befb6.JPG" alt="">
+                
+              <h4>Beautiful Architecture</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut purus ut libero porta interdum dignissim at quam. Vivamus et sem tortor, vitae accumsan magna. Etiam vitae dui sed augue volutpat vehicula iaculis ut dui. Vivamus congue porta feugiat. 
 </br>
 </br>
@@ -325,7 +341,7 @@ Vestibulum imperdiet mattis erat vel convallis. Mauris aliquet pellentesque nisl
               </p>
                             <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517ee2ebd4aee.JPG" alt="">
                 
-              <!-- <h4>Photographing weird stuff that morning</h4> -->
+              <h4>Photographing weird stuff that morning</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut purus ut libero porta interdum dignissim at quam. 
 </br>
 </br>
@@ -336,7 +352,7 @@ Vestibulum imperdiet mattis erat vel convallis. Mauris aliquet pellentesque nisl
               </p>
                             <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517edcf47a042.JPG" alt="">
                 
-              <!-- <h4>Searching for a place for lunch</h4> -->
+              <h4>Searching for a place for lunch</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut purus ut libero porta interdum dignissim at quam. Vivamus et sem tortor, vitae accumsan magna. Etiam vitae dui sed augue volutpat vehicula iaculis ut dui. Vivamus congue porta feugiat. 
 </br>
 </br>
@@ -344,7 +360,7 @@ Vestibulum imperdiet mattis erat vel convallis. Mauris aliquet pellentesque nisl
               </p>
                             <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/517edd7be6053.JPG" alt="">
                 
-              <!-- <h4>Nom nom nom....cheese steak sandwich</h4> -->
+              <h4>Nom nom nom....cheese steak sandwich</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut purus ut libero porta interdum dignissim at quam. Vivamus et sem tortor, vitae accumsan magna. Etiam vitae dui sed augue volutpat vehicula iaculis ut dui. Vivamus congue porta feugiat. 
 </br>
 </br>
@@ -362,38 +378,40 @@ Nunc sagittis nulla sed massa cursus sed vehicula velit.
 
     <div class="Out_nearby_wrap">
         		<script type="text/javascript">
-    		setgmapmarker(40.78540259000005, -73.95718705799993, "Jewish Museum", "22602226");
+    		setgmapmarker(40.78082656700008, -73.97364816499993, "American Museum of Natural History", "22602181");
     		</script>
     		        <div id="nearby_box"> 
 
           <div class="nearby_item mini_item">
-              <div class="clearfix" id="22602226" gid="">                
+              <div class="clearfix" id="22602181" gid="">                
                   <div class="mini_other">
-                  	<img class="img-polaroid" src="http://siteimages.gatheringup.com/images/places.jpg" alt="thumbnail">						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(22602226, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
-						    				
+                    <div class="thumbnail_box">
+                  	 <img src="https://irs3.4sqi.net/img/general/width320/50768454_keaj0u0_Y_Ec-IRhjjkZ9YNYIa9nLmIYGoqbmUu-tP8.jpg" alt="thumbnail">						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(22602181, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						    		</div> 		
                   </div>  
 
                   <div class="mini_text">
-                    <h4><a href="/localize?search=Jewish+Museum"><span>1</span>.&nbsp;Jewish Museum</a></h4>
-                    <p>1109 Fifth Ave</br>
-                    New York, NY 10128<br>
-(212) 423-3200<br>
-<a href="http://www.thejewishmuseum.org/index.php" target="_blank">Website</a>
+                    <h4><a href="/localize?search=American+Museum+of+Natural+History"><span>1</span>.&nbsp;American Museum of Natural History</a></h4>
+                    <p>Central Park West at 79th Street</br>
+                    New York, NY 10024<br>
+                    (212) 769-5100<br><br>
+                    <a href="http://www.amnh.com"><span class="icon-globe"></span>&nbspWebsite</a>
                     </p>
                    <div class="result_cat">
                    <button class="btn btn-mini cat_tag_mini disabled">Museums</button>
+<button class="btn btn-mini cat_tag_mini disabled">Editor's Picks</button>
                     </div>                       
                   </div>
 
               </div>       
             <div class="item_tab">
-            <span class="down_arrow" aria-hidden="true" data-icon="&#xf0d8;"></span>
+            <span class="icon-chevron-down icon-white down_arrow"></span>
             </div>                
             <div class="item_content">
               <div class="dividline"></div>                      
-                  <p>                  </br>    
+                  <p>The American Museum of Natural History is one of the largest and most celebrated museums in the worlds. Located on the Upper West Side, the museum contains 27 interconnecting buildings, with 45 permanet exhibition halls. With over 32 million specimens of plants, fossils, minerals, rocks, metorities, animals and much more. If you love science & culture, then the American Museum of Natural History is the place is be.                  </br>    
                                     </br>                       
-                                  </div>
+                    Open daily from 10am - 5:45pm              </div>
             </div>              
           </div>
               		<script type="text/javascript">
@@ -454,6 +472,29 @@ Nunc sagittis nulla sed massa cursus sed vehicula velit.
     <!-- Module End -->         
 
           </div>
+    <!-- Footer -->
+      <div class="footer2">
+        <p class="footer_bold">Copyright Gathering Up Ltd 2013. All rights reserved.&nbsp|
+          <a href="https://www.facebook.com/GatheringUp"><span class="icon-datebookfacebook"></span>Facebook</a>  |
+          <a href="https://twitter.com/Gathering_UP"><span class="icon-twitter"></span>Twitter</a>  |
+          <a href="http://gatheringup.wordpress.com"><span class="icon-wordpress"></span>Blog</a>  |
+          <a href="/about">About Us</a>  |
+          <a href="/about/termsofuse">Terms of Use</a>  |
+          <a href="/about/privacy">Privacy Policy</a> |
+        </p>
+      </div>
 
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/bootstrap.min.js"></script>
+<!--Carousel Javascript-->    
+    <script type="text/javascript"> 
+
+    
+      $(function(){
+    	  $("#regpassword").tooltip();
+      });
+    </script>
   </body>
 </html>

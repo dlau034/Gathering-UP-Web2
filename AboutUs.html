@@ -53,7 +53,7 @@
   
     <!-- Navigations Unit -->
 
-    <div class="navbar navbar_container">
+<div class="navbar navbar_container">
       <div class="navbar-inner nav_bar_style navbar-fixed-top">
         <div class="container">
 
@@ -66,58 +66,62 @@
         </a>
 
           <!-- Change Out the Logo -->          
-
-          <a class="brand" href="index.html">GatheringUP</a> 
+    <div class="brand_fix">
+          <a class="brand" href="/">GatheringUP</a>
+        </div> 
 
           <!-- Elements inside will disappear when mobile -->          
             <div id="collapse_content" class="nav-collapse collapse"> 
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
-                  <li><a href="Whats_around.html">What's Around</a></li>                      
+                  <li><a href="/localize">What's Around</a></li>                      
                   </ul>
-                  <form id="header_search_wrap" class="navbar-search">
-                    <input id="header_search" type="text" class=" span4 search-query" placeholder="Search for places, locations, dining etc . . .">
-                  </form>
-
-                    <!-- Dropdown -->               
-
-                    <!-- Not logged In --> 
-
-                <ul id="nav_cta" class="nav pull-right">
-                  <li><a class="btn_nav_cta" href="#register_modal" data-toggle="modal">Register</a></li>            
+                  <form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
+                    <div class="input-append">
+                      <input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park" value="" autocomplete="off">
+                      <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
+                    </div>                  
+                    </form>
+                      <a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
+                                  
+<span id="loggedinuserspan">
+                               <ul id="nav_cta" class="nav pull-right">
+                  <li><a class="btn_nav_cta" href="javascript:void(0)" data-toggle="modal" onclick="registerpopup()">Register</a></li>            
                   <li>
                       <a class="btn_nav_cta dropdown-toggle" href="#" id="style_dp_text" data-toggle="dropdown">
                         Sign In
                         <b class="icon-chevron-down icon-white"></b>
                       </a>
                       <div id="signin_box" class="dropdown-menu">
-                        <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button> 
-                          <form class="clearfix" id="signin_content" method="post"action="login" accept-charset="UTF-8">
-                          <div class="dividline"></div>                        
-                            <div class="control-group">                            
-                              <span class="help-block"></span>
-                                <input class="input_dp" placeholder="Email" type="email" name="Email" required>
-                            </div>
-                            <div class="control-group">                              
-                              <p class="help-block"></
-                                <input class="input_dp" placeholder="Password" type="password" name="password" required>                                
-                            </div>
-                          <div id="forgotpw"><a href="#register_modal" data-toggle="modal">Forgot Password</a></div>
+                        <span id="logindropdownspan">
+                        <a href="https://www.facebook.com/dialog/oauth?client_id=444845832200364&amp;redirect_uri=http%3A%2F%2Fwww.gatheringup.com%2Fuser%2Ffacebook&amp;state=95696bab9d935a2d763b732bbbdc0f0a" class="facebookurl">
+                          <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button>  
+                        </a>
+                          <div class="dividline"></div>  
+     <div id="SideDropLoginErrors"></div>
+                        <form class="clearfix" id="signin_content" method="post" action="#" accept-charset="UTF-8">
+                          <input class="input_dp" placeholder="Username" id="droploginemail" type="text" name="username">
+                          <input class="input_dp" placeholder="Password" id="droploginpassword" type="password" name="password">
+                          <div id="forgotpw"><a onclick="logintoforget()">Forgot Password</a></div>
                           <button class="btn btn-green clearfix">Sign in</button>
                         </form>
+                          </span>
                       </div>                
                   </li>             
                 </ul>            
+               </span>
 
             </div>
          </div>
       </div>
-    </div>    
+    </div> 
 
     <!-- Featured Unit -->
+    <img class="about_img" src="images/team_img.jpg" alt="">
     
-
     <div class="container about_wrap">
+      <h1>About GatheringUP</h1>
+      <div class="dividline"></div>
       <div class="about_text">
         
         
@@ -141,7 +145,7 @@
         <!-- <div class="row"> -->
 
         <div class="team_member">
-          <div class="staff_img img-circle"></div>
+          <img src="images/ken.jpg" class="staff_img img-circle">
             <div class="about_unit">            
               <h2>Kenneth Su</h2>
               <h4>FOUNDER</h4>
@@ -157,7 +161,7 @@
         
 
         <div class="team_member">
-          <div class="staff_img img-circle"></div>
+          <img src="images/david.jpg" class="staff_img img-circle">
             <div class="about_unit">            
               <h2>David Lau</h2>
               <h4>LEAD DESIGNER</h4>
@@ -170,7 +174,7 @@
 
 
         <div class="team_member">
-          <div class="staff_img img-circle"></div>
+          <img src="images/ashley.jpg" class="staff_img img-circle">
             <div class="about_unit">            
               <h2>Ashley Villarreal</h2>
               <h4>Writer</h4>

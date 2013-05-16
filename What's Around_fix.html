@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GatheringUP - Homepage</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+    <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple.">
+    <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
+
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-mobile.css"/>
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles2.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/icomoon/icomoon.css">  
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/nav.css">  
+  
+  <script type="text/javascript" src="/js/underscore-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
+  <script src="js/jquery-ui-1.10.2.custom.js"></script>   
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>
+  
+  
+  
+  <!--  Google maps -->
+  <script type="text/javascript">
+
+    $(function() {
+        
+      $( "#accordion" ).accordion({
+        heightStyle: "content"
+      });
+    });
+  </script>
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="/js/gatheringup-registration.js"></script>
+<script type="text/javascript" src="/js/gatheringup-localize.js"></script>
+<script type="text/javascript" src="/js/gatheringup-bookmark.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+    <body onload="initialize()">
+  
+  <script src="/js/jqBootstrapValidation.js"></script>
+<script type="text/javascript">
+function invitedecline(idinvite)
+{
+	$.get("/invitation/decline?idinvite="+idinvite);
+	$("#"+idinvite+"invl").remove();
+	$("#"+idinvite+"inv").remove();
+	$("#"+idinvite+"invn").remove();
+	$invites=$("#note_on>b").html();
+	$invites=$invites-1;
+	if($invites<=0){
+		$("#note_on").attr('id',"note_off");
+	}
+	$invites=$("#note_on>b").html($invites);
+}
+
+jQuery(document).ready(function() {
+
+$( "#header_search" ).typeahead({
+	source: function (query, process) {
+          return $.get('/bit/localize/search', { search: query }, function (data) {
+      		var name = jQuery.parseJSON(data);
+
+            return process(name);
+        });
+      },
+      updater: function(item) {
+          this.$element[0].value = item;
+          this.$element[0].form.submit();
+          return item;
+      },
+      minLength: 2});
+});
+      
+$(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+  });
+
+  window.isloggedin = 1  ;
+  </script>
+
+<script type="text/html" id='loggedintemplate'>
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        <%=user["firstname"]%> <%=user["lastname"]%> 
+                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+</script>
+
+
+<!-- Header + Navbar -->
+
+
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+		<div class="brand_fix">
+          <a class="brand" href="/">GatheringUP</a>
+        </div> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="/localize"><img src="http://siteimages.gatheringup.com/images/around.png" alt="">What's Around</a></li>                      
+                  </ul>
+                  <form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
+                    <div class="input-append">
+                      <input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park" value="" autocomplete="off">
+                      <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
+                    </div>                  
+                    </form>
+											<a id="note_on" class="dropdown-toggle"	data-toggle="dropdown"  href=""><b>1</b></a>
+	
+                      	<ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
+                        <div style="max-height: 21em; overflow-y: auto;" class="note_box">
+																		<div class="roundedbox" id="345inv">
+                            <div class="breakline_note" id="345invl"></div>
+
+                                <div class="imagebox" >
+						<img class="img-polaroid" src="http://graph.facebook.com/kenneth.su.505/picture" title="Kenneth Su" width="37"><br>						                                </div>
+							<div class="note" id="345invn">Kenneth Su has invited you to join gathering( <a href="/datebook?idinvite=345">
+								Art Exhibit: Fish & Crushed Can Story- Mixed Media </a>)<br>
+								<a href="/invitation/accept?idinvite=345">Accept</a> | 
+								<a href="javascript:void(0);" onclick="invitedecline(345)">Decline</a>
+							</div>
+						</div>
+						                            </div>                                    
+                        </ul>
+											
+<span id="loggedinuserspan">
+                                   <!-- Dropdown -->                
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        David Lau                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+
+                    <!-- Not logged In --> 
+               </span>
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+ <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
+
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Register with GatheringUP!</h1>
+     <div class="dividline"></div>
+       <form id="registerform">
+         <div class="clearfix">
+
+           <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>
+               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
+           </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>                  
+                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
+               </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <p class="help-block"></p>   
+                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
+             </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
+             </div>              
+         </div>              
+
+         <div class="control-group">
+             <div class="control">    
+
+               <input 
+                 id="password2nd"
+                 class="form_reg" 
+                 placeholder="Retype Password"
+                 type="password"
+                 name="passwordconf"
+                 data-validation-match-match="password1"    
+                 minlength="8" 
+                 data-validation-minlength-message="Minimum 8 Characters"              
+                 />
+               <p class="help-block"></p>    
+             </div>              
+         </div>       
+<div id="RegistrationErrors"></div>
+
+           <div class="control-group">
+             <div class="control">                  
+               <p class="help-block"></p>                                 
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" type="text" placeholder="Enter Captcha" required>
+               <div ><img src="/captcha"></div>                
+             </div>
+           </div>
+
+         </div>
+
+         <div class="dividline"></div>
+         <button class="btn btn-large btn-green" >Register!</button>
+       </form>
+     <h4>OR</h4>
+<a href=""  id="fb_register" class="facebookurl"  >
+     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
+</a>
+ </div>    
+
+
+
+<!--Forgot Password Modal-->
+<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Forgot Password?</h1>
+     <div class="dividline"></div>
+       <form  id="forgotpasswordform" class="forgot_fields clearfix">
+         <div class="control-group">
+           <div class="controls">
+              <p class="help-block"></p>
+               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
+
+           </div>
+         </div>
+         <button type="submit" class="btn btn-green">Forgot Password!</button>  
+       </form>  
+  </div>
+  
+<script type="text/javascript">
+jQuery(document).ready(function() {
+$( "#Nearby_Search" ).typeahead({
+	source: function (query, process) {
+          return $.get('/bit/localize/search', { search: query }, function (data) {
+      		var name = jQuery.parseJSON(data);
+
+            return process(name);
+        });
+      },
+      updater: function(item) {
+          console.log("working");
+          this.$element[0].value = item;
+          this.$element[0].form.submit();
+          return item;
+      },
+      minLength: 2});
+});
+ </script>
+
+    <div id="nearby_nav">
+        <div id="nav_features">
+            <div class="input-append">
+                  <form  action="/localize" method="get">
+              <input placeholder="Find Something!"  id="Nearby_Search"  name="search" type="text" value=""  autocomplete="off">
+              <button class="btn btn-green btn-large" type="submit">Go!</button>
+              </form>
+            </div>
+            <div class="dividline"></div>            
+            <select>
+              <option>Central Park</option>
+            </select>  
+        </div>      
+
+        <!-- <div id="nearby_catagories"> -->
+    
+    <div id="accordion">
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Hot Spots</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                <li><a href="/localize?categoryid=22">Park Picks</a> </li>
+                <li><a href="/localize?categoryid=1">Staff Picks</a></li>                        
+                <li><a href="/localize">Cheap Eats</a> </li>
+                <li><a href="/localize">Local Favorites</a></li>
+                <li><a href="/localize">Family Friendly</a></li>
+                <li><a href="/localize">Visitors</i></a></li>                        
+            </ul>
+      </div>
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Food</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                <li><a >Fast Food<i class="icon-right icon-play icon-white"></i></a>
+                    <ul class="sub-level">
+                      <li><a class="newline" href="/localize">Pizza</a></li>
+                      <li><a href="/localize">Dining</a></li>
+                      <li><a href="/localize">Restuarants</a></li>
+                      <li><a href="/localize">Delis</a></li>
+                      <li><a class="newline" href="/localize">Dining</a></li>
+                      <li><a href="/localize">Restuarants</a></li>
+                      <li><a href="/localize">Delis</a></li>  
+                      <li><a href="/localize">Restuarants</a></li>
+                      <li><a href="/localize">Delis</a></li>
+                      <li><a href="/localize">Food</a></li>
+                      <li><a href="/localize">Dining</a></li>                       
+            </ul>
+                </li>
+                <li><a href="/localize">Take Out</a></li>
+                <li><a href="/localize">Fine Dining<i class="icon-right icon-play icon-white"></i></a></li>                        
+                <li><a href="/localize">Bars</a></li>                     
+                <li><a href="/localize">Restaurants<i class="icon-right icon-play icon-white"></i></a>
+                    <ul class="sub-level">
+                      <li><a class="newline" href="/localize">American</a></li>
+                      <li><a href="/localize">Chinese</a></li>
+                      <li><a href="/localize">Delis</a></li>
+                      <li><a href="/localize">French</a></li>
+                      <li><a href="/localize">Italian</a></li>
+                      <li><a href="/localize">Japanese</a></li>  
+                      <li><a href="/localize">Kosher</a></li>
+                      <li><a class="newline" href="/localize">Latin</a></li>
+                      <li><a href="/localize">Pizza</a></li>
+		            </ul>
+                </li>                        
+                <li><a href="/localize">Cafes</a></li>
+                <li><a href="/localize">Markets</a></li>                        
+            </ul>
+      </div>
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Landmarks</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                      <li><a class="newline" href="/localize">Buildings</a></li>
+                      <li><a class="newline" href="/localize">Food</a></li>
+                      </ul>
+                      </div>
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Civic buildings</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                      <li><a class="newline" href="/localize">Post Office</a></li>
+                      <li><a class="newline" href="/localize">Schools</a></li>
+                      <li><a class="newline" href="/localize">Police Stations</a></li>
+                      </ul>
+                      </div>
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Transportation</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                      <li><a class="newline" href="/localize">Subway Stations</a></li>
+                      </ul>
+                      </div>
+      <h3><span class="icomoon-right" data-icon="&#x23;" aria-hidden="true"></span>Active Lifestyle</h3>
+      <div class="navigation">
+            <ul class="top-level">
+                <li><a href="#">Musuems <i class="icon-right icon-play icon-white"></i></a>
+                    <ul class="sub-level">
+                      <li><a class="newline" href="/localize">Food</a></li>
+                      <li><a href="/localize">Dining</a></li>
+                      <li><a href="/localize">Restuarants</a></li>
+                      <li><a href="/localize">Delis</a></li>
+                      <li><a href="/localize">Food</a></li>
+                      <li><a href="/localize">Dining</a></li>
+                      <li><a href="/localize">Restuarants</a></li>
+                      <li><a href="/localize">Delis</a></li>  
+                      <li><a href="/localize">Restuarants</a></li>
+                      <li><a href="/localize">Delis</a></li>
+                      <li><a href="/localize">Food</a></li>
+                      <li><a href="/localize">Dining</a></li></br>          
+                      <li><a class="newline" href="/localize">Dining</a></li>
+                      <li><a href="/localize">Restuarants</a></li>
+                      <li><a href="/localize">Delis</a></li>  
+                      <li><a href="/localize">Restuarants</a></li>
+                      <li><a href="/localize">Delis</a></li>
+                      <li><a href="/localize">Food</a></li>
+                      <li><a href="/localize">Dining</a></li>                       
+            </ul>
+                </li>
+                <li><a href="/localize">Cinema</a></li>
+                <li><a href="/localize">Art Galleries<i class="icon-right icon-play icon-white"></i></a></li>                        
+                <li><a href="/localize">Cinema</a></li>                     
+                <li><a href="/localize">Art Galleries</a></li>                        
+                <li><a href="/localize">Cinema</a></li>
+                <li><a href="/localize">Art Galleries</a></li>                        
+            </ul>
+      </div>
+        
+
+    <!-- Nav Listing Unit End -->          
+
+        </div>
+    </div>    
+<script type="text/html" id='locations'>
+<% var max = (((page+1)*numentries)>outdata.length) ? outdata.length:((page+1)*numentries); %>
+<% for(index=(page*numentries); index<max; index++){ %>
+<% item=outdata[index] %>
+	<% if(item.tier == 1){ %>
+            <div class="nearby_item sm_mod clearfix">
+                    <div class="item_text" id="<%= (index+1)%>" gid="">
+                      <h4><a href="/localize?searchid=<%= item.idlocalize %>"><span><%= (index+1)%></span>.&nbsp;<%= item.localname%></a></h4><br>
+                      <div class="result_cat">
+                    <%
+                    	var categories = item.category.split(', ');
+//console.log(categories);
+                    	for(var i = 0; i<categories.length; i++){
+					%>
+                    		<button class="btn btn-mini cat_tag_mini disabled"><%=categories[i]%></button>
+					<%
+                    	}
+                    %>
+                    </div>                          
+                    </div>
+<% var imageurl =  (item.imageurl) ? (item.imageurl):('http://siteimages.gatheringup.com/images/places.jpg') %>
+                      <img class="thumbnail" src="<%=imageurl%>" alt="thumbnail">
+            </div>
+	<% }else if(item.tier == 2){ %>
+            <div class="nearby_item med_mod clearfix">
+                    <div class="item_text" id="<%= (index+1)%>" gid="">
+                      <h4>
+							<a href="/localize?searchid=<%= item.idlocalize %>">
+						<span><%= (index+1)%></span>.&nbsp;<%= item.localname %></a></h4>
+                      <p><%= item.address1 %><br>
+                      	<%= item.address2 %><br> 
+						<%= item.city %>, <%= item.statecode %> <%= item.zip %><br>
+						<%= item.phone %><br>
+						<a href="<%= item.url %>" target="_blank"><%= item.url %></a></p>
+                        <div class="result_cat">
+                    <%
+                    	var categories = item.category.split(', ');
+//console.log(categories);
+                    	for(var i = 0; i<categories.length; i++){
+					%>
+                    		<button class="btn btn-mini cat_tag_mini disabled"><%=categories[i]%></button>
+					<%
+                    	}
+                    %>
+                        </div>
+                    </div>
+                    <div class="item_other">
+					<% var imageurl =  (item.imageurl) ? (item.imageurl):('http://siteimages.gatheringup.com/images/places.jpg') %>
+                      <img class="thumbnail" src="<%=imageurl%>" alt="thumbnail">
+						<% if(bookmarks[item.idlocalize]){%>
+						<button class="btn-orange btn btn-green btn-mini"  onclick="toggleplace(<%=item.idlocalize%>, this)">Bookmarked</button>
+						<% }else{ %>
+						<button class="CTA_button btn btn-green btn-mini"  onclick="toggleplace(<%=item.idlocalize%>, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						<% } %>
+                    </div>
+            </div>
+	<% }else{ %>
+            <div class="nearby_item">
+                <div class="item_top_info clearfix">                
+                    <div class="item_text" id="<%= (index+1)%>" gid="">
+                      <h4>
+						<a href="/localize?searchid=<%= item.idlocalize %>">
+							<span><%= (index+1)%></span>.&nbsp;<%= item.localname %></a></h4>
+                      <p><%= item.address1 %><br>
+                      	<%= item.address2 %><br> 
+						<%= item.city %>, <%= item.statecode %> <%= item.zip %><br>
+						<%= item.phone %><br>
+						</p>
+                    <div class="result_cat">
+                    <%
+                    	var categories = item.category.split(', ');
+//console.log(categories);
+                    	for(var i = 0; i<categories.length; i++){
+					%>
+                    		<button class="btn btn-mini cat_tag_mini disabled"><%=categories[i]%></button>
+					<%
+                    	}
+                    %>
+                    </div>     
+                                          
+                    </div>
+                    <div class="item_other">
+<% var imageurl =  (item.imageurl) ? (item.imageurl):('http://siteimages.gatheringup.com/images/places.jpg') %>
+                      <img class="thumbnail" src="<%=imageurl%>" alt="thumbnail">
+						<% if(bookmarks[item.idlocalize]){%>
+						<button class="btn-orange btn btn-green btn-mini"  onclick="toggleplace(<%=item.idlocalize%>, this)">Bookmarked</button>
+						<% }else{ %>
+						<button class="CTA_button btn btn-green btn-mini"  onclick="toggleplace(<%=item.idlocalize%>, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						<% } %>
+                    </div>   
+<div class="item_tab"><span class="icon-chevron-down icon-white down_arrow"></span></div>   
+                </div>
+                <div class="item_content">
+                    <div class="dividline"></div>
+                    <a href="<%= item.url %>" target="_blank"><%= item.url %></a>
+                    <p><%= item.directions %>
+                    <br>    
+                    <br>    
+                    <%= item.description %>
+                    <br>    
+                    <br>                       
+                    Opening Hours<br>
+                    <%= item.phone%>
+                    </p>       
+                </div>              
+            </div>
+<%
+	}
+}
+%>
+</script>
+
+<script type="text/javascript">
+//var bookmarks={};
+var bookmarks = {};
+		
+</script>
+
+    <div id="map_canvas" class="map_around" style="height: 100%; width:100%; float: left; position: fixed;">
+<!--         <iframe  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=google+map+zoom+buttons&amp;aq=f&amp;ie=UTF8&amp;hl=en&amp;hq=zoom+buttons&amp;hnear=New+York&amp;t=m&amp;ll=40.770954,-73.975067&amp;spn=0.011375,0.018239&amp;z=15&amp;output=embed">
+</iframe> -->
+    </div>    
+    <div class="bg_wrap"></div>
+    <div class="nearby_wrap">
+        <!-- <div id="nearby_box">  -->
+
+</div> 
+    <!-- Nearby Column -->  
+<script type="text/javascript">
+window.tierhidden;
+window.tierdisplay;
+
+function displayresults(){
+	window.template = $('#locations').html();
+	var temp1 = _.template(template, {outdata : window.tierdisplay, page: window.searchpage, numentries: window.searchshow});
+	//	$( temp1 ).appendTo("#nearby_wrap");
+	$( ".nearby_wrap" ).append(temp1);
+	
+	window.searchpage++;	
+	
+	jQuery.each(window.tierdisplay, function(index, value){
+		var count = index+1;
+		setgmapnumbermarker(value.latitude, value.longitude, value.destname, count);
+	//	console.log("count: "+count+", shownum: "+window.searchshow);
+		if(count== window.searchshow){
+	//		console.log("counts equal");
+			return false;
+		}
+	});
+}
+
+$(function() {
+	var getgeo = 0;
+
+
+	if(getgeo){
+    	window.postdata={latitude: 40.768169, longitude: -73.981132, latrange: 0.002, lonrange: 0.002};
+	    navigator.geolocation.getCurrentPosition(function (position){
+		    window.postdata={latitude: position.coords.latitude, longitude: position.coords.longitude, latrange: 0.002, lonrange: 0.002};
+	    } );
+
+	    $.ajax({
+	        type: "POST",
+	        url: "/localize/getnearbyplacesgps",
+	        data: window.postdata,
+	        dataType: 'json',
+	        success: function(data){
+	        	if(data.status=="true"){
+	    			window.tierhidden = data.tierhidden;
+	    			jQuery.each(window.tierhidden, function(index, value){
+//	    				console.log("index: "+index+"value:"+value.latitude+", "+value.longitude);
+	    				setgmapiconmarker(value.latitude,value.longitude, value.category, value.imageurl);
+	    			});
+	    			window.tierdisplay = data.tierdisplay;
+	    			window.searchmax = window.tierdisplay.length;
+
+	    			displayresults();
+	        	}else{
+		        	
+	        	}
+	        	
+	        },
+	        error: function(errMsg, ajaxOptions, thrownError) {
+        		console.log(errMsg);
+	        }
+		}
+		);
+		
+	}else{
+			window.tierhidden = [{"idlocalize":"22606004","entityid":null,"destname":"Museum of Natural History\/Planitarium","altname":null,"localname":"Museum of Natural History\/Planitarium","desttype":"Amenities","destsubtype":"Recycling Bins","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"Central Park West","address2":null,"zip":null,"latitude":"40.78055800000000","longitude":"-73.97292400000000","directions":null,"description":null,"products":null,"services":null,"type":"Outdoor ","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/recycle.png","tier":"0","category":"Recycling Bins","distance":"0.000772362078735348"},{"idlocalize":"22606006","entityid":null,"destname":"Museum of Natural History\/Planitarium","altname":null,"localname":"Museum of Natural History\/Planitarium","desttype":"Amenities","destsubtype":"Recycling Bins","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"W 81 St Loop","address2":null,"zip":null,"latitude":"40.78266600000000","longitude":"-73.97321500000000","directions":null,"description":null,"products":null,"services":null,"type":"Outdoor ","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/recycle.png","tier":"0","category":"Recycling Bins","distance":"0.00188974751708917"},{"idlocalize":"22606005","entityid":null,"destname":"Museum of Natural History\/Planitarium","altname":null,"localname":"Museum of Natural History\/Planitarium","desttype":"Amenities","destsubtype":"Recycling Bins","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"W 81 St Loop","address2":null,"zip":null,"latitude":"40.78217500000000","longitude":"-73.97225600000000","directions":null,"description":null,"products":null,"services":null,"type":"Outdoor ","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/recycle.png","tier":"0","category":"Recycling Bins","distance":"0.00193814213677239"},{"idlocalize":"22606002","entityid":null,"destname":"Museum of Natural History\/Planitarium","altname":null,"localname":"Museum of Natural History\/Planitarium","desttype":"Amenities","destsubtype":"Recycling Bins","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"W 79 St & Columbus Ave","address2":null,"zip":null,"latitude":"40.78193600000000","longitude":"-73.97542000000000","directions":null,"description":null,"products":null,"services":null,"type":"Outdoor ","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/recycle.png","tier":"0","category":"Recycling Bins","distance":"0.00209051210202962"},{"idlocalize":"22595902","entityid":null,"destname":null,"altname":null,"localname":null,"desttype":"Amenities","destsubtype":"Bicycle Racks","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":"408 Columbus Ave","address2":null,"zip":null,"latitude":"40.78229500000000","longitude":"-73.97524400000000","directions":null,"description":"408 Columbus Ave - Racks: 1 small","products":null,"services":null,"type":"clampedToGround","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/cycling.png","tier":"0","category":"Bicycle Racks","distance":"0.0021686366276246"},{"idlocalize":"22592555","entityid":null,"destname":null,"altname":null,"localname":null,"desttype":"Amenities","destsubtype":"Bicycle Racks","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":"410 Columbus Ave","address2":null,"zip":null,"latitude":"40.78235500000000","longitude":"-73.97520000000000","directions":null,"description":"410 Columbus Ave - Racks: 1 small","products":null,"services":null,"type":"clampedToGround","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/cycling.png","tier":"0","category":"Bicycle Racks","distance":"0.00217814124947058"},{"idlocalize":"22606003","entityid":null,"destname":"Museum of Natural History\/Planitarium","altname":null,"localname":"Museum of Natural History\/Planitarium","desttype":"Amenities","destsubtype":"Recycling Bins","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"W 78 St & Columbus Ave","address2":null,"zip":null,"latitude":"40.78126500000000","longitude":"-73.97592700000000","directions":null,"description":null,"products":null,"services":null,"type":"Outdoor ","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/recycle.png","tier":"0","category":"Recycling Bins","distance":"0.00232062759892466"},{"idlocalize":"22591006","entityid":null,"destname":null,"altname":null,"localname":null,"desttype":"Amenities","destsubtype":"Bicycle Racks","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":"451 Columbus Ave","address2":null,"zip":null,"latitude":"40.78361500000000","longitude":"-73.97425400000000","directions":null,"description":"451 Columbus Ave - Racks: 1 small","products":null,"services":null,"type":"clampedToGround","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/cycling.png","tier":"0","category":"Bicycle Racks","distance":"0.00285348815353151"},{"idlocalize":"22594314","entityid":null,"destname":null,"altname":null,"localname":null,"desttype":"Amenities","destsubtype":"Bicycle Racks","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":"452 Columbus Ave","address2":null,"zip":null,"latitude":"40.78366700000000","longitude":"-73.97423900000000","directions":null,"description":"452 Columbus Ave - Racks: 1 small","products":null,"services":null,"type":"clampedToGround","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/cycling.png","tier":"0","category":"Bicycle Racks","distance":"0.00290123174260689"},{"idlocalize":"22593447","entityid":null,"destname":null,"altname":null,"localname":null,"desttype":"Amenities","destsubtype":"Bicycle Racks","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":"457 Columbus Ave","address2":null,"zip":null,"latitude":"40.78375200000000","longitude":"-73.97415300000000","directions":null,"description":"457 Columbus Ave - Racks: 1 small","products":null,"services":null,"type":"clampedToGround","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/cycling.png","tier":"0","category":"Bicycle Racks","distance":"0.0029686725340263"},{"idlocalize":"22592064","entityid":null,"destname":null,"altname":null,"localname":null,"desttype":"Amenities","destsubtype":"Bicycle Racks","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":"353 Columbus Ave","address2":null,"zip":null,"latitude":"40.78036900000000","longitude":"-73.97662400000000","directions":null,"description":"353 Columbus Ave - Racks: 1 small","products":null,"services":null,"type":"clampedToGround","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/cycling.png","tier":"0","category":"Bicycle Racks","distance":"0.00301080745102376"},{"idlocalize":"22608964","entityid":"606","destname":"Starbucks","altname":null,"localname":"Starbucks","desttype":"Facilities","destsubtype":"WiFi","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":"444 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78373379900006","longitude":"-73.97464725799995","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"212-769-2296","cost":"Fee-based","url":"http:\/\/www.starbucks.com","imageurl":"http:\/\/siteimages.gatheringup.com\/images\/wifi.png","tier":"0","category":"Wireless Internet Connection","distance":"0.00307411527505177"},{"idlocalize":"22592098","entityid":null,"destname":null,"altname":null,"localname":null,"desttype":"Amenities","destsubtype":"Bicycle Racks","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":"54 W 74 St","address2":null,"zip":null,"latitude":"40.77815900000000","longitude":"-73.97650200000000","directions":null,"description":"54 W 74 St - Racks: 1 small","products":null,"services":null,"type":"clampedToGround","status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":"http:\/\/siteimages.gatheringup.com\/images\/cycling.png","tier":"0","category":"Bicycle Racks","distance":"0.00390644184745299"}];
+			jQuery.each(window.tierhidden, function(index, value){
+//				console.log("index: "+index+"value:"+value.latitude+", "+value.longitude);
+				setgmapiconmarker(value.latitude,value.longitude, value.category, value.imageurl);
+			});
+			window.tierdisplay = [{"idlocalize":"22602181","entityid":"","destname":"American Museum of Natural History","altname":null,"localname":"American Museum of Natural History","desttype":"Culture","destsubtype":"Museum","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":"Central Park West at 79th Street","address2":"","zip":"10024","latitude":"40.78082656700008","longitude":"-73.97364816499993","directions":"Suggested admission fee is $19, but you can pay what you can afford.","description":"The American Museum of Natural History is one of the largest and most celebrated museums in the worlds. Located on the Upper West Side, the museum contains 27 interconnecting buildings, with 45 permanet exhibition halls. With over 32 million specimens of plants, fossils, minerals, rocks, metorities, animals and much more. If you love science & culture, then the American Museum of Natural History is the place is be.","products":"","services":"","type":"","status":"","hours":"Open daily from 10am - 5:45pm","phone":"(212) 769-5100","cost":"","url":"http:\/\/www.amnh.org\/","imageurl":"https:\/\/irs3.4sqi.net\/img\/general\/width960\/50768454_keaj0u0_Y_Ec-IRhjjkZ9YNYIa9nLmIYGoqbmUu-tP8.jpg","tier":"3","category":"Museums, Editor's Picks","distance":"0"},{"idlocalize":"22600978","entityid":null,"destname":"81 St-Museum of Natural History","altname":null,"localname":"81 St-Museum of Natural History","desttype":"Transport","destsubtype":"Subway","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":null,"address2":null,"zip":null,"latitude":"40.78031900000000","longitude":"-73.97317900000000","directions":"Division: IND\nLine: 8th Avenue\nTransfers: B, C, , , , , , , , , \nNorth South Street: Central Park West\nEast West Street: 77th St\nCorner: NW","description":"ADA: FALSE\nADA Note: \nFree Crossover: TRUE\nEntrance Type: Stair\nEntry: YES\nExit Only: \nEntrance Staffing: NONE","products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.mta.info\/nyct\/subway\/index.html","imageurl":null,"tier":"1","category":"Subway Station","distance":"0.000691187425188086"},{"idlocalize":"22600977","entityid":null,"destname":"81 St-Museum of Natural History","altname":null,"localname":"81 St-Museum of Natural History","desttype":"Transport","destsubtype":"Subway","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":null,"address2":null,"zip":null,"latitude":"40.78089500000000","longitude":"-73.97291800000000","directions":"Division: IND\nLine: 8th Avenue\nTransfers: B, C, , , , , , , , , \nNorth South Street: Central Park West\nEast West Street: 77th St\nCorner: NW","description":"ADA: FALSE\nADA Note: \nFree Crossover: TRUE\nEntrance Type: Door\nEntry: YES\nExit Only: \nEntrance Staffing: NONE","products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.mta.info\/nyct\/subway\/index.html","imageurl":null,"tier":"1","category":"Subway Station","distance":"0.000733364849586919"},{"idlocalize":"22602818","entityid":null,"destname":"Standard Parking Corporation","altname":null,"localname":"Standard Parking Corporation","desttype":"Facilities","destsubtype":"Parking Garage","statecode":"NY","city":"New York","borough":"New York","countyname":"NEW YORK","address1":"200 Central Park","address2":null,"zip":"10024","latitude":"40.78062329879600","longitude":"-73.97275972124050","directions":null,"description":"Number of spaces: 424","products":null,"services":null,"type":"Parking Garage","status":null,"hours":null,"phone":"2123137275","cost":null,"url":null,"imageurl":null,"tier":"1","category":"Parking Garage","distance":"0.000911400173632253"},{"idlocalize":"2255352","entityid":null,"destname":"Caffe Storico","altname":null,"localname":"Caffe Storico","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"2          West   77 Street","address2":null,"zip":"10024","latitude":"40.77960100000000","longitude":"-73.97388500000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2124859211","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Italian","distance":"0.00124824087778047"},{"idlocalize":"875038","entityid":null,"destname":"Hayden Planetarium","altname":null,"localname":"Hayden Planetarium","desttype":"Building","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.78204560000000","longitude":"-73.97430520000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"2","category":"Other Buildings","distance":"0.00138482361554841"},{"idlocalize":"22610223","entityid":"M010","destname":"Naturalists' Walk","altname":null,"localname":"Naturalists' Walk","desttype":"Central Park","destsubtype":"Destinations","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.77988000000000","longitude":"-73.97262600000000","directions":null,"description":"Restored in 1996 with an educational connection in mind, this landscape features a rustic outdoor \"classroom\" where students can gather with teachers and sit on split-log benches.","products":null,"services":null,"type":"landscapes-points-of-interest","status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/great-lawn\/naturalists-walk.html","imageurl":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/images\/naturalists-walk-t.jpg","tier":"3","category":"Central Park","distance":"0.00139312970421897"},{"idlocalize":"22602433","entityid":null,"destname":"The Hertz Corp","altname":null,"localname":"The Hertz Corp","desttype":"Facilities","destsubtype":"Parking Garage","statecode":"NY","city":"New York","borough":"New York","countyname":"NEW YORK","address1":"21o 77 Street","address2":null,"zip":"10024","latitude":"40.78005843266174","longitude":"-73.97488576287084","directions":null,"description":"Number of spaces: 250","products":null,"services":null,"type":"Parking Garage","status":null,"hours":null,"phone":"2124865919","cost":null,"url":null,"imageurl":null,"tier":"1","category":"Parking Garage","distance":"0.00145659838383569"},{"idlocalize":"2256968","entityid":null,"destname":"Scaletta Ristorante","altname":null,"localname":"Scaletta Ristorante","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"50 West 77 Street","address2":null,"zip":"10024","latitude":"40.78006900000000","longitude":"-73.97500000000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2127699191","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Italian","distance":"0.00154963403001558"},{"idlocalize":"22602262","entityid":null,"destname":"New York Historical Society","altname":null,"localname":"New York Historical Society","desttype":"Culture","destsubtype":"Museum","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":"2 West 77th Street","address2":"","zip":"10024","latitude":"40.77927357500005","longitude":"-73.97425753799990","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"(212) 873-3400","cost":null,"url":"https:\/\/www.nyhistory.org\/web\/","imageurl":null,"tier":"3","category":"Museums","distance":"0.00166826844519693"},{"idlocalize":"22610274","entityid":"M010","destname":"Eaglevale Arch","altname":null,"localname":"Eaglevale Arch","desttype":"Central Park","destsubtype":"Destinations","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.77913000000000","longitude":"-73.97315000000000","directions":null,"description":"The Park's only double arch, this stone structure carries an access road to the West Drive from Central Park West over both the bridle path and a pedestrian path.","products":null,"services":null,"type":"arches-and-bridges","status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/great-lawn\/eaglevale-arch.html","imageurl":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/images\/eaglevale-arch-t.jpg","tier":"3","category":"Central Park","distance":"0.00176819341502282"},{"idlocalize":"22596817","entityid":"M053","destname":"Theodore Roosevelt Park Fruit  & Vegetable Cart","altname":null,"localname":"Theodore Roosevelt Park Fruit  & Vegetable Cart","desttype":"Dining","destsubtype":"Food Cart","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"Parkside of West 81st Street Between Central Park West and Columbus Avenue","address2":null,"zip":null,"latitude":"40.78256700000000","longitude":"-73.97327900000000","directions":null,"description":"","products":null,"services":null,"type":"Fruit  & Vegetable Cart","status":null,"hours":null,"phone":"","cost":null,"url":"","imageurl":null,"tier":"1","category":"Food Stands","distance":"0.00177915424412923"},{"idlocalize":"1926869","entityid":null,"destname":"Theodore Roosevelt Memorial","altname":null,"localname":"Theodore Roosevelt Memorial","desttype":"Park","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.78055560000000","longitude":"-73.97555560000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"1","category":"Parks","distance":"0.00192658542363116"},{"idlocalize":"22600976","entityid":null,"destname":"81 St-Museum of Natural History","altname":null,"localname":"81 St-Museum of Natural History","desttype":"Transport","destsubtype":"Subway","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":null,"address2":null,"zip":null,"latitude":"40.78197600000000","longitude":"-73.97202700000000","directions":"Division: IND\nLine: 8th Avenue\nTransfers: B, C, , , , , , , , , \nNorth South Street: Central Park West\nEast West Street: 81st St\nCorner: SW","description":"ADA: FALSE\nADA Note: \nFree Crossover: TRUE\nEntrance Type: Stair\nEntry: YES\nExit Only: \nEntrance Staffing: FULL","products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.mta.info\/nyct\/subway\/index.html","imageurl":null,"tier":"1","category":"Subway Station","distance":"0.00198730273948086"},{"idlocalize":"22596552","entityid":"M053","destname":"Columbus Avenue Art Show","altname":null,"localname":"Columbus Avenue Art Show","desttype":"Shop","destsubtype":"Concession","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"Avenue Between West 77th and West 81st Streets","address2":null,"zip":null,"latitude":"40.78191000000000","longitude":"-73.97534200000000","directions":null,"description":"Crafts on Columbus transforms the popular tree-lined sidewalk next to the American Museum of Natural History and the Rose Center for Earth and Space into a premier marketplace for Fine American Crafts. This annual event takes place on weekends in the Spring and Fall. The event is held outdoors on the sidewalk next to the Museum from 77th to 81st Street. Admission to the public is free.","products":null,"services":null,"type":"Art Show","status":null,"hours":null,"phone":"","cost":null,"url":"","imageurl":null,"tier":"1","category":"Concession","distance":"0.00201069740955041"},{"idlocalize":"2258015","entityid":null,"destname":"Calle Ocho","altname":null,"localname":"Calle Ocho","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"45 West 81 Street","address2":null,"zip":"10024","latitude":"40.78284400000000","longitude":"-73.97355400000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2128735025","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Other","distance":"0.00201962941064845"},{"idlocalize":"1926871","entityid":null,"destname":"Hayden House","altname":null,"localname":"Hayden House","desttype":"Building","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"13 W 81st St","address2":null,"zip":"10024-6001","latitude":"40.78250000000000","longitude":"-73.97250000000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"2","category":"Other Buildings","distance":"0.00202944841577908"},{"idlocalize":"22597092","entityid":null,"destname":"79th Street Greenmarket","altname":null,"localname":"79th Street Greenmarket","desttype":"Dining","destsubtype":"Farmers Market","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"Columbus Ave Bet W 78th & 81st Sts","address2":null,"zip":null,"latitude":"40.78195100000000","longitude":"-73.97548000000000","directions":null,"description":"Distribute Health Bucks: Yes\nAccept Health Bucks: Yes\nebt: Yes\nStellar: No","products":null,"services":null,"type":null,"status":null,"hours":"Opening Days: Sunday\nOpening Hours: 8am-5pm","phone":null,"cost":null,"url":null,"imageurl":null,"tier":"3","category":"Farmers Market","distance":"0.00214941132377333"},{"idlocalize":"2255402","entityid":null,"destname":"The Coffee Bean & Tea Leaf","altname":null,"localname":"The Coffee Bean & Tea Leaf","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"392 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78170000000000","longitude":"-73.97567700000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"9175411033","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Cafes, Tea Rooms, Coffee & Tea","distance":"0.00220885867876605"},{"idlocalize":"2242435","entityid":null,"destname":"World Coffee","altname":null,"localname":"World Coffee","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"416 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78254000000000","longitude":"-73.97505900000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2128741936","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Cafes, Tea Rooms, Coffee & Tea","distance":"0.00221952878841054"},{"idlocalize":"22596627","entityid":"M001|B113|M007|M013|M203C","destname":"Green Markets","altname":null,"localname":"Green Markets","desttype":"Shop","destsubtype":"Concession","statecode":"NY","city":"Manhattan","borough":"Manhattan","countyname":"Manhattan","address1":"Various Locations Citywide","address2":null,"zip":null,"latitude":"40.78121600000000","longitude":"-73.97584900000000","directions":null,"description":"The Council on the Environment of New York City (CENYC) operates open-air green markets (or farmer's markets) at over twenty parks throughout the five boroughs.   These green markets serve two significant purposes: the markets provide New Yorkers access to fresh and organic fruits, vegetables, herbs, including a variety of baked and other farm goods, and they support regional farmers by giving them the opportunity to sell their products in the city.  This partnership helps make New York City a healthier place to live.","products":null,"services":null,"type":"Other","status":null,"hours":null,"phone":"(212) 788-7476","cost":null,"url":"http:\/\/www.cenyc.org\/greenmarket","imageurl":null,"tier":"1","category":"Concession","distance":"0.00223502410700287"},{"idlocalize":"22602273","entityid":null,"destname":"Rose Center for Earth and Space (Hayden Planetarium)","altname":null,"localname":"Rose Center for Earth and Space (Hayden Planetarium)","desttype":"Culture","destsubtype":"Museum","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":"15 West 81st Street","address2":"","zip":"10024","latitude":"40.78286016600003","longitude":"-73.97257491099992","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"(212) 769-5100","cost":null,"url":"http:\/\/www.haydenplanetarium.org\/index.php","imageurl":null,"tier":"3","category":"Museums","distance":"0.0022994345046464"},{"idlocalize":"1927403","entityid":null,"destname":"Winston Preparatory School","altname":null,"localname":"Winston Preparatory School","desttype":"School","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"14 W 76th St","address2":null,"zip":"10023-1501","latitude":"40.77881630000000","longitude":"-73.97480610000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"1","category":"Education","distance":"0.00231991096293788"},{"idlocalize":"2253090","entityid":null,"destname":"78 Below","altname":null,"localname":"78 Below","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"380 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78137300000000","longitude":"-73.97591700000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2127247800","cost":null,"url":null,"imageurl":null,"tier":"2","category":"American (New)","distance":"0.00233370976791327"},{"idlocalize":"1926810","entityid":null,"destname":"Park Belvedere","altname":null,"localname":"Park Belvedere","desttype":"Building","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"402 Columbus Ave","address2":null,"zip":"10024-5146","latitude":"40.78222220000000","longitude":"-73.97555560000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"2","category":"Other Buildings","distance":"0.00236349312456967"},{"idlocalize":"22600975","entityid":null,"destname":"81 St-Museum of Natural History","altname":null,"localname":"81 St-Museum of Natural History","desttype":"Transport","destsubtype":"Subway","statecode":"NY","city":null,"borough":null,"countyname":null,"address1":null,"address2":null,"zip":null,"latitude":"40.78225400000000","longitude":"-73.97174100000000","directions":"Division: IND\nLine: 8th Avenue\nTransfers: B, C, , , , , , , , , \nNorth South Street: Central Park West\nEast West Street: 81st St\nCorner: NW","description":"ADA: FALSE\nADA Note: \nFree Crossover: TRUE\nEntrance Type: Stair\nEntry: YES\nExit Only: \nEntrance Staffing: FULL","products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.mta.info\/nyct\/subway\/index.html","imageurl":null,"tier":"1","category":"Subway Station","distance":"0.00238219296159771"},{"idlocalize":"1926870","entityid":null,"destname":"The Beresford","altname":null,"localname":"The Beresford","desttype":"Building","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"7 W 81st St","address2":null,"zip":"10024-6049","latitude":"40.78250000000000","longitude":"-73.97194440000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"2","category":"Other Buildings","distance":"0.00238813592164342"},{"idlocalize":"2249717","entityid":null,"destname":"Raku It's Japanese Ii","altname":null,"localname":"Raku It's Japanese Ii","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"57 West 76 Street","address2":null,"zip":"10023","latitude":"40.77948000000000","longitude":"-73.97563400000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2128731220","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Japanese","distance":"0.00239932976747816"},{"idlocalize":"2236306","entityid":null,"destname":"Ocean Grill","altname":null,"localname":"Ocean Grill","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"384 Columbus Ave","address2":null,"zip":"10024","latitude":"40.78164000000000","longitude":"-73.97591040000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2125792300","cost":null,"url":null,"imageurl":null,"tier":"2","category":"American (New), Sidewalk Cafe","distance":"0.0024040342012658"},{"idlocalize":"2256950","entityid":null,"destname":"Uno Chicago Grill","altname":null,"localname":"Uno Chicago Grill","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"432 Columbus Ave","address2":null,"zip":"10024","latitude":"40.78305100000000","longitude":"-73.97469700000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2125954700","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Pizza","distance":"0.00245930010947779"},{"idlocalize":"1926867","entityid":null,"destname":"Universalist Church of New York","altname":null,"localname":"Universalist Church of New York","desttype":"Church","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"5 W 75th St","address2":null,"zip":"10023-2101","latitude":"40.77861110000000","longitude":"-73.97472220000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"1","category":"Churches","distance":"0.00246208147911776"},{"idlocalize":"22589677","entityid":null,"destname":"Gari International Inc.","altname":null,"localname":"Gari International Inc.","desttype":"Dining","destsubtype":"Sidewalk Cafe","statecode":"NY","city":"New York","borough":"New York","countyname":"NEW YORK","address1":"370 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78104598014977","longitude":"-73.97613217885032","directions":"","description":"370 COLUMBUS AVENUE\nNEW YORK, NY 10024\n(40.78104598014977, -73.97613217885032)\n size in sq ft: 191","products":null,"services":null,"type":"Unenclosed","status":null,"hours":null,"phone":"2129327466","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Sidewalk Cafe","distance":"0.00249368541302294"},{"idlocalize":"1926809","entityid":null,"destname":"The Evelyn","altname":null,"localname":"The Evelyn","desttype":"Building","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"1 W 78th St","address2":null,"zip":"10024-5156","latitude":"40.78138890000000","longitude":"-73.97611110000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"2","category":"Other Buildings","distance":"0.00252631494815681"},{"idlocalize":"22610320","entityid":"M010","destname":"Balcony Bridge","altname":null,"localname":"Balcony Bridge","desttype":"Central Park","destsubtype":"Destinations","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.77860300000000","longitude":"-73.97241000000000","directions":null,"description":"Supporting the West Drive, this stately stone structure spans a small inlet connecting the Lake and what was originally the Ladies Pond. It is named for the two bench-lined balconies on its east side.","products":null,"services":null,"type":"arches-and-bridges","status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/great-lawn\/balcony-bridge.html","imageurl":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/images\/balcony-bridge-t.jpg","tier":"3","category":"Central Park","distance":"0.00254505457130818"},{"idlocalize":"2240335","entityid":null,"destname":"Gari","altname":null,"localname":"Gari","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"370 Columbus Ave","address2":null,"zip":"10024","latitude":"40.78098400000000","longitude":"-73.97619900000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2123624816","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Japanese","distance":"0.00255568862481677"},{"idlocalize":"2236712","entityid":null,"destname":"Starbucks Coffee","altname":null,"localname":"Starbucks Coffee","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"444 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78331020000000","longitude":"-73.97431630000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2127692296","cost":null,"url":null,"imageurl":null,"tier":"1","category":"Cafes, Tea Rooms, Coffee & Tea","distance":"0.0025719325917653"},{"idlocalize":"22589491","entityid":null,"destname":"Shake Shack 366 Columbus Llc","altname":null,"localname":"Shake Shack 366 Columbus Llc","desttype":"Dining","destsubtype":"Sidewalk Cafe","statecode":"NY","city":"New York","borough":"New York","countyname":"NEW YORK","address1":"366 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78096513726777","longitude":"-73.97623556586913","directions":"","description":"366 COLUMBUS AVENUE\nNEW YORK, NY 10024\n(40.78096513726777, -73.97623556586913)\n size in sq ft: 431","products":null,"services":null,"type":"Enclosed","status":null,"hours":null,"phone":"2122271771","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Sidewalk Cafe","distance":"0.00259110883154131"},{"idlocalize":"2244586","entityid":null,"destname":"Shake Shack","altname":null,"localname":"Shake Shack","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"366 Columbus Ave","address2":null,"zip":"10024","latitude":"40.78088100000000","longitude":"-73.97627200000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"6467478770","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Burgers","distance":"0.00262439956160883"},{"idlocalize":"2237915","entityid":null,"destname":"Cafe Frida","altname":null,"localname":"Cafe Frida","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"368 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78080310000000","longitude":"-73.97632050000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2127122929","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Mexican, Sidewalk Cafe","distance":"0.00267243803531913"},{"idlocalize":"1926866","entityid":null,"destname":"The Kenilworth","altname":null,"localname":"The Kenilworth","desttype":"Building","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"1 W 75th St","address2":null,"zip":"10023-2101","latitude":"40.77833330000000","longitude":"-73.97472220000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"2","category":"Other Buildings","distance":"0.00271476177869398"},{"idlocalize":"22610216","entityid":"M010","destname":"Oak Bridge at Bank Rock Bay","altname":null,"localname":"Oak Bridge at Bank Rock Bay","desttype":"Central Park","destsubtype":"Destinations","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.77876700000000","longitude":"-73.97175000000000","directions":null,"description":"This footbridge crossing Bank Rock Bay was originally built of white oak - hence its early name, Oak Bridge. In 2009, the Conservancy recreated the bridge using historic photographs and original drawings. ","products":null,"services":null,"type":"arches-and-bridges","status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/great-lawn\/bank-rock-bridge.html","imageurl":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/images\/bank-rock-bridge-t.jpg","tier":"3","category":"Central Park","distance":"0.00280086532964021"},{"idlocalize":"2245240","entityid":null,"destname":"Isabella's","altname":null,"localname":"Isabella's","desttype":"Business","destsubtype":null,"statecode":"NY","city":"New York","borough":"Manhattan","countyname":"New York","address1":"359 Columbus Avenue","address2":null,"zip":"10024","latitude":"40.78053400000000","longitude":"-73.97649500000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2127242100","cost":null,"url":null,"imageurl":null,"tier":"2","category":"American (New), Sidewalk Cafe","distance":"0.00286182895489636"},{"idlocalize":"22610317","entityid":"M010","destname":"Bank Rock Bay","altname":null,"localname":"Bank Rock Bay","desttype":"Central Park","destsubtype":"Destinations","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.77893000000000","longitude":"-73.97141000000000","directions":null,"description":"The narrow inlet of water at the northern tip of the Lake, Bank Rock Bay is a popular bird-watching area. The Conservancy recently restored the site as part of a larger effort to secure the Lake's eroding shoreline. ","products":null,"services":null,"type":"landscapes-points-of-interest","status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/great-lawn\/bank-rock-bay.html","imageurl":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/images\/bank-rock-bay-t.jpg","tier":"3","category":"Central Park","distance":"0.00293365794747869"},{"idlocalize":"22610250","entityid":"M010","destname":"Hernshead","altname":null,"localname":"Hernshead","desttype":"Central Park","destsubtype":"Destinations","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.77797000000000","longitude":"-73.97296000000000","directions":null,"description":"Hernshead, a promontory that juts out into The Lake, is named after what must have once been the shape of a \"hern\" or heron's head, and a bird often sighted in Central Park. Hernshead is planted with seasonal flowers and aquatic plantings.","products":null,"services":null,"type":"landscapes-points-of-interest","status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/great-lawn\/hernshead.html","imageurl":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/images\/hernshead-t.jpg","tier":"3","category":"Central Park","distance":"0.00293828965438969"},{"idlocalize":"22610280","entityid":"M010","destname":"Diana Ross Playground","altname":null,"localname":"Diana Ross Playground","desttype":"Central Park","destsubtype":"Destinations","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":"81 St & Central Pk West","address2":null,"zip":null,"latitude":"40.78223000000000","longitude":"-73.97094000000000","directions":null,"description":"Funding for this playground was provided by the singer Diana Ross after her historic concert on the Great Lawn in 1983. ","products":null,"services":null,"type":"playground","status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/great-lawn\/diana-ross-playground.html","imageurl":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/images\/diana-ross-playground-t.jpg","tier":"3","category":"Central Park","distance":"0.00305021013246212"},{"idlocalize":"22598734","entityid":null,"destname":"Park, Yun K","altname":"Poly Organic Cleaners","localname":"Poly Organic Cleaners","desttype":"Facilities","destsubtype":"LAUNDRY","statecode":"NY","city":"New York","borough":"New York","countyname":"NEW YORK","address1":"60 West   75 Street","address2":"","zip":"10023","latitude":"40.77885752917574","longitude":"-73.97625162126306","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":"2127210478","cost":null,"url":null,"imageurl":null,"tier":"2","category":"Laundromat","distance":"0.00326421421901756"},{"idlocalize":"22610200","entityid":"M010","destname":"Ramble Stone Arch","altname":null,"localname":"Ramble Stone Arch","desttype":"Central Park","destsubtype":"Destinations","statecode":"NY","city":"New York","borough":"New York","countyname":"New York","address1":null,"address2":null,"zip":null,"latitude":"40.77837400000000","longitude":"-73.97134400000000","directions":null,"description":"This rough stone arch stands in a cleft between two high rock outcrops. It is considered one of the most picturesque of Central Park's bridges.","products":null,"services":null,"type":"arches-and-bridges","status":null,"hours":null,"phone":null,"cost":null,"url":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/great-lawn\/ramble-stone-arch.html","imageurl":"http:\/\/www.centralparknyc.org\/visit\/things-to-see\/images\/ramble-stone-arch-t.jpg","tier":"3","category":"Central Park","distance":"0.00336515396926446"},{"idlocalize":"22602486","entityid":null,"destname":"Click Parking Corp","altname":null,"localname":"Click Parking Corp","desttype":"Facilities","destsubtype":"Parking Garage","statecode":"NY","city":"New Yrok","borough":"New Yrok","countyname":"NEW YROK","address1":"225 Central Park","address2":null,"zip":"10024","latitude":"40.78309010964309","longitude":"-73.97099741328788","directions":null,"description":"Number of spaces: 58","products":null,"services":null,"type":"Parking Garage","status":null,"hours":null,"phone":"2122493344","cost":null,"url":null,"imageurl":null,"tier":"1","category":"Parking Garage","distance":"0.00348570078114377"},{"idlocalize":"1920291","entityid":null,"destname":"Mount Pleasant Baptist Church","altname":null,"localname":"Mount Pleasant Baptist Church","desttype":"Church","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"119 W 80th St","address2":null,"zip":"10024-7101","latitude":"40.78361110000000","longitude":"-73.97638890000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"1","category":"Churches","distance":"0.00390707721553944"},{"idlocalize":"1927305","entityid":null,"destname":"Mount Pleasant Christian Academy","altname":null,"localname":"Mount Pleasant Christian Academy","desttype":"School","destsubtype":null,"statecode":"NY","city":"New York","borough":null,"countyname":"New York","address1":"119 W 80th St","address2":null,"zip":"10024-7101","latitude":"40.78361110000000","longitude":"-73.97638890000000","directions":null,"description":null,"products":null,"services":null,"type":null,"status":null,"hours":null,"phone":null,"cost":null,"url":null,"imageurl":null,"tier":"1","category":"Education","distance":"0.00390707721553944"}];
+			window.searchmax = window.tierdisplay.length;
+			displayresults();
+
+	}
+	
+	$(window).scroll(function(){  
+        if($(window).scrollTop() >= $(document).height() - ($(window).height()+120)){  
+    		if((window.searchpage*window.searchshow + 1)<window.searchmax){
+	        	var temp1 = _.template(window.template, {outdata : window.tierdisplay, page: window.searchpage, numentries: window.searchshow});
+	//        	$( temp1 ).appendTo("#nearby_wrap");
+	        	$( ".nearby_wrap" ).append(temp1);
+//	        	console.log("page: "+ window.searchpage+", numshow:"+window.searchshow+", max: "+window.searchmax);
+
+	        	jQuery.each(window.tierdisplay, function(index, value){
+	        		var count = index+1;
+//	        		console.log("count: "+count+", shownum: "+window.searchshow+", page:"+window.searchpage);
+	        		if(count>=(window.searchpage*window.searchshow) && count < ((window.searchpage+1)*window.searchshow)){
+
+	                  	var myLatlng = new google.maps.LatLng(value.latitude,value.longitude);
+//		        		console.log("lat: "+value.latitude+", lon: "+value.longitude);
+	                  	
+	                	window.marker[count] = new google.maps.Marker({
+	                	    position: myLatlng,
+	                	    title: value.destname,
+	                	    animation: google.maps.Animation.DROP,
+	                  	    icon: 'http://siteimages.gatheringup.com/mapsicon/'+count+'.png'
+//	                  	    icon: 'https://chart.googleapis.com/chart?chst=d_map_spin&chld=.6%7C0%7C44dBbC%7C11%7Cb%7C'+count
+	                	});
+	                	window.marker[count].setMap(window.mapgathering );
+
+	    	        	var divnum = document.getElementById(count);
+//	    	    		$(divnum).attr("gid", i);
+	    	    		google.maps.event.addDomListener(divnum, 'click', function(e) {
+	    	        		count = $(this).attr("id");
+	    	    			toggleBounce(count);
+	    	   			});
+
+//		        		console.log("count: "+count+", shownum: "+window.searchshow);
+	        		}
+	        		if(count == ((window.searchpage+1)*window.searchshow)){
+//	        			console.log("counts equal");
+	        			return false;
+		        	}
+	        	});
+
+	        	// Reset event handlers because we reloaded new data.
+	        	$(".item_tab").unbind('click');
+	        	$(".nearby_item").off('mouseenter mouseleave');
+	        	
+	        	$(".item_tab").click(function() {
+//	        		console.log("parent");
+	        		$(this).parent().siblings(".item_content").slideToggle();
+	        		$(this).children("span").toggleClass("icon-chevron-down");
+	        		$(this).children("span").toggleClass("icon-chevron-up");
+	        	});
+	        	$(".nearby_item").hover(function(){
+//	        		console.log("CTA_button2");
+	        		$(this).find(".CTA_button").toggle();
+	        	});
+	        	window.searchpage++;	
+    		}
+        }  
+	});   
+	
+	$(".nearby_item").hover(function(){
+//		console.log("CTA_button2");
+		$(this).find(".CTA_button").toggle();
+	});
+
+	$(".item_tab").click(function(){
+		$(this).parent().siblings(".item_content").slideToggle();
+		$(this).children("span").toggleClass("icon-chevron-down");
+		$(this).children("span").toggleClass("icon-chevron-up");
+	});
+});
+</script>
+    
+    <!-- Footer -->
+      <div class="footer2">
+        <p class="footer_bold">Copyright Gathering Up Ltd 2013. All rights reserved.&nbsp|
+          <a href="https://www.facebook.com/GatheringUp"><span class="icon-datebookfacebook"></span>Facebook</a>  |
+          <a href="https://twitter.com/Gathering_UP"><span class="icon-twitter"></span>Twitter</a>  |
+          <a href="http://gatheringup.wordpress.com"><span class="icon-wordpress"></span>Blog</a>  |
+          <a href="/about">About Us</a>  |
+          <a href="/about/termsofuse">Terms of Use</a>  |
+          <a href="/about/privacy">Privacy Policy</a> |
+        </p>
+      </div>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/bootstrap.min.js"></script>
+<!--Carousel Javascript-->    
+    <script type="text/javascript"> 
+
+    
+      $(function(){
+    	  $("#regpassword").tooltip();
+      });
+    </script>
+  </body>
+</html>

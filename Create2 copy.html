@@ -2,34 +2,35 @@
 <html>
 <head>
 	<title>GatheringUP - Homepage</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
-    <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
-    <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+  <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
+  <meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
 
-    <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
-    <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-responsive.css"/>
-    <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-mobile.css"/>
-    <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles_create.css">
-    <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/icomoon/icomoon.css">  
-    <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/jquery_override.css">
-    <link href="http://siteimages.gatheringup.com/css/select2-create.css" rel="stylesheet"/>
-    
-    <script type="text/javascript" src="http://localhost/js/underscore-min.js"></script>
-    <script src="http://localhost/js/jquery-1.7.2.min.js"></script>    
-    <script src="http://localhost/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://localhost/js/gatheringup-story.js"></script>
-    <script src="http://localhost/js/select2.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>  
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-responsive.css"/>
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap-mobile.css"/>
+  <!-- <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles2.css"> -->
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles_create.css">
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/icomoon/icomoon.css">  
+  <link rel="stylesheet" href="http://siteimages.gatheringup.com/css/jquery_override.css">
+  <link href="http://siteimages.gatheringup.com/css/select2-create.css" rel="stylesheet"/>
 
-	<!-- Google Font -->
+  <script type="text/javascript" src="http://localhost/js/underscore-min.js"></script>
+  <script src="http://localhost/js/jquery-1.7.2.min.js"></script>    
+  <script src="http://localhost/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://localhost/js/gatheringup-story.js"></script>
+  <script src="http://localhost/js/select2.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>  
 
-    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
-    <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  <!-- Google Font -->
 
-<script type="text/javascript" src="http://localhost/js/gatheringup-registration.js"></script>
-<script type="text/javascript">
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+  <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="http://localhost/js/gatheringup-registration.js"></script>
+  <script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-38678718-1']);
@@ -41,9 +42,9 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script>
-      </head>
-        <body onload="initialize()">
+  </script>
+</head>
+<body onload="initialize()">
           <script src="http://localhost/js/jqBootstrapValidation.js"></script>
             <script type="text/javascript">
 
@@ -283,47 +284,47 @@ $(document).ready(function(){
 </script>
 
 <script type="text/html" id='idmodule'>
-    <div class="content_btn">
-			<form method="post" action="javascript:void(0);" enctype="multipart/form-data">
-				<input type="hidden" name="articleid" value="<%=articleid%>"> 
-				<input type="hidden" name="idsection" class="sequence"	value="">
-        <div class="row content_unit added_unit">          
-          <span class="btn-destory icon-remove"></span>
-            <div class="form_sizing">
-                <div class="image_unit">
-                    <div class="placeholder_box img-polaroid">
-          				<img src="http://siteimages.gatheringup.com/images/placeholder_img4.jpg" class="preview_img" alt="">
-                </div>
-                <a class="file-input-wrapper btn btn-upload btn-green">Upload Image
-                	<input title="Upload Image" type="file"  name="storyitemfile" value="" onchange="uploadimage(this)" >
-                  <i class="icon-picture icon-white"></i>
-                </a>
-              <span></span>
-            <input class="form_normal locationsearch" placeholder="Where did you go next?" name="place"  type="text" autocomplete="off" value="">
-            </div>
-                  <textarea class="input_reset description_text" placeholder="Tell Us a bit more about what you did?" name="content" id="" rows="8"></textarea>    
-            </div>
-			     <input class="btn btn-danger"  type="submit"  onclick="savemodule(this)"  value="Save">       
-        </div>
-			</form>                 
-    </div>
+  <div class="content_btn">
+		<form method="post" action="javascript:void(0);" enctype="multipart/form-data">
+			<input type="hidden" name="articleid" value="<%=articleid%>"> 
+			<input type="hidden" name="idsection" class="sequence">
+      <div class="row content_unit added_unit">          
+        <span class="btn-destory icon-remove"></span>
+          <div class="form_sizing">
+              <div class="image_unit">
+                  <div class="placeholder_box img-polaroid">
+        				<img src="http://siteimages.gatheringup.com/images/placeholder_img4.jpg" class="preview_img" alt="">
+              </div>
+              <a class="file-input-wrapper btn btn-upload btn-green">Upload Image
+              	<input title="Upload Image" type="file"  name="storyitemfile" value="" onchange="uploadimage(this)" >
+                <i class="icon-picture icon-white"></i>                  
+              </a>
+              <div class="featured_check">FEATURED<input type="checkbox" name="featured" value="featured"></div>                 
+            <span></span>
+          <input class="form_normal locationsearch" placeholder="Where did you go next?" name="place"  type="text" autocomplete="off" value="">
+          </div>
+                <textarea class="input_reset description_text" placeholder="Tell Us a bit more about what you did?" name="content" id="" rows="8"></textarea>    
+          </div>  
+      </div>
+		</form>                 
+  </div>
 
 <!-- Add class to wrap add more and publish story button -->
 
-      <div class="progress_buttons">
-        <button class="btn btn-large btn-add btn-green" onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add More</button>      
-        <button id="btn-publish" type="submit" class="btn btn-large btn-green" onclick="publishstory()">Publish story !</button>
-      </div>    
+<div class="progress_buttons">
+<button class="btn btn-large btn-add btn-green" onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add</button>      
+<button id="btn-publish" type="submit" class="btn btn-large btn-green" onclick="publishstory()">Publish Story !</button>
+</div>
 
 </script>
 
-    <script type="text/html" id='idaddmodulebutton'>
-            <button class="btn btn-large btn-add btn-green" onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add Location</button>  
-    </script>
+<script type="text/html" id='idaddmodulebutton'>
+  <button class="btn btn-large btn-add btn-green" onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add Location</button>  
+</script>
 
-    <script type="text/html" id='publishbutton'>
-        <br><button id="btn-publish" type="submit" class="btn btn-large btn-green" onclick="publishstory()">Publish story!</button>      
-    </script>
+<script type="text/html" id='publishbutton'>
+    <br><button id="btn-publish" type="submit" class="btn btn-large btn-green" onclick="publishstory()">Publish Story!</button>      
+</script>
 
 
     <!-- Create Outing Top -->
@@ -331,17 +332,13 @@ $(document).ready(function(){
     <div class="create_container"> 
       <div class="create_frame span7">
         <h1>Share Your Story</h1>
+
         <div class="row top_unit">
           <form  method="post"  action="#"  id="article" accept-charset="utf-8" enctype="multipart/form-data" >
             <div class="image_unit">
               <div class="placeholder_box img-polaroid">
-                  <img src="http://siteimages.gatheringup.com/images/placeholder_img3.jpg" class="preview_img" alt="">
+                <img src="http://siteimages.gatheringup.com/images/placeholder_img3.jpg" class="preview_img" alt="">
               </div>
-              <a class="file-input-wrapper btn btn-upload btn-green">Upload Image
-              <input title="Upload Image"  name="storyfile" type="file" value="" onchange="uploadimage(this)">
-              <i class="icon-picture icon-white"></i>
-              </a>
-              <span></span>                                 
             </div>            
             <input type="hidden" name="articleid" value="0">
             <div class="form_sizing">
@@ -352,46 +349,44 @@ $(document).ready(function(){
               <h5>By Kenneth Su</h5>            
             </div>
             <div class="form_sizing">
-                <select multiple="multiple" name="category[]" placeholder="PICK CATEGORIES"  value=' ' id="e1" class="full-width">
-                  <option value="7">Local Residents</option>
-                  <option value="8">Visitors</option>
-                </select>  
+              <select multiple="multiple" name="category[]" placeholder="PICK CATEGORIES"  value=' ' id="e1" class="full-width">
+                <option value="7">Local Residents</option>
+                <option value="8">Visitors</option>
+              </select>  
             </div>  
           </form>
         </div>      
 
     <!-- Create Second Unit -->
 
-        <div class="content_btn">
-              <form method="post" action="javascript:void(0);" enctype="multipart/form-data">
-                <input type="hidden" name="articleid" value="314"> 
-                <input type="hidden" name="idsection" class="sequence" value="">
-                <div class="row content_unit">                   
-                  <div class="placeholder_box img-polaroid">
-                    <img src="http://siteimages.gatheringup.com/images/placeholder_img4.jpg" class="preview_img" alt="">
-                  </div>              
-                        <div class="image_unit">
-                            <a class="file-input-wrapper btn btn-upload btn-green">Upload Image
-                              <input title="Upload Image" type="file" name="storyitemfile" value="" onchange="uploadimage(this)">
-                              <i class="icon-picture icon-white"></i>
-                            </a>
-                          <span></span>                                 
-                        </div>                                
-                    <input class="form_normal locationsearch" placeholder="Where did you go?" name="place" type="text" autocomplete="off" value="">
-                        
-                          <textarea class="input_reset description_text" placeholder="Describe what you did?" name="content" id="" rows="8"></textarea>    
-                        
-                    
-              <input class="btn btn-danger" type="submit" onclick="savemodule(this)" value="Save">       
-              <div class="dashedline"></div>
-                </div>
-              </form>
+    <div class="content_btn">
+      <form method="post" action="javascript:void(0);" enctype="multipart/form-data">
+        <input type="hidden" name="articleid" value="314"> 
+        <input type="hidden" name="idsection" class="sequence" value="">
+        <div class="row content_unit">                            
+          <div class="image_unit">
+            <div class="placeholder_box img-polaroid">
+              <img src="http://siteimages.gatheringup.com/images/placeholder_img4.jpg" class="preview_img" alt="">
+            </div>                                          
+            <a class="file-input-wrapper btn btn-upload btn-green">Upload Image
+              <input title="Upload Image" type="file" name="storyitemfile" value="" onchange="uploadimage(this)">
+              <i class="icon-picture icon-white"></i>
+            </a>
+            <div class="featured_check">FEATURED<input type="checkbox" name="featured" value="featured"></div>             
+            <span></span>
 
-              <div class="progress_buttons">
-                <button class="btn btn-large btn-add btn-green" onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add More</button>      
-                <button id="btn-publish" type="submit" class="btn btn-large btn-green" onclick="publishstory()">Publish story !</button>
-              </div>                 
-        </div>        
+          </div>                                
+          <input class="form_normal locationsearch" placeholder="Where did you go?" name="place" type="text" autocomplete="off" value="">    
+          <textarea class="input_reset description_text" placeholder="Describe what you did?" name="content" id="" rows="8"></textarea>                               
+          <div class="dashedline"></div>
+        </div>
+      </form>
+
+      <div class="progress_buttons">
+        <button class="btn btn-large btn-add btn-green" onclick="addmodule(this)"><i class="icon-plus icon-white"></i>&nbsp;Add</button>      
+        <button id="btn-publish" type="submit" class="btn btn-large btn-green" onclick="publishstory()">Publish Story !</button>
+      </div>                 
+    </div>        
 
   
     <script>

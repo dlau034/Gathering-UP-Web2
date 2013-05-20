@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GatheringUP - Homepage</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+<meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple. Gathering Up made Simple.">
+<meta name="keywords" content="GatheringUp, Gathering Up, New York City, Organize, Friends, Events, Dining, Place, Food, Drink">
+
+<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
+<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles_nav.css">
+<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/admin_panel.css">
+<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/icomoon/icomoon.css">  
+  
+  <script type="text/javascript" src="/js/underscore-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="/js/gatheringup-registration.js"></script>
+    <script class="jsbin" src="/js/jquery.dataTables.nightly.js"></script>   
+    
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+  <!-- Header + Navbar -->
+
+
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+		<div class="brand_fix">
+          <a class="brand" href="/">GatheringUP</a>
+        </div> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="/gupadmin/neighborhood">Neighborhood</a></li>                      
+                  <li><a href="/gupadmin/tags">Tags</a></li>                      
+                  <li><a href="/gupadmin/places">Places</a></li>                      
+                  <li><a href="/gupadmin/events">Events</a></li>                      
+                  <li><a href="/gupadmin/rankings">Rankings</a></li>                      
+                  </ul>
+						
+<span id="loggedinuserspan">
+                                   <!-- Dropdown -->                
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        David Lau                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+
+                    <!-- Not logged In --> 
+               </span>
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+ <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
+
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Register with GatheringUP!</h1>
+     <div class="dividline"></div>
+       <form id="registerform">
+         <div class="clearfix">
+
+           <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>
+               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
+           </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>                  
+                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
+               </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <p class="help-block"></p>   
+                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
+             </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
+             </div>              
+         </div>              
+
+         <div class="control-group">
+             <div class="control">    
+
+               <input 
+                 id="password2nd"
+                 class="form_reg" 
+                 placeholder="Retype Password"
+                 type="password"
+                 name="passwordconf"
+                 data-validation-match-match="password1"    
+                 minlength="8" 
+                 data-validation-minlength-message="Minimum 8 Characters"              
+                 />
+               <p class="help-block"></p>    
+             </div>              
+         </div>       
+<div id="RegistrationErrors"></div>
+
+           <div class="control-group">
+             <div class="control">                  
+               <p class="help-block"></p>                                 
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" type="text" placeholder="Enter Catcha" required>
+               <div ><img src="/captcha"></div>                
+             </div>
+           </div>
+
+         </div>
+
+         <div class="dividline"></div>
+         <button class="btn btn-large btn-green" >Register!</button>
+       </form>
+     <h4>OR</h4>
+<a href=""  id="fb_register" class="facebookurl"  >
+     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
+</a>
+ </div>    
+
+
+
+<!--Forgot Password Modal-->
+<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Forgot Password?</h1>
+     <div class="dividline"></div>
+       <form  id="forgotpasswordform" class="forgot_fields clearfix">
+         <div class="control-group">
+           <div class="controls">
+              <p class="help-block"></p>
+               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
+
+           </div>
+         </div>
+         <button type="submit" class="btn btn-green">Forgot Password!</button>  
+       </form>  
+  </div>
+  
+   
+
+    <script>
+    /*
+      $(document).ready(function() {
+        $('#Neigbhor_table').dataTable();
+      } ); 
+       */
+       function goneighborhood()
+       {
+           console.log("Go Neighborhood...");
+           var template = $("#neighborhoodtemplate").html();
+           neighborhood = $("#idneighbors").val();
+           data = {idneighborhood: neighborhood};
+           console.log(data);
+           
+	       	$.ajax({
+	    		url: '/gupadmin/neighborhood/getneighborhooddetails',
+	    		type: 'POST',
+	    		data: data,
+	            success:  function (responseText){
+	            	try{
+	                	var outdata = jQuery.parseJSON(responseText);
+//		             	console.log(responseText);
+		                var temp = _.template(template,{neighborhood: outdata});
+		                $("#Neighborhoodspan").html(temp);
+//		                console.log(neighborhood);
+		                $('#Neigbhor_table').dataTable({'iDisplayLength':25});
+		                $( ".typeahead" ).typeahead({
+		                    source: availableTags
+		                  });
+	            	}catch(e){
+//	            		console.log("found json error!");
+	            		console.log(e);
+		            }
+	            }
+	    	});
+       }
+       function editneighborhood(){
+           console.log("Edit Neighborhood...");
+           var template = $("#editneighborhoodtemplate").html();
+           neighborhood = $("#idneighbors").val();
+           data = {idneighborhood: neighborhood};
+	       	$.ajax({
+	    		url: '/gupadmin/neighborhood/getneighborhood',
+	    		type: 'POST',
+	    		data: data,
+	            success:  function (responseText){
+	            	try{
+	                	var outdata = jQuery.parseJSON(responseText);
+//		             	console.log(responseText);
+		                var temp = _.template(template,{neighborhood: outdata});
+		                $("#Editneighborhoodspan").html(temp);
+//		                console.log(neighborhood);
+		     			$(".add_neighbor").modal("show");
+	            	}catch(e){
+//	            		console.log("found json error!");
+	            		console.log(e);
+		            }
+	            }
+	    	});
+       }
+       function saveneighborhood(){
+//    		var tzero = $(element).closest("Form");
+    		var senddata =$("#add_neighbor_form").serialize();
+    		var active = $("#hoodactive button.active").val();
+    		senddata = senddata+"&hoodactive="+active;
+
+    		console.log("Edit Neighborhood...: "+active);
+    		console.log(senddata);
+    		
+			$.ajax({
+				url: '/gupadmin/neighborhood/editneighborhood',
+				type: 'POST',
+				data: senddata,
+				success:  function (responseText){
+		
+//			       	var outdata = jQuery.parseJSON(responseText);
+		         	console.log(responseText);
+		         	window.location='/gupadmin/neighborhood';
+//					$(".add_neighbor").modal("hide");
+		        }
+			});
+       }
+       function addneighborhood(){
+           console.log("Add Neighborhood...");
+           var template = $("#editneighborhoodtemplate").html();
+//           neighborhood = $("#idneighbors").val();
+           var temp = _.template(template,{neighborhood: {}});
+           $("#Editneighborhoodspan").html(temp);
+//           console.log(neighborhood);
+			$(".add_neighbor").modal("show");
+       }
+
+       function addcategory()
+       {
+           var senddata = $("#add_category_form").serialize();
+           console.log(senddata);
+           
+			$.ajax({
+				url: '/gupadmin/neighborhood/addcategory',
+				type: 'POST',
+				data: senddata,
+				success:  function (responseText){
+		         	goneighborhood();
+		        }
+			});
+       }
+       function showremovecategory(category)
+       {
+           console.log("delete: ");
+           console.log(category);
+           var template = $("#categoryremovetemplate").html();
+//         neighborhood = $("#idneighbors").val();
+         var temp = _.template(template,category);
+         $("#Categoryremovespan").html(temp);
+         $(".remove_row_button").modal("show");
+       }
+       function removecategory(idneighborhood, idcategorygroup)
+       {
+           senddata = {idneighborhood: idneighborhood, idcategorygroup: idcategorygroup };
+           console.log("remove category");
+			$.ajax({
+				url: '/gupadmin/neighborhood/removecategory',
+				type: 'POST',
+				data: senddata,
+				success:  function (responseText){
+					console.log(responseText);
+		         	goneighborhood();
+		        }
+			});
+       }
+       function showeditcategory(category)
+       {
+           console.log("show edit category");
+           console.log(category);
+           var template = $("#categoryedittemplate").html();
+//         neighborhood = $("#idneighbors").val();
+         var temp = _.template(template, category);
+         $("#Categoryeditspan").html(temp);
+         $(".edit_row_button").modal("show"); 
+       }
+       function editcategory(element)
+       {
+           console.log("edit category");
+           var senddata = $(element).closest("form").serialize();
+           console.log(senddata);
+			$.ajax({
+				url: '/gupadmin/neighborhood/editcategory',
+				type: 'POST',
+				data: senddata,
+				success:  function (responseText){
+					console.log(responseText);
+		         	goneighborhood();
+		        }
+			});
+       }
+       function addtag(element)
+       {
+           var senddata = $(element).closest("form").serialize();
+           
+			$.ajax({
+				url: '/gupadmin/neighborhood/addtag',
+				type: 'POST',
+				data: senddata,
+				success:  function (responseText){
+					var outdata = jQuery.parseJSON(responseText);
+					if(outdata == null || outdata.status==false){
+						// Tag already exists in system... do nothing.
+					}else{
+						$(element).parents("tr").find('select[name="tags"]').append('<option value="'+outdata.name+'">'+outdata.name+'</option>');
+						$(element).parents("tr").find('input[name="tagname"]').val("");
+					}
+		        }
+			});
+       }
+       function removetag(element)
+       {
+           console.log("remove tag");
+           var senddata = $(element).closest("form").serialize();
+			console.log(senddata);
+           
+			$.ajax({
+				url: '/gupadmin/neighborhood/removetag',
+				type: 'POST',
+				data: senddata,
+				success:  function (responseText){
+					var outdata = jQuery.parseJSON(responseText);
+					if(outdata.status==false){
+						// Tag already exists in system... do nothing.
+					}else{
+						console.log("remove tag working...");
+						$(element).closest('form').find('option[value="'+outdata.tags+'"]').remove();
+					}
+		        }
+			});
+       }
+      
+
+      var availableTags = ["Accessories","Accountants","Active Life","Acupuncture","Adult","Adult Education","Adult Entertainment","Advertising","Afghan","African","Airlines","Airport Shuttles","Airports","Allergists","Amateur Sports Teams","American (New)","American (Traditional)","Amusement Parks","Anesthesiologists","Animal Shelters","Antiques","Apartments","Appliances","Appliances & Repair","Aquariums","Arabian","Arcades","Arch","Archery","Architects","Area","Argentine","Arroyo","Art Galleries","Art Schools","Art Supplies","Arts & Crafts","Arts & Entertainment","Asian Fusion","Auction Houses","Audiologist","Australian","Austrian","Auto Detailing","Auto Glass Services","Auto Parts & Supplies","Auto Repair","Automotive","BBQ Area","Baby Gear & Furniture","Bagels","Bail Bondsmen","Bakeries","Bangladeshi","Bankruptcy Law","Banks & Credit Unions","Bar","Barbeque","Barbers","Barre Classes","Bars","Bartenders","Basin","Basketball Court","Basque","Bathroom","Bay","Beaches","Beauty and Spas","Bed & Breakfast","Beer, Wine & Spirits","Belgian","Bench","Bend","Bespoke Clothing","Bicycle Racks","Bike Rentals","Bike Repair\/Maintenance","Bikes","Boat Charters","Boat Dealers","Boat Repair","Boating","Bocce","Body Shops","Books, Mags, Music and Video","Bookstores","Boot Camps","Botanical Gardens","Bowling","Brasseries","Brazilian","Breakfast & Brunch","Breweries","Bridal","Bridge","British","Bubble Tea","Buddhist Temples","Buffets","Building Supplies","Burgers","Burmese","Butcher","CPR Classes","CSA","Cafes","Cajun\/Creole","Cambodian","Campgrounds","Canal","Candy Stores","Cannabis Clinics","Cantonese","Cape","Car Dealers","Car Rental","Car Stereo Installation","Car Wash","Cardiologists","Cards & Stationery","Career Counseling","Caribbean","Carpet Cleaning","Carpet Installation","Carpeting","Casinos","Catalan","Caterers","Cemetery","Census","Central Park","Champagne Bars","Channel","Charlie Parker Jazz Festival","Check Cashing\/Pay-day Loans","Cheese Shops","Cheesesteaks","Chicken Wings","Child Care & Day Care","Children's Clothing","Chilean","Chinese","Chiropractors","Chocolatiers and Shops","Churches","Cinema","City Hall","Civil","Cliff","Climbing","Clowns","Coffee & Tea","College Counseling","Colleges & Universities","Colombian","Comedy","Comedy Clubs","Comfort Food","Comic Books","Commercial Real Estate","Community Center","Community Service\/Non-Profit","Computers","Concession","Contractors","Convenience Stores","Cooking Schools","Cosmetic Dentists","Cosmetic Surgeons","Cosmetics & Beauty Supply","Cosmetology Schools","Costumes","Counseling & Mental Health","Country Dance Halls","Couriers & Delivery Services","Courthouses","Crater","Creperies","Cricket","Criminal Defense Law","Crossing","Cuban","Cultural Center","Czech\/Slovakian","DJs","Dam","Dance","Dance Clubs","Dance Schools","Dance Studios","Data Recovery","Day Spas","Delis","Dentists","Department Stores","Departments of Motor Vehicles","Dermatologists","Desserts","Diagnostic Imaging","Diagnostic Services","Dim Sum","Diners","Disc Golf","Discount Store","Dive Bars","Diving","Divorce and Family Law","Do-It-Yourself Food","Doctors","Dog Parks","Dog Walkers","Dominican","Donuts","Driving Schools","Drugstores","Dry Cleaning & Laundry","Ear Nose & Throat","Eastern European","Editor's Picks","Education","Educational Services","Egyptian","Electricians","Electronics","Electronics Repair","Elementary Schools","Embassy","Employment Agencies","Employment Law","Endodontists","Estate Planning Law","Ethiopian","Ethnic Food","Event Photography","Event Planning & Services","Eyelash Service","Eyewear & Opticians","Fabric Stores","Falls","Family Practice","Farmers Market","Fashion","Fast Food","Ferry Terminals","Fertility","Festivals","Filipino","Financial Advising","Financial Services","Fire Departments","Fireworks","Fish & Chips","Fishing","Fitness & Instruction","Flat","Flight Instruction","Flooring","Florists","Flowers & Gifts","Fondue","Food","Food Court","Food Delivery Services","Food Stands","Food Trucks","Forest","Formal Wear","Framing","Free Diving","French","Fruits & Veggies","Funeral Services & Cemeteries","Furniture Reupholstery","Furniture Stores","Gap","Garage Door Services","Gardeners","Gas & Service Stations","Gastroenterologist","Gastropubs","Gay Bars","Gelato","General Dentistry","General Litigation","Geographic Location","German","Gerontologists","Gift Shops","Glacier","Gluten-Free","Go Karts","Golf","Golf Equipment","Graphic Design","Greek","Grocery","Guest Houses","Gun\/Rifle Ranges","Guns & Ammo","Gut","Gyms","Hair Extensions","Hair Removal","Hair Salons","Hair Stylists","Haitian","Halal","Handball Courts","Handyman","Hang Gliding","Harbor","Hardware Stores","Hats","Hawaiian","Health Markets","Health and Medical","Hearing Aid Providers","Heating & Air Conditioning\/HVAC","Herbs and Spices","Hiking","Himalayan\/Nepalese","Hindu Temples","Hobby Shops","Home & Garden","Home Cleaning","Home Decor","Home Health Care","Home Inspectors","Home Organization","Home Services","Home Staging","Home Theatre Installation","Hookah Bars","Horse Boarding","Horse Racing","Horseback Riding","Hospice","Hospitals","Hostels","Hot Dogs","Hot Pot","Hot Tub and Pool","Hotels","Hotels & Travel","Hungarian","IT Services & Computer Repair","Iberian","Ice Cream & Frozen Yogurt","Immigration Law","Indian","Indonesian","Insurance","Interior Design","Internal Medicine","Internet Cafes","Internet Service Providers","Investing","Irish","Island","Isthmus","Italian","Japanese","Jazz & Blues","Jewelry","Juice Bars & Smoothies","Junk Removal and Hauling","Karaoke","Keys & Locksmiths","Kids & Family","Kitchen & Bath","Kiteboarding","Knitting Supplies","Korean","Kosher","Laboratory Testing","Lactation Services","Lake","Lakes","Landmarks & Historical Buildings","Landscape Architects","Landscaping","Language Schools","Laotian","Laser Eye Surgery\/Lasik","Laser Hair Removal","Latin American","Laundromat","Lava","Lawyers","Leather Goods","Lebanese","Leisure Centers","Levee","Libraries","Life Coach","Lighting Fixtures & Equipment","Limos","Lingerie","Live\/Raw Food","Local Flavor","Local Services","Lounges","Luggage","Magicians","Makeup Artists","Malaysian","Marketing","Martial Arts","Masonry\/Concrete","Mass Media","Massage","Massage Schools","Massage Therapy","Matchmakers","Maternity Wear","Mattresses","Meat Shops","Medical Centers","Medical Spas","Medical Transportation","Mediterranean","Men's Clothing","Men's Hair Salons","Mexican","Middle Eastern","Middle Schools & High Schools","Midwives","Military","Mine","Mini Golf","Mobile Phone Repair","Mobile Phones","Modern European","Mongolian","Moroccan","Mortgage Brokers","Mosques","Motorcycle Dealers","Motorcycle Rental","Motorcycle Repair","Mountain Biking","Movers","Museums","Music","Music & DVDs","Music & Dance","Music & Film","Music Venues","Musical Instruments & Teachers","Musicians","Nail Salons","Nature Center","Nature Preserve","Naturopathic\/Holistic","Neurologist","Newspapers & Magazines","Nightlife","Not Listed\/Not Applicable","Notaries","Nurseries & Gardening","Nutritionists","Nuts\/Confectionary","Obstetricians and Gynecologists","Occupational Therapy","Office Cleaning","Office Equipment","Officiants","Oil Change Stations","Oilfield","Oncologist","Opera & Ballet","Ophthalmologists","Optometrists","Oral Surgeons","Orthodontists","Orthopedists","Osteopathic Physicians","Other","Other Buildings","Outdoor Gear","Outlet Stores","Paddleboarding","Paintball","Painters","Pakistani","Parking","Parking Garage","Parks","Party & Event Planning","Party Bus Rentals","Party Equipment Rentals","Party Supplies","Pawn Shops","Pediatric Dentists","Pediatricians","Performing Arts","Periodontists","Persian\/Iranian","Personal Assistants","Personal Chefs","Personal Injury Law","Personal Shopping","Peruvian","Pest Control","Pet Boarding\/Pet Sitting","Pet Groomers","Pet Services","Pet Stores","Pet Training","Pets","Photographers","Photography Stores & Services","Physical Therapy","Piano Bars","Piercing","Pilates","Pillar","Pizza","Plain","Playgrounds","Plumbing","Plus Size Fashion","Podiatrists","Police Departments","Polish","Pool Cleaners","Pool Halls","Populated Place","Portuguese","Post Offices","Preschools","Print Media","Printing Services","Prison","Private Investigation","Private Tutors","Proctologists","Professional Services","Professional Sports Teams","Property Management","Psychiatrists","Psychics & Astrologers","Public Relations","Public Services & Government","Public Transportation","Pubs","Puerto Rican","Pulmonologist","RV Dealers","RV Rental","Radio Stations","Rafting\/Kayaking","Range","Rapids","Real Estate","Real Estate Agents","Real Estate Law","Real Estate Services","Recording & Rehearsal Studios","Recreation Centers","Recycling Bins","Recycling Center","Reflexology","Rehabilitation Center","Religious Organizations","Religious Schools","Reserve","Reservoir","Resorts","Restaurants","Retirement Homes","Ridge","Rock Climbing","Rolfing","Roofing","Running Tracks","Russian","Salad","Salvadoran","Sandwiches","Scandinavian","Scottish","Screen Printing","Screen Printing\/T-Shirt Printing","Scuba Diving","Sea","Seafood","Seafood Markets","Security Systems","Self Storage","Senegalese","Senior Center","Session Photography","Sewing & Alterations","Shades & Blinds","Shanghainese","Shared Office Spaces","Shaved Ice","Shipping Centers","Shoe Repair","Shoe Stores","Shopping","Shopping Centers","Sidewalk Cafe","Singaporean","Skate Parks","Skating Rinks","Ski Resorts","Skin Care","Skydiving","Slope","Smog Check Stations","Snow Removal","Soccer","Social Clubs","Solar Installation","Soul Food","Soup","South African","Southern","Spanish","Special Education","Specialty Food","Specialty Schools","Speech Therapists","Spoken Word","Sporting Goods","Sports Bars","Sports Clubs","Sports Medicine","Sports Wear","Spring","Stadiums & Arenas","Steakhouses","Stream","Street Vendors","Subway Station","Summer Camps","Summit","Surfing","Sushi Bars","Swamp","Swimming Lessons\/Schools","Swimming Pools","Swimwear","Synagogues","Szechuan","Tai Chi","Taiwanese","Talent Agencies","Tanning","Tapas Bars","Tapas\/Small Plates","Tattoo","Tattoo Removal","Tax Services","Taxis","Tea Rooms","Television Service Providers","Television Stations","Tennis","Test Preparation","Tex-Mex","Thai","Theater","Thrift Stores","Ticket Sales","Tires","Tobacco Shops","Tours","Tower","Towing","Toy Stores","Traditional Chinese Medicine","Trail","Train Stations","Trainers","Trampoline Parks","Translation Services","Transportation","Travel Services","Tree Services","Trinidadian","Truck Rental","Tubing","Tunnel","Turkish","Tutoring Centers","Ukrainian","Uniforms","University Housing","Unknown","Urgent Care","Used, Vintage & Consignment","Utilities","Vacation Rental Agents","Vacation Rentals","Valley","Vegan","Vegetarian","Venezuelan","Venues & Event Spaces","Veterinarians","Video\/Film Production","Videographers","Videos and Video Game Rental","Vietnamese","Vinyl Records","Visitor Center","Vocational and Technical School","Watch Repair","Watches","Water Fountain","Web Design","Wedding Planning","Weight Loss Centers","Well","Wholesale Stores","Wigs","Window Washing","Windows Installation","Windshield Installation & Repair","Wine Bars","Wineries","Wireless Internet Connection","Women's Clothing","Woods","Yoga","Zoos"];
+    </script>  
+    <div class="container">
+      <div class="top_wrap">
+
+        <h2>Neighborhood Selection</h2>        
+          <div class="breakline"></div>
+            <select name="neighbors" id="idneighbors">
+                          <option value="11">Baychester, Bronx</option>
+                            <option value="14">Bedford Park, Bronx</option>
+                            <option value="35">Belmont, Bronx</option>
+                            <option value="41">Castle Hill, Bronx</option>
+                            <option value="13">City Island, Bronx</option>
+                            <option value="270">Claremont Village, Bronx</option>
+                            <option value="28">Clason Point, Bronx</option>
+                            <option value="2">Co-op City, Bronx</option>
+                            <option value="44">Concourse, Bronx</option>
+                            <option value="271">Concourse Village, Bronx</option>
+                            <option value="30">Country Club, Bronx</option>
+                            <option value="18">East Tremont, Bronx</option>
+                            <option value="3">Eastchester, Bronx</option>
+                            <option value="46">Edenwald, Bronx</option>
+                            <option value="40">Edgewater Park, Bronx</option>
+                            <option value="4">Fieldston, Bronx</option>
+                            <option value="17">Fordham, Bronx</option>
+                            <option value="20">High  Bridge, Bronx</option>
+                            <option value="25">Hunts Point, Bronx</option>
+                            <option value="6">Kingsbridge, Bronx</option>
+                            <option value="24">Longwood, Bronx</option>
+                            <option value="21">Melrose, Bronx</option>
+                            <option value="16">Morris Heights, Bronx</option>
+                            <option value="34">Morris Park, Bronx</option>
+                            <option value="26">Morrisania, Bronx</option>
+                            <option value="22">Mott Haven, Bronx</option>
+                            <option value="272">Mount Eden, Bronx</option>
+                            <option value="273">Mount Hope, Bronx</option>
+                            <option value="37">North Riverdale, Bronx</option>
+                            <option value="9">Norwood, Bronx</option>
+                            <option value="42">Olinville, Bronx</option>
+                            <option value="31">Parkchester, Bronx</option>
+                            <option value="38">Pelham Bay, Bronx</option>
+                            <option value="43">Pelham Gardens, Bronx</option>
+                            <option value="12">Pelham Parkway, Bronx</option>
+                            <option value="23">Port Morris, Bronx</option>
+                            <option value="5">Riverdale, Bronx</option>
+                            <option value="39">Schuylerville, Bronx</option>
+                            <option value="27">Soundview, Bronx</option>
+                            <option value="36">Spuyten Duyvil, Bronx</option>
+                            <option value="29">Throgs Neck, Bronx</option>
+                            <option value="45">Unionport, Bronx</option>
+                            <option value="15">University Heights, Bronx</option>
+                            <option value="33">Van Nest, Bronx</option>
+                            <option value="1">Wakefield, Bronx</option>
+                            <option value="19">West Farms, Bronx</option>
+                            <option value="32">Westchester Square, Bronx</option>
+                            <option value="10">Williamsbridge, Bronx</option>
+                            <option value="8">Woodlawn, Bronx</option>
+                            <option value="80">Bath Beach, Brooklyn</option>
+                            <option value="47">Bay Ridge, Brooklyn</option>
+                            <option value="64">Bedford Stuyvesant, Brooklyn</option>
+                            <option value="48">Bensonhurst, Brooklyn</option>
+                            <option value="92">Bergen Beach, Brooklyn</option>
+                            <option value="88">Boerum Hill, Brooklyn</option>
+                            <option value="81">Borough Park, Brooklyn</option>
+                            <option value="52">Brighton Beach, Brooklyn</option>
+                            <option value="285">Broadway Junction, Brooklyn</option>
+                            <option value="65">Brooklyn Heights, Brooklyn</option>
+                            <option value="61">Brownsville, Brooklyn</option>
+                            <option value="63">Bushwick, Brooklyn</option>
+                            <option value="75">Canarsie, Brooklyn</option>
+                            <option value="67">Carroll Gardens, Brooklyn</option>
+                            <option value="91">City Line, Brooklyn</option>
+                            <option value="85">Clinton Hill, Brooklyn</option>
+                            <option value="66">Cobble Hill, Brooklyn</option>
+                            <option value="79">Coney Island, Brooklyn</option>
+                            <option value="56">Crown Heights, Brooklyn</option>
+                            <option value="72">Cypress Hills, Brooklyn</option>
+                            <option value="224">Ditmas Park, Brooklyn</option>
+                            <option value="87">Downtown, Brooklyn</option>
+                            <option value="286">Dumbo, Brooklyn</option>
+                            <option value="82">Dyker Heights, Brooklyn</option>
+                            <option value="57">East Flatbush, Brooklyn</option>
+                            <option value="73">East New York, Brooklyn</option>
+                            <option value="97">East Williamsburg, Brooklyn</option>
+                            <option value="55">Flatbush, Brooklyn</option>
+                            <option value="76">Flatlands, Brooklyn</option>
+                            <option value="70">Fort Greene, Brooklyn</option>
+                            <option value="102">Fort Hamilton, Brooklyn</option>
+                            <option value="282">Fulton Ferry, Brooklyn</option>
+                            <option value="95">Georgetown, Brooklyn</option>
+                            <option value="83">Gerritsen Beach, Brooklyn</option>
+                            <option value="69">Gowanus, Brooklyn</option>
+                            <option value="51">Gravesend, Brooklyn</option>
+                            <option value="50">Greenpoint, Brooklyn</option>
+                            <option value="298">Highland Park, Brooklyn</option>
+                            <option value="292">Homecrest, Brooklyn</option>
+                            <option value="58">Kensington, Brooklyn</option>
+                            <option value="299">Madison, Brooklyn</option>
+                            <option value="78">Manhattan Beach, Brooklyn</option>
+                            <option value="54">Manhattan Terrace, Brooklyn</option>
+                            <option value="84">Marine Park, Brooklyn</option>
+                            <option value="93">Midwood, Brooklyn</option>
+                            <option value="265">Mill Basin, Brooklyn</option>
+                            <option value="77">Mill Island, Brooklyn</option>
+                            <option value="100">Navy Yard, Brooklyn</option>
+                            <option value="263">New Lots, Brooklyn</option>
+                            <option value="98">North Side, Brooklyn</option>
+                            <option value="90">Ocean Hill, Brooklyn</option>
+                            <option value="101">Ocean Parkway, Brooklyn</option>
+                            <option value="264">Paerdegat Basin, Brooklyn</option>
+                            <option value="71">Park Slope, Brooklyn</option>
+                            <option value="60">Prospect Heights, Brooklyn</option>
+                            <option value="89">Prospect Lefferts Gardens, Brooklyn</option>
+                            <option value="94">Prospect Park South, Brooklyn</option>
+                            <option value="68">Red Hook, Brooklyn</option>
+                            <option value="262">Remsen Village, Brooklyn</option>
+                            <option value="226">Rugby, Brooklyn</option>
+                            <option value="86">Sea Gate, Brooklyn</option>
+                            <option value="53">Sheepshead Bay, Brooklyn</option>
+                            <option value="99">South Side, Brooklyn</option>
+                            <option value="96">Spring Creek, Brooklyn</option>
+                            <option value="74">Starrett City, Brooklyn</option>
+                            <option value="49">Sunset Park, Brooklyn</option>
+                            <option value="283">Vinegar Hill, Brooklyn</option>
+                            <option value="284">Weeksville, Brooklyn</option>
+                            <option value="62">Williamsburg, Brooklyn</option>
+                            <option value="59">Windsor Terrace, Brooklyn</option>
+                            <option value="225">Wingate, Brooklyn</option>
+                            <option value="130">Battery Park City, Manhattan</option>
+                            <option value="250">Carnegie Hill, Manhattan</option>
+                            <option value="108">Central Harlem, Manhattan</option>
+                            <option value="300">Central Park, Manhattan</option>
+                            <option value="119">Chelsea, Manhattan</option>
+                            <option value="103">Chinatown, Manhattan</option>
+                            <option value="252">Civic Center, Manhattan</option>
+                            <option value="116">Clinton, Manhattan</option>
+                            <option value="109">East Harlem, Manhattan</option>
+                            <option value="121">East Village, Manhattan</option>
+                            <option value="131">Financial District, Manhattan</option>
+                            <option value="279">Flatiron, Manhattan</option>
+                            <option value="129">Gramercy, Manhattan</option>
+                            <option value="120">Greenwich Village, Manhattan</option>
+                            <option value="106">Hamilton Heights, Manhattan</option>
+                            <option value="105">Inwood, Manhattan</option>
+                            <option value="112">Lenox Hill, Manhattan</option>
+                            <option value="115">Lincoln Square, Manhattan</option>
+                            <option value="124">Little Italy, Manhattan</option>
+                            <option value="122">Lower East Side, Manhattan</option>
+                            <option value="127">Manhattan Valley, Manhattan</option>
+                            <option value="107">Manhattanville, Manhattan</option>
+                            <option value="7">Marble Hill, Manhattan</option>
+                            <option value="117">Midtown, Manhattan</option>
+                            <option value="253">Midtown South, Manhattan</option>
+                            <option value="128">Morningside Heights, Manhattan</option>
+                            <option value="118">Murray Hill, Manhattan</option>
+                            <option value="251">Noho, Manhattan</option>
+                            <option value="113">Roosevelt Island, Manhattan</option>
+                            <option value="125">Soho, Manhattan</option>
+                            <option value="278">Stuyvesant Town, Manhattan</option>
+                            <option value="274">Sutton Place, Manhattan</option>
+                            <option value="123">Tribeca, Manhattan</option>
+                            <option value="277">Tudor City, Manhattan</option>
+                            <option value="276">Turtle Bay, Manhattan</option>
+                            <option value="110">Upper East Side, Manhattan</option>
+                            <option value="114">Upper West Side, Manhattan</option>
+                            <option value="104">Washington Heights, Manhattan</option>
+                            <option value="126">West Village, Manhattan</option>
+                            <option value="111">Yorkville, Manhattan</option>
+                            <option value="180">Arverne, Queens</option>
+                            <option value="132">Astoria, Queens</option>
+                            <option value="269">Astoria Heights, Queens</option>
+                            <option value="155">Auburndale, Queens</option>
+                            <option value="178">Bay Terrace, Queens</option>
+                            <option value="154">Bayside, Queens</option>
+                            <option value="177">Beechhurst, Queens</option>
+                            <option value="197">Bellaire, Queens</option>
+                            <option value="193">Belle Harbor, Queens</option>
+                            <option value="159">Bellerose, Queens</option>
+                            <option value="281">Blissville, Queens</option>
+                            <option value="175">Breezy Point, Queens</option>
+                            <option value="162">Briarwood, Queens</option>
+                            <option value="174">Broad Channel, Queens</option>
+                            <option value="196">Brookville, Queens</option>
+                            <option value="171">Cambria Heights, Queens</option>
+                            <option value="152">College Point, Queens</option>
+                            <option value="157">Douglaston, Queens</option>
+                            <option value="141">Downtown Flushing, Queens</option>
+                            <option value="144">East Elmhurst, Queens</option>
+                            <option value="179">Edgemere, Queens</option>
+                            <option value="135">Elmhurst, Queens</option>
+                            <option value="173">Far Rockaway, Queens</option>
+                            <option value="184">Floral Park, Queens</option>
+                            <option value="138">Forest Hills, Queens</option>
+                            <option value="199">Forest Hills Gardens, Queens</option>
+                            <option value="161">Fresh Meadows, Queens</option>
+                            <option value="158">Glen Oaks, Queens</option>
+                            <option value="147">Glendale, Queens</option>
+                            <option value="188">Hillcrest, Queens</option>
+                            <option value="166">Hollis, Queens</option>
+                            <option value="185">Holliswood, Queens</option>
+                            <option value="136">Howard Beach, Queens</option>
+                            <option value="275">Hunters Point, Queens</option>
+                            <option value="134">Jackson Heights, Queens</option>
+                            <option value="163">Jamaica Center, Queens</option>
+                            <option value="186">Jamaica Estates, Queens</option>
+                            <option value="266">Jamaica Hills, Queens</option>
+                            <option value="139">Kew Gardens, Queens</option>
+                            <option value="160">Kew Gardens Hills, Queens</option>
+                            <option value="191">Laurelton, Queens</option>
+                            <option value="192">Lefrak City, Queens</option>
+                            <option value="190">Lindenwood, Queens</option>
+                            <option value="156">Little Neck, Queens</option>
+                            <option value="142">Long Island City, Queens</option>
+                            <option value="297">Malba, Queens</option>
+                            <option value="145">Maspeth, Queens</option>
+                            <option value="293">Middle Village, Queens</option>
+                            <option value="183">Murray Hill, Queens</option>
+                            <option value="182">Neponsit, Queens</option>
+                            <option value="198">North Corona, Queens</option>
+                            <option value="164">Oakland Gardens, Queens</option>
+                            <option value="150">Ozone Park, Queens</option>
+                            <option value="268">Pomonok, Queens</option>
+                            <option value="165">Queens Village, Queens</option>
+                            <option value="187">Queensboro Hill, Queens</option>
+                            <option value="189">Ravenswood, Queens</option>
+                            <option value="148">Rego Park, Queens</option>
+                            <option value="140">Richmond Hill, Queens</option>
+                            <option value="146">Ridgewood, Queens</option>
+                            <option value="169">Rochdale, Queens</option>
+                            <option value="194">Rockaway Park, Queens</option>
+                            <option value="172">Rosedale, Queens</option>
+                            <option value="291">Roxbury, Queens</option>
+                            <option value="181">Seaside, Queens</option>
+                            <option value="195">Somerville, Queens</option>
+                            <option value="137">South Corona, Queens</option>
+                            <option value="167">South Jamaica, Queens</option>
+                            <option value="151">South Ozone Park, Queens</option>
+                            <option value="170">Springfield Gardens, Queens</option>
+                            <option value="168">St. Albans, Queens</option>
+                            <option value="176">Steinway, Queens</option>
+                            <option value="143">Sunnyside, Queens</option>
+                            <option value="280">Sunnyside Gardens, Queens</option>
+                            <option value="267">Utopia, Queens</option>
+                            <option value="153">Whitestone, Queens</option>
+                            <option value="149">Woodhaven, Queens</option>
+                            <option value="133">Woodside, Queens</option>
+                            <option value="218">Annadale, Staten Island</option>
+                            <option value="244">Arden Heights, Staten Island</option>
+                            <option value="230">Arlington, Staten Island</option>
+                            <option value="231">Arrochar, Staten Island</option>
+                            <option value="238">Bay Terrace, Staten Island</option>
+                            <option value="248">Bloomfield, Staten Island</option>
+                            <option value="249">Bulls Head, Staten Island</option>
+                            <option value="241">Butler Manor, Staten Island</option>
+                            <option value="211">Castleton Corners, Staten Island</option>
+                            <option value="242">Charleston, Staten Island</option>
+                            <option value="247">Chelsea, Staten Island</option>
+                            <option value="256">Clifton, Staten Island</option>
+                            <option value="257">Concord, Staten Island</option>
+                            <option value="234">Dongan Hills, Staten Island</option>
+                            <option value="290">Egbertville, Staten Island</option>
+                            <option value="261">Elm Park, Staten Island</option>
+                            <option value="217">Eltingville, Staten Island</option>
+                            <option value="258">Emerson Hill, Staten Island</option>
+                            <option value="229">Graniteville, Staten Island</option>
+                            <option value="236">Grant City, Staten Island</option>
+                            <option value="232">Grasmere, Staten Island</option>
+                            <option value="216">Great Kills, Staten Island</option>
+                            <option value="245">Greenridge, Staten Island</option>
+                            <option value="205">Grymes Hill, Staten Island</option>
+                            <option value="246">Heartland Village, Staten Island</option>
+                            <option value="260">Howland Hook, Staten Island</option>
+                            <option value="239">Huguenot, Staten Island</option>
+                            <option value="295">Lighthouse Hill, Staten Island</option>
+                            <option value="287">Manor Heights, Staten Island</option>
+                            <option value="209">Mariner's Harbor, Staten Island</option>
+                            <option value="235">Midland Beach, Staten Island</option>
+                            <option value="201">New Brighton, Staten Island</option>
+                            <option value="214">New Dorp, Staten Island</option>
+                            <option value="237">New Dorp Beach, Staten Island</option>
+                            <option value="212">New Springville, Staten Island</option>
+                            <option value="215">Oakwood, Staten Island</option>
+                            <option value="233">Old Town, Staten Island</option>
+                            <option value="227">Park Hill, Staten Island</option>
+                            <option value="240">Pleasant Plains, Staten Island</option>
+                            <option value="210">Port Ivory, Staten Island</option>
+                            <option value="208">Port Richmond, Staten Island</option>
+                            <option value="294">Prince's Bay, Staten Island</option>
+                            <option value="259">Randall Manor, Staten Island</option>
+                            <option value="254">Richmond Town, Staten Island</option>
+                            <option value="296">Richmond Valley, Staten Island</option>
+                            <option value="203">Rosebank, Staten Island</option>
+                            <option value="243">Rossville, Staten Island</option>
+                            <option value="289">Sandy Ground, Staten Island</option>
+                            <option value="255">Shore Acres, Staten Island</option>
+                            <option value="222">Silver Lake, Staten Island</option>
+                            <option value="207">South Beach, Staten Island</option>
+                            <option value="200">St. George, Staten Island</option>
+                            <option value="202">Stapleton, Staten Island</option>
+                            <option value="223">Sunnyside, Staten Island</option>
+                            <option value="206">Todt Hill, Staten Island</option>
+                            <option value="221">Tompkinsville, Staten Island</option>
+                            <option value="220">Tottenville, Staten Island</option>
+                            <option value="213">Travis, Staten Island</option>
+                            <option value="204">West Brighton, Staten Island</option>
+                            <option value="228">Westerleigh, Staten Island</option>
+                            <option value="288">Willowbrook, Staten Island</option>
+                            <option value="219">Woodrow, Staten Island</option>
+                          </select> 
+        <button class="btn btn-go btn-success" onClick="goneighborhood()">Go</button>
+        <button class="btn btn-warning"  type="button" onClick="editneighborhood()">Edit</button>
+        <button type="button" class="btn btn-success pull-right" onClick="addneighborhood()">+ Add Neighborhood</button>
+        
+        <div class="breakline"></div>
+      </div>
+      
+      
+<span id="Neighborhoodspan"></span>
+<script type="text/html" id='neighborhoodtemplate'>
+
+      <h2><%=neighborhood.neighborhood%>: Category - Tag Mapping</h2>
+
+        <div id="add_category" class="input-append">
+            <form id="add_category_form"  method="post" action="javascript:void(0);" >
+				<input type="hidden" name="idneighborhood" value="<%=neighborhood.idneighborhood%>">
+				<input class="span3" id="appendedInputButton" name="category" value="" placeholder="Add a New Catagory" type="text">
+				<button class="btn btn-success" type="button" onClick="addcategory()">+ Add Catogory</button>
+			</form>
+        </div>
+
+      <div id="neighbor_wrap">
+
+      <div class="breakline"></div>
+        
+        <table class="display table table-hover" id="Neigbhor_table">
+          <thead>
+            <tr>
+              <th>Edit Row</th>
+              <th>Categories</th>
+              <th>ID</th>
+              <th>Tags</th>
+            </tr>
+          </thead>
+<% var categories = neighborhood.categories;
+for(var i=0; i < categories.length; i++){
+onecategory = categories[i];
+%>
+            <tr>
+              <td>
+                <button class="btn btn-mini btn-warning btn-edit" onClick='showeditcategory(<%=JSON.stringify(onecategory).replace(/'/g, "&#39;")%>)'>Edit</button>
+                <button class="btn btn-mini btn-danger btn-remove" onClick='showremovecategory(<%=JSON.stringify(onecategory).replace(/'/g, "&#39;")%>)'>Remove</button>
+              </td>
+              <td><%=onecategory.name%> </td>
+              <td><%=onecategory.idcategorygroup%></td>
+              <td>
+                <div class="input-append">
+            	<form  method="post" action="javascript:void(0);" >
+					<input type="hidden" name="idcategorygroup" value="<%=onecategory.idcategorygroup%>">
+	                <input class="typeahead span3" type="text" autocomplete="off" name="tagname" placeholder="Find Tag" value="">
+    	            <button class="btn btn-success" type="button" onClick="addtag(this)">+ Link Tags</button>
+				</form>
+                </div>
+                  <div class="tag_module">
+            	<form  method="post" action="javascript:void(0);" >
+					<input type="hidden" name="idcategorygroup" value="<%=onecategory.idcategorygroup%>">
+                   <select name="tags">
+					<% if(onecategory.tags){ %>
+					<% var tags = onecategory.tags.split(",");
+						for(var j=0; j<tags.length; j++){
+					%>
+                     <option value="<%=tags[j]%>"><%=tags[j]%></option>
+					<%}%>
+					<% } %>
+                   </select>      
+                   <button class="btn btn-danger btn-mini" onClick="removetag(this)">x</button>
+				</form>
+                 </div>
+              </td>
+            </tr>
+<%} %>
+        </table>               
+
+      </div>
+    </div>
+</script>
+
+<span id="Categoryeditspan"></span>
+<script type="text/html" id='categoryedittemplate'>
+    <!-- Edit Modal -->
+
+      <div class="modal hide fade edit_row_button" tabindex="-1" role="dialog" aria-hidden="true">
+       <form  method="post" action="javascript:void(0);" >
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Edit This Catalogue</h4>
+          <div class="breakline"></div>
+          <label for="">Category Name</label>
+			<input type="hidden" name="idcategorygroup" value="<%=idcategorygroup%>">
+			<input type="hidden" name="idneighborhood" value="<%=idneighborhood%>">
+            <input type="text" name="name" value="<%=name%>">
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>          
+          <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onClick='editcategory(this)'>Save changes</button>
+          </div>
+	</form> 
+   </div>
+</script>
+
+<span id="Categoryremovespan"></span>
+<script type="text/html" id='categoryremovetemplate'>
+    <!-- Remove Modal -->
+
+      <div class="modal hide fade remove_row_button" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Are you sure that you want to remove this category and the tags associated with it?</h4>
+          <h3 id="dymanic"><%=name%></h3>
+        </div>
+        <div class="modal-footer">          
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
+          <button class="btn btn-success" data-dismiss="modal" aria-hidden="true" onClick="removecategory(<%=idneighborhood%>,<%=idcategorygroup%>)">Yes</button>
+          </div>
+      </div>
+</script>
+
+<span id="Editneighborhoodspan"></span>
+<script type="text/html" id='editneighborhoodtemplate'>
+
+    <!-- Add Neighborhood Modal -->
+
+      <div class="modal hide fade add_neighbor" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          
+            <h4>Manage Neighborhood</h4>
+
+              <div class="breakline"></div>            
+
+              <form id="add_neighbor_form"  method="post" action="javascript:void(0);" >
+				<input type="hidden" name="idneighborhood" value="<%=neighborhood.idneighborhood%>">
+                <div class="clearfix">
+                  <div class="add_left">
+                    <label for="">Neighborhood Name</label>
+                   <input placeholder="Neighborhood Name" type="text" name="hoodname" value="<%=neighborhood.name%>">
+                  </div>     
+                  <div class="add_right">
+                    <label for="">Place(Left) Navigation</label>
+                   <input placeholder="Path to file" type="text" name="catagoryleftnav" value="<%=neighborhood.catagoryleftnav%>">
+                  </div>                               
+                  <div class="add_left">
+                    <label for="">Borough</label>
+                   <input class="typeahead" placeholder="Borough" type="text" name="hoodborough" value="<%=neighborhood.borough%>">                  
+                 </div>
+                  <div class="add_left" id="radio_button">
+                    <label for="">Display Status</label>                    
+                      <div class="btn-group" id="hoodactive" data-toggle="buttons-radio">
+                        <button type="button" class="btn btn-success <%= ((neighborhood.isactive && neighborhood.isactive!=0)? "active":"" ) %>" value="1" >Active</button>
+                        <button type="button" class="btn btn-success <%= ((neighborhood.isactive && neighborhood.isactive!=0) ? "":"active" ) %>" value="0">Inactive</button>
+                      </div>
+                  </div>
+                </div>                    
+
+                <div class="breakline"></div>
+
+                <div class="clearfix">
+                  <label for="">GPS Location 1</label>
+                    <div class="add_left">
+                      <input placeholder="Longitude" type="text" name="alon" value="<%=neighborhood.alon%>">
+                    </div>
+                    <div class="add_right">
+                      <input placeholder="Latitude" type="text" name="alat" value="<%=neighborhood.alat%>">
+                    </div>               
+                  <label for="">GPS Location 2</label>                                      
+                    <div class="add_left">
+                      <input placeholder="Longitude" type="text" name="blon" value="<%=neighborhood.blon%>">
+                    </div>
+                    <div class="add_right">
+                      <input placeholder="Latitude" type="text" name="blat" value="<%=neighborhood.blat%>">
+                    </div>     
+                  <label for="">GPS Location 3</label>                                      
+                    <div class="add_left">
+                      <input placeholder="Longitude" type="text" name="clon" value="<%=neighborhood.clon%>">
+                    </div>
+                    <div class="add_right">
+                      <input placeholder="Latitude" type="text" name="clat" value="<%=neighborhood.clat%>">
+                    </div>   
+                  <label for="">GPS Location 4</label>                                      
+                    <div class="add_left">
+                      <input placeholder="Longitude" type="text" name="dlon" value="<%=neighborhood.dlon%>">
+                    </div>
+                    <div class="add_right">
+                      <input placeholder="Latitude" type="text" name="dlat" value="<%=neighborhood.dlat%>">
+                    </div>                                    
+                </div>                         
+              </form>
+        </div>
+        <div class="modal-footer">          
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-success" onClick="saveneighborhood()">+ Save Neighborhood</button>
+
+          </div>
+</script>
+      </div>      
+<script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

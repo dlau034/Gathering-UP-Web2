@@ -2393,9 +2393,11 @@ select:focus {
     /*float: left;*/
 }
 .image_unit .btn-upload {
-    margin-top: -6em;
-    margin-left: 1em!important;
+    margin-left: 0.5em!important;
+    margin-top: -3em;
+    position: absolute;
 }
+
 .input_reset {
     outline: none;
      -webkit-box-shadow:  none!important;
@@ -2437,7 +2439,8 @@ select:focus {
     border:1px dashed #ccc!important; 
 }
 .form_sizing {
-    margin-top: 1.0em;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 .content_unit .form_sizing .btn-upload {
     margin-bottom: 1em;
@@ -2540,12 +2543,8 @@ select:focus {
     position: relative;    
 }
 .btn-uploadhead {
-    /*margin-top: 1.5em;*/
     border-radius: 3px;
     width: 100%;
-}
-.form_sizing a.btn-upload {
-    margin-top: -5em;
 }
 .image_unit span {
     font-size: 0.8em;
@@ -2558,25 +2557,25 @@ select:focus {
 /* WORKING on preview image positioning */
 /* WORKING on preview image positioning */
 
-.content_unit textarea, .top_unit textarea {
-
-    /*-webkit-box-sizing: content-box!important;*/
-    /*-moz-box-sizing: content-box!important;*/
-    /*box-sizing: content-box!important;*/
-    /*width: 58%;*/
-    
-}
-.content_unit .image_unit, .top_unit .image_unit {
-    width: 100%;
-    float: left;
-}   
-
 .placeholder_box {
-    width: 100%
-    margin-bottom: 1em;
+    width: 100%;   
 }
 .preview_img {
     width: 100%!important;
+}
+.featured_check {
+    margin-top: -2.7em;
+    z-index: 101;
+    position: absolute;
+    right: 2em;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: #555;
+    text-shadow: 0px 1px 0px white;
+}
+.featured_check input {
+    margin: 0px 2px 2px 2px;
+
 }
 @media (max-width:480px){
     .content_unit textarea, .top_unit textarea {
@@ -2692,17 +2691,13 @@ span.file-input-name {
 @media (max-width: 767px) {
      .top_unit { 
         margin-right: 0px;
-        /*padding-bottom: 20px;*/
         padding-top: 0px;
     }   
-    .create_container {
-        /*margin-right: 20px;*/
-        /*margin-left: 20px;*/
-    }    
     .create_frame h1 {
         font-size: 2em;
         line-height: 1em;
-        margin-top: 2.5em;
+        margin-top: 1em;
+        margin-bottom: 0.7em;
     }        
 }
 .tutorialwrap {
@@ -2751,7 +2746,8 @@ span.file-input-name {
 }
 .progress_buttons {
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 2.2em;
+    margin-top: 1em;
 }
 
     /* Float Tab 
@@ -3072,13 +3068,4 @@ span.file-input-name {
 .fb_edge_widget_with_comment {
     float: left;
     margin-right: 0.5em;
-}
-#icon-pen {
-/*    background-image: url("../images/pencil.png");
-    width: 32px;
-    height: 30px;
-    display: block;
-    float: left;
-    position: relative;
-    margin-left: -21px;*/
 }

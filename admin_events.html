@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  	<title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+  	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles_nav.css">
+  	<link rel="stylesheet" href="css/admin_panel.css">  
+    <link rel="Stylesheet" type="text/css" href="http://siteimages.gatheringup.com/css/timepicker.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    
+
+    <script src="js/jquery-1.9.1.js"></script>    
+    <script class="jsbin" src="js/jquery.dataTables.nightly.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>   
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $('#example').dataTable();
+      }); 
+    </script>        
+
+    <script>
+    $(function() {
+      $( ".from" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        onClose: function( selectedDate ) {
+          $( "#to" ).datepicker( "option", "minDate", selectedDate );
+        }
+      });
+      $( ".to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        onClose: function( selectedDate ) {
+          $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+        }
+      });
+    });
+    </script>    
+
+
+    <script>
+    $(function() {
+      var availableTags = [
+        "Chinese",
+        "Japanese",
+        "Mexican",
+        "Thai",
+        "American",
+        "Cafe ",
+        "Bar",
+        "Juice Bar",
+        "Bakery",
+        "Sandwiches",
+        "Fast Food",
+        "Korean",
+        "Malaysian",
+        "Jamaican",
+        "Seafood",
+      ];
+      $( ".typeahead" ).typeahead({
+        source: availableTags
+      });
+    });
+    </script>      
+
+  	<!-- Google Font -->
+
+       <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+       <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+  </head>
+<body>
+
+      <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+          <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <!-- Change Out the Logo -->          
+
+          <a class="brand" href="index.html">GatheringUP - Admin</a> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                       <li><a href="admin_Neighborhood.html">Neigbhorhoods</a></li>                      
+                       <li><a href="admin_tags.html">Tags</a></li>                      
+                       <li><a href="admin_places.html">Places</a></li>                      
+                  </ul>
+            </div>
+         </div>
+      </div>
+    </div>    
+
+    <!-- Event Modifier Panel -->
+
+    <div class="container event_admin">
+      <h2>Events</h2>
+      <div class="breakline clearfix"></div>
+      <div class="event_filters">
+          <div class="input-append">
+            <input class="span3" id="appendedInputButton" placeholder="Search Events" autocomplete="off" type="text">
+            <button class="btn btn-success" type="button">Search</button>
+          </div>        
+          <div class="date_filters">
+            <label for="from">From</label>
+            <input type="text" class="from" name="from" />
+            <label for="to">to</label>
+            <input type="text" class="to" name="to" />
+            <button class="btn btn-success">Filter</button>
+          </div>          
+        </div>
+      <div class="breakline clearfix"></div>
+
+      <div class="event_query">
+        <h2>Event Results</h2>
+
+<!-- Table Start -->
+
+        <table class="display table table-hover" id="example">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Catogories</th>
+              <th>Location</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="">
+              <td>Art Exhibit: Fish & Crushed Can Story- Mixed Media</td>
+              <td>May 22, 2013</td>
+              <td>08:00 AM - 06:00 PM</td>
+              <td></td>
+              <td>Queens Botanical Garden</td>
+              <td>
+                  <button data-target=".edit_listing" data-toggle="modal" class="btn btn-mini btn-warning btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Art Exhibit: Fish & Crushed Can Story- Mixed Media</td>
+              <td>May 22, 2013</td>
+              <td>08:00 AM - 06:00 PM</td>
+              <td></td>
+              <td>Queens Botanical Garden</td>
+              <td>
+                  <button data-target=".edit_listing" data-toggle="modal" class="btn btn-mini btn-warning btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Art Exhibit: Fish & Crushed Can Story- Mixed Media</td>
+              <td>May 22, 2013</td>
+              <td>08:00 AM - 06:00 PM</td>
+              <td></td>
+              <td>Queens Botanical Garden</td>
+              <td>
+                  <button data-target=".edit_listing" data-toggle="modal" class="btn btn-mini btn-warning btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Art Exhibit: Fish & Crushed Can Story- Mixed Media</td>
+              <td>May 22, 2013</td>
+              <td>08:00 AM - 06:00 PM</td>
+              <td></td>
+              <td>Queens Botanical Garden</td>
+              <td>
+                  <button data-target=".edit_listing" data-toggle="modal" class="btn btn-mini btn-warning btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Art Exhibit: Fish & Crushed Can Story- Mixed Media</td>
+              <td>May 22, 2013</td>
+              <td>08:00 AM - 06:00 PM</td>
+              <td></td>
+              <td>Queens Botanical Garden</td>
+              <td>
+                  <button data-target=".edit_listing" data-toggle="modal" class="btn btn-mini btn-warning btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+            <tr class="">
+              <td>Art Exhibit: Fish & Crushed Can Story- Mixed Media</td>
+              <td>May 22, 2013</td>
+              <td>08:00 AM - 06:00 PM</td>
+              <td></td>
+              <td>Queens Botanical Garden</td>
+              <td>
+                  <button data-target=".edit_listing" data-toggle="modal" class="btn btn-mini btn-warning btn-edit-tag">Edit</button>
+                  <button data-target=".remove_row_button" data-toggle="modal" class="btn btn-mini btn-danger btn-remove-tag">Remove</button>              
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      <!-- Table End -->        
+      </div>
+    </div>
+
+
+    <!-- Edit Places Modal -->
+
+      <div class="modal hide fade edit_listing" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Edit This Catalogue</h4>
+          <div class="breakline"></div>
+
+          <form class="eventform">
+            <div class="width_full input_field pull-left">
+              <label for="">Event Name</label>
+              <input type="text">
+            </div>        
+
+            <div class="input_field">
+              <div>
+                <label for="">Location</label>
+                <input type="text">
+              </div>
+              <div>
+                <label for="">Zip</label>
+                <input class="span2" type="text">
+              </div>
+              <div>
+                <label for="">State</label>
+                <input class="span1" type="text">                            
+              </div>                
+            </div>    
+
+            <div class="date_filters">
+              <label for="eventdate">Event Date</label>
+              <input type="text" class="eventdate" name="eventdate" />
+            </div>
+
+            <div>
+              <div class="pull-left">
+                <label for="Endtime">Start Time</label>
+                <input type="text" id="timepick" name="timepick">
+              </div>
+              <div class="pull-right">
+                <label for="Endtime">End Time</label>
+                <input type="text" id="timepick" name="timepick">
+              </div>
+            </div>
+            <div class="input_field">
+              <label for="Endtime">Event Description</label>
+              <textarea class="width_full" id="event_description" rows="6"></textarea>
+            </div>
+            <div class="input_field pull-left">
+              <label for="organization">Organization</label>
+              <input type="text" id="organization" name="organization">
+            </div>     
+            <div class="input_field pull-right">
+              <label for="organization">Image URL</label>
+              <input type="text" id="image_url" name="image_url">
+            </div>        
+            <div class="input_field pull-left">
+              <label for="GPS Longitude">Longitude</label>
+              <input type="text" id="longitude" name="longitude">
+            </div>
+            <div class="input_field pull-right">
+              <label for="GPS Latitude">Latitude</label>
+              <input type="text" id="longitude" name="latitude">
+            </div>                                
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Save changes</button>
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>          
+          </div>
+      </div>
+
+    <!-- Remove Places Modal -->
+
+      <div class="modal hide fade remove_row_button" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <h4>Are you sure that you want to remove this event?</h4>
+          <h3 id="dymanic">This Event</h3>
+        </div>
+        <div class="modal-footer">          
+          <button class="btn btn-success">Yes</button>
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
+          </div>
+      </div>
+
+    <!-- Javascripts -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $('#timepick').timepicker();    
+    </script>
+
+</body>
+</html>

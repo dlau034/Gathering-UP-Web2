@@ -276,3 +276,45 @@ td.description {
 #Places_table thead tr th:last-child {
 	background: none;
 }
+
+    /* Event Modifier Page
+    -------------------------------------------------- */
+
+.event_admin {
+	margin-top: 4em;
+}
+.event_filters .date_filters {
+	display: inline-block;
+	float: right;
+}
+.event_filters .date_filters label, .event_filters .date_filters input {
+	display: inline-block;
+}
+.event_filters {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+.event_query {
+	font-size: 0.9em;
+}
+.edit_listing {
+	width: 38em;
+}
+.edit_listing form {
+	margin-top: 1em;
+}
+.width_full {
+	width: 100%;
+}
+.eventform textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.edit_listing .modal-body {
+	max-height: none!important;
+	margin: 15px!important;
+	padding: 0!important;
+}
+
+	

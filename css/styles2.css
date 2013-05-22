@@ -1547,7 +1547,7 @@ a.accordion-toggle.nav_cat {
 
 @media (max-height: 710px) {
     .featured_unit {
-        margin-top: -15px;
+        margin-top: -18px;
     }
     #featured_title h1 {
         margin-top: 60px;
@@ -1562,24 +1562,16 @@ margin-left: -30px !important;
     margin-right:1em; 
     margin-left:1em;        
 }
-#featured_title { 
-    /*width: auto;*/
-    max-width: 45em;
-    margin-top: 10px;
-    float: left;
-    margin-left: 1.5em;
-}
 #featured_title h1 {
     color: white;
-    padding: 7px 10px 7px 10px;
     line-height: 1.2em;
-    text-shadow: 0px 2px 0px rgba(0,0,0,0.7),0px 0px 4px rgba(0,0,0,1);
-    font-weight: 700;
-    word-wrap:break-word;
-    font-size: 3em;
+    text-shadow: 0px 0px 0px rgba(0,0,0,0.6),0px 2px 6px rgba(1,0,0,1);
+    font-weight: 400;
+    word-wrap: break-word;
+    font-size: 3.8em;
+    text-align: center;
+    padding-top: 1.0em;
 }    
- 
-}
 #featured_title h4 {
     background-color: rgba(122,201,67,0.8);
     color: white;
@@ -1587,6 +1579,17 @@ margin-left: -30px !important;
     position: absolute;  
     padding: 1px 10px 1px 10px;
     font-style: italic;
+}
+.featured_unit p {
+    margin-right: 2em;
+    color: white;
+    font-weight: 100;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: arvo;
+    text-shadow: 0px 0px 5px rgba(0,0,0,1);
 }
 .featured_text {
     float: right;
@@ -1609,12 +1612,14 @@ margin-left: -30px !important;
     }
 }
 .featured_text p {
-    color: white;
+    color: #f9f9f9;
     font-size: 1.3em;
     padding: 1em 1em 0em 1em;
     line-height: 1.5em;
     font-weight: 400;
-    text-shadow: 0px 1px 0px rgba(0,0,0,0.6), 0px 0px 8px black;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.6), 0px 0px 5px black;
+    margin-top: 12.2em;
+    font-weight: 100;
 }
 .featured_text p a {
     color: white;
@@ -1629,22 +1634,23 @@ margin-left: -30px !important;
 
 @media (max-width: 979px) and (min-width: 600px)   {
     #featured_title { 
-        max-width: 45%;
+        /*max-width: 45%;*/
         margin-left: 2em;
     }
     .featured_text {   
         max-width: 40%; 
     }
     #featured_title h1 { 
-        font-size: 2rem;
+        font-size: 2.3rem;
     }    
 }
 @media (max-width: 599px)  {
     #featured_title h1 {
-        font-size: 1.8em;
+        font-size: 2.4em;
         margin-right:10px; 
         margin-left:10px;
-        margin-top: -50px
+        margin-top: -50px;
+        padding-top: 2em;
     }    
     #featured_title h4 {
         margin-right:10px; 
@@ -1941,7 +1947,7 @@ select:focus {
 }
 @media (max-width: 979px) and (min-width: 600px)   {
     .container-module {
-        position: relative;        
+        /*position: relative;        */
     }
     .module_unit {
         margin-right:15px !important; 

@@ -1279,6 +1279,11 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     margin-top: 6px;
     margin-bottom: 6px;
 }
+@media (max-width: 768px) {
+    #nonaccordion {
+        display: none;
+    }
+}
 
 #accordion {
     width: 21em;

@@ -2101,5 +2101,3 @@
 	$.timepicker.version = "1.3";
 
 })(jQuery);
-
-

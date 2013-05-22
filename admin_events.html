@@ -7,20 +7,26 @@
   	<link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles_nav.css">
   	<link rel="stylesheet" href="css/admin_panel.css">  
-    <link rel="Stylesheet" type="text/css" href="http://siteimages.gatheringup.com/css/timepicker.css" />
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    
+    <link rel="stylesheet" href="css/jquery-ui-timepicker-addon.css">      
 
     <script src="js/jquery-1.9.1.js"></script>    
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script class="jsbin" src="js/jquery.dataTables.nightly.js"></script>
     <script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>   
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-sliderAccess.js"></script>
 
     <script>
       $(document).ready(function() {
         $('#example').dataTable();
       }); 
     </script>        
+
+    <script>
+      $(function(){
+        $('.timepick').timepicker();
+      });
+    </script>
 
     <script>
     $(function() {
@@ -43,30 +49,29 @@
     });
     </script>    
 
-
     <script>
-    $(function() {
-      var availableTags = [
-        "Chinese",
-        "Japanese",
-        "Mexican",
-        "Thai",
-        "American",
-        "Cafe ",
-        "Bar",
-        "Juice Bar",
-        "Bakery",
-        "Sandwiches",
-        "Fast Food",
-        "Korean",
-        "Malaysian",
-        "Jamaican",
-        "Seafood",
-      ];
-      $( ".typeahead" ).typeahead({
-        source: availableTags
+      $(function() {
+        var availableTags = [
+          "Chinese",
+          "Japanese",
+          "Mexican",
+          "Thai",
+          "American",
+          "Cafe ",
+          "Bar",
+          "Juice Bar",
+          "Bakery",
+          "Sandwiches",
+          "Fast Food",
+          "Korean",
+          "Malaysian",
+          "Jamaican",
+          "Seafood",
+        ];
+        $( ".typeahead" ).typeahead({
+          source: availableTags
+        });
       });
-    });
     </script>      
 
   	<!-- Google Font -->
@@ -120,16 +125,18 @@
           </div>        
           <div class="date_filters">
             <label for="from">From</label>
-            <input type="text" class="from" name="from" />
+            <input type="text" class="span2 from" name="from" />
             <label for="to">to</label>
-            <input type="text" class="to" name="to" />
+            <input type="text" class="span2 to" name="to" />
             <button class="btn btn-success">Filter</button>
           </div>          
-        </div>
+          <button class="btn btn-success" id="create_event" data-target=".edit_listing" data-toggle="modal">Create Event</button>
+      </div>
+      
       <div class="breakline clearfix"></div>
 
       <div class="event_query">
-        <h2>Event Results</h2>
+      <h2>Event Results</h2>
 
 <!-- Table Start -->
 
@@ -222,76 +229,82 @@
 
     <!-- Edit Places Modal -->
 
-      <div class="modal hide fade edit_listing" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-          <h4>Edit This Catalogue</h4>
-          <div class="breakline"></div>
+    <div class="modal hide fade edit_listing" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4>Create / Edit Event</h4>
+        <div class="breakline"></div>
 
-          <form class="eventform">
-            <div class="width_full input_field pull-left">
-              <label for="">Event Name</label>
-              <input type="text">
-            </div>        
+        <form class="eventform">
+          <div class="input_field pull-left">
+            <label>Event Name</label>
+            <input class="span6" type="text">
+          </div>    
 
-            <div class="input_field">
-              <div>
-                <label for="">Location</label>
-                <input type="text">
-              </div>
-              <div>
-                <label for="">Zip</label>
-                <input class="span2" type="text">
-              </div>
-              <div>
-                <label for="">State</label>
-                <input class="span1" type="text">                            
-              </div>                
-            </div>    
-
-            <div class="date_filters">
-              <label for="eventdate">Event Date</label>
-              <input type="text" class="eventdate" name="eventdate" />
-            </div>
-
-            <div>
-              <div class="pull-left">
-                <label for="Endtime">Start Time</label>
-                <input type="text" id="timepick" name="timepick">
-              </div>
-              <div class="pull-right">
-                <label for="Endtime">End Time</label>
-                <input type="text" id="timepick" name="timepick">
-              </div>
-            </div>
-            <div class="input_field">
-              <label for="Endtime">Event Description</label>
-              <textarea class="width_full" id="event_description" rows="6"></textarea>
-            </div>
-            <div class="input_field pull-left">
-              <label for="organization">Organization</label>
-              <input type="text" id="organization" name="organization">
-            </div>     
-            <div class="input_field pull-right">
-              <label for="organization">Image URL</label>
-              <input type="text" id="image_url" name="image_url">
-            </div>        
-            <div class="input_field pull-left">
-              <label for="GPS Longitude">Longitude</label>
-              <input type="text" id="longitude" name="longitude">
-            </div>
-            <div class="input_field pull-right">
-              <label for="GPS Latitude">Latitude</label>
-              <input type="text" id="longitude" name="latitude">
-            </div>                                
-          </form>
-
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Save changes</button>
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>          
+          <div class="input_field">
+            <label>Location</label>
+            <input class="span6" type="text">
           </div>
+
+          <div class="input_field location_details">
+            <div>
+              <label>Zip</label>
+              <input class="span2" type="text">
+            </div>
+            <div>
+              <label>State</label>
+              <input class="span1" type="text">                            
+            </div>                
+          </div>    
+
+          <div class="date_filters input_field">
+            <label>Event Date</label>
+            <input type="text" class="from" name="eventdate" />
+          </div>
+
+          <div class="input_field">
+            <div class="pull-left">
+              <label>Start Time</label>
+              <input type="text" name="timepick" class="timepick"/>
+            </div>
+            <div class="pull-right">
+              <label for="Endtime">End Time</label>
+              <input type="text" name="timepick" class="timepick"/>
+            </div>
+          </div>
+
+          <div class="input_field description">
+            <label for="Endtime">Event Description</label>
+            <textarea class="width_full" id="event_description" rows="6"></textarea>
+          </div>
+
+          <div class="input_field pull-left">
+            <label for="organization">Organization</label>
+            <input type="text" id="organization" name="organization">
+          </div>    
+
+          <div class="input_field pull-right">
+            <label for="organization">Image URL</label>
+            <input type="text" id="image_url" name="image_url">
+          </div>    
+
+          <div class="input_field pull-left">
+            <label for="GPS Longitude">GPS Longitude</label>
+            <input type="text" id="longitude" name="longitude">
+          </div>
+
+          <div class="input_field pull-right">
+            <label for="GPS Latitude">GPS Latitude</label>
+            <input type="text" id="longitude" name="latitude">
+          </div>                                
+        </form>
+
       </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Save changes</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>          
+      </div>
+    </div>
 
     <!-- Remove Places Modal -->
 
@@ -310,9 +323,5 @@
     <!-- Javascripts -->
 
     <script src="js/bootstrap.min.js"></script>
-    <script>
-      $('#timepick').timepicker();    
-    </script>
-
 </body>
 </html>

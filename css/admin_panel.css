@@ -285,7 +285,7 @@ td.description {
 }
 .event_filters .date_filters {
 	display: inline-block;
-	float: right;
+	margin-left: 2em;
 }
 .event_filters .date_filters label, .event_filters .date_filters input {
 	display: inline-block;
@@ -299,6 +299,9 @@ td.description {
 }
 .edit_listing {
 	width: 38em;
+	top: 4%!important;
+	position: absolute;
+	margin-bottom: 10em!important;
 }
 .edit_listing form {
 	margin-top: 1em;
@@ -316,5 +319,19 @@ td.description {
 	margin: 15px!important;
 	padding: 0!important;
 }
-
-	
+.location_details div {
+	display: inline-block;
+}
+.location_details div:nth-of-type(3) {
+	margin-left: 1.4em;
+}
+.input_field {
+	margin-bottom: 1em;
+	/*margin-top: 1em;*/
+}
+.description {
+	margin-top: 6em;
+}
+#create_event {
+	float: right;
+}

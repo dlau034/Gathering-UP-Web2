@@ -103,9 +103,9 @@ form {
   background: -o-linear-gradient(top,  #5b80bf 0%,#3b5a9a 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top,  #5b80bf 0%,#3b5a9a 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #5b80bf 0%,#3b5a9a 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b80bf', endColorstr='#3b5a9a',GradientType=0 ); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#5b80bf&#39;, endColorstr=&#39;#3b5a9a&#39;,GradientType=0 ); /* IE6-9 */
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   border-radius: 2px !important;
   font-family: "ubuntu";
@@ -191,7 +191,7 @@ form {
   background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
   background-repeat: repeat-x;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 
   border-radius: 0px !important;
@@ -227,7 +227,7 @@ form {
   background-image: linear-gradient(to bottom, #F8AD3B, #F7931E);
   background-repeat: repeat-x;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   border-radius: 0px !important;
   font-family: ubuntu
@@ -520,7 +520,7 @@ form {
     background-repeat: repeat-x;
     border-color: #f89406 #f89406 #ad6704;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#fffbb450&#39;, endColorstr=&#39;#fff89406&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);   
 }
 @media (max-width: 979px) {
@@ -1054,7 +1054,7 @@ background-image: -o-linear-gradient(#A3c86c, #ccc);
 background-image: linear-gradient(#A3c86c, #ccc);*/
 
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     height: 1.5em;
     bottom: 0;
@@ -1245,7 +1245,7 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     background: -o-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #f8a644 0%,#f7931e 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8a644', endColorstr='#f7931e',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#f8a644&#39;, endColorstr=&#39;#f7931e&#39;,GradientType=0 ); /* IE6-9 */
 
 }
 #nonaccordion h3:focus {
@@ -1274,7 +1274,7 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
     background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     margin-top: 6px;
     margin-bottom: 6px;
@@ -1299,7 +1299,7 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     background: -o-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #f8a644 0%,#f7931e 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8a644', endColorstr='#f7931e',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#f8a644&#39;, endColorstr=&#39;#f7931e&#39;,GradientType=0 ); /* IE6-9 */
 
 }
 #accordion h3:focus {
@@ -1328,7 +1328,7 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
     background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);    
     margin-top: 6px;
     margin-bottom: 6px;
@@ -1808,7 +1808,7 @@ background-image: linear-gradient(white, #ccc);
   background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
   background-repeat: repeat-x;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.4),inset 0 -1px 6px rgba(255,255,255,0.2); 
     -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4),inset 0 -1px 6px rgba(255,255,255,0.2); 
@@ -2342,7 +2342,7 @@ select:focus {
     background-image: linear-gradient(to bottom, #A3c86c, #87B63F);
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 .CTA_button_mini {
@@ -2479,7 +2479,7 @@ select:focus {
     background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
     background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 
     width: 250px;
@@ -2572,19 +2572,35 @@ select:focus {
     /* */
 
 .about_wrap {
-    margin-top: 5em;
+    margin-top: 1.2em;
     padding-left: 2em;
     padding-right: 2em;
+    text-shadow:0px 1px 0px white;
 }
 .about_wrap h2{
     color: #555;
     text-shadow:0px 1px 0px white;
     font-family: arvo;
+    font-weight: 400;
+}
+.about_text h3 {
+    font-weight: 100;
+    line-height: 1.4em;
+    margin-bottom: 1em;
+    font-size: 1.4em;
+
+}
+.team_member h4 {
+    color: #F7931E;
+    text-shadow:0px 1px 0px white;
 }
 .about_wrap p{
-    font-size: 1.1em;
+    /*font-size: 0.9em;*/
     line-height: 1.5em;
     text-shadow:0px 1px 0px white;   
+}
+.team_member p {
+    font-size: 1em;
 }
 .about_wrap .dividline {
     margin-bottom: 1em;
@@ -2592,15 +2608,38 @@ select:focus {
 .about_text,.about_team {
     margin-bottom: 3em;
 }
+.about_unit {
+    margin-left: 16em;
+}
+@media (max-width: 580px) {
+    .about_unit {
+        margin-left: auto;
+        clear: both;
+    }
+    .staff_img {
+        float: none!important;
+        margin: 0 auto;
+        display: block;
+    }
+    .about_wrap h2 {
+        text-align: center;
+    }
+    .team_member h4 {
+        text-align: center;
+    }    
+}
+.team_member {
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
 .staff_img {
     width: 170px;
     height: 170px;
     background-image: url("http://siteimages.gatheringup.com/images/david_head_bw.jpg");
-    margin: 0 auto;
-    border: 8px solid #f9f9f9;
-    -webkit-box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
-    -moz-box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
-    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3),0px 1px 6px rgba(0,0,0,0.3);
+    /*margin: 0 auto;*/
+    float: left;
+    border: 5px solid #f1f1f1;
+    box-shadow: inset 0px 2px 5px rgba(0,0,0,0.8),0px 2px 6px rgba(0,0,0,0.6);
 }
 .about_team .span4 h4{
     text-align: center;
@@ -2621,13 +2660,22 @@ select:focus {
     width: 90%;
     margin: 0 auto;    
 }
-.staff_img:hover{
-    background-image: url("http://siteimages.gatheringup.com/images/david_head.jpg");    background-color: blue;
-    border-color: #F7931E;
-}
 .about_team .span4 {
     margin-top: 3em;
     margin-bottom: 3em;
+}
+.about_img {
+    width: 100%;
+    margin-top: 1em;
+}
+@media (max-width: 768px) {
+    .about_img {
+        height: 200px;    
+        max-width: none!important;
+        width: auto;
+        margin-left: -5em;
+        
+    }
 }
 
     /* Change Password Page
@@ -2761,4 +2809,5 @@ select:focus {
     margin-top: 8px;
     display: block;
 }
+
 

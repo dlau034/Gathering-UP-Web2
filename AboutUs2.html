@@ -17,10 +17,10 @@
 
   <script>
     $(document).ready(function(){
-        var $container = $('#module_wrap');
+        var $container = $(&#39;#module_wrap&#39;);
         $container.imagesLoaded(function(){
             $container.masonry({
-              itemSelector: '.module_unit',
+              itemSelector: &#39;.module_unit&#39;,
               columnWidth: 0,
               isFitWidth: true,       
               isAnimated: true              
@@ -46,8 +46,8 @@
 
 	<!-- Google Font -->
 
-     <link href='http://fonts.googleapis.com/css?family=Arvo:300,400,500,700' rel='stylesheet' type='text/css'>
-     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href=&#39;http://fonts.googleapis.com/css?family=Arvo:300,400,500,700&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;>
+     <link href=&#39;http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;>   	
 </head>
 <body>
   
@@ -74,7 +74,7 @@
             <div id="collapse_content" class="nav-collapse collapse"> 
                 <ul id="nav_items_group" class="nav">
                     <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
-                  <li><a href="/localize">What's Around</a></li>                      
+                  <li><a href="/localize">What&#39;s Around</a></li>                      
                   </ul>
                   <form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
                     <div class="input-append">
@@ -308,7 +308,7 @@
 
     <script src="js/bootstrap.min.js"></script>
     <script>
-      $('.dropdown-menu').click(function(event){
+      $(&#39;.dropdown-menu&#39;).click(function(event){
            event.stopPropagation();
        });
     </script>

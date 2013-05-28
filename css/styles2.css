@@ -1408,8 +1408,8 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);    
-    margin-top: 10px;
-    margin-bottom: 1px;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 a.accordion-toggle.nav_cat {
@@ -2184,7 +2184,7 @@ select:focus {
     position: fixed; 
     width: 100%;
     bottom: 0;
-    z-index: 5;
+    z-index: 101;
 }
 .footer2 p {
     margin-bottom: 3px;

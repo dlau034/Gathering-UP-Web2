@@ -16,15 +16,8 @@
     text-shadow: 0px 1px 0px white;
     color: #444;    
 }    
-.row {
-    /*background-color: red;*/
-}
-.span12 {
-    /*background-color: blue;*/
-}
 .full-width {
     width: 100%;
-    /*float: left;*/
 }
 .image_unit .btn-upload {
     margin-left: 0.5em!important;
@@ -104,8 +97,8 @@
 .added_unit {
     border: 2px dashed #ccc;
     margin: 0em 1em 2em 1em!important;
-    padding-top: 1em;
-    padding-bottom: 0!important;
+    /*padding-top: 1em;*/
+    /*padding-bottom: 0!important;*/
 }
 
 @media (max-width: 480px) {
@@ -329,7 +322,7 @@ span.file-input-name {
     .create_frame h1 {
         font-size: 2em;
         line-height: 1em;
-        margin-top: 1em;
+        margin-top: 2.2em;
         margin-bottom: 0.7em;
     }        
 }
@@ -385,3 +378,37 @@ span.file-input-name {
     position: fixed!important;
     margin-top: -25px;
 }
+
+
+    /* Right Location Details Module - Styles
+    -------------------------------------------------- */    
+
+.create_location {
+    width: 21em;
+    position: absolute;
+    overflow: hidden;
+    right: 1.5em;
+    margin-top: 2.5em;
+    padding-bottom: 1em;
+}
+@media (max-width: 768px) {
+    .create_location {
+        display: none;
+    }
+}
+
+/*@media (max-width: 849px) and (min-width: 550px) {
+    .create_location {
+        right: 0em!important;
+        position: relative;
+        background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");
+        width: 60%;
+        margin: 0px;
+        padding-bottom: 3em;
+
+        -webkit-box-shadow: 0 0 2em black;
+         -moz-box-shadow: 0 0 2em black;
+         box-shadow: 0 0 2em black; 
+    }
+}    */
+

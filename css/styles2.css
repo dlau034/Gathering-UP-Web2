@@ -1245,6 +1245,17 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     /* Accordion Modificiations
     -------------------------------------------------- */
 
+.active_nav {    
+    background: none!important;
+    background: #f8a644!important;
+    background: -moz-linear-gradient(top, #f8a644 0%, #f7931e 100%)!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8a644), color-stop(100%,#f7931e))!important;
+    background: -webkit-linear-gradient(top, #f8a644 0%,#f7931e 100%)!important;
+    background: -o-linear-gradient(top, #f8a644 0%,#f7931e 100%)!important;
+    background: -ms-linear-gradient(top, #f8a644 0%,#f7931e 100%)!important;
+    background: linear-gradient(to bottom, #f8a644 0%,#f7931e 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#f8a644&#39;, endColorstr=&#39;#f7931e&#39;,GradientType=0 )!important;
+}
 
 #nonaccordion {
     margin-left: 2em;
@@ -1257,7 +1268,7 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     background: #f8a644; /* Old browsers */
     background: -moz-linear-gradient(top,  #f8a644 0%, #f7931e 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8a644), color-stop(100%,#f7931e)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(top,  #f8a644 0%,#f79dd31e 100%); /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #f8a644 0%,#f7931e 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #f8a644 0%,#f7931e 100%); /* W3C */

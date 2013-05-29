@@ -931,7 +931,7 @@ form {
 @media (max-width: 767px) {
     .map_around {
         height: 30%!important;
-        margin-top: 5.5em;
+        margin-top: 6.5em;
         min-height: 13em!important;
 
         -webkit-box-shadow:0px 3px 10px rgba(0,0,0,0.3);
@@ -1020,7 +1020,7 @@ form {
     bottom: 6em;
 }
 .nearby_wrap .nearby_item:nth-of-type(1) {
-    margin-top: 9em;
+    margin-top: 9em!important;
 }
 @media(min-width:979px) {
     .bg_wrap {
@@ -1420,7 +1420,7 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);    
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 1px;
 }
 
 a.accordion-toggle.nav_cat {
@@ -2232,12 +2232,18 @@ select:focus {
     margin-left: ;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 551px) {
     .map_outing {
         position: fixed!important;
+        margin-top: -24px;
     }
 }
-@media (max-width:549px) {
+@media (min-width: 551px) and (max-width: 767px) {
+    .map_outing {
+        margin-top: 0px;
+    }
+}
+@media (max-width: 550px) {
     .map_outing {
         position: relative!important;
         height: 40%!important;
@@ -2278,15 +2284,16 @@ select:focus {
     margin: 0.6em 0.1em 0.3em 0.1em;          
 }
 #Outing_wrap h1 {
-    line-height:1.2em;
+    line-height:1.3em;
     font-weight: 500;  
     margin-top: 0.5em;
     color: #444;
+    font-size: 3em;
 }
 #Outing_wrap p {
     color: #555;
-    font-size: 1.3em;
-    line-height: 1.5em;
+    font-size: 1.1em;
+    line-height: 1.6em;
     margin: 1em 0.3em 1em 0.3em;
 }
 #Outing_wrap h4 {

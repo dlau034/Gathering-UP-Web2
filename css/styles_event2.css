@@ -1,0 +1,385 @@
+
+    /* GatheringUP Stylesheet - Events Page
+    -------------------------------------------------- */
+    /* Styles_event2.css */
+
+
+    /* Map */
+    /* -------------------------------------------------- */
+
+
+.map_event {
+	width: 100%;
+	height: 100%;
+	float: left;
+	display: block;
+	z-index: 5;
+}
+@media (min-width: 1250px) {
+	.map_event {
+		position: fixed!important;
+		margin-left: 250px;
+		bottom: 1.9em!important;
+	}
+}
+
+@media (max-width: 1249px) and (min-width: 980px) {
+	.map_event {
+		position: fixed!important;
+		margin-left: 250px;
+		bottom: 1.9em!important;
+	}
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+	.map_event {
+		position: fixed!important;
+		height: 19em!important;
+		margin-left: 0;
+		width: 78%!important;
+		right: 0;
+		z-index: 1;
+		margin-top: 3em;
+
+		-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.4);
+		-moz-box-shadow: 0px 3px 10px rgba(0,0,0,0.4);
+		box-shadow: 0px 3px 10px rgba(0,0,0,0.4);
+	}
+}
+
+@media (max-width: 767px) {
+	.map_event {
+		height: 30%!important;
+		margin-top: 3em;
+		min-height: 13em!important;
+		-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+		box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+	}	
+}
+
+@media (max-width: 479px) {
+	.map_event {
+	height: 40%!important;
+	min-height: 13em!important;
+	}	
+}
+
+	/* Filter */
+	/* -------------------------------------------------- */
+
+#filter_event {
+	position: fixed;
+	top: 0;
+	width: 18em;
+	height: 100%;
+	background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");
+	border-collapse: collapse;
+	z-index: 7;
+	-webkit-box-shadow: 0em 0em 1em #333;
+	-moz-box-shadow: 0em 0em 1em #333;
+	box-shadow: 0em 0em 1em #333;
+}
+#filter_unit {
+	margin-top: 5em;
+}
+#filter_unit .accordion {
+	margin-right: 1em;
+	margin-left: 1em;
+}
+#filter_unit .accordion .accordion-heading {
+	background-color: #9BC155;
+}
+#filter_unit .accordion .accordion-heading a {
+    font-family: arvo;
+    display: block;
+    padding: 5px 10px;
+    color: white!important;
+    font-weight: 100;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    border-left: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    background-color: #A3C86C;
+    background-image: -moz-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#8BB946));
+    background-image: -webkit-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+#filter_unit .accordion-group {
+	background-color: white;
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+#filter_unit .categories ul, #filter_unit .price ul, #filter_unit .boros ul {
+	list-style-type: none;
+	margin:0;
+}
+#filter_unit .categories input, #filter_unit .price input, #filter_unit .boros input {
+	float:  right;
+	height: auto!important;
+}
+
+	/* Event Details */
+	/* -------------------------------------------------- */
+
+.event_wrap {
+    width: 37em;
+    margin-left: 18em;
+    position: relative;
+    z-index: 6;
+    height: 100%;
+    padding-top: 1.5em;
+}
+@media (max-width: 1199px) and (min-width:979px) {
+    .event_wrap {
+        /*margin-left: 25em!important;*/
+        clear: both;
+        /*width: 27em!important;*/
+    }
+}
+.event_wrap .event_item {
+    bottom: 6em;
+}
+.event_wrap .event_item:nth-of-type(1) {
+    margin-top: 9em!important;
+}
+@media (max-width: 480px) {
+    .event_wrap { 
+        margin-left: 0!important;
+        width: auto;
+        padding: 10px;
+        z-index: 1;  
+        min-height: 10em;
+        -webkit-box-shadow:  inset 0px 4px 7px rgba(0,0,0,0.3);                   
+        -moz-box-shadow:  inset 0px 4px 7px rgba(0,0,0,0.3);                   
+        box-shadow:  inset 0px 4px 7px rgba(0,0,0,0.3);                   
+        height: auto;
+    }  	
+    .event_item {
+        margin-top: 1em;
+    }       
+    .item_other {
+        max-width: 125px;
+    }
+    .event_item h4 {
+        font-size: 1.0em;
+    }
+    .event_item p {
+        font-size: 0.8em;
+        /*float: left;*/
+    }         
+}
+@media (max-width: 767px) {
+    .event_wrap {
+        margin-top: 0;
+        margin-bottom: 0;  
+        height: auto;  
+        background: none;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-top: 0;
+        clear: both;
+        width: auto!important;
+    }	
+}
+.item_tab {
+    color: white;
+    text-align: center;
+    font-family: arvo;
+}
+.event_other {
+    width: 27%;
+    float: right;
+    position: relative;
+    margin: 10px 10px 10px 0px;       
+}
+.event_other button.btn-mini {
+    /*float: right;*/
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 4px!important;
+    margin-bottom: 0px;
+    display: block!important;
+    padding: 0;
+}
+.event_other .thumbnail_box {
+    display: block;
+    /*height: 9em;*/
+    /*overflow: hidden;*/
+    border: 4px solid white;
+
+    -webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+    -moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+}
+
+@media (max-width: 440px) {
+    .event_other .thumbnail_box {
+        height: 8em;
+    }
+}
+@media (max-width: 400px) {
+    .event_other .thumbnail_box {
+        height: 7em;
+    }
+}
+@media (max-width: 360px) {
+    .event_other .thumbnail_box {
+        height: 6em;
+    }
+}
+@media (max-width: 320px) {
+    .event_other .thumbnail_box {
+        height: 5.5em;
+    }
+}
+
+.event_item {
+    /*min-height: 14.5em;*/
+    margin-top: 1em;
+    background-color: #f5f5f5;
+    -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
+    box-shadow: 0 0 7px rgba(0,0,0,0.3);
+    width: 93%;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+.event_item h4 {
+    float: left;
+    color: #F05A33;
+    line-height: 1.3em;
+    font-weight: 700;
+    font-size: 1.1em;
+    text-shadow: 0px -1px 0px white;    
+    margin-bottom: 5px;
+    width: 100%;
+}
+.event_item h5 {
+    color: #F05A33;
+    font-family: arvo;
+}
+.event_item h4 a {
+    color: #F05A33;
+}
+.event_item span {
+    font-family: ubuntu;
+    font-size: 1.5em;
+    font-weight: 500;
+
+}
+.event_item p {
+    color: #666;
+    font-size: 0.9em;
+    font-weight: 100;    
+    line-height: 1.3em;
+    clear: both
+}
+@media (max-width: 380px) {
+    .event_item {
+        min-height: 13em;
+        margin-top: 1em;
+    }    
+}
+.event_top_info.clearfix {
+    padding-top: 1px;
+    margin-bottom: 1.2em;
+    padding: 0;
+}
+.btn-nearby {
+    width: 25px!important;
+    float: left;
+}
+.btn-bookmark {
+   width: 75%!important;
+   margin-left: 6px;
+   float: right;
+}span.event_cat {
+    background: #F05A33;
+    color: white;
+    font-size: 1em;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    font-weight: 100;
+}
+.event_text {
+    padding: 0.2em 0.5em 1em 1em;
+    width: 55%;
+    float: left;
+}
+@media(min-width:979px) {
+    .bg_event {
+        background-color: rgba(255,255,255,0.5);
+        position: fixed;
+        height: 100%;
+        width: 37em;
+        margin-left: 18em;
+        z-index: 6;
+    }
+}
+@media(max-width:1199px) {
+    .bg_event {
+        /*margin-left: 21em;*/
+    }
+}
+.calender_full {
+    padding:0;
+}
+.calender_full .ui-datepicker {     
+    width: 100%;
+    padding: 0;
+    display: none;
+}
+.calender_full .ui-datepicker-header {
+    background-color: #EAEAEA;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.calender_full .ui-datepicker td span, .ui-datepicker td a {
+    text-align: center;
+    font-weight: 700;
+}
+.calender_full .ui-datepicker td {
+    border: 1px solid #eee;
+    padding: 1px;
+}
+
+.calender_full .ui-datepicker-calendar thead {
+    display: none;
+}
+.calender_full .ui-datepicker table {
+    margin: 0!important;
+}
+.calender_full .ui-datepicker-prev {
+    background-image: url("../images/left_right.png");
+    background-repeat: no-repeat;
+    text-indent: -999px;
+    cursor: pointer;
+    background-position: 5px;
+}
+
+.calender_full .ui-datepicker-next {
+    background-image: url("../images/left_right.png");   
+    background-repeat: no-repeat;
+    text-indent: -999px;
+    cursor: pointer;
+    background-position: -11px;
+}
+.calender_full .ui-datepicker-next-hover, .calender_full .ui-datepicker-prev-hover {
+    right: 2px!important;
+}
+.event_item .item_tab a{
+    color: white;
+}
+.modal-backdrop, .modal-backdrop.fade.in  {
+    background-color: rgba(0,0,0,0.4);
+}
+

@@ -1,0 +1,329 @@
+<!doctype html>
+
+<html>
+<head>
+  	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+
+	<!-- Stylesheets -->
+	
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+  <link rel="stylesheet" href="css/bootstrap-mobile.css"/>
+  <link rel="stylesheet" href="css/jquery.ui.datepicker.css"/>
+  <!-- <link rel="stylesheet" href="css/jquery.ui.theme.css"/> -->
+	<!-- <link rel="stylesheet" href="css/demos.css"/> -->
+
+	<link rel="stylesheet" href="css/styles2.css">
+	<link rel="stylesheet" href="css/styles_event2.css">
+
+	<link rel="stylesheet" href="css/icomoon/icomoon.css">  
+  
+	<!-- Javascript -->
+
+  	<script src="js/jquery-1.9.1.js"></script>   
+  	<script src="js/jquery-ui-1.10.2.custom.js"></script>   
+  	<script type="text/javascript" src="js/script.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+  	
+  	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>
+
+	<script type="text/javascript" src="/js/gatheringup-registration.js"></script>
+	<script type="text/javascript" src="/js/gatheringup-localize.js"></script>
+	<script type="text/javascript" src="/js/gatheringup-bookmark.js"></script>  	
+
+  <script>
+    $(function() {
+      $( "#datepicker" ).datepicker();
+    });
+  </script>
+
+	<!-- Google Font -->
+
+	<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+	<title>Events - GatheringUP</title>
+</head>
+
+<body onload="initialize()">
+
+    <!-- Header Unit -->
+
+    <div class="navbar navbar_container">
+    	<div class="navbar-inner nav_bar_style navbar-fixed-top">
+    		<div class="container">
+
+    			<!-- Controls the mobile menu button -->
+
+    			<a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    			</a>
+
+    			<!-- Change Out the Logo -->      
+
+    			<div class="brand_fix">
+    				<a class="brand" href="/">GatheringUP</a>
+    			</div> 
+
+    			<!-- Elements inside will disappear when mobile -->          
+
+    			<div id="collapse_content" class="nav-collapse collapse"> 
+    				<ul id="nav_items_group" class="nav">
+    					<li><a href="/localize">Places</a></li>                      
+    					<li><a href="/localize">Events</a></li>                      
+    				</ul>
+    				<form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
+    					<div class="input-append">
+    						<input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park" value="" autocomplete="off">
+    						<button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
+    					</div>                  
+    				</form>
+    				<a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
+
+    				<span id="loggedinuserspan">
+    					<ul id="nav_cta" class="nav pull-right">
+    						<li><a class="btn_nav_cta" href="javascript:void(0)" data-toggle="modal" onclick="registerpopup()">Register</a></li>            
+    						<li>
+    							<a class="btn_nav_cta dropdown-toggle" href="#" id="style_dp_text" data-toggle="dropdown">
+    								Sign In
+    								<b class="icon-chevron-down icon-white"></b>
+    							</a>
+    							<div id="signin_box" class="dropdown-menu">
+    								<span id="logindropdownspan">
+    									<a href="https://www.facebook.com/dialog/oauth?client_id=444845832200364&amp;redirect_uri=http%3A%2F%2Fwww.com%2Fuser%2Ffacebook&amp;state=95696bab9d935a2d763b732bbbdc0f0a" class="facebookurl">
+    										<button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button>  
+    									</a>
+    									<div class="dividline"></div>  
+    									<div id="SideDropLoginErrors"></div>
+    									<form class="clearfix" id="signin_content" method="post" action="#" accept-charset="UTF-8">
+    										<input class="input_dp" placeholder="Username" id="droploginemail" type="text" name="username">
+    										<input class="input_dp" placeholder="Password" id="droploginpassword" type="password" name="password">
+    										<div id="forgotpw"><a onclick="logintoforget()">Forgot Password</a></div>
+    										<button class="btn btn-green clearfix">Sign in</button>
+    									</form>
+    								</span>
+    							</div>                
+    						</li>             
+    					</ul>            
+    				</span>
+
+    			</div>
+    		</div>
+    	</div>
+    </div>    <!-- Header End -->
+
+    
+    <div id="filter_event">  <!-- Left Panel Start -->
+        <div id="filter_unit">
+        <div class="accordion" id="accordion2">
+
+          <div class="accordion-group calendar">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                When
+              </a>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse in">
+              <div class="accordion-inner calender_full">
+                <div id="datepicker"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-group categories">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                Categories
+              </a>
+            </div>
+            <div id="collapseTwo" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul>
+                    <li>All Categories<input type="checkbox"></li>
+                    <li>Class<input type="checkbox"></li>
+                    <li>Conference<input type="checkbox"></li>
+                    <li>Social Events<input type="checkbox"></li>
+                    <li>Other Events<input type="checkbox"></li>
+                    <li>Networking<input type="checkbox"></li>
+                    <li>Business<input type="checkbox"></li>
+                    <li>Fundraisers<input type="checkbox"></li>
+                    <li>Music<input type="checkbox"></li>
+                    <li>Food/Wine<input type="checkbox"></li>
+                    <li>Performing Arts<input type="checkbox"></li>
+                    <li>Other Entertainment<input type="checkbox"></li>
+                    <li>Outdoors<input type="checkbox"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-group price">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                Price
+              </a>
+            </div>
+            <div id="collapseThree" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul>
+                    <li>Free<input type="checkbox"></li>
+                    <li>$<input type="checkbox"></li>
+                    <li>$$<input type="checkbox"></li>
+                    <li>$$$<input type="checkbox"></li>
+                    <li>$$$$<input type="checkbox"></li>
+                    <li>$$$$$<input type="checkbox"></li>
+                </ul>
+              </div>
+            </div>
+          </div>          
+
+          <div class="accordion-group boros">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                Location
+              </a>
+            </div>
+            <div id="collapseFour" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul>
+                    <li>Manhattan<input type="checkbox"></li>
+                    <li>Queens<input type="checkbox"></li>
+                    <li>Brooklyn<input type="checkbox"></li>
+                    <li>Bronx<input type="checkbox"></li>
+                    <li>Staten Island<input type="checkbox"></li>
+                </ul>
+              </div>
+            </div>
+          </div>       
+
+        </div>        
+        </div>
+    </div> <!-- Left Panel End -->
+
+    <!-- Event Details -->
+
+        <div class="bg_event"></div>
+        <div class="event_wrap">
+
+        <!-- Result Module -->            
+            <div class="event_item">
+                <div class="event_top_info clearfix">                
+                    <div class="event_text">
+                      <h4><a href=""><span>1.&nbsp</span>Elegance for All: A Pop-Up Shop by ModCloth</a></h4>
+                      <h5>June 14, 2013 at 6:00 PM</h5>
+                      <p>Organized by ModCloth<br>
+                      Location 05, 509 West 34th Street,<br>
+                      New York, NY
+                      <br>                     
+                      </p>                
+                      <span class="event_cat">Fashion</span>
+                    </div>
+                    <div class="event_other">
+                      <div class="thumbnail_box">
+                        <img src="images/image1.jpg" alt="thumbnail">
+                      </div>  
+                      <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby"><span class="icon-white icon-screenshot"></span></button>
+
+                    </div>                       
+                    <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div>
+                </div>            
+            </div>
+
+        <!-- Result Module -->            
+            <div class="event_item">
+                <div class="event_top_info clearfix">                
+                    <div class="event_text">
+                      <h4><a href=""><span>2.&nbsp</span>Dutchess</a></h4>
+                      <h5>June 14, 2013 at 6:00 PM</h5>                      
+                      <p>Organized by ModCloth<br>
+                      Location 05, 509 West 34th Street,<br>
+                      New York, NY
+                      <br>                     
+                      </p>
+                      <span class="event_cat">Fashion</span>
+                    </div>
+                    <div class="event_other">
+                      <div class="thumbnail_box">
+                        <img src="images/image2.jpg" alt="thumbnail">
+                      </div>    
+                      <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby"><span class="icon-white icon-screenshot"></span></button>
+                    </div>                       
+                    <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div>                                     
+                </div>
+            </div>            
+
+        <!-- Result Module -->            
+            <div class="event_item">
+                <div class="event_top_info clearfix">                
+                    <div class="event_text">
+                      <h4><a href=""><span>1.&nbsp</span>Elegance for All: A Pop-Up Shop by ModCloth</a></h4>
+                      <h5>June 14, 2013 at 6:00 PM</h5>
+                      <p>Organized by ModCloth<br>
+                      Location 05, 509 West 34th Street,<br>
+                      New York, NY
+                      <br>                     
+                      </p>                
+                      <span class="event_cat">Fashion</span>
+                    </div>
+                    <div class="event_other">
+                      <div class="thumbnail_box">
+                        <img src="images/image1.jpg" alt="thumbnail">
+                      </div>  
+                      <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby"><span class="icon-white icon-screenshot"></span></button>
+
+                    </div>                       
+                    <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div>
+                </div>            
+            </div>
+            
+
+        <!-- Result Module END -->                  
+               
+        </div> 
+    </div>
+    
+
+    <!-- Map Background -->
+    <div id="map_canvas" class="map_event"></div>     
+
+
+    <!-- Event Detail Modal -->
+    <div class="modal hide fade eventmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="event-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        
+      
+
+            <div class="event_item">
+                <div class="event_top_info clearfix">                
+                    <div class="event_text">
+                      <h4><a href=""><span>2.&nbsp</span>Dutchess</a></h4>
+                      <h5>June 14, 2013 at 6:00 PM</h5>                      
+                      <p>Organized by ModCloth<br>
+                      Location 05, 509 West 34th Street,<br>
+                      New York, NY
+                      <br>                     
+                      </p>
+                      <span class="event_cat">Fashion</span>
+                    </div>
+                    <div class="event_other">
+                      <div class="thumbnail_box">
+                        <img src="images/image2.jpg" alt="thumbnail">
+                      </div>    
+                      <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby"><span class="icon-white icon-screenshot"></span></button>
+                    </div>                                                    
+                </div>
+            </div>  
+
+      </div>
+    </div>
+
+</body>
+</html>

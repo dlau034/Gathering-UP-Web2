@@ -72,16 +72,34 @@
 
     			<div id="collapse_content" class="nav-collapse collapse"> 
     				<ul id="nav_items_group" class="nav">
-    					<li><a href="/localize">Places</a></li>                      
-    					<li><a href="/localize">Events</a></li>                      
+    					<li>
+                <a href="/localize">Places
+                  <img src="http://siteimages.gatheringup.com/images/around.png" alt="">
+                </a>
+              </li>                      
+              <li>
+                <a href="/localize">Events
+                  <img src="images/eventpin.png" alt="">
+                </a>
+              </li>                      
+    					<li>
+                <a href="/localize">Stories
+                  <img src="images/storypin.png" alt="">
+              </a>
+              </li>                      
     				</ul>
-    				<form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
+
+            <!-- Remove Search Bar -->
+
+<!--     				<form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
     					<div class="input-append">
     						<input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park" value="" autocomplete="off">
     						<button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
     					</div>                  
     				</form>
-    				<a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
+ -->    				
+
+            <a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
 
     				<span id="loggedinuserspan">
     					<ul id="nav_cta" class="nav pull-right">
@@ -132,75 +150,26 @@
               </div>
             </div>
           </div>
-
-          <div class="accordion-group categories">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                Categories
-              </a>
-            </div>
-            <div id="collapseTwo" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <ul>
-                    <li>All Categories<input type="checkbox"></li>
-                    <li>Class<input type="checkbox"></li>
-                    <li>Conference<input type="checkbox"></li>
-                    <li>Social Events<input type="checkbox"></li>
-                    <li>Other Events<input type="checkbox"></li>
-                    <li>Networking<input type="checkbox"></li>
-                    <li>Business<input type="checkbox"></li>
-                    <li>Fundraisers<input type="checkbox"></li>
-                    <li>Music<input type="checkbox"></li>
-                    <li>Food/Wine<input type="checkbox"></li>
-                    <li>Performing Arts<input type="checkbox"></li>
-                    <li>Other Entertainment<input type="checkbox"></li>
-                    <li>Outdoors<input type="checkbox"></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-group price">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                Price
-              </a>
-            </div>
-            <div id="collapseThree" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <ul>
-                    <li>Free<input type="checkbox"></li>
-                    <li>$<input type="checkbox"></li>
-                    <li>$$<input type="checkbox"></li>
-                    <li>$$$<input type="checkbox"></li>
-                    <li>$$$$<input type="checkbox"></li>
-                    <li>$$$$$<input type="checkbox"></li>
-                </ul>
-              </div>
-            </div>
-          </div>          
-
-          <div class="accordion-group boros">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                Location
-              </a>
-            </div>
-            <div id="collapseFour" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <ul>
-                    <li>Manhattan<input type="checkbox"></li>
-                    <li>Queens<input type="checkbox"></li>
-                    <li>Brooklyn<input type="checkbox"></li>
-                    <li>Bronx<input type="checkbox"></li>
-                    <li>Staten Island<input type="checkbox"></li>
-                </ul>
-              </div>
-            </div>
-          </div>       
-
         </div>        
         </div>
+        <div class="filter_dates">
+          <button class="btn btn-green">Today</button>
+          <button class="btn btn-green">Tomorrow</button>
+          <button class="btn btn-green">The Weekend</button>
+        </div>   
+
+      <div class="footer3">
+        <p>
+          <a href="https://www.facebook.com/GatheringUp">Facebook</a> -
+          <a href="https://twitter.com/Gathering_UP">Twitter</a> -
+          <a href="http://gatheringup.wordpress.com">Blog</a> -
+          <a href="/about">About</a> -
+          <a href="/about/termsofuse">Terms of Use</a><br> - 
+          <a href="/about/privacy">Privacy Policy</a> -
+          Images Provided by <a href="http://www.foursquare.com">Foursquare</a>
+        </p>
+      </div>            
+
     </div> <!-- Left Panel End -->
 
     <!-- Event Details -->
@@ -214,22 +183,23 @@
                     <div class="event_text">
                       <h4><a href=""><span>1.&nbsp</span>Elegance for All: A Pop-Up Shop by ModCloth</a></h4>
                       <h5>June 14, 2013 at 6:00 PM</h5>
-                      <p>Organized by ModCloth<br>
-                      Location 05, 509 West 34th Street,<br>
-                      New York, NY
+                      <p>
+                      You&#8217;re cordially invited to Elegance for All. A Pop-Up Shop by ModCloth. Join us for champagne & shopping in all sizes as ...
                       <br>                     
                       </p>                
-                      <span class="event_cat">Fashion</span>
                     </div>
                     <div class="event_other">
                       <div class="thumbnail_box">
                         <img src="images/image1.jpg" alt="thumbnail">
                       </div>  
+                    </div>
+                    <div class="btn_group">
                       <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
-                      <button class="CTA_button btn btn-green btn-mini btn-nearby"><span class="icon-white icon-screenshot"></span></button>
-
-                    </div>                       
-                    <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div>
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
+                      <button href=".eventmodal" class="CTA_button btn btn-green btn-mini btn-readmore" data-toggle="modal">Read More</button>
+                    </div>     
+                                      
+                    <!-- <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div> -->
                 </div>            
             </div>
 
@@ -237,48 +207,51 @@
             <div class="event_item">
                 <div class="event_top_info clearfix">                
                     <div class="event_text">
-                      <h4><a href=""><span>2.&nbsp</span>Dutchess</a></h4>
-                      <h5>June 14, 2013 at 6:00 PM</h5>                      
-                      <p>Organized by ModCloth<br>
-                      Location 05, 509 West 34th Street,<br>
-                      New York, NY
+                      <h4><a href=""><span>2.&nbsp</span>Shakespeare in the Park Presents "The Comedy of Errors"</a></h4>
+                      <h5>June 26, 2013 at 08:30 PM - 12:30 AM</h5>
+                      <p>
+                      The Comedy of Errors, one of William Shakespeare's earliest plays, is a comical tale about two sets of twins who were at birth ...
                       <br>                     
-                      </p>
-                      <span class="event_cat">Fashion</span>
+                      </p>                
                     </div>
                     <div class="event_other">
                       <div class="thumbnail_box">
-                        <img src="images/image2.jpg" alt="thumbnail">
-                      </div>    
+                        <img src="images/shakespeare.jpg" alt="thumbnail">
+                      </div>  
+                    </div>
+                    <div class="btn_group">
                       <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
-                      <button class="CTA_button btn btn-green btn-mini btn-nearby"><span class="icon-white icon-screenshot"></span></button>
-                    </div>                       
-                    <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div>                                     
-                </div>
-            </div>            
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
+                      <button class="CTA_button btn btn-green btn-mini btn-readmore">Read More</button>
+                    </div>     
+                                      
+                    <!-- <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div> -->
+                </div>            
+            </div>    
 
         <!-- Result Module -->            
             <div class="event_item">
                 <div class="event_top_info clearfix">                
                     <div class="event_text">
-                      <h4><a href=""><span>1.&nbsp</span>Elegance for All: A Pop-Up Shop by ModCloth</a></h4>
+                      <h4><a href=""><span>3.&nbsp</span>Elegance for All</a></h4>
                       <h5>June 14, 2013 at 6:00 PM</h5>
-                      <p>Organized by ModCloth<br>
-                      Location 05, 509 West 34th Street,<br>
-                      New York, NY
+                      <p>
+                      You&#8217;re cordially invited to Elegance for All. A Pop-Up Shop by ModCloth. Join us for champagne & shopping in all sizes as ...
                       <br>                     
                       </p>                
-                      <span class="event_cat">Fashion</span>
                     </div>
                     <div class="event_other">
                       <div class="thumbnail_box">
                         <img src="images/image1.jpg" alt="thumbnail">
                       </div>  
+                    </div>
+                    <div class="btn_group">
                       <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
-                      <button class="CTA_button btn btn-green btn-mini btn-nearby"><span class="icon-white icon-screenshot"></span></button>
-
-                    </div>                       
-                    <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div>
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
+                      <button class="CTA_button btn btn-green btn-mini btn-readmore">Read More</button>
+                    </div>     
+                                      
+                    <!-- <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div> -->
                 </div>            
             </div>
             
@@ -295,35 +268,39 @@
 
     <!-- Event Detail Modal -->
     <div class="modal hide fade eventmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="event-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <!-- <div class="event-header"> -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
         
-      
-
             <div class="event_item">
                 <div class="event_top_info clearfix">                
                     <div class="event_text">
-                      <h4><a href=""><span>2.&nbsp</span>Dutchess</a></h4>
-                      <h5>June 14, 2013 at 6:00 PM</h5>                      
-                      <p>Organized by ModCloth<br>
-                      Location 05, 509 West 34th Street,<br>
-                      New York, NY
-                      <br>                     
-                      </p>
-                      <span class="event_cat">Fashion</span>
+                      <h4><a href=""><span>1.&nbsp</span>Elegance for All: A Pop-Up Shop by ModCloth</a></h4>
+                      <h5>June 14, 2013 at 6:00 PM</h5>
+                      <p>
+                      Location05<br>                     
+                      509 West 34th Street<br>                      
+                      New York, NY 10001<br>                     
+                              
+                      </p>                
                     </div>
                     <div class="event_other">
                       <div class="thumbnail_box">
-                        <img src="images/image2.jpg" alt="thumbnail">
-                      </div>    
+                        <img src="images/image1.jpg" alt="thumbnail">
+                      </div>  
                       <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
-                      <button class="CTA_button btn btn-green btn-mini btn-nearby"><span class="icon-white icon-screenshot"></span></button>
-                    </div>                                                    
-                </div>
-            </div>  
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>                  
+                    </div>
+          
+                    <!-- <div class="item_tab"><a href=".eventmodal" role="button" data-toggle="modal">Read More</a></div> -->
+                </div>            
+            </div>
 
+            <div class="event_data">
+              <div class="dividline"></div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, enim ad in laboriosam voluptate cupiditate iure necessitatibus adipisci minima quo dicta incidunt atque excepturi inventore id repudiandae voluptatum? Quo eum accusantium hic minus facilis velit similique voluptate nesciunt reprehenderit consequatur. Sit itaque in maiores voluptatum quas non id quam earum.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, enim ad in laboriosam voluptate cupiditate iure necessitatibus adipisci minima quo dicta incidunt atque excepturi inventore id repudiandae voluptatum? Quo eum accusantium hic minus facilis velit similique voluptate nesciunt reprehenderit consequatur. Sit itaque in maiores voluptatum quas non id quam earum.         
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, enim ad in laboriosam voluptate cupiditate iure necessitatibus adipisci minima quo dicta incidunt atque excepturi inventore id repudiandae voluptatum? Quo eum accusantium hic minus facilis velit similique voluptate nesciunt reprehenderit consequatur. Sit itaque in maiores voluptatum quas non id quam earum.      
+            </div>     
       </div>
-    </div>
-
 </body>
 </html>

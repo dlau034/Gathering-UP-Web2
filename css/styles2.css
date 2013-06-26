@@ -577,14 +577,15 @@ form {
 #nav_items_group a {
     color: white;
     text-shadow: none;
-    font-size: 1.1em;
+    font-size: 1em;
+    font-weight: 100;
+    font-family: arvo;
     padding-left: 40px;
-    margin-left: -24px;
 }
 #nav_items_group a img{
     position: absolute;
-    left: -22px;
     top: 3px;
+    margin-left: -36px;
 }
 @media (max-width: 979px) {
     #nav_items_group a img{
@@ -1197,11 +1198,10 @@ background-image: linear-gradient(#A3c86c, #ccc);*/
     clear: both
 }
 .CTA_button {    
-    float: right;
-    width: 100%;
     margin-top: 5px;
     border-radius: 2px!important;
-    display: none;  /*toggles the hide function - default as display none*/
+    width: 11em;
+    margin: auto 8px;
 }
 
     /* Nav Listing Unit

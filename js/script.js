@@ -1,20 +1,20 @@
-$(document).ready(function(){
-	$(".event_item").hover(function(){
-		$(this).find(".CTA_button").toggle();
-	});
-});
+// $(document).ready(function(){
+// 	$(".event_item").hover(function(){
+// 		$(this).find(".CTA_button").toggle();
+// 	});
+// });
 
-$(document).ready(function(){
-	$(".nearby_item").hover(function(){
-		$(this).find(".CTA_button").toggle();
-	});
-});
+// $(document).ready(function(){
+// 	$(".nearby_item").hover(function(){
+// 		$(this).find(".CTA_button").toggle();
+// 	});
+// });
 
-$(document).ready(function(){
-	$(".mini_item").hover(function(){
-		$(this).find(".CTA_button_mini").toggle();
-	});
-});
+// $(document).ready(function(){
+// 	$(".mini_item").hover(function(){
+// 		$(this).find(".CTA_button_mini").toggle();
+// 	});
+// });
 
 $(document).ready(function() {
 	$(".item_tab").click(function() {

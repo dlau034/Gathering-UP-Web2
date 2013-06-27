@@ -1,0 +1,40 @@
+.home_main {
+	background-color: white;
+	/*height: 100%;*/
+	-webkit-box-shadow: 0em 0em 1.5em #555;
+	-moz-box-shadow: 0em 0em 1.5em #555;
+	box-shadow: 0em 0em 1.5em #555;
+	padding: 1.7em;
+	z-index: -10;
+	position: relative;
+	display: block;
+}
+.large_listing {
+	width: 100%;
+	background-color: #f1f1f1;
+	height: 14em;
+	display: block;
+	float: left;
+	margin-bottom: 1em;
+	position: relative;
+}
+.main_listing {
+	width: 100%;
+	background-color: #f1f1f1;
+	height: 11em;
+	display: block;
+	float: left;
+	margin-bottom: 1em;
+	position: relative;
+}
+.side_listing {
+	width: 85%;
+	background-color:#f1f1f1;
+	height: 17em;
+	display: block;
+	float: right;
+	margin-bottom: 1em;
+}
+#top_margin {
+	margin-top: 2em;
+}

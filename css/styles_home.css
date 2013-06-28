@@ -5,36 +5,224 @@
 	-moz-box-shadow: 0em 0em 1.5em #555;
 	box-shadow: 0em 0em 1.5em #555;
 	padding: 1.7em;
-	z-index: -10;
 	position: relative;
 	display: block;
 }
 .large_listing {
-	width: 100%;
+	width: 104%;
 	background-color: #f1f1f1;
-	height: 14em;
+	/*height: 14em;*/
 	display: block;
 	float: left;
 	margin-bottom: 1em;
 	position: relative;
 }
 .main_listing {
-	width: 100%;
+	width: 104%;
 	background-color: #f1f1f1;
-	height: 11em;
+	/*height: 11em;*/
 	display: block;
 	float: left;
 	margin-bottom: 1em;
 	position: relative;
 }
+@media (max-width: 599px) {
+	.large_listing {
+		width: 100%
+	}
+	.main_listing {
+		width: 100%
+	}	
+}
 .side_listing {
 	width: 85%;
 	background-color:#f1f1f1;
-	height: 17em;
 	display: block;
 	float: right;
 	margin-bottom: 1em;
 }
 #top_margin {
-	margin-top: 2em;
+	margin-top: 2.4em;
+}
+
+    /* Featured Page Tags
+    -------------------------------------------------- */
+
+.tag_home {
+    font-family: arvo;
+    /*background-color: #FFD321;*/
+    color: white;
+    position: absolute;
+    right: -10px;
+    margin-top: 8px;
+    padding: 0.3em 0.5em;
+    font-size: 1.2em;
+    font-weight: 400;
+    z-index: 1;
+
+    -webkit-box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
+    /*text-shadow: 0px -1px 0px rgba(0,0,0,0.4);*/
+}
+@media (max-width: 599px) {
+	.tag_home {
+		font-size: 0.9em;
+	}
+	.corner_img {
+		margin-top: 36px!important;
+	}
+}
+.corner_img {
+	position: absolute;
+	right: 0;
+	margin-top: 38px;
+	margin-right: -10px;
+	z-index: 0;
+	display: block;
+}
+.tag_story {
+	background-color: #FFD321;
+}
+.tag_story img {
+	margin-left: 69px;
+    margin-top: 7px;
+}
+.tag_place {
+	background-color: #F6921D;
+}
+.tag_place img {
+	margin-left: 65px;
+	margin-top: 7px;	
+}
+.tag_event {
+	background-color: #EF4136;
+}
+.tag_event img {
+	margin-left: 68px;
+	margin-top: 7px;		
+}
+.thumbnail_large {
+    width: 22em;
+    float: left;
+    margin: 0.7em 0.7em 0em 0.7em;
+    height: 12em;
+    overflow: hidden;
+    border: 4px solid white;
+    -webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+    -moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;    
+}
+@media (min-width: 980px) {
+	.thumbnail_large, .thumbnail_square  {
+		margin: 0.7em!important;
+	}
+}
+@media (max-width: 599px) {
+	.thumbnail_large {
+		width: 94%;
+	}
+	.large_listing h2 {
+		float: left;
+	}
+	.large_listing h5 {
+		float: left;
+	}	
+	.large_listing p {
+		clear: both;
+	}
+}
+@media (max-width: 499px) {
+	.thumbnail_large {
+		width: 92%;
+	}
+}
+@media (max-width: 349px) {
+	.thumbnail_large {
+		width: 89%;
+	}
+}
+.thumbnail_large img{ 
+	width: 100%
+}
+.thumbnail_square {
+    width: 9em;
+    float: left;
+    margin: 0.7em 0.7em 0em 0.7em;
+    height: 9em;
+    overflow: hidden;
+    border: 4px solid white;
+    -webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+    -moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;        
+}
+
+.home_main h2 {
+	font-family: arvo;
+	font-weight: 400;
+	color: #333;
+	line-height: 1.1em;
+	font-size: 1.7em;
+	margin-bottom: 0.1em;
+	width: 87%;
+	margin-left: 0.5em;
+    text-shadow: 0px 1px 0px white!important;	
+}
+.home_main p {
+	color: #444;
+	font-size: 0.95em;
+	font-weight: 400;
+	line-height: 1.4em;
+	margin-top: 0.3em;
+	margin-right: 1em;
+	margin-left: 1em;
+}
+.home_main h5 {
+	margin: 0;
+	font-family: arvo;
+	color: #666;
+	font-weight: 400;
+	margin-left: 0.9em;
+    text-shadow: 0px 1px 0px white!important;	
+}
+.home_main p a {
+	font-weight: 700;
+	color: #222;
+	font-family: arvo;
+    text-shadow: 0px 1px 0px white!important;	
+}
+.home_main p a:hover {
+	color: #619D00;
+	text-decoration: underline; 
+}
+
+.side_listing {
+	margin: 0em auto 1.2em auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0.7em;
+}
+.img_side {
+	width: 90%;
+	border-radius: 0;
+	margin: 0.3em auto;
+}
+.sidelink {
+	margin: 0 auto;
+	width: 90%;
+	margin-top: 0.5em;
+	line-height: 1.3em;	
+}
+.sidelink a {
+	font-family: arvo;
+	font-weight: 400;
+}
+@media (max-width: 599px) {
+	.side_listing {
+		width: 100%!important;
+	}
+}
+.home_footer {
+	position: relative!important;
 }

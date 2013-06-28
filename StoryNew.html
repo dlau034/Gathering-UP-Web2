@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>GatheringUp - Visiting from Chicago</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+ <meta name="description" content="GatheringUP is about finding fun things to do in and around New York City's Central Park.">
+ <meta name="keywords" content="Central, Park, New, York, City, Upper, West, East, NYC, Museum, Lincoln, Center, Columbus, Circle, Side">
+
+ <meta property="fb:app_id"          content="444845832200364" />
+ <meta property="og:type" content="article" />
+ <meta property="og:title" content="Visiting from Chicago"/>
+ <meta property="og:url" content="http://www.gatheringup.com/story?articleid=330"/>
+ <meta property="og:image" content="http://images.gatheringup.com/images/large/51b66ae8e1613.jpg"/>
+ <meta property="og:site_name" content="GatheringUp"/>
+ <meta property="og:description" content="Sharice and Gary were coming out of the American Museum of Natural History when a salesman for Central Park Guided Tours approached them. “Thank you, but not today,” said Sharice, smiling politely."/>
+
+
+ <link rel="stylesheet" href="css/bootstrap.css">
+ <link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+ <link rel="stylesheet" href="css/bootstrap-mobile.css"/>
+ <link rel="stylesheet" href="css/styles2.css">
+ <link rel="stylesheet" href="css/icomoon/icomoon.css">  
+ <link rel="stylesheet" href="css/jquery_override.css">
+ <link href="css/select2.css" rel="stylesheet"/>
+
+ <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+ <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+
+ <script type="text/javascript" src="/js/underscore-min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>    
+ <script type="text/javascript" src="/js/gatheringup-published-min.js"></script>
+
+<script type="text/javascript" src="/js/gatheringup-registration.js"></script>
+<script type="text/javascript" src="/js/gatheringup-localize.js"></script>
+<script type="text/javascript" src="/js/gatheringup-bookmark.js"></script> 
+
+ <script src="/js/select2.js"></script>
+ <script src="/js/script.js"></script>
+
+
+	<!-- Google Font -->
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDgWlD8brKo2WBwz8HkaWT5unU58aurUIk&sensor=true"  type="text/javascript"></script>
+  <script type="text/javascript" src="/js/gatheringup-registration-min.js"></script>
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+ <body onload="initialize()">
+
+    <!-- Header Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+          <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <!-- Change Out the Logo -->      
+
+          <div class="brand_fix">
+            <a class="brand" href="/">GatheringUP</a>
+          </div> 
+
+          <!-- Elements inside will disappear when mobile -->          
+
+          <div id="collapse_content" class="nav-collapse collapse"> 
+            <ul id="nav_items_group" class="nav">
+              <li>
+                <a href="/localize">Places
+                  <img src="http://siteimages.gatheringup.com/images/around.png" alt="">
+                </a>
+              </li>                      
+              <li>
+                <a href="/localize">Events
+                  <img src="images/eventpin.png" alt="">
+                </a>
+              </li>                      
+              <li>
+                <a class="active" href="/localize">Stories
+                  <img src="images/storypin.png" alt="">
+              </a>
+              </li>                      
+            </ul>
+
+            <!-- Remove Search Bar -->
+
+<!--            <form id="header_search_wrap" class="navbar-search" action="/localize" method="get">
+              <div class="input-append">
+                <input id="header_search" type="text" class="span4 search-query" name="search" placeholder="Search In and Around Central Park" value="" autocomplete="off">
+                <button class="btn btn-green search-query" type="submit"><i class="icon-search icon-white"></i></button>
+              </div>                  
+            </form>
+ -->            
+
+            <a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
+
+            <span id="loggedinuserspan">
+              <ul id="nav_cta" class="nav pull-right">
+                <li><a class="btn_nav_cta" href="javascript:void(0)" data-toggle="modal" onclick="registerpopup()">Register</a></li>            
+                <li>
+                  <a class="btn_nav_cta dropdown-toggle" href="#" id="style_dp_text" data-toggle="dropdown">
+                    Sign In
+                    <b class="icon-chevron-down icon-white"></b>
+                  </a>
+                  <div id="signin_box" class="dropdown-menu">
+                    <span id="logindropdownspan">
+                      <a href="https://www.facebook.com/dialog/oauth?client_id=444845832200364&amp;redirect_uri=http%3A%2F%2Fwww.com%2Fuser%2Ffacebook&amp;state=95696bab9d935a2d763b732bbbdc0f0a" class="facebookurl">
+                        <button class="btn btn_facebookdp btn-facebook"><span aria-hidden="true" class="icon-datebookfacebook"></span>Sign in with Facebook</button>  
+                      </a>
+                      <div class="dividline"></div>  
+                      <div id="SideDropLoginErrors"></div>
+                      <form class="clearfix" id="signin_content" method="post" action="#" accept-charset="UTF-8">
+                        <input class="input_dp" placeholder="Username" id="droploginemail" type="text" name="username">
+                        <input class="input_dp" placeholder="Password" id="droploginpassword" type="password" name="password">
+                        <div id="forgotpw"><a onclick="logintoforget()">Forgot Password</a></div>
+                        <button class="btn btn-green clearfix">Sign in</button>
+                      </form>
+                    </span>
+                  </div>                
+                </li>             
+              </ul>            
+            </span>
+
+          </div>
+        </div>
+      </div>
+    </div>    <!-- Header End -->
+
+ <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
+
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Register with GatheringUP!</h1>
+     <div class="dividline"></div>
+       <form id="registerform">
+         <div class="clearfix">
+
+           <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>
+               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
+           </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>                  
+                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
+               </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <p class="help-block"></p>   
+                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
+             </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
+             </div>              
+         </div>              
+
+         <div class="control-group">
+             <div class="control">    
+
+               <input 
+                 id="password2nd"
+                 class="form_reg" 
+                 placeholder="Retype Password"
+                 type="password"
+                 name="passwordconf"
+                 data-validation-match-match="password1"    
+                 minlength="8" 
+                 data-validation-minlength-message="Minimum 8 Characters"              
+                 />
+               <p class="help-block"></p>    
+             </div>              
+         </div>       
+<div id="RegistrationErrors"></div>
+
+           <div class="control-group">
+             <div class="control">                  
+               <p class="help-block"></p>                                 
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" placeholder="Enter Captcha" required>
+               <div ><img src="/captcha"></div>                
+             </div>
+           </div>
+
+         </div>
+
+         <div class="dividline"></div>
+         <button class="btn btn-large btn-green" >Register!</button>
+       </form>
+     <h4>OR</h4>
+<a href=""  id="fb_register" class="facebookurl"  >
+     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
+</a>
+ </div>    
+
+
+
+<!--Forgot Password Modal-->
+<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Forgot Password?</h1>
+     <div class="dividline"></div>
+       <form  id="forgotpasswordform" class="forgot_fields clearfix">
+         <div class="control-group">
+           <div class="controls">
+              <p class="help-block"></p>
+               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
+
+           </div>
+         </div>
+         <button type="submit" class="btn btn-green">Forgot Password!</button>  
+       </form>  
+  </div>
+  
+
+<script type="text/javascript">
+//var bookmarks={};
+var bookmarks = {};
+		
+</script>
+
+    <div id="map_canvas" class="map_outing" style="height: 100%; width:100%; position: fixed;">
+    </div>    
+
+    
+
+    <!-- Nav Listing Unit -->  
+
+    <div id="Outing_frame">
+      <div id="Outing_wrap">
+        <h1>Visiting from Chicago</h1>
+          <div class="Outing_detail clearfix">
+            <div class="author clearfix">
+                          <img class="img-polaroid img-circle" src="http://siteimages.gatheringup.com/images/headshot.jpg" alt="">
+              
+              <h5>By Ashley Villarreal<br> Published 2013-06-11 01:07:56</h5>            
+            </div>
+<div class="fb-like" data-href="http://www.gatheringup.com/story?articleid=330" data-send="true" data-layout="button_count" data-width="280" data-show-faces="true"></div>
+<a href="https://twitter.com/share" class="twitter-share-button">tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+          </div>         
+          <div class="Outing_cat">
+<button class="btn btn-mini cat_tag">Visitors</button>
+          </div>      
+              
+                                 
+                            	<div id="place22602181"></div>
+              <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/51b66ae8e1613.jpg" alt="">
+                
+              <h4>Grabbing a bite</h4>
+              <p>Sharice and Gary were coming out of the American Museum of Natural History when a salesman for Central Park Guided Tours approached them. “Thank you, but not today,” said Sharice, smiling politely. 
+              </p>
+                            	<div id="place22602181"></div>
+              <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/51b671846033d.jpg" alt="">
+                
+              <h4>Views from the park</h4>
+              <p>They were vacationing from Chicago and had enjoyed spending time at the museum where they saw Our Global Kitchen: Food, Nature, Culture. Sharice said home-cooked meals had been a big part of her life growing up and she&#039;d been happy to see how food had impacted different societies throughout history. 
+              </p>
+                            	<div id="place22610316"></div>
+              <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/51b674b8bc4c9.jpg" alt="">
+                
+              <h4>Grabbing a bite</h4>
+              <p>While they&#039;d visited New York City many times before, they opted out of taking a stroll through Central Park because of the rain. However, they both agreed the areas around Belvedere Castle were among their favorites – mainly for the view. 
+              </p>
+                            	<div id="place2257408"></div>
+              <img class="img-polaroid img-content" src="http://images.gatheringup.com/images/large/51b6767b22972.jpg" alt="">
+                
+              <h4></h4>
+              <p>Before visiting the museum they’d come from Brooklyn Diner, a local eatery near the southern edge of the park. Gary, who hails from Brooklyn, said that although the food was not like anything he&#039;d grown up with, it had hit the spot for the moment. 
+              </p>
+                            <div class="dividline"></div>
+<button onClick="checkloggedin('/storycreate')" class="btn btn-green btn-large btn_cta">Create your own Perfect Outing!</button>
+      <div class="fb-comments" data-href="http://www.gatheringup.com/story?articleid=330" data-width="470" data-num-posts="10"></div>
+      </div>
+      
+    </div>    
+
+<!-- Nearby Column -->  
+
+    <div class="Out_nearby_wrap">
+        		<script type="text/javascript">
+    		setgmapmarker(40.78082656700008, -73.97364816499993, "American Museum of Natural History", "22602181");
+    		</script>
+    		        <div id="nearby_box"> 
+
+          <div class="nearby_item mini_item">
+              <div class="clearfix" id="22602181" gid="">                
+                  <div class="mini_other">
+                  <div class="thumbnail_box">
+                  	<img  src="https://irs3.4sqi.net/img/general/width320/50768454_keaj0u0_Y_Ec-IRhjjkZ9YNYIa9nLmIYGoqbmUu-tP8.jpg" alt="thumbnail">    				</div>
+						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(22602181, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						    				
+                  </div>  
+
+                  <div class="mini_text">
+                    <h4><a href="/localize?searchid=22602181"><span>1</span>.&nbsp;American Museum of Natural History</a></h4>
+                    <p>Central Park West at 79th Street<br>
+                    New York, NY 10024<br>
+(212) 769-5100<br>
+<br><a href="http://www.amnh.org/" target="_blank"><span class="icon-globe"></span>&nbsp;Website</a>
+                    </p>
+                   <div class="result_cat">
+                   <button class="btn btn-mini cat_tag_mini disabled">Museums</button>
+<button class="btn btn-mini cat_tag_mini disabled">Arts & Culture - Favs</button>
+<button class="btn btn-mini cat_tag_mini disabled">Favorites</button>
+                    </div>                       
+                  </div>
+
+              </div>       
+            <div class="item_tab">
+            <span class="icon-chevron-down icon-white down_arrow"></span>
+            </div>                
+            <div class="item_content">
+              <div class="dividline"></div>                      
+                  <p><div>
+The American Museum of Natural History is one of the largest and most celebrated museums in the worlds. Located on the Upper West Side, the museum contains 27 interconnecting buildings, with 45 permanet exhibition halls. With over 32 million specimens of plants, fossils, minerals, rocks, metorities, animals and much more. If you love science & culture, then the American Museum of Natural History is the place is be.</div>
+<br><div><span class="icon-star"></span>&nbsp;Suggested admission fee is $19, but you can pay what you can afford.</div>
+<br><div>
+<span class="icon-time"></span>&nbsp;Open daily from 10 am - 5:45 pm</div>
+<br>              </div>
+            </div>              
+          </div>
+              		<script type="text/javascript">
+    		setgmapmarker(40.78082656700008, -73.97364816499993, "American Museum of Natural History", "22602181");
+    		</script>
+    		        <div id="nearby_box"> 
+
+          <div class="nearby_item mini_item">
+              <div class="clearfix" id="22602181" gid="">                
+                  <div class="mini_other">
+                  <div class="thumbnail_box">
+                  	<img  src="https://irs3.4sqi.net/img/general/width320/50768454_keaj0u0_Y_Ec-IRhjjkZ9YNYIa9nLmIYGoqbmUu-tP8.jpg" alt="thumbnail">    				</div>
+						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(22602181, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						    				
+                  </div>  
+
+                  <div class="mini_text">
+                    <h4><a href="/localize?searchid=22602181"><span>2</span>.&nbsp;American Museum of Natural History</a></h4>
+                    <p>Central Park West at 79th Street<br>
+                    New York, NY 10024<br>
+(212) 769-5100<br>
+<br><a href="http://www.amnh.org/" target="_blank"><span class="icon-globe"></span>&nbsp;Website</a>
+                    </p>
+                   <div class="result_cat">
+                   <button class="btn btn-mini cat_tag_mini disabled">Museums</button>
+<button class="btn btn-mini cat_tag_mini disabled">Arts & Culture - Favs</button>
+<button class="btn btn-mini cat_tag_mini disabled">Favorites</button>
+                    </div>                       
+                  </div>
+
+              </div>       
+            <div class="item_tab">
+            <span class="icon-chevron-down icon-white down_arrow"></span>
+            </div>                
+            <div class="item_content">
+              <div class="dividline"></div>                      
+                  <p><div>
+The American Museum of Natural History is one of the largest and most celebrated museums in the worlds. Located on the Upper West Side, the museum contains 27 interconnecting buildings, with 45 permanet exhibition halls. With over 32 million specimens of plants, fossils, minerals, rocks, metorities, animals and much more. If you love science & culture, then the American Museum of Natural History is the place is be.</div>
+<br><div><span class="icon-star"></span>&nbsp;Suggested admission fee is $19, but you can pay what you can afford.</div>
+<br><div>
+<span class="icon-time"></span>&nbsp;Open daily from 10 am - 5:45 pm</div>
+<br>              </div>
+            </div>              
+          </div>
+              		<script type="text/javascript">
+    		setgmapmarker(40.77930000000000, -73.96886400000000, "Belvedere Castle", "22610316");
+    		</script>
+    		        <div id="nearby_box"> 
+
+          <div class="nearby_item mini_item">
+              <div class="clearfix" id="22610316" gid="">                
+                  <div class="mini_other">
+                  <div class="thumbnail_box">
+                  	<img  src="http://www.centralparknyc.org/visit/things-to-see/images/belvedere-t.jpg" alt="thumbnail">    				</div>
+						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(22610316, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						    				
+                  </div>  
+
+                  <div class="mini_text">
+                    <h4><a href="/localize?searchid=22610316"><span>3</span>.&nbsp;Belvedere Castle</a></h4>
+                    <p>Central Park<br>
+                    New York, NY <br>
+<br>
+<br><a href="http://www.centralparknyc.org/visit/things-to-see/great-lawn/belvedere-castle.html" target="_blank"><span class="icon-globe"></span>&nbsp;Website</a>
+                    </p>
+                   <div class="result_cat">
+                   <button class="btn btn-mini cat_tag_mini disabled">Family Friendly - Favs</button>
+<button class="btn btn-mini cat_tag_mini disabled">Central Park</button>
+<button class="btn btn-mini cat_tag_mini disabled">Parks - Favs</button>
+                    </div>                       
+                  </div>
+
+              </div>       
+            <div class="item_tab">
+            <span class="icon-chevron-down icon-white down_arrow"></span>
+            </div>                
+            <div class="item_content">
+              <div class="dividline"></div>                      
+                  <p><div>
+Calvert Vaux created the miniature castle in 1869 as one of its many whimsical structures intended as a lookout to the reservoir to the north (now the Great Lawn) and the Ramble to the south.</div>
+<br>              </div>
+            </div>              
+          </div>
+              		<script type="text/javascript">
+    		setgmapmarker(40.76620000000000, -73.98165000000000, "Brooklyn Diner", "2257408");
+    		</script>
+    		
+          <div class="nearby_item mini_item med_mod_2 clearfix">
+              <div class="clearfix" id="2257408" gid="">                
+                  <div class="mini_other">
+                  <div class="thumbnail_box">
+                  	<img src="http://siteimages.gatheringup.com/images/places.jpg" alt="thumbnail">    				</div>
+						                    <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(2257408, this)"><i class="icon-bookmark icon-white"></i>Bookmark</button>
+						                  </div>  
+
+                  <div class="mini_text">
+                    <h4><a href="/localize?searchid=2257408"><span>4</span>.&nbsp;Brooklyn Diner</a></h4>
+                    <p>212 W 57th St<br>
+                    New York, NY 10019<br>
+212-977-2280<br><a href="http://brooklyndiner.com/" target="_blank"><span class="icon-globe"></span>&nbspWebsite</a>
+                    </p>
+                   <div class="result_cat">
+                   <button class="btn btn-mini cat_tag_mini disabled">American (New)</button>
+                    </div>                           
+                  </div>
+
+              </div>                    
+            <div class="item_content">
+              <div class="dividline"></div>
+                  
+              </div>
+            </div> 
+
+		
+    <!-- Module End -->         
+
+          </div>
+
+    <!-- Footer -->
+      <div class="footer2">
+        <p class="footer_bold">Copyright Gathering Up Ltd 2013. All rights reserved.&nbsp;|
+          <a href="https://www.facebook.com/GatheringUp"><span class="icon-datebookfacebook"></span>Facebook</a>  |
+          <a href="https://twitter.com/Gathering_UP"><span class="icon-twitter"></span>Twitter</a>  |
+          <a href="http://gatheringup.wordpress.com"><span class="icon-wordpress"></span>Blog</a>  |
+          <a href="/about">About Us</a>  |
+          <a href="/about/termsofuse">Terms of Use</a>  |
+          <a href="/about/privacy">Privacy Policy</a> | <a href="http://www.foursquare.com">Some Images Provided by Foursquare</a>
+        </p>
+      </div>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/bootstrap.min.js"></script>
+<!--Carousel Javascript-->    
+    <script type="text/javascript"> 
+
+    
+      $(function(){
+    	  $("#regpassword").tooltip();
+      });
+    </script>
+  </body>
+</html>

@@ -948,7 +948,7 @@ form {
 /* Large-modules */
 
 .nearby_item {
-    margin-top: 0.6em;
+    margin-top: 1em;
     background-color: #f5f5f5;
     -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
     -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
@@ -1013,15 +1013,16 @@ form {
     width: 100%;
 }
 .item_text {
-    margin-top: 0.2em;
-    width: 63%;
-    float: right;
-    margin-right: 0.5em;
+    margin: 1em;
+}
+.item_text h4 {
+    font-family: arvo;
 }
 .item_other {
     width: 8em;
     position: relative;
     margin: 15px 15px 10px 15px;    
+    float: left;
 }
 .item_other button.btn-mini {
     float: right;
@@ -1104,7 +1105,6 @@ form {
     font-size: 0.85em;
     font-weight: 400;
     line-height: 1.3em;
-    clear: both;
     margin: 0.4em auto;
 }
 .nearby_item p a{
@@ -1141,7 +1141,7 @@ form {
     margin-top: 0.2em;
 }
 .placesmodal .place_data {
-    margin: 1em 2em 2em 2em;
+    /*margin: 1em 2em 2em 2em;*/
     font-size: 0.9em;
     color: #666;
     font-weight: 400;
@@ -1156,8 +1156,8 @@ form {
     margin-left: 0;
 }
 .placesmodal .item_other {
-    margin: 0;
-    margin-left: 2em;
+    margin: 0em 1em 0.5em 2em;    
+    float: left;
 }
 .placesmodal .nearby_item {
     border: none;
@@ -1168,9 +1168,11 @@ form {
     margin-top: 2em;
 }
 .placesmodal .item_text {
-    margin-top: 0;
-    margin-right: 2em;
-    text-align: right;
+    margin: 2em 2em 1em 2em;
+}
+.placesmodal .item_text p {
+    font-size: 0.9em;
+    line-height: 1.4em;
 }
 .placesmodal .nearby_item h5 {
     font-size: 1em;
@@ -1179,29 +1181,87 @@ form {
     font-size: 1.3em;
     margin-bottom: 0.3em;
     margin-top: 0em;
-    float: right;
+    /*float: right;*/
 }
 .placesmodal .nearby_item p {
     font-size: 0.9em;
     margin-top: 0.3em;
+    clear: both;
 }
 .placesmodal .dividline {
     margin-bottom: 1em;
 }
 .placesmodal .cat_tag_mini {
-    float: right;
     clear: both;
     margin-bottom: 0.5em;
-}
-@media (max-width: 590px) {
-    .placesmodal .item_text {
-        width: 50%;
-    }
-}
+}   
 .modal-backdrop, .modal-backdrop.fade.in {
     background-color: rgba(0,0,0,0.4);
 }
+.placesmodal .accordion-inner {
+    padding: 0;
+    /*background-color: #eee;*/
+    border:none;
+}
+.placesmodal .accordion-heading {
+    font-weight: 100;
+    font-size: 1.1em;
+    font-family: arvo;
+    
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    border-left: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    border-top: 1px solid rgba(0, 0, 0, .1);    
 
+    background-color: #A3C86C;
+    background-image: -moz-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#8BB946));
+    background-image: -webkit-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
+    background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.placesmodal .accordion-heading a {
+    color: white;
+    padding: 5px 10px;
+}
+.placesmodal .accordion-group {
+    margin-top: 5px;
+}
+.placesmodal .comment_msg {
+    width: 100%;
+    border-radius: 0;
+    font-family: ubuntu;
+}
+.placesmodal .reviews .accordion-inner{
+    padding: 0em 1em 3em 1em;
+}
+.placesmodal .reviews button.btn-green {
+    float: right;
+}
+.placesmodal .reviews p{
+    font-size: 0.85em;
+    line-height: 1.4em;
+    clear: right;
+}
+.placesmodal .reviews h4{
+    margin: 0;
+    font-size: 1em;
+    float: left;
+}
+.placesmodal .reviews span {
+    float: right;
+    font-size: 0.7em;
+}
+.placesmodal .reviews .img-polaroid {
+    float: left;
+    margin: 0em 0.5em 0.3em 0em ;
+}
+.placesmodal .reviews .text_fields {
+    margin-top: 1em;
+}
     /* Nav Listing Unit
     -------------------------------------------------- */
 
@@ -1307,7 +1367,7 @@ form {
     }
 }
 .accordion {
-    margin-top: -7px;
+    margin: 0em 2em 2em 2em;
 }
 #accordion2:focus, .accordion-group:focus {
     outline: none;
@@ -1384,7 +1444,7 @@ form {
     color: white;
     font-weight: 100;
     line-height: 17px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: arvo;
 
     text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
@@ -1436,29 +1496,16 @@ a.accordion-toggle.nav_cat {
     /* General Elements */
 
 .cat_tag {
-    border-radius: 12px;
     font-family: ubuntu;
     font-weight: 500;
-    font-size: 0.9em;
-    padding: 1px 10px 1px 10px;
-    margin-top: 3px;
-    opacity: 1!important;
+    font-size: 1em;
+    padding: 5px;
+    color: white;
+    background-color: #EFA759;
 
-  background-color: #8BB946!important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8BB946", endColorstr="#8BB946");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#8BB946), to(#8BB946));
-  background-image: -moz-linear-gradient(top, #8BB946, #8BB946);
-  background-image: -ms-linear-gradient(top, #8BB946, #8BB946);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8BB946), color-stop(100%, #8BB946));
-  background-image: -webkit-linear-gradient(top, #8BB946, #8BB946);
-  background-image: -o-linear-gradient(top, #8BB946, #8BB946);
-  background-image: linear-gradient(#8BB946, #8BB946);
-  /*border-color: #8BB946 #6bb700 hsl(85, 100%, 35.5%);*/
-  border: 1px solid #8baf55;
-  color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
-  -webkit-font-smoothing: antialiased;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-right: 0.5em;
 }
 
 .cat_tag_mini {
@@ -1469,6 +1516,7 @@ a.accordion-toggle.nav_cat {
     padding: 3px 5px;        
     color: white;
     background-color: #EFA759!important;
+    white-space: nowrap;
 }
     /* Hero Unit
     -------------------------------------------------- */
@@ -1565,7 +1613,6 @@ margin-left: -30px !important;
     font-weight: 700;
 }
 .featured_tag {
-    /*background-color: red;*/
     padding: 0em 1em 1em 1em;
     bottom: 0px;
 }
@@ -1787,7 +1834,9 @@ background-image: linear-gradient(white, #ccc);
 
 /*Comment out*//*Comment out*/
 
-
+.Story_top {
+    margin-top: 4.5em;
+}
 #filter_cat{
     text-align: center;
     margin: 0 auto;
@@ -1974,7 +2023,7 @@ select:focus {
 }
 .module_tag {
     background-color: #f0f0f0;
-    padding: 0.3em 1em 0.3em 1em;
+    padding: 0.8em;
     border-top: 1px solid #ccc;
 }
 
@@ -2183,8 +2232,6 @@ select:focus {
 }
 .author {
     margin-bottom: 1em;
-    /*width: 49%;*/
-    /*float: left;*/
     clear: both;
 }
 .author h5 {
@@ -2199,19 +2246,10 @@ select:focus {
 }
 .share_cat {
     float: right;
-    /*width: 40%;*/
-    /*background-color: blue;    */
     margin-top: 0.5em;
 }
-.Outing_cat .cat_tag {
-    margin-bottom: 10px;
-    margin-left: 5px;
-
-    /*text-align: right;*/
-    /*float: right;*/
-}
 #Outing_wrap .Outing_cat {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
 }
 #fb_outing {
     border-radius: 3px !important;
@@ -2228,13 +2266,12 @@ select:focus {
     /*Right Nearby Unit*/
 
 .Out_nearby_wrap {
-    width: 21em;
-    /*margin-left: 60%;*/
     position: absolute;
     overflow: hidden;
     right: 1.5em;
-    margin-top: 2.5em;
+    margin-top: 3.2em;
     padding-bottom: 1em;
+    width: 21em;
 }
 .mini_item img {
     width: 100%;
@@ -2243,8 +2280,7 @@ select:focus {
 .mini_other {
     width: 33%;
     float: left;
-    margin-left: 8px;
-    margin-top: 8px;
+    margin: 8px 2px 8px 8px;    
 }
 .mini_other .btn-mini {
     width: 100%;
@@ -2264,11 +2300,10 @@ select:focus {
 
 .mini_item {
     min-height: 13em;
-    padding-bottom: 1.5em;
+    padding-bottom: 0.5em;
 }
 .mini_text {
-    width: 60%;
-    float: left;
+    margin-right: 10px;    
     margin-left: 10px; 
 }
 .mini_item h4 {
@@ -2277,7 +2312,8 @@ select:focus {
 }
 .mini_item p {
     font-size: 0.85em!important;
-    line-height: 1.2em;
+    line-height: 1.3em;
+    margin-top: 1em;
 }
 .mini_item dt {
     font-size: 0.9em;
@@ -2356,7 +2392,6 @@ select:focus {
         position: relative;
         background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");
         width: 60%;
-        /*padding-top: 3em;*/
         margin: 0px;
         padding-bottom: 3em;
 
@@ -2387,8 +2422,8 @@ select:focus {
         overflow: hidden;
         position: relative;
         right: 0;
-        margin: 0 auto;
-        width: 100%;
+        margin: 1em 1em;
+        width: auto;
     }
     .mini_other {
         max-width: 7em;
@@ -2420,14 +2455,24 @@ select:focus {
         margin-left: 0;
         margin-bottom: 0px;
     }
-    .Outing_cat .cat_tag {
+/*    .Outing_cat .cat_tag {
         margin-left: 0px;
-    }
+    }*/
     #fb_outing {
         float: left;
         clear: both;
     }
 }
+.btn_group_mini {
+    text-align: center;
+    margin-top: 0.5em;
+}
+.btn_group_mini .CTA_button {
+    width: 8.5em!important;
+    margin: auto 3px;
+    font-size: 10px;
+}
+
 
     /* Float Tab 
     -------------------------------------------------- */    

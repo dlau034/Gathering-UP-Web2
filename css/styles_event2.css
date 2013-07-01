@@ -143,13 +143,6 @@
     position: relative;
     border: 1px solid rgba(0,0,0,0.3);
 }
-.event_item:hover {
-    background-color: #f9f9f9;
-    -webkit-box-shadow: 0 0 15px #7CB02C;
-    -moz-box-shadow: 0 0 15px #7CB02C;
-    box-shadow: 0 0 15px #7CB02C;
-    border: 1px solid #7CB02C;
-}
 .event_item h4 {
     float: left;
     line-height: 1.3em;

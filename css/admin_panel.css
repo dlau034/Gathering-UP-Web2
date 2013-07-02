@@ -335,3 +335,121 @@ td.description {
 #create_event {
 	float: right;
 }
+
+    /* Home Modifier Page
+    -------------------------------------------------- */
+
+.ad_home {
+	margin-top: 4em;
+	width: 1020px;
+	padding: 0em 2em 0em 2em;
+}
+.ad_home, .ad_home input, .ad_home textarea, .ad_home select {
+	font-family: ubuntu;
+
+}
+.ad_large_col {
+	width: 775px;
+	float: left;
+	position: relative;
+	margin-bottom: 4em;	
+	/*padding-left: 2em;*/
+	/*padding-right: 2em;*/
+}
+.ad_small_col {
+	width: 218px;
+	float: right;
+	margin-top: 4.5em;
+}
+.ad_large_listing {
+	float: left;
+	width: 100%;
+	margin-bottom: 2em;
+	position: relative;
+	background-color: #f1f1f1;
+}
+.ad_large_listing img {
+	float: left;
+	width: 10em;
+	margin: 1em;
+}
+.ad_list_details {
+	width: 26.5em;
+	float: left;
+	margin-top: 1em;
+}
+.ad_controls {
+	background-color: #E6E6E6;
+	width: 18em;
+	float: right;
+	min-height: 19em;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 1em;	
+
+}
+.ad_list_details input, .ad_list_details textarea{
+	width: 100%;
+	margin-bottom: 1em!important;
+}
+.ad_small_listing {
+	background-color: #f1f1f1;
+	margin-bottom: 1.5em;
+	padding: 1em;
+}
+.ad_small_listing img {
+	width: 14em;
+	margin-bottom:0.5em!important;
+}
+.ad_small_listing input {
+	width: 12.8em;
+	margin-bottom:0.5em!important;
+}
+.ad_small_listing button {
+	width: 100%;
+}
+.item_controls {
+	position: absolute;
+	width: 18em;
+	background-color: #E6E6E6;
+	height: 4.4em;
+	right: 0;
+	bottom: 0;
+}
+.ad_controls select {
+	width: 100%;
+	margin-bottom: 1em;
+}
+.ad_controls input {
+	width: 10.4em;
+}
+.item_controls {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 1em;
+}
+.item_controls button{
+	width: 100%;
+}
+.ad_large_col .breakline {
+	margin-bottom: 2em;
+	height: 4px;
+}
+.button_set .btn-delete {
+	float: right;
+	width: 7em
+}
+.button_set .btn-save {
+	float: left;
+	width: 7em
+}
+.btn-publish {
+	width: 7.45em!important;
+	margin-bottom: 0.6em;
+}
+.button_set {
+	bottom: 3em;
+}

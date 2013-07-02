@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  	<title>Admin Home</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+  	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles_nav.css">
+  	<link rel="stylesheet" href="css/admin_panel.css">
+    <link rel="stylesheet" href="icomoon/icomoon.css">  
+
+    <script src="js/jquery-1.9.1.js"></script>    
+    <script class="jsbin" src="js/jquery.dataTables.nightly.js"></script>   
+
+    <script>
+      $(document).ready(function() {
+        $('#Neigbhor_table').dataTable();
+      } );  
+    </script>    
+
+    <script>
+    $(function() {
+      var availableTags = [
+        "Chinese",
+        "Japanese",
+        "Mexican",
+        "Thai",
+        "American",
+        "Cafe",
+        "Bar",
+        "Juice Bar",
+        "Bakery",
+        "Sandwiches",
+        "Fast Food",
+        "Korean",
+        "Malaysian",
+        "Jamaican",
+        "Seafood",
+      ];
+      $( ".typeahead" ).typeahead({
+        source: availableTags
+      });
+    });
+    </script>      
+
+  	<!-- Google Font -->
+
+       <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+       <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  </head>
+<body>
+
+      <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+
+          <a class="brand" href="index.html">GatheringUP - Admin</a> 
+
+          <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                       <li><a href="Admin_Neighborhood.html">Neigbhorhoods</a></li>                      
+                       <li><a href="admin_tags.html">Tags</a></li>                      
+                       <li><a href="admin_places.html">Places</a></li>
+                       <li><a href="admin_rank.html">Featured Ranking</a></li>                      
+                  </ul>
+            </div>
+         </div>
+      </div>
+    </div>    
+
+    <!-- Featured Panel -->
+
+<div class="container ad_home">
+  
+    <div class="ad_large_col">
+
+      <h2>Featured Item</h2>
+
+        <div class="ad_large_listing">
+            <img class="thumbnail" src="images/thumb_run.jpg" alt="">
+  
+            <div class="ad_list_details clearfix">
+              <input type="text" placeholder="Featured Headline">
+              <input type="text" placeholder="Featured Subtitle">
+              <textarea id="" cols="30" rows="6" placeholder="Featured Text"></textarea>
+            </div>
+            <div class="ad_controls">
+              <select>
+                <option value="">Places</option>
+                <option value="">Events</option>
+                <option value="">Stories</option>
+              </select>
+              <div class="input-append">
+                <input placeholder="Search Places" id="appendedInputButton" type="text">
+                <button class="btn btn-success" type="button">Go!</button>
+              </div>                        
+            </div>
+            <div class="item_controls">
+              <button class="btn btn-success">Save</button>
+            </div>    
+        </div>
+
+        <div class="breakline"></div>
+        <h2>Create an Item</h2>
+
+        <div class="ad_large_listing">
+            <img class="thumbnail" src="images/thumb_run.jpg" alt="">
+  
+            <div class="ad_list_details clearfix">
+              <input type="text" placeholder="Featured Headline">
+              <input type="text" placeholder="Featured Subtitle">
+              <textarea id="" cols="30" rows="6" placeholder="Featured Text"></textarea>
+            </div>
+            <div class="ad_controls">
+              <select>
+                <option value="">Places</option>
+                <option value="">Events</option>
+                <option value="">Stories</option>
+              </select>
+              <div class="input-append">
+                <input placeholder="Search Places" id="appendedInputButton" type="text">
+                <button class="btn btn-success" type="button">Go!</button>
+              </div>                        
+            </div>
+            <div class="item_controls">
+              <button class="btn btn-success">Add</button>
+            </div>    
+        </div>
+
+        <div class="breakline"></div>
+        <!-- <h2>Home Listing</h2>  -->
+        
+        <div class="ad_large_listing">
+            <img class="thumbnail" src="images/thumb_run.jpg" alt="">
+  
+            <div class="ad_list_details clearfix">
+              <input type="text" placeholder="Featured Headline">
+              <input type="text" placeholder="Featured Subtitle">
+              <textarea id="" cols="30" rows="6" placeholder="Featured Text"></textarea>
+            </div>
+            <div class="ad_controls">
+              <select>
+                <option value="">Places</option>
+                <option value="">Events</option>
+                <option value="">Stories</option>
+              </select>
+              <div class="input-append">
+                <input placeholder="Search Events" id="appendedInputButton" type="text">
+                <button class="btn btn-success" type="button">Go!</button>
+              </div>                        
+            </div>
+            <div class="item_controls button_set ">
+              <div class="btn-group" data-toggle="buttons-radio">
+                <button type="button" id="publish" class="btn btn-orange btn-publish">Publish</button>
+                <button type="button" id="unpublish" class="btn btn-orange btn-publish">Un-Publish</button>
+              </div>               
+              <button class="btn btn-delete btn-success">Save</button>
+              <button data-target=".remove_home_item" data-toggle="modal" class="btn btn-save btn-danger">Remove</button>
+            </div>    
+        </div>       
+
+        <div class="ad_large_listing">
+            <img class="thumbnail" src="images/thumb_run.jpg" alt="">
+  
+            <div class="ad_list_details clearfix">
+              <input type="text" placeholder="Featured Headline">
+              <input type="text" placeholder="Featured Subtitle">
+              <textarea id="" cols="30" rows="6" placeholder="Featured Text"></textarea>
+            </div>
+            <div class="ad_controls">
+              <select>
+                <option value="">Places</option>
+                <option value="">Events</option>
+                <option value="">Stories</option>
+              </select>
+              <div class="input-append">
+                <input placeholder="Search Places" id="appendedInputButton" type="text">
+                <button class="btn btn-success" type="button">Go!</button>
+              </div>                        
+            </div>
+            <div class="item_controls button_set ">
+              <div class="btn-group" data-toggle="buttons-radio">
+                <button type="button" id="publish" class="btn btn-orange btn-publish">Publish</button>
+                <button type="button" id="unpublish" class="btn btn-orange btn-publish">Un-Publish</button>
+              </div>               
+              <button class="btn btn-delete btn-success">Save</button>
+              <button class="btn btn-save btn-danger">Remove</button>
+            </div>    
+        </div>                  
+
+    
+    </div>
+
+    <div class="ad_small_col">
+      <div class="ad_small_listing">
+        <img class="thumbnail" src="images/thumb_run.jpg" alt="">        
+        <input type="text" placeholder="Text Title">
+        <input type="text" placeholder="Page Link">
+        <button class="btn btn-success">Save</button>
+      </div>      
+
+      <div class="ad_small_listing">
+        <img class="thumbnail" src="images/thumb_run.jpg" alt="">        
+        <input type="text" placeholder="Text Title">
+        <input type="text" placeholder="Page Link">
+        <button class="btn btn-success">Save</button>
+      </div>      
+
+      <div class="ad_small_listing">
+        <img class="thumbnail" src="images/thumb_run.jpg" alt="">        
+        <input type="text" placeholder="Text Title">
+        <input type="text" placeholder="Page Link">
+        <button class="btn btn-success">Save</button>
+      </div>      
+    </div>
+
+</div>    
+
+    <!-- Remove Modal -->
+
+    <div class="modal hide fade remove_home_item" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4>Are you sure that you want to remove featured item?</h4>
+        <h3 id="dymanic">This Featured Headline</h3>
+      </div>
+      <div class="modal-footer">          
+        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Yes</button>
+        <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">No</button>
+      </div>
+    </div>
+
+    <!-- Javascripts -->
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>    

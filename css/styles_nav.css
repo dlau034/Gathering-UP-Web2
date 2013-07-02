@@ -66,12 +66,18 @@ label {
     background-repeat: no-repeat;
     text-indent: -999px;
     width: 10em;
-    /*height: 2.4em;*/
+    
     background-position: center;
     margin-left: 0px !important;
     margin-right: 2em;
-}
+    position: absolute;
 
+    margin-top: -1px;
+    height: 2em;
+}
+#nav_items_group {
+  margin-left: 18em;
+}
 /* Styles Navigation Buttons */
 
 #nav_items_group a {
@@ -98,3 +104,35 @@ label {
     background-image: none !important;
 }
 
+.btn-orange {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #F8AD3B;
+  background-image: -moz-linear-gradient(top, #F8AD3B, #F7931E);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F8AD3B), to(#F7931E));
+  background-image: -webkit-linear-gradient(top, #F8AD3B, #F7931E);
+  background-image: -o-linear-gradient(top, #F8AD3B, #F7931E);
+  background-image: linear-gradient(to bottom, #F8AD3B, #F7931E);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  /*border-radius: 0px !important;*/
+  font-family: ubuntu
+}
+
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:active,
+.btn-orange.active,
+.btn-orange.disabled,
+.btn-orange[disabled] {
+  color: #ffffff;
+  background-color: #F7931E!important;
+  /**background-color: #499249;*/
+}
+
+.btn-orange:active,`
+.btn-orange.active {
+  background-color: #F8AD3B; \9;
+}

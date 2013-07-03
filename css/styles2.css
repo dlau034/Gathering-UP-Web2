@@ -919,11 +919,10 @@ form {
 /* Small-modules */
 
 .nearby_item.sm_mod {
-    min-height: 6.5em;    
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    border: 1px solid rgba(0,0,0,0.15)
+    border: 1px solid rgba(0,0,0,0.1);
 } 
 .sm_mod img {
     width: 4em;
@@ -933,9 +932,16 @@ form {
     margin: 10px 6px 0px 0px;     
 }
 .sm_mod .item_text {
-    width: 70%;
+    width: 27.6em;
+    margin: 0.5em 1em;
 }
-
+.sm_mod .item_text h4 {
+    margin-top: 0;
+}
+.sm_mod .item_text p {
+    margin-top: 0;
+    float: right;
+}
 /* Med-modules */
 
 .nearby_item.med_mod {
@@ -950,13 +956,14 @@ form {
 .nearby_item {
     margin-top: 1em;
     background-color: #f5f5f5;
-    -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
-    box-shadow: 0 0 7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
     margin-right: auto;
     margin-left: auto;
     position: relative;
-    border: 1px solid rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.35);
+    clear: both;
 }
 .nearby_wrap .nearby_item {
     bottom: 6em;

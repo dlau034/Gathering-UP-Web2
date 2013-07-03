@@ -33,7 +33,7 @@ ul.top-level li {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#afafaf',GradientType=0 ); /* IE6-9 */
     }
 .navigation a {
-    color: #f9f9f9;
+    color: white;
     cursor: pointer;
     display: block;
     height: 25px;

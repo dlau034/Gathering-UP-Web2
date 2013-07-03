@@ -23,27 +23,28 @@ ul.top-level li {
     /*background-color: #aaa;*/
     border: 1px solid #999;
 
-background: #c6c6c6; /* Old browsers */
-background: -moz-linear-gradient(top, #c6c6c6 0%, #afafaf 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c6c6c6), color-stop(100%,#afafaf)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #c6c6c6 0%,#afafaf 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #c6c6c6 0%,#afafaf 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #c6c6c6 0%,#afafaf 100%); /* IE10+ */
-background: linear-gradient(to bottom, #c6c6c6 0%,#afafaf 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#afafaf',GradientType=0 ); /* IE6-9 */
-}
+    background: #c6c6c6; /* Old browsers */
+    background: -moz-linear-gradient(top, #c6c6c6 0%, #afafaf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c6c6c6), color-stop(100%,#afafaf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #c6c6c6 0%,#afafaf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #c6c6c6 0%,#afafaf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #c6c6c6 0%,#afafaf 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #c6c6c6 0%,#afafaf 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#afafaf',GradientType=0 ); /* IE6-9 */
+    }
 .navigation a {
-    color: white;
+    color: #f9f9f9;
     cursor: pointer;
     display: block;
-    height:25px;
+    height: 25px;
     line-height: 25px;
-    text-indent: 10px;          
-    text-decoration:none;
-    text-shadow:1px 1px 0px rgba(0,0,0,0.2);
-    width:100%;
+    text-decoration: none;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    width: 100%;
     padding: 1px 0px;
-    font-weight: 400;
+    font-weight: 100;
+    font-size: 0.9em;
+    text-indent: 1.2em;
 }
 .navigation a:hover{  
     color: white;

@@ -2,26 +2,24 @@
 <html>
 <head>
 <meta charset="utf-8">
-    <title>GatheringUp - Gathering Up made Simple.</title>
+    <title>GatheringUp -  Gathering Up made Simple.</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=0.6">
-    <meta name="description" content="GatheringUP is about finding fun things to do in and around New York City's Central Park.">
-    <meta name="keywords" content="Central, Park, New, York, City, Upper, West, East, NYC, Museum, Lincoln, Center, Columbus, Circle, Side">
+    <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook.  Gathering Up made Simple.">
+    <meta name="keywords" content="Datebook, Organize, GatheringUp, Gathering Up, New York City, Friends, Events, Dining, Place, Food, Drink">
 
 <!-- Le styles -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
           body {
             padding-top: 60px;
           }
 
         </style>        
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/base/minified/jquery-ui.min.css" />
 <link rel="Stylesheet" type="text/css" href="/css/chosen.css" />
 <link rel="Stylesheet" type="text/css" href="/css/home.css" />
-    <link href="/css/styles2.css" rel="stylesheet">
-    <link href="/css/styles_datebook.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/icomoon/icomoon.css">  
+    <link href="css/styles.css" rel="stylesheet">
 
 <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
@@ -29,7 +27,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="favicon.ico">
-    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
  
 <link rel="Stylesheet" type="text/css" href="/css/timepicker.css" />
@@ -61,9 +59,12 @@
 <body>
 
     <div class="wrapper"> <!-- Wrapper -->   
+<!-- Header + Navbar -->
 
-  <script src="/js/jqBootstrapValidation.js"></script>
 <script type="text/javascript">
+<!--
+
+//-->
 function invitedecline(idinvite)
 {
 	$.get("/invitation/decline?idinvite="+idinvite);
@@ -78,210 +79,45 @@ function invitedecline(idinvite)
 	$invites=$("#note_on>b").html($invites);
 }
 
-jQuery(document).ready(function() {
-
-$(function(){ 
-    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
-  });
-
-  window.isloggedin = 1  ;
-});
-  </script>
-
-<script type="text/html" id='loggedintemplate'>
-                  <div class="dropdown" id="loggedindropdown">
-                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
-                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
-                        <%=user["firstname"]%> <%=user["lastname"]%> 
-                        <b class="caret dp_caret"></b>
-                      </a>
-                      <ul class="dropdown-menu" id="dp_list">
-                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
-                        <li><a href="/storymine">My Stories</a></li>
-                        <li><a href="/events">Park Events</a></li>
-                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
-                        <li><a href="/user/logout">Log Out</a></li>
-                      </ul>
-                    </form>                      
-                  </div>  
 </script>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="top-stripe"></div>
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">Gathering UP</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                
+                  <li><a  href="/dining">Dining</a></li>
+                  <li><a  href="/places">Places</a></li>
+                  <li><a  href="/events">Events</a></li>
+                                 <li><a class="header-active" href="/datebook">Datebook</a></li>
+					                  		<li>
+                  												<a id="note_off" class="dropdown-toggle" data-toggle="dropdown"  href="">&nbsp;</a>
+											                  	</li>
+                              </ul>
+                              <div class="dropdown">
+               		              <form style="color:white;" class="navbar-form pull-right">Hello &nbsp;
+                <a class="dropdown-toggle " type="button" data-toggle="dropdown" href="#">David Lau</a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                      <!-- <li><a href="logOut.html">Settings</a></li> -->                    
+                      <li style="text-align: center"><a href="/preferences/changepasswd">Change Password</a></li>          
+                      <li style="text-align: center"><a href="/user/logout">Log Out</a></li>          
+                  </ul>
+              </form>
+              </div>
+               		
+                             </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div><script type="text/javascript">
 
-
-<!-- Header + Navbar -->
-
-
-    <!-- Navigations Unit -->
-
-    <div class="navbar navbar_container">
-      <div class="navbar-inner nav_bar_style navbar-fixed-top">
-        <div class="container">
-
-          <!-- Controls the mobile menu button -->
-
-         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </a>
-
-          <!-- Change Out the Logo -->          
-		<div class="brand_fix">
-          <a class="brand" href="/">GatheringUP</a>
-        </div> 
-
-          <!-- Elements inside will disappear when mobile -->          
-            <div id="collapse_content" class="nav-collapse collapse"> 
-                <ul id="nav_items_group" class="nav">
-                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
-                  <li><a href="/localize"><img src="http://siteimages.gatheringup.com/images/around.png" alt="">Places</a></li>                      
-              <li>
-                <a href="/events">Events
-                  <img src="images/eventpin.png" alt="">
-                </a>
-              </li>                      
-              <li>
-                <a href="/stories">Stories
-                  <img src="images/storypin.png" alt="">
-              </a>
-              </li>                      
-                   </ul>
- 											<a id="note_on" class="dropdown-toggle"	data-toggle="dropdown"  href=""><b>1</b></a>
-	
-                      	<ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
-                        <div style="max-height: 21em; overflow-y: auto;" class="note_box">
-																		<div class="roundedbox" id="345inv">
-                            <div class="breakline_note" id="345invl"></div>
-
-                                <div class="imagebox" >
-						<img class="img-polaroid" src="http://graph.facebook.com/kenneth.su.505/picture" title="Kenneth Su" width="37"><br>						                                </div>
-							<div class="note" id="345invn">Kenneth Su has invited you to join gathering( <a href="/datebook?idinvite=345">
-								Art Exhibit: Fish & Crushed Can Story- Mixed Media </a>)<br>
-								<a href="/invitation/accept?idinvite=345">Accept</a> | 
-								<a href="javascript:void(0);" onclick="invitedecline(345)">Decline</a>
-							</div>
-						</div>
-						                            </div>                                    
-                        </ul>
-											
-<span id="loggedinuserspan">
-                                   <!-- Dropdown -->                
-                  <div class="dropdown" id="loggedindropdown">
-                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
-                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
-                        David Lau                        <b class="caret dp_caret"></b>
-                      </a>
-                      <ul class="dropdown-menu" id="dp_list">
-                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
-                        <li><a href="/storymine">My Stories</a></li>
-                        <li><a href="/events">Park Events</a></li>
-                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
-                        <li><a href="/user/logout">Log Out</a></li>
-                      </ul>
-                    </form>                      
-                  </div>  
-
-                    <!-- Not logged In --> 
-               </span>
-
-            </div>
-         </div>
-      </div>
-    </div>    
-
- <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
-
-     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-     <h1>Register with GatheringUP!</h1>
-     <div class="dividline"></div>
-       <form id="registerform">
-         <div class="clearfix">
-
-           <div class="control-group">
-             <div class="control">
-               <p class="help-block"></p>
-               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
-           </div>
-         </div>
-
-         <div class="control-group">
-             <div class="control">
-               <p class="help-block"></p>                  
-                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
-               </div>
-         </div>
-
-         <div class="control-group">
-             <div class="control">    
-               <p class="help-block"></p>   
-                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
-             </div>
-         </div>
-
-         <div class="control-group">
-             <div class="control">    
-               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
-             </div>              
-         </div>              
-
-         <div class="control-group">
-             <div class="control">    
-
-               <input 
-                 id="password2nd"
-                 class="form_reg" 
-                 placeholder="Retype Password"
-                 type="password"
-                 name="passwordconf"
-                 data-validation-match-match="password1"    
-                 minlength="8" 
-                 data-validation-minlength-message="Minimum 8 Characters"              
-                 />
-               <p class="help-block"></p>    
-             </div>              
-         </div>       
-<div id="RegistrationErrors"></div>
-
-           <div class="control-group">
-             <div class="control">                  
-               <p class="help-block"></p>                                 
-               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" placeholder="Enter Captcha" required>
-               <div ><img src="/captcha"></div>                
-             </div>
-           </div>
-
-         </div>
-
-         <div class="dividline"></div>
-         <button class="btn btn-large btn-green" >Register!</button>
-       </form>
-     <h4>OR</h4>
-<a href=""  id="fb_register" class="facebookurl"  >
-     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
-</a>
- </div>    
-
-
-
-<!--Forgot Password Modal-->
-<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
-     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-     <h1>Forgot Password?</h1>
-     <div class="dividline"></div>
-       <form  id="forgotpasswordform" class="forgot_fields clearfix">
-         <div class="control-group">
-           <div class="controls">
-              <p class="help-block"></p>
-               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
-
-           </div>
-         </div>
-         <button type="submit" class="btn btn-green">Forgot Password!</button>  
-       </form>  
-  </div>
-  
-<script type="text/javascript">
-
-window.friends = {"48":{"name":"A Drawing Board","id":"530338615"},"157":{"name":"Aaron Paterson","id":"655427568"},"321":{"name":"Aaron Siewert","id":"1433845225"},"56":{"name":"Aaron Spence","id":"544005672"},"211":{"name":"Adrian Lo","id":"697515111"},"307":{"name":"Aidar Dulati","id":"1252583186"},"339":{"name":"Akira Akaho","id":"1663426283"},"273":{"name":"Alan Lee","id":"878965506"},"194":{"name":"Alastair Mckenzie","id":"682871735"},"290":{"name":"Alex Liang","id":"901995231"},"123":{"name":"Alexander Joseph Prasetya","id":"607123237"},"33":{"name":"Alexander Shi","id":"509682079"},"338":{"name":"Alexandra-Jayeun Lee","id":"1634810070"},"268":{"name":"Alvin To","id":"830085354"},"109":{"name":"Amanda Dickson","id":"600270563"},"121":{"name":"Amanda Lee","id":"606651018"},"37":{"name":"Amy Feng","id":"512975718"},"25":{"name":"Andrew Leung","id":"503893256"},"353":{"name":"Andrew Shaw","id":"100000785596562"},"77":{"name":"Andrew Tang","id":"573170330"},"32":{"name":"Andy Ong","id":"509197602"},"335":{"name":"Andy Tseng","id":"1579279159"},"224":{"name":"Andy Wu","id":"719040262"},"52":{"name":"Angie Pranish","id":"538330244"},"47":{"name":"Angus Yeh","id":"529660999"},"131":{"name":"Anh Doe","id":"620233125"},"361":{"name":"Anisha Bhattacharya","id":"100002097961523"},"145":{"name":"Anita Dobson","id":"638207752"},"184":{"name":"Anna Tokareva","id":"677332226"},"154":{"name":"Annabel Smart","id":"651326859"},"163":{"name":"Anne Kei","id":"663027118"},"250":{"name":"Anthea Du","id":"768233041"},"269":{"name":"Archie T. Ecture","id":"833680611"},"146":{"name":"Archiplan Auckland","id":"639068752"},"133":{"name":"Ashleigh Ngan","id":"621764737"},"355":{"name":"Auckland Architecture","id":"100001158105360"},"364":{"name":"Aus Al-majmuei","id":"100002298037071"},"306":{"name":"Babette Vavaboom","id":"1213789606"},"230":{"name":"Barbara Lau","id":"729463873"},"368":{"name":"Becky Palmer","id":"100004003827010"},"41":{"name":"Bella Anderson","id":"516393206"},"267":{"name":"Bess Ashby","id":"828620315"},"285":{"name":"Bevan Tse","id":"900855018"},"136":{"name":"Bill Blue","id":"624967337"},"120":{"name":"Billy Cheung","id":"606300065"},"215":{"name":"Bobby Shen","id":"701634433"},"23":{"name":"Borijan Milic","id":"502729129"},"8":{"name":"Bowen Pan","id":"217700148"},"13":{"name":"Brad Bonnington","id":"217700597"},"49":{"name":"Brad Featherstone","id":"531012886"},"303":{"name":"Brandon Yang","id":"1157062896"},"104":{"name":"Brian 'Baz' Cheng","id":"598364154"},"2":{"name":"Bruce","email":"bh@hsstaffing.com"},"4":{"name":"Callum Christopher","id":"21105912"},"172":{"name":"Cameron Harrison","id":"668850267"},"270":{"name":"Candice Rose Mason","id":"834059936"},"43":{"name":"Carina Crescent","id":"518428270"},"207":{"name":"Carmen Fu","id":"695521059"},"124":{"name":"Caroline Fergusson","id":"609267924"},"241":{"name":"Cecilia Yeung","id":"748208451"},"67":{"name":"Chad Reed","id":"563111655"},"208":{"name":"Chang Liu","id":"696715359"},"367":{"name":"Chaz Chai","id":"100002877996822"},"365":{"name":"Che Ly","id":"100002434009575"},"341":{"name":"Chel Salinas","id":"100000154146876"},"114":{"name":"Chelsea Zgierski-Boreyko","id":"601191497"},"99":{"name":"Chien-Lin Wu","id":"591598318"},"142":{"name":"Clai Wong","id":"631816082"},"203":{"name":"Claire Hamilton","id":"686440167"},"95":{"name":"Clio Chiu","id":"588620416"},"22":{"name":"Crystal Ly","id":"502545864"},"359":{"name":"Cynthia Suththananthathas","id":"100001896298455"},"349":{"name":"Dagan Lin","id":"100000489313233"},"63":{"name":"Damien Zarb","id":"551015634"},"278":{"name":"Dan Liu","id":"899920227"},"333":{"name":"Dan Lowery","id":"1527579329"},"107":{"name":"Dan TheProducer Shirazi","id":"600155695"},"308":{"name":"Daniel Chan","id":"1265418203"},"319":{"name":"Daniel Spitzer","id":"1409558559"},"217":{"name":"Daniel Zhu","id":"708255588"},"134":{"name":"Daphne Lee","id":"621815286"},"117":{"name":"David Main","id":"601640092"},"92":{"name":"David Tat","id":"587853173"},"94":{"name":"Deborah Ruth","id":"588500409"},"276":{"name":"Devashish Sharma","id":"893110153"},"129":{"name":"Dhaval Dharamsi","id":"617076605"},"15":{"name":"Dipra Ray","id":"217700745"},"39":{"name":"Dorothy Ng","id":"513161323"},"62":{"name":"Duen Bhumiwat","id":"549558379"},"195":{"name":"Eddy Lau","id":"683450085"},"185":{"name":"Edw\u00ecn Yu","id":"678555305"},"330":{"name":"EeLaine Yeoh","id":"1505015152"},"164":{"name":"Elisapeta Heta","id":"663128315"},"295":{"name":"Elizabeth Tjahjana","id":"1024686887"},"28":{"name":"Ellen Ashenden","id":"506271512"},"188":{"name":"Emily Cheang","id":"680431958"},"243":{"name":"Emily Lay","id":"750638311"},"168":{"name":"Erik Chamonte","id":"667250081"},"244":{"name":"Eshan Gupta","id":"751017930"},"78":{"name":"Eugene ISack","id":"574172805"},"30":{"name":"Eva Cheung","id":"507346852"},"337":{"name":"Febian Tan","id":"1620255393"},"160":{"name":"Felice Burrows","id":"660665703"},"181":{"name":"Feri Tan","id":"673249951"},"29":{"name":"Fiona Rodrigues","id":"507325842"},"100":{"name":"Francisca Siew","id":"595092348"},"158":{"name":"Fraser Moore","id":"659325032"},"297":{"name":"Gabriel C Troia","id":"1061820505"},"9":{"name":"Gabrielle Chin","id":"217700183"},"336":{"name":"Gerard Gruiters","id":"1590832154"},"140":{"name":"Gian Harton","id":"631030032"},"198":{"name":"Gina Gahee Kim","id":"684687916"},"225":{"name":"Gina Wang","id":"721876339"},"242":{"name":"Gopika Gnanakumar","id":"749721354"},"332":{"name":"Grace Astalia","id":"1513782141"},"369":{"name":"Gregory Gibbons","id":"100004428491141"},"54":{"name":"Haihong Wang","id":"542094054"},"314":{"name":"Harry Zhao","id":"1349510573"},"272":{"name":"Hasie Leung","id":"875780366"},"328":{"name":"Hayden McCallum","id":"1496467228"},"216":{"name":"Hayley Bongiovanni","id":"707506773"},"174":{"name":"Hayley Fisher","id":"669775350"},"35":{"name":"Heidi Leung","id":"512907194"},"152":{"name":"Helen Liu","id":"648078462"},"93":{"name":"Helen Pan","id":"588398262"},"311":{"name":"Hock Choo","id":"1320381848"},"180":{"name":"Ian Scott","id":"671346164"},"110":{"name":"Ibrahim Ikram","id":"600987142"},"139":{"name":"Isabella Seakins","id":"628581038"},"348":{"name":"Jack Payne","id":"100000426486611"},"286":{"name":"Jack Qian","id":"901015363"},"302":{"name":"Jae Hong","id":"1150338442"},"255":{"name":"Jae Jang","id":"775435216"},"288":{"name":"Jai Park","id":"901785186"},"108":{"name":"James Egen","id":"600175612"},"309":{"name":"James Wilson","id":"1269909158"},"85":{"name":"James Wong Kein Peng","id":"581890415"},"229":{"name":"Jane Lucky","id":"725895108"},"89":{"name":"Janet Yuen","id":"585613244"},"76":{"name":"Janey Lu","id":"573055508"},"115":{"name":"Janice Au","id":"601307232"},"98":{"name":"Jasmin Kaur","id":"589536280"},"183":{"name":"Jasmine Pang","id":"675813466"},"239":{"name":"Jason Yap","id":"744161768"},"82":{"name":"Jayesh Patel","id":"578351010"},"231":{"name":"Jenni Liang","id":"729733586"},"156":{"name":"Jenny Cho","id":"655159545"},"296":{"name":"Jeremy Chapman","id":"1031437575"},"263":{"name":"Jess Lu","id":"796077836"},"105":{"name":"Jesse Byrt","id":"598407772"},"282":{"name":"Jessica Gopalan","id":"900555636"},"233":{"name":"Jessica Li","id":"731157153"},"141":{"name":"Jessica Park","id":"631680925"},"342":{"name":"Jiae Erin Lee","id":"100000171554963"},"275":{"name":"Jimmy Tan","id":"879780117"},"166":{"name":"Jin Akagi","id":"663640886"},"199":{"name":"Jiyae Park","id":"684723717"},"253":{"name":"Joann Shum","id":"770919107"},"102":{"name":"Joanna Wong","id":"595440952"},"191":{"name":"Johanna Bilkey","id":"681925690"},"310":{"name":"John Bradbury","id":"1306840927"},"271":{"name":"John F Baker","id":"834412177"},"226":{"name":"Johnny Liu","id":"722092643"},"5":{"name":"Jonathan Hooper","id":"23701654"},"84":{"name":"Jong Keun Tony Ryu","id":"581610086"},"45":{"name":"Jordan Wang","id":"522295791"},"246":{"name":"Joyce Yue","id":"751854388"},"292":{"name":"Judy Tan","id":"902330130"},"254":{"name":"Julia Chan","id":"772154456"},"210":{"name":"Julie Tse","id":"697465437"},"274":{"name":"Jun-ho Park","id":"879735234"},"261":{"name":"Justin Xie","id":"786632914"},"356":{"name":"Kanese Lui","id":"100001339912277"},"193":{"name":"Karen Yung","id":"682030832"},"118":{"name":"Kartik Wali","id":"602605603"},"190":{"name":"Kate Andrew","id":"681131455"},"97":{"name":"Kate Beilby","id":"588887516"},"212":{"name":"Katelyn Ma","id":"699031899"},"69":{"name":"Katie Skudder","id":"566561685"},"137":{"name":"Kaushik Rao","id":"625812516"},"112":{"name":"Kavita Pattery","id":"601080477"},"59":{"name":"Kay Feng","id":"546545131"},"170":{"name":"Kaye Chen","id":"667460537"},"70":{"name":"Keikei Lam","id":"566693442"},"58":{"name":"Kelly O Sullivan","id":"545622482"},"66":{"name":"Kenneth Su","id":"560278016"},"351":{"name":"Kent van Velden","id":"100000647335870"},"148":{"name":"Kevin Ha","id":"644543454"},"130":{"name":"Kevin Mach","id":"619755514"},"289":{"name":"Kevin Son","id":"901850108"},"280":{"name":"Kevin Tang","id":"900480391"},"245":{"name":"Kim Huynh","id":"751468766"},"236":{"name":"Kirwin Tan","id":"735598688"},"257":{"name":"Kitty Lin","id":"779470316"},"213":{"name":"Koni Lui","id":"699995844"},"291":{"name":"Lanny Lin","id":"902280643"},"144":{"name":"Laury Van Der Linden","id":"636150890"},"363":{"name":"Lee  Mi-Ji","id":"100002225393906"},"87":{"name":"Leighton Noakes","id":"584926274"},"312":{"name":"Leong Kim Choo","id":"1327931957"},"366":{"name":"Li Ling","id":"100002577902764"},"222":{"name":"Lili Sakalia","id":"717760736"},"240":{"name":"Lily Wong","id":"747894847"},"346":{"name":"Lin Ma","id":"100000373383983"},"162":{"name":"Linda Wen","id":"662555996"},"265":{"name":"Linh Su","id":"812425007"},"350":{"name":"Louise Goodwin","id":"100000530176677"},"204":{"name":"Luke Timmins","id":"694459892"},"247":{"name":"Lydia Qu","id":"765919370"},"16":{"name":"Lynn Lai","id":"217700762"},"354":{"name":"Lynn Lai","id":"100001033794900"},"90":{"name":"Maha Albadrawi","id":"586430189"},"88":{"name":"Mana Kealoha","id":"585285766"},"299":{"name":"Mandy Huang","id":"1098879339"},"352":{"name":"Marc Lithgow","id":"100000669912571"},"323":{"name":"Marcus Sin","id":"1455737865"},"301":{"name":"Margaret Purcell Saena","id":"1131030247"},"71":{"name":"Maria Chen","id":"569230762"},"18":{"name":"Marie-Claire Henderson","id":"217700828"},"201":{"name":"Marion Rose","id":"685316052"},"300":{"name":"Mark Davis","id":"1106942898"},"331":{"name":"Mark Durden","id":"1509985739"},"7":{"name":"Mark Schmidt","id":"217700125"},"248":{"name":"Martin Leung-Wai","id":"765952078"},"20":{"name":"Masakazu Morozumi","id":"500627571"},"326":{"name":"Mat Gaver","id":"1472259229"},"334":{"name":"Matthew Gross","id":"1532767370"},"44":{"name":"Matthew Le Grice","id":"521684209"},"227":{"name":"Mavis Shih","id":"722357135"},"79":{"name":"Melissa Bennett","id":"574534225"},"318":{"name":"Melissa Loren","id":"1378710231"},"38":{"name":"Melody Shiue","id":"512992184"},"167":{"name":"Mianoke Youngblood","id":"665189705"},"182":{"name":"Michael Chan","id":"673716628"},"155":{"name":"Michael John Conway Ware","id":"651337390"},"159":{"name":"Michael Kao","id":"659506304"},"55":{"name":"Michael Shi","id":"543026655"},"218":{"name":"Michael del Castillo","id":"709991554"},"358":{"name":"Michal Karminski","id":"100001439152462"},"135":{"name":"Michelle \u062a Tan","id":"624607933"},"53":{"name":"Miguel Machado","id":"541072353"},"259":{"name":"Mikhil Varma","id":"784091382"},"206":{"name":"Mina Kim","id":"694819275"},"329":{"name":"Minesh Patel","id":"1501067167"},"46":{"name":"Minka Ip","id":"523970507"},"57":{"name":"Misung Kim","id":"544598963"},"150":{"name":"Mitchell Round","id":"646584936"},"315":{"name":"Modos Auckland","id":"1350668782"},"340":{"name":"Monica Katz","id":"100000098154704"},"192":{"name":"Mush Mush","id":"681926158"},"322":{"name":"Nacho Choza de Juan","id":"1446811170"},"294":{"name":"Nam Do","id":"1023973004"},"264":{"name":"Natasha Krishnadas","id":"799100356"},"258":{"name":"Natasha Tasker-Keirle","id":"780834960"},"128":{"name":"Neeharika Walthati","id":"615046336"},"42":{"name":"Neha Chaudhari","id":"517333602"},"86":{"name":"Nhien Thi Thuy Nguyen","id":"583877735"},"101":{"name":"Nick Sayes","id":"595106963"},"317":{"name":"Nick White","id":"1365278802"},"65":{"name":"Nirbhay Jawale","id":"555029820"},"196":{"name":"Nirupa George","id":"684077243"},"262":{"name":"Norman Tam","id":"794770620"},"17":{"name":"Olivia Caughey","id":"217700780"},"221":{"name":"Owen Huang","id":"715052100"},"214":{"name":"Panin Thum-Umnauysuk","id":"700453312"},"143":{"name":"Patrick Loo","id":"634415356"},"252":{"name":"Pene Lister","id":"769805362"},"138":{"name":"Peter Lee","id":"626510004"},"279":{"name":"Peter Quach","id":"900460004"},"360":{"name":"Peter Rood","id":"100001978495383"},"165":{"name":"Philip Guan","id":"663463083"},"72":{"name":"Pinsi Lei","id":"570970872"},"127":{"name":"Piwi Shackell","id":"611785351"},"12":{"name":"Pritisha Unka","id":"217700583"},"74":{"name":"Rach Yang Yang","id":"572180134"},"235":{"name":"Rachel Siow","id":"732530768"},"232":{"name":"Rachel Soakell","id":"731145213"},"238":{"name":"Rahman Hussain","id":"741545382"},"324":{"name":"Rainy Zhu","id":"1469276413"},"205":{"name":"Raj Kutty","id":"694608723"},"237":{"name":"Raymond Lowe","id":"737282016"},"325":{"name":"Rebecca Hood","id":"1470015322"},"256":{"name":"Robert Dziekan","id":"776954932"},"113":{"name":"Rohit Patel","id":"601125366"},"343":{"name":"Rois Tang","id":"100000179982535"},"14":{"name":"Rucha Sarma","id":"217700742"},"60":{"name":"Runcong Cen","id":"548920533"},"64":{"name":"Ruth Lai","id":"554422675"},"34":{"name":"Ryan Peeters","id":"512729476"},"153":{"name":"Sachin Thakur","id":"650310855"},"91":{"name":"Samantha Zhen","id":"586860920"},"173":{"name":"Sandeep Waghulde","id":"669670787"},"357":{"name":"Sandy Son","id":"100001358960684"},"111":{"name":"Sanjeev Krishna","id":"601045113"},"68":{"name":"Sankalp Dave","id":"563153505"},"106":{"name":"Santhiya Veejian","id":"599964216"},"80":{"name":"Sarah Botur","id":"575548961"},"119":{"name":"Sarah Liu","id":"602610259"},"344":{"name":"Sarah Mcilwaine","id":"100000335063571"},"313":{"name":"Sarah Yunhee Lee","id":"1346982717"},"234":{"name":"Sarosh Mulla","id":"731586908"},"151":{"name":"Saryu Sharma","id":"646801691"},"116":{"name":"Sasha Willins","id":"601619553"},"209":{"name":"Sean Bian","id":"697406292"},"125":{"name":"Sean Tan","id":"609699298"},"197":{"name":"Sean Taylor","id":"684581643"},"75":{"name":"Shantanu Lal","id":"572931586"},"327":{"name":"Sharan Ghadiyar","id":"1474242176"},"6":{"name":"Shinji Kim","id":"122606145"},"283":{"name":"Shiva Gopalan","id":"900645693"},"228":{"name":"Shivani Balraj","id":"724296897"},"26":{"name":"Shwetha Nair","id":"505580572"},"320":{"name":"Sione Havili Mau","id":"1430193198"},"186":{"name":"Snowy Wright","id":"679268941"},"11":{"name":"Sommer Tsai","id":"217700265"},"284":{"name":"Sonam Arora","id":"900725416"},"298":{"name":"Stephanie Joondeph","id":"1081980640"},"31":{"name":"Stephanie Kunau","id":"507625834"},"36":{"name":"Stephanie Winquist","id":"512940918"},"178":{"name":"Stephen Joel Riki Williams","id":"670540407"},"260":{"name":"Stephen Mach","id":"785053452"},"305":{"name":"Steven Wulf","id":"1197950476"},"251":{"name":"Steven Yuen","id":"768369627"},"126":{"name":"Sunny Wong","id":"609842863"},"27":{"name":"Suraj Samtani","id":"506154033"},"281":{"name":"TC Liu","id":"900485439"},"147":{"name":"Tan Shu Ping","id":"639200446"},"304":{"name":"Tatiana Zimina","id":"1171625661"},"21":{"name":"Taufeeq Humayun Makani","id":"501354543"},"200":{"name":"Tee Sal","id":"685260076"},"50":{"name":"Therese Fo'ou","id":"533360859"},"266":{"name":"Tim Jiang","id":"814650499"},"51":{"name":"Tim Solomon","id":"534339104"},"83":{"name":"Tom Ho","id":"580201202"},"24":{"name":"Tom Owen","id":"503749554"},"223":{"name":"Tony Chien","id":"717775243"},"316":{"name":"Tracy Ruan","id":"1360520409"},"179":{"name":"Trevor Ke","id":"670761581"},"177":{"name":"Uddhav Naik","id":"670250701"},"96":{"name":"Varun Bhai","id":"588853200"},"287":{"name":"Vedrana Krivokuca","id":"901635273"},"103":{"name":"Victor Eng","id":"597911340"},"149":{"name":"Viddhi Gadhvi","id":"644773288"},"73":{"name":"Vishi Veerappan","id":"571516567"},"171":{"name":"Wayne Lin","id":"668156834"},"362":{"name":"WebSoul Graphic WebDesign","id":"100002191542469"},"187":{"name":"Webber Logan","id":"680328956"},"61":{"name":"Wei Lun Ha","id":"549542097"},"249":{"name":"Wendy Yeung","id":"768083155"},"293":{"name":"Wenyuan Kuang","id":"1014611928"},"19":{"name":"William Samuels","id":"220000525"},"176":{"name":"Winnie Wang","id":"669961786"},"3":{"name":"Xander Honkala","id":"2260434"},"161":{"name":"Xiaolei Rei Chen","id":"662145498"},"277":{"name":"Yangting Yang","id":"899120005"},"345":{"name":"Yeojin Jung","id":"100000366462162"},"219":{"name":"Yi Huang Loh","id":"711160303"},"40":{"name":"Yi Lin Yoong","id":"514200695"},"10":{"name":"Yihong Shi","id":"217700190"},"169":{"name":"YingFei Yew","id":"667405708"},"81":{"name":"Yingy Xie","id":"575576197"},"122":{"name":"Yolunda Hickman","id":"606793972"},"347":{"name":"Yui Okamura","id":"100000411611831"},"220":{"name":"Yushi Wang","id":"714985764"},"189":{"name":"Yvonne Mak","id":"680930823"},"132":{"name":"Zainab Kajiji","id":"620455455"},"175":{"name":"Zeyn Shah","id":"669835231"},"1":{"name":"dd","email":"daf@dav.com"},"0":{"name":"dfasdf","email":"dad@davd.com"},"202":{"name":"\u6eab\u5929\u742a","id":"685371431"}};
+window.friends = {"45":{"name":"A Drawing Board","id":"530338615"},"155":{"name":"Aaron Paterson","id":"655427568"},"52":{"name":"Aaron Spence","id":"544005672"},"209":{"name":"Adrian Lo","id":"697515111"},"302":{"name":"Aidar Dulati","id":"1252583186"},"331":{"name":"Akira Akaho","id":"1663426283"},"269":{"name":"Alan Lee","id":"878965506"},"192":{"name":"Alastair Mckenzie","id":"682871735"},"286":{"name":"Alex Liang","id":"901995231"},"119":{"name":"Alexander Joseph Prasetya","id":"607123237"},"30":{"name":"Alexander Shi","id":"509682079"},"330":{"name":"Alexandra-Jayeun Lee","id":"1634810070"},"264":{"name":"Alvin To","id":"830085354"},"105":{"name":"Amanda Dickson","id":"600270563"},"117":{"name":"Amanda Lee","id":"606651018"},"34":{"name":"Amy Feng","id":"512975718"},"344":{"name":"Andrew Shaw","id":"100000785596562"},"72":{"name":"Andrew Tang","id":"573170330"},"29":{"name":"Andy Ong","id":"509197602"},"327":{"name":"Andy Tseng","id":"1579279159"},"220":{"name":"Andy Wu","id":"719040262"},"49":{"name":"Angie Pranish","id":"538330244"},"44":{"name":"Angus Yeh","id":"529660999"},"127":{"name":"Anh Doe","id":"620233125"},"351":{"name":"Anisha Bhattacharya","id":"100002097961523"},"142":{"name":"Anita Dobson","id":"638207752"},"182":{"name":"Anna Tokareva","id":"677332226"},"152":{"name":"Annabel Smart","id":"651326859"},"161":{"name":"Anne Kei","id":"663027118"},"246":{"name":"Anthea Du","id":"768233041"},"265":{"name":"Archie T. Ecture","id":"833680611"},"143":{"name":"Archiplan Auckland","id":"639068752"},"129":{"name":"Ashleigh Ngan","id":"621764737"},"98":{"name":"Ashley Jihyun Lim","id":"596556234"},"346":{"name":"Auckland Architecture","id":"100001158105360"},"354":{"name":"Aus Al-majmuei","id":"100002298037071"},"301":{"name":"Babette Vavaboom","id":"1213789606"},"226":{"name":"Barbara Lau","id":"729463873"},"358":{"name":"Becky Palmer","id":"100004003827010"},"38":{"name":"Bella Anderson","id":"516393206"},"263":{"name":"Bess Ashby","id":"828620315"},"281":{"name":"Bevan Tse","id":"900855018"},"132":{"name":"Bill Blue","id":"624967337"},"116":{"name":"Billy Cheung","id":"606300065"},"213":{"name":"Bobby Shen","id":"701634433"},"21":{"name":"Borijan Milic","id":"502729129"},"6":{"name":"Bowen Pan","id":"217700148"},"11":{"name":"Brad Bonnington","id":"217700597"},"46":{"name":"Brad Featherstone","id":"531012886"},"298":{"name":"Brandon Yang","id":"1157062896"},"100":{"name":"Brian 'Baz' Cheng","id":"598364154"},"2":{"name":"Callum Christopher","id":"21105912"},"170":{"name":"Cameron Harrison","id":"668850267"},"266":{"name":"Candice Rose Mason","id":"834059936"},"40":{"name":"Carina Crescent","id":"518428270"},"205":{"name":"Carmen Fu","id":"695521059"},"120":{"name":"Caroline Fergusson","id":"609267924"},"237":{"name":"Cecilia Yeung","id":"748208451"},"63":{"name":"Chad Reed","id":"563111655"},"206":{"name":"Chang Liu","id":"696715359"},"357":{"name":"Chaz Chai","id":"100002877996822"},"355":{"name":"Che Ly","id":"100002434009575"},"332":{"name":"Chel Salinas","id":"100000154146876"},"110":{"name":"Chelsea Zgierski-Boreyko","id":"601191497"},"94":{"name":"Chien-Lin Wu","id":"591598318"},"139":{"name":"Clai Wong","id":"631816082"},"201":{"name":"Claire Hamilton","id":"686440167"},"90":{"name":"Clio Chiu","id":"588620416"},"20":{"name":"Crystal Ly","id":"502545864"},"350":{"name":"Cynthia Suththananthathas","id":"100001896298455"},"340":{"name":"Dagan Lin","id":"100000489313233"},"59":{"name":"Damien Zarb","id":"551015634"},"274":{"name":"Dan Liu","id":"899920227"},"325":{"name":"Dan Lowery","id":"1527579329"},"103":{"name":"Dan TheProducer Shirazi","id":"600155695"},"303":{"name":"Daniel Chan","id":"1265418203"},"313":{"name":"Daniel Spitzer","id":"1409558559"},"215":{"name":"Daniel Zhu","id":"708255588"},"130":{"name":"Daphne Lee","id":"621815286"},"113":{"name":"David Main","id":"601640092"},"87":{"name":"David Tat","id":"587853173"},"89":{"name":"Deborah Ruth","id":"588500409"},"272":{"name":"Devashish Sharma","id":"893110153"},"125":{"name":"Dhaval Dharamsi","id":"617076605"},"13":{"name":"Dipra Ray","id":"217700745"},"36":{"name":"Dorothy Ng","id":"513161323"},"58":{"name":"Duen Bhumiwat","id":"549558379"},"193":{"name":"Eddy Lau","id":"683450085"},"183":{"name":"Edw\u00ecn Yu","id":"678555305"},"322":{"name":"EeLaine Yeoh","id":"1505015152"},"162":{"name":"Elisapeta Heta","id":"663128315"},"291":{"name":"Elizabeth Tjahjana","id":"1024686887"},"25":{"name":"Ellen Ashenden","id":"506271512"},"186":{"name":"Emily Cheang","id":"680431958"},"239":{"name":"Emily Lay","id":"750638311"},"166":{"name":"Erik Chamonte","id":"667250081"},"134":{"name":"Esha Shah","id":"626001184"},"240":{"name":"Eshan Gupta","id":"751017930"},"73":{"name":"Eugene ISack","id":"574172805"},"27":{"name":"Eva Cheung","id":"507346852"},"329":{"name":"Febian Tan","id":"1620255393"},"158":{"name":"Felice Burrows","id":"660665703"},"179":{"name":"Feri Tan","id":"673249951"},"26":{"name":"Fiona Rodrigues","id":"507325842"},"95":{"name":"Francisca Siew","id":"595092348"},"156":{"name":"Fraser Moore","id":"659325032"},"7":{"name":"Gabrielle Chin","id":"217700183"},"328":{"name":"Gerard Gruiters","id":"1590832154"},"137":{"name":"Gian Harton","id":"631030032"},"196":{"name":"Gina Gahee Kim","id":"684687916"},"221":{"name":"Gina Wang","id":"721876339"},"238":{"name":"Gopika Gnanakumar","id":"749721354"},"324":{"name":"Grace Astalia","id":"1513782141"},"359":{"name":"Gregory Gibbons","id":"100004428491141"},"309":{"name":"Harry Zhao","id":"1349510573"},"268":{"name":"Hasie Leung","id":"875780366"},"320":{"name":"Hayden McCallum","id":"1496467228"},"214":{"name":"Hayley Bongiovanni","id":"707506773"},"172":{"name":"Hayley Fisher","id":"669775350"},"32":{"name":"Heidi Leung","id":"512907194"},"149":{"name":"Helen Liu","id":"648078462"},"88":{"name":"Helen Pan","id":"588398262"},"306":{"name":"Hock Choo","id":"1320381848"},"178":{"name":"Ian Scott","id":"671346164"},"106":{"name":"Ibrahim Ikram","id":"600987142"},"136":{"name":"Isabella Seakins","id":"628581038"},"339":{"name":"Jack Payne","id":"100000426486611"},"282":{"name":"Jack Qian","id":"901015363"},"297":{"name":"Jae Hong","id":"1150338442"},"251":{"name":"Jae Jang","id":"775435216"},"284":{"name":"Jai Park","id":"901785186"},"104":{"name":"James Egen","id":"600175612"},"304":{"name":"James Wilson","id":"1269909158"},"80":{"name":"James Wong Kein Peng","id":"581890415"},"225":{"name":"Jane Lucky","id":"725895108"},"84":{"name":"Janet Yuen","id":"585613244"},"71":{"name":"Janey Lu","id":"573055508"},"111":{"name":"Janice Au","id":"601307232"},"93":{"name":"Jasmin Kaur","id":"589536280"},"181":{"name":"Jasmine Pang","id":"675813466"},"235":{"name":"Jason Yap","id":"744161768"},"77":{"name":"Jayesh Patel","id":"578351010"},"227":{"name":"Jenni Liang","id":"729733586"},"154":{"name":"Jenny Cho","id":"655159545"},"292":{"name":"Jeremy Chapman","id":"1031437575"},"259":{"name":"Jess Lu","id":"796077836"},"101":{"name":"Jesse Byrt","id":"598407772"},"278":{"name":"Jessica Gopalan","id":"900555636"},"229":{"name":"Jessica Li","id":"731157153"},"138":{"name":"Jessica Park","id":"631680925"},"333":{"name":"Jiae Erin Lee","id":"100000171554963"},"271":{"name":"Jimmy Tan","id":"879780117"},"164":{"name":"Jin Akagi","id":"663640886"},"197":{"name":"Jiyae Park","id":"684723717"},"249":{"name":"Joann Shum","id":"770919107"},"97":{"name":"Joanna Wong","id":"595440952"},"189":{"name":"Johanna Bilkey","id":"681925690"},"267":{"name":"John F Baker","id":"834412177"},"222":{"name":"Johnny Liu","id":"722092643"},"293":{"name":"Jon Nutting","id":"1051708105"},"3":{"name":"Jonathan Hooper","id":"23701654"},"79":{"name":"Jong Keun Tony Ryu","id":"581610086"},"42":{"name":"Jordan Wang","id":"522295791"},"242":{"name":"Joyce Yue","id":"751854388"},"288":{"name":"Judy Tan","id":"902330130"},"250":{"name":"Julia Chan","id":"772154456"},"208":{"name":"Julie Tse","id":"697465437"},"270":{"name":"Jun-ho Park","id":"879735234"},"257":{"name":"Justin Xie","id":"786632914"},"347":{"name":"Kanese Lui","id":"100001339912277"},"191":{"name":"Karen Yung","id":"682030832"},"114":{"name":"Kartik Wali","id":"602605603"},"188":{"name":"Kate Andrew","id":"681131455"},"92":{"name":"Kate Beilby","id":"588887516"},"210":{"name":"Katelyn Ma","id":"699031899"},"65":{"name":"Katie Skudder","id":"566561685"},"133":{"name":"Kaushik Rao","id":"625812516"},"108":{"name":"Kavita Pattery","id":"601080477"},"55":{"name":"Kay Feng","id":"546545131"},"168":{"name":"Kaye Chen","id":"667460537"},"66":{"name":"Keikei Lam","id":"566693442"},"54":{"name":"Kelly O Sullivan","id":"545622482"},"62":{"name":"Kenneth Su","id":"560278016"},"342":{"name":"Kent van Velden","id":"100000647335870"},"145":{"name":"Kevin Ha","id":"644543454"},"126":{"name":"Kevin Mach","id":"619755514"},"285":{"name":"Kevin Son","id":"901850108"},"276":{"name":"Kevin Tang","id":"900480391"},"241":{"name":"Kim Huynh","id":"751468766"},"232":{"name":"Kirwin Tan","id":"735598688"},"253":{"name":"Kitty Lin","id":"779470316"},"211":{"name":"Koni Lui","id":"699995844"},"287":{"name":"Lanny Lin","id":"902280643"},"141":{"name":"Laury Van Der Linden","id":"636150890"},"353":{"name":"Lee  Mi-Ji","id":"100002225393906"},"82":{"name":"Leighton Noakes","id":"584926274"},"307":{"name":"Leong Kim Choo","id":"1327931957"},"356":{"name":"Li Ling","id":"100002577902764"},"218":{"name":"Lili Sakalia","id":"717760736"},"236":{"name":"Lily Wong","id":"747894847"},"337":{"name":"Lin Ma","id":"100000373383983"},"160":{"name":"Linda Wen","id":"662555996"},"261":{"name":"Linh Su","id":"812425007"},"341":{"name":"Louise Goodwin","id":"100000530176677"},"305":{"name":"Lucia Park","id":"1302797839"},"202":{"name":"Luke Timmins","id":"694459892"},"243":{"name":"Lydia Qu","id":"765919370"},"14":{"name":"Lynn Lai","id":"217700762"},"345":{"name":"Lynn Lai","id":"100001033794900"},"85":{"name":"Maha Albadrawi","id":"586430189"},"83":{"name":"Mana Kealoha","id":"585285766"},"295":{"name":"Mandy Huang","id":"1098879339"},"343":{"name":"Marc Lithgow","id":"100000669912571"},"316":{"name":"Marcus Sin","id":"1455737865"},"67":{"name":"Maria Chen","id":"569230762"},"16":{"name":"Marie-Claire Henderson","id":"217700828"},"199":{"name":"Marion Rose","id":"685316052"},"296":{"name":"Mark Davis","id":"1106942898"},"323":{"name":"Mark Durden","id":"1509985739"},"5":{"name":"Mark Schmidt","id":"217700125"},"244":{"name":"Martin Leung-Wai","id":"765952078"},"18":{"name":"Masakazu Morozumi","id":"500627571"},"326":{"name":"Matthew Gross","id":"1532767370"},"41":{"name":"Matthew Le Grice","id":"521684209"},"223":{"name":"Mavis Shih","id":"722357135"},"74":{"name":"Melissa Bennett","id":"574534225"},"35":{"name":"Melody Shiue","id":"512992184"},"165":{"name":"Mianoke Youngblood","id":"665189705"},"180":{"name":"Michael Chan","id":"673716628"},"153":{"name":"Michael John Conway Ware","id":"651337390"},"157":{"name":"Michael Kao","id":"659506304"},"51":{"name":"Michael Shi","id":"543026655"},"349":{"name":"Michal Karminski","id":"100001439152462"},"131":{"name":"Michelle \u062a Tan","id":"624607933"},"50":{"name":"Miguel Machado","id":"541072353"},"255":{"name":"Mikhil Varma","id":"784091382"},"204":{"name":"Mina Kim","id":"694819275"},"321":{"name":"Minesh Patel","id":"1501067167"},"43":{"name":"Minka Ip","id":"523970507"},"53":{"name":"Misung Kim","id":"544598963"},"147":{"name":"Mitchell Round","id":"646584936"},"310":{"name":"Modos Auckland","id":"1350668782"},"190":{"name":"Mush Mush","id":"681926158"},"315":{"name":"Nacho Choza de Juan","id":"1446811170"},"290":{"name":"Nam Do","id":"1023973004"},"260":{"name":"Natasha Krishnadas","id":"799100356"},"254":{"name":"Natasha Tasker-Keirle","id":"780834960"},"124":{"name":"Neeharika Walthati","id":"615046336"},"39":{"name":"Neha Chaudhari","id":"517333602"},"81":{"name":"Nhien Thi Thuy Nguyen","id":"583877735"},"96":{"name":"Nick Sayes","id":"595106963"},"312":{"name":"Nick White","id":"1365278802"},"61":{"name":"Nirbhay Jawale","id":"555029820"},"194":{"name":"Nirupa George","id":"684077243"},"258":{"name":"Norman Tam","id":"794770620"},"15":{"name":"Olivia Caughey","id":"217700780"},"217":{"name":"Owen Huang","id":"715052100"},"212":{"name":"Panin Thum-Umnauysuk","id":"700453312"},"140":{"name":"Patrick Loo","id":"634415356"},"248":{"name":"Pene Lister","id":"769805362"},"135":{"name":"Peter Lee","id":"626510004"},"275":{"name":"Peter Quach","id":"900460004"},"163":{"name":"Philip Guan","id":"663463083"},"123":{"name":"Piwi Shackell","id":"611785351"},"10":{"name":"Pritisha Unka","id":"217700583"},"69":{"name":"Rach Yang Yang","id":"572180134"},"231":{"name":"Rachel Siow","id":"732530768"},"228":{"name":"Rachel Soakell","id":"731145213"},"234":{"name":"Rahman Hussain","id":"741545382"},"317":{"name":"Rainy Zhu","id":"1469276413"},"203":{"name":"Raj Kutty","id":"694608723"},"151":{"name":"Rani Chegudi","id":"650810086"},"233":{"name":"Raymond Lowe","id":"737282016"},"318":{"name":"Rebecca Hood","id":"1470015322"},"252":{"name":"Robert Dziekan","id":"776954932"},"109":{"name":"Rohit Patel","id":"601125366"},"334":{"name":"Rois Tang","id":"100000179982535"},"12":{"name":"Rucha Sarma","id":"217700742"},"56":{"name":"Runcong Cen","id":"548920533"},"60":{"name":"Ruth Lai","id":"554422675"},"31":{"name":"Ryan Peeters","id":"512729476"},"150":{"name":"Sachin Thakur","id":"650310855"},"86":{"name":"Samantha Zhen","id":"586860920"},"171":{"name":"Sandeep Waghulde","id":"669670787"},"348":{"name":"Sandy Son","id":"100001358960684"},"107":{"name":"Sanjeev Krishna","id":"601045113"},"64":{"name":"Sankalp Dave","id":"563153505"},"102":{"name":"Santhiya Veejian","id":"599964216"},"75":{"name":"Sarah Benikowsky","id":"575548961"},"115":{"name":"Sarah Liu","id":"602610259"},"335":{"name":"Sarah Mcilwaine","id":"100000335063571"},"308":{"name":"Sarah Yunhee Lee","id":"1346982717"},"230":{"name":"Sarosh Mulla","id":"731586908"},"148":{"name":"Saryu Sharma","id":"646801691"},"112":{"name":"Sasha Willins","id":"601619553"},"207":{"name":"Sean Bian","id":"697406292"},"121":{"name":"Sean Tan","id":"609699298"},"195":{"name":"Sean Taylor","id":"684581643"},"70":{"name":"Shantanu Lal","id":"572931586"},"319":{"name":"Sharan Ghadiyar","id":"1474242176"},"4":{"name":"Shinji Kim","id":"122606145"},"279":{"name":"Shiva Gopalan","id":"900645693"},"224":{"name":"Shivani Balraj","id":"724296897"},"23":{"name":"Shwetha Nair","id":"505580572"},"314":{"name":"Sione Havili Mau","id":"1430193198"},"184":{"name":"Snowy Wright","id":"679268941"},"9":{"name":"Sommer Tsai","id":"217700265"},"280":{"name":"Sonam Arora","id":"900725416"},"294":{"name":"Stephanie Joondeph","id":"1081980640"},"28":{"name":"Stephanie Kunau","id":"507625834"},"33":{"name":"Stephanie Winquist","id":"512940918"},"176":{"name":"Stephen Joel Riki Williams","id":"670540407"},"256":{"name":"Stephen Mach","id":"785053452"},"300":{"name":"Steven Wulf","id":"1197950476"},"247":{"name":"Steven Yuen","id":"768369627"},"122":{"name":"Sunny Wong","id":"609842863"},"24":{"name":"Suraj Samtani","id":"506154033"},"277":{"name":"TC Liu","id":"900485439"},"144":{"name":"Tan Shu Ping","id":"639200446"},"299":{"name":"Tatiana Zimina","id":"1171625661"},"19":{"name":"Taufeeq Humayun Makani","id":"501354543"},"198":{"name":"Tejas Salway","id":"685260076"},"47":{"name":"Therese Fo'ou","id":"533360859"},"262":{"name":"Tim Jiang","id":"814650499"},"48":{"name":"Tim Solomon","id":"534339104"},"78":{"name":"Tom Ho","id":"580201202"},"22":{"name":"Tom Owen","id":"503749554"},"219":{"name":"Tony Chien","id":"717775243"},"311":{"name":"Tracy Ruan","id":"1360520409"},"177":{"name":"Trevor Ke","id":"670761581"},"175":{"name":"Uddhav Naik","id":"670250701"},"91":{"name":"Varun Bhai","id":"588853200"},"283":{"name":"Vedrana Krivokuca","id":"901635273"},"99":{"name":"Victor Eng","id":"597911340"},"146":{"name":"Viddhi Gadhvi","id":"644773288"},"68":{"name":"Vishi Veerappan","id":"571516567"},"169":{"name":"Wayne Lin","id":"668156834"},"352":{"name":"WebSoul Graphic WebDesign","id":"100002191542469"},"185":{"name":"Webber Logan","id":"680328956"},"57":{"name":"Wei Lun Ha","id":"549542097"},"245":{"name":"Wendy Yeung","id":"768083155"},"289":{"name":"Wenyuan Kuang","id":"1014611928"},"17":{"name":"William Samuels","id":"220000525"},"174":{"name":"Winnie Wang","id":"669961786"},"1":{"name":"Xander Honkala","id":"2260434"},"159":{"name":"Xiaolei Rei Chen","id":"662145498"},"273":{"name":"Yangting Yang","id":"899120005"},"336":{"name":"Yeojin Jung","id":"100000366462162"},"216":{"name":"Yi Huang Loh","id":"711160303"},"37":{"name":"Yi Lin Yoong","id":"514200695"},"8":{"name":"Yihong Shi","id":"217700190"},"167":{"name":"YingFei Yew","id":"667405708"},"76":{"name":"Yingy Xie","id":"575576197"},"118":{"name":"Yolunda Hickman","id":"606793972"},"338":{"name":"Yui Okamura","id":"100000411611831"},"187":{"name":"Yvonne Mak","id":"680930823"},"128":{"name":"Zainab Kajiji","id":"620455455"},"173":{"name":"Zeyn Shah","id":"669835231"},"0":{"name":"kenneth","email":"ken@ke.com"},"200":{"name":"\u6eab\u5929\u742a","id":"685371431"}};
 var tmphash = new Object();
 
 $.each(window.friends, function(key, value){
@@ -321,27 +157,7 @@ $(document).ready(function() {
 		selectable: true,
 		timeFormat: 'h:mm TT',
 		unselectAuto: true,
-		events: [{
-title: '',
-hidden: 'testing',
-hiddenactivity: '374',
-hiddentime: '12:00 AM',
-start: new Date(2013, 6, 17, 0, 0),
-end: new Date(2013, 6, 17, 0, 0),
-color: '#00abdc',
-allDay: false
-},
-{
-title: '',
-hidden: 'American Museum of Natural History',
-hiddenactivity: '375',
-hiddentime: '12:00 AM',
-start: new Date(2013, 6, 17, 0, 0),
-end: new Date(2013, 6, 17, 0, 0),
-color: '#00abdc',
-allDay: false
-}
-		]
+		events: [		]
 	});
 	
 });
@@ -349,7 +165,7 @@ allDay: false
 
 <!--
 Underscore is stripping out img's for select options for some reason.
-<img src="gnome_stock_person.png" height="20"> 
+<img src="/images/gnome_stock_person.png" height="20"> 
 					<img src="http://graph.facebook.com/<%=one.id %>/picture" height="20">-->
 <style type="text/css">
 
@@ -397,7 +213,7 @@ Underscore is stripping out img's for select options for some reason.
       			<%  }else if(one.oauth_uid) { %> 
                     <img class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/<%= one.oauth_uid %>/picture" alt="thumbnail"> 
       			<%  }else { %> 
-                    <img class="img-polaroid thumbnail_profile" src="http://siteimages.gatheringup.com/images/headshot.jpg" alt="thumbnail"> 
+                    <img class="img-polaroid thumbnail_profile" src="/images/gnome_stock_person.png" alt="thumbnail"> 
 				<%  } %>
                     <div class="text_entry">
                     <h4><%= one.firstname %> <%= one.lastname %></h4>
@@ -419,7 +235,7 @@ Underscore is stripping out img's for select options for some reason.
       			<%  }else if(one.oauth_uid) { %> 
                     <img id="<%=one.iduser%>" rel="tooltip" data-placement="left" data-original-title="<%=one.firstname%> <%=one.lastname%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/<%= one.oauth_uid %>/picture" alt="thumbnail"> 
       			<%  }else { %> 
-                    <img id="<%=one.iduser%>" rel="tooltip" data-placement="left" data-original-title="<%=one.firstname%> <%=one.lastname%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="http://siteimages.gatheringup.com/images/headshot.jpg" alt="thumbnail"> 
+                    <img id="<%=one.iduser%>" rel="tooltip" data-placement="left" data-original-title="<%=one.firstname%> <%=one.lastname%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="/images/gnome_stock_person.png" alt="thumbnail"> 
 				<%  } %>
 				</div>
 			<% }); %>
@@ -432,7 +248,7 @@ Underscore is stripping out img's for select options for some reason.
       			<%  if(one.oauth_uid) { %> 
                     <img id="<%=one.idinvite%>invite" rel="tooltip" data-placement="left" data-original-title="<%=one.name%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/<%= one.oauth_uid %>/picture" alt="thumbnail"> 
       			<%  }else { %> 
-                    <img id="<%=one.idinvite%>invite" rel="tooltip" data-placement="left" data-original-title="<%=one.name%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="http://siteimages.gatheringup.com/images/headshot.jpg" alt="thumbnail"> 
+                    <img id="<%=one.idinvite%>invite" rel="tooltip" data-placement="left" data-original-title="<%=one.name%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="/images/gnome_stock_person.png" alt="thumbnail"> 
 				<%  } %>
 				</div>
 			<% }); %>
@@ -486,7 +302,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
       			<%  }else if(one.oauth_uid) { %> 
                     <img class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/<%= one.oauth_uid %>/picture" alt="thumbnail"> 
       			<%  }else { %> 
-                    <img class="img-polaroid thumbnail_profile" src="http://siteimages.gatheringup.com/images/headshot.jpg" alt="thumbnail"> 
+                    <img class="img-polaroid thumbnail_profile" src="/images/gnome_stock_person.png" alt="thumbnail"> 
 				<%  } %>
                     <div class="text_entry">
                     <h4><%= one.firstname %> <%= one.lastname %></h4>
@@ -508,7 +324,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
       			<%  }else if(one.oauth_uid) { %>
                     <img id="<%=one.iduser%>" rel="tooltip" data-placement="left" data-original-title="<%=one.firstname%> <%=one.lastname%>" class="attendnames img-polaroid thumbnail_profile" src="http://graph.facebook.com/<%= one.oauth_uid %>/picture" alt="thumbnail"> 
       			<%  }else { %> 
-                    <img id="<%=one.iduser%>" rel="tooltip" data-placement="left" data-original-title="<%=one.firstname%> <%=one.lastname%>" class="attendnames img-polaroid thumbnail_profile" src="http://siteimages.gatheringup.com/images/headshot.jpg" alt="thumbnail"> 
+                    <img id="<%=one.iduser%>" rel="tooltip" data-placement="left" data-original-title="<%=one.firstname%> <%=one.lastname%>" class="attendnames img-polaroid thumbnail_profile" src="/images/gnome_stock_person.png" alt="thumbnail"> 
 				<%  } %>
 				</div>
 			<% }); %>
@@ -521,7 +337,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
       			<%  if(one.oauth_uid) { %> 
                     <img id="<%=one.idinvite%>invite" rel="tooltip" data-placement="left" data-original-title="<%=friendshash[one.oauth_uid]%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/<%= one.oauth_uid %>/picture" alt="thumbnail">
       			<%  }else { %> 
-                    <img id="<%=one.idinvite%>invite" rel="tooltip" data-placement="left" data-original-title="<%=one.name%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="http://siteimages.gatheringup.com/images/headshot.jpg" alt="thumbnail"> 
+                    <img id="<%=one.idinvite%>invite" rel="tooltip" data-placement="left" data-original-title="<%=one.name%>" class=" attendnames img-polaroid thumbnail_profile"  class="img-polaroid thumbnail_profile" src="/images/gnome_stock_person.png" alt="thumbnail"> 
 				<%  } %>
 				</div>
 			<% }); %>
@@ -537,7 +353,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
       			<%  }else if(one.oauth_uid) { %> 
                     <img class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/<%= one.oauth_uid %>/picture" alt="thumbnail"> 
       			<%  }else { %> 
-                    <img class="img-polaroid thumbnail_profile" src="http://siteimages.gatheringup.com/images/headshot.jpg" alt="thumbnail"> 
+                    <img class="img-polaroid thumbnail_profile" src="/images/gnome_stock_person.png" alt="thumbnail"> 
 				<%  } %>
                     <div class="text_entry">
                     <h4><%= one.firstname %> <%= one.lastname %></h4>
@@ -605,8 +421,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Aaron Paterson|655427568"> Aaron Paterson</option> 		
 						 
-            	    <option value="Aaron Siewert|1433845225"> Aaron Siewert</option> 		
-						 
             	    <option value="Aaron Spence|544005672"> Aaron Spence</option> 		
 						 
             	    <option value="Adrian Lo|697515111"> Adrian Lo</option> 		
@@ -634,8 +448,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             	    <option value="Amanda Lee|606651018"> Amanda Lee</option> 		
 						 
             	    <option value="Amy Feng|512975718"> Amy Feng</option> 		
-						 
-            	    <option value="Andrew Leung|503893256"> Andrew Leung</option> 		
 						 
             	    <option value="Andrew Shaw|100000785596562"> Andrew Shaw</option> 		
 						 
@@ -671,6 +483,8 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Ashleigh Ngan|621764737"> Ashleigh Ngan</option> 		
 						 
+            	    <option value="Ashley Jihyun Lim|596556234"> Ashley Jihyun Lim</option> 		
+						 
             	    <option value="Auckland Architecture|100001158105360"> Auckland Architecture</option> 		
 						 
             	    <option value="Aus Al-majmuei|100002298037071"> Aus Al-majmuei</option> 		
@@ -704,8 +518,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             	    <option value="Brandon Yang|1157062896"> Brandon Yang</option> 		
 						 
             	    <option value="Brian &#039;Baz&#039; Cheng|598364154"> Brian 'Baz' Cheng</option> 		
-						            	    <option value="Bruce|bh@hsstaffing.com"> Bruce</option> 		
-      					 
+						 
             	    <option value="Callum Christopher|21105912"> Callum Christopher</option> 		
 						 
             	    <option value="Cameron Harrison|668850267"> Cameron Harrison</option> 		
@@ -796,6 +609,8 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Erik Chamonte|667250081"> Erik Chamonte</option> 		
 						 
+            	    <option value="Esha Shah|626001184"> Esha Shah</option> 		
+						 
             	    <option value="Eshan Gupta|751017930"> Eshan Gupta</option> 		
 						 
             	    <option value="Eugene ISack|574172805"> Eugene ISack</option> 		
@@ -814,8 +629,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Fraser Moore|659325032"> Fraser Moore</option> 		
 						 
-            	    <option value="Gabriel C Troia|1061820505"> Gabriel C Troia</option> 		
-						 
             	    <option value="Gabrielle Chin|217700183"> Gabrielle Chin</option> 		
 						 
             	    <option value="Gerard Gruiters|1590832154"> Gerard Gruiters</option> 		
@@ -831,8 +644,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             	    <option value="Grace Astalia|1513782141"> Grace Astalia</option> 		
 						 
             	    <option value="Gregory Gibbons|100004428491141"> Gregory Gibbons</option> 		
-						 
-            	    <option value="Haihong Wang|542094054"> Haihong Wang</option> 		
 						 
             	    <option value="Harry Zhao|1349510573"> Harry Zhao</option> 		
 						 
@@ -920,11 +731,11 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Johanna Bilkey|681925690"> Johanna Bilkey</option> 		
 						 
-            	    <option value="John Bradbury|1306840927"> John Bradbury</option> 		
-						 
             	    <option value="John F Baker|834412177"> John F Baker</option> 		
 						 
             	    <option value="Johnny Liu|722092643"> Johnny Liu</option> 		
+						 
+            	    <option value="Jon Nutting|1051708105"> Jon Nutting</option> 		
 						 
             	    <option value="Jonathan Hooper|23701654"> Jonathan Hooper</option> 		
 						 
@@ -1014,6 +825,8 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Louise Goodwin|100000530176677"> Louise Goodwin</option> 		
 						 
+            	    <option value="Lucia Park|1302797839"> Lucia Park</option> 		
+						 
             	    <option value="Luke Timmins|694459892"> Luke Timmins</option> 		
 						 
             	    <option value="Lydia Qu|765919370"> Lydia Qu</option> 		
@@ -1032,8 +845,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Marcus Sin|1455737865"> Marcus Sin</option> 		
 						 
-            	    <option value="Margaret Purcell Saena|1131030247"> Margaret Purcell Saena</option> 		
-						 
             	    <option value="Maria Chen|569230762"> Maria Chen</option> 		
 						 
             	    <option value="Marie-Claire Henderson|217700828"> Marie-Claire Henderson</option> 		
@@ -1050,8 +861,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Masakazu Morozumi|500627571"> Masakazu Morozumi</option> 		
 						 
-            	    <option value="Mat Gaver|1472259229"> Mat Gaver</option> 		
-						 
             	    <option value="Matthew Gross|1532767370"> Matthew Gross</option> 		
 						 
             	    <option value="Matthew Le Grice|521684209"> Matthew Le Grice</option> 		
@@ -1059,8 +868,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             	    <option value="Mavis Shih|722357135"> Mavis Shih</option> 		
 						 
             	    <option value="Melissa Bennett|574534225"> Melissa Bennett</option> 		
-						 
-            	    <option value="Melissa Loren|1378710231"> Melissa Loren</option> 		
 						 
             	    <option value="Melody Shiue|512992184"> Melody Shiue</option> 		
 						 
@@ -1073,8 +880,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             	    <option value="Michael Kao|659506304"> Michael Kao</option> 		
 						 
             	    <option value="Michael Shi|543026655"> Michael Shi</option> 		
-						 
-            	    <option value="Michael del Castillo|709991554"> Michael del Castillo</option> 		
 						 
             	    <option value="Michal Karminski|100001439152462"> Michal Karminski</option> 		
 						 
@@ -1095,8 +900,6 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             	    <option value="Mitchell Round|646584936"> Mitchell Round</option> 		
 						 
             	    <option value="Modos Auckland|1350668782"> Modos Auckland</option> 		
-						 
-            	    <option value="Monica Katz|100000098154704"> Monica Katz</option> 		
 						 
             	    <option value="Mush Mush|681926158"> Mush Mush</option> 		
 						 
@@ -1138,11 +941,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Peter Quach|900460004"> Peter Quach</option> 		
 						 
-            	    <option value="Peter Rood|100001978495383"> Peter Rood</option> 		
-						 
             	    <option value="Philip Guan|663463083"> Philip Guan</option> 		
-						 
-            	    <option value="Pinsi Lei|570970872"> Pinsi Lei</option> 		
 						 
             	    <option value="Piwi Shackell|611785351"> Piwi Shackell</option> 		
 						 
@@ -1159,6 +958,8 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             	    <option value="Rainy Zhu|1469276413"> Rainy Zhu</option> 		
 						 
             	    <option value="Raj Kutty|694608723"> Raj Kutty</option> 		
+						 
+            	    <option value="Rani Chegudi|650810086"> Rani Chegudi</option> 		
 						 
             	    <option value="Raymond Lowe|737282016"> Raymond Lowe</option> 		
 						 
@@ -1192,7 +993,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Santhiya Veejian|599964216"> Santhiya Veejian</option> 		
 						 
-            	    <option value="Sarah Botur|575548961"> Sarah Botur</option> 		
+            	    <option value="Sarah Benikowsky|575548961"> Sarah Benikowsky</option> 		
 						 
             	    <option value="Sarah Liu|602610259"> Sarah Liu</option> 		
 						 
@@ -1258,7 +1059,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Taufeeq Humayun Makani|501354543"> Taufeeq Humayun Makani</option> 		
 						 
-            	    <option value="Tee Sal|685260076"> Tee Sal</option> 		
+            	    <option value="Tejas Salway|685260076"> Tejas Salway</option> 		
 						 
             	    <option value="Therese Fo&#039;ou|533360859"> Therese Fo'ou</option> 		
 						 
@@ -1326,15 +1127,12 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 						 
             	    <option value="Yui Okamura|100000411611831"> Yui Okamura</option> 		
 						 
-            	    <option value="Yushi Wang|714985764"> Yushi Wang</option> 		
-						 
             	    <option value="Yvonne Mak|680930823"> Yvonne Mak</option> 		
 						 
             	    <option value="Zainab Kajiji|620455455"> Zainab Kajiji</option> 		
 						 
             	    <option value="Zeyn Shah|669835231"> Zeyn Shah</option> 		
-						            	    <option value="dd|daf@dav.com"> dd</option> 		
-      					            	    <option value="dfasdf|dad@davd.com"> dfasdf</option> 		
+						            	    <option value="kenneth|ken@ke.com"> kenneth</option> 		
       					 
             	    <option value="溫天琪|685371431"> 溫天琪</option> 		
 								</select><br>
@@ -1362,16 +1160,8 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
           <button style="width: 100%;" class="btn btn-blue" onclick="addemail()">Add Friend</button>  
         <div class="friends_module">
 			          <div class=" alert Friends">
-            <button type="button" class="close" data-dismiss="alert" onclick='removeemail("bh@hsstaffing.com")'>&times;</button>
-            <p>Bruce<br>bh@hsstaffing.com</p>
-          </div>
-      		          <div class=" alert Friends">
-            <button type="button" class="close" data-dismiss="alert" onclick='removeemail("daf@dav.com")'>&times;</button>
-            <p>dd<br>daf@dav.com</p>
-          </div>
-      		          <div class=" alert Friends">
-            <button type="button" class="close" data-dismiss="alert" onclick='removeemail("dad@davd.com")'>&times;</button>
-            <p>dfasdf<br>dad@davd.com</p>
+            <button type="button" class="close" data-dismiss="alert" onclick='removeemail("ken@ke.com")'>&times;</button>
+            <p>kenneth<br>ken@ke.com</p>
           </div>
       		 
         </div>
@@ -1397,48 +1187,41 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             <li class="tab-pane pill_width active">
               <a id="Your_event" href="#home"  data-toggle="tab"><h4 style="font-size: 1.17em;">Your Events</h4></a>
             </li>
-             
+             <li class="tab-pane pill_bookmarks dropdown">
+            <a id="Your_bookmark" class="dropdown-toggle" data-toggle="dropdown" href="#" >
+           <h4 style="font-size: 1.17em;margin-left: 13px;text-align: center;">Bookmarks 
+<b class="caret"></b></h4>
+            </a>
+<ul class="nav nav-tab dropdown-menu" style="  border-radius: 0px !important; text-align: center; min-width: 115px;margin-top: 0px; margin-right: 0px;right: 2px;">
+<!-- links -->
+<li><a data-toggle="tab" href="#bookmarkbusiness"  onclick="loadbusinessbookmark('business')">Dining</a></li>
+<li><a data-toggle="tab"  href="#bookmarkplace" onclick="loadplacebookmark('places')">Places</a></li>
+<li><a data-toggle="tab"  href="#bookmarkevents"  onclick="loadeventsbookmark('events')">Events</a></li>
+</ul>
+</li>
         </ul>
 
 		<div class="tab-content">
             <div class="tab-pane active" id="home">
 			<div class="customscroll">
             <div class="EventListing">
-							<div class="eventbox">
-                    <div class="event_datebox">
-                      <div class="datewrap">
-                      <span style="font-size:1.1em;line-height:1.35em;">Jul</span><br> 
-                      <span style="font-size:1.5em;">17</span><br> 
-                      <span style="font-family:ubuntu;">WED</span>
-                      </div>                      
-                    </div> 
-                    <div class="event_summary">
-                    			<a href="javascript:void(0);"
-										onclick="loadeventdetail(374)">
-									testing</a> 
-									<span id="id374"></span>									<br>
-										<br>
-									12:00 AM -
-									12:00 AM									</div>
-									</div>
-								<div class="eventbox">
-                    <div class="event_datebox">
-                      <div class="datewrap">
-                      <span style="font-size:1.1em;line-height:1.35em;">Jul</span><br> 
-                      <span style="font-size:1.5em;">17</span><br> 
-                      <span style="font-family:ubuntu;">WED</span>
-                      </div>                      
-                    </div> 
-                    <div class="event_summary">
-                    			<a href="javascript:void(0);"
-										onclick="loadeventdetail(375)">
-									American Museum of Natural History</a> 
-									<span id="id375"></span>									<br>
-									Central Park West at 79th Street	<br>
-									12:00 AM -
-									12:00 AM									</div>
-									</div>
-							</div>
+							<div class="tutorialbox">
+				   <h4> <span style="font-size:2em;">1</span>&nbspClick<span style="font-weight:500;color:#00abdc;"> Places, Dining or Events</span></h4>
+                     <img style="width:100%" src="/images/tutorial_scn1.png" alt="">
+								  </div>
+                  <div class="tutorialbox">
+                     <h4> <span style="font-size:2em;">2</span>&nbspPick Event & Add to<span style="font-weight:500;color:#00abdc;"> Datebook</span></h4>
+                     <img style="width:100%" src="/images/tutorial_scn2.png" alt="">
+                  </div>                  
+                  <div class="tutorialbox">
+                     <h4> <span style="font-size:2em;">3</span>&nbspCreate the <span style="font-weight:500;color:#00abdc;"> Event</span></h4>
+                     <img style="width:100%" src="/images/tutorial_scn3.png" alt="">
+                  </div>      
+                  <div class="tutorialbox">
+                     <h4> <span style="font-size:2em;">4</span>&nbspManage Your Events in<span style="font-weight:500;color:#00abdc;"> Datebook</span></h4>
+                     <img style="width:100%" src="/images/tutorial_scn4.png" alt="">
+                  </div>
+						</div>
             </div>
             </div>
         <div class="tab-pane" id="bookmarkplace">
@@ -1449,14 +1232,14 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
             </div>   
             </div>   
           </div>
-<!--        <div class="tab-pane" id="bookmarkbusiness">
+        <div class="tab-pane" id="bookmarkbusiness">
         <div class="BookmarkTitles">Bookmarked Dining</div>
 			<div class="customscroll">
             <div class="yourBookmarks">
             Processing....
             </div>   
             </div>   
-          </div> --> 
+          </div>
         <div class="tab-pane" id="bookmarkevents">
         <div  class="BookmarkTitles">Bookmarked Events</div>
 			<div class="customscroll">
@@ -1471,7 +1254,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
       <div class="span8" id="grandcentral" >
 <div id='calendar'></div>
 <span id="event_main">
-</span>  
+Processing...</span>  
 </div>
 <span id="modalholder"></span>
 
@@ -1493,26 +1276,149 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 	});
 
 </script>
-    <!-- Footer -->
-      <div class="footer2">
-        <p class="footer_bold">Copyright Gathering Up Ltd 2013. All rights reserved.&nbsp;|
-          <a href="https://www.facebook.com/GatheringUp"><span class="icon-datebookfacebook"></span>Facebook</a>  |
-          <a href="https://twitter.com/Gathering_UP"><span class="icon-twitter"></span>Twitter</a>  |
-          <a href="http://gatheringup.wordpress.com"><span class="icon-wordpress"></span>Blog</a>  |
-          <a href="/about">About Us</a>  |
-          <a href="/about/termsofuse">Terms of Use</a>  |
-          <a href="/about/privacy">Privacy Policy</a> |
-        </p>
+<!-- Footer -->
+  <div class="footer">
+    <p>Copyright Gathering Up Ltd 2013. All rights reserved.</p>
+    <p>Design + Built by <a href="http://techkinesis.com">Techkinesis</a>. Proudly Made in NYC</p>
+    <p>
+      <a href="http://Facebook.com/gatheringup">Follow Us on Facebook</a>  | 
+      <a href="/about">About Us</a>  |  
+      <a href="/about/termsofuse">Terms of Use</a>  |  
+      <a href="/about/privacy">Privacy Policy</a> | 
+      <a href="/about/contactusform">Contact Us</a>
+    </p>  
+  </div>  
+
+<!--Register Modal-->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header registerModal">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h2 id="myModalLabel">Register with GatheringUP!</h2>
+        
+<div style="width: 400px;" class="breakline"></div> 
       </div>
+		<div style="padding-top: 2px;" class="modal-body">
+            <form  id="registerform" action="#">
+      <div id="RegistrationErrors"  class="form-large"  style="width:402px;" ></div>
+              <div>
+                  <input type="text" name="firstname" id="firstname" class="form-large"  style="width:402px;" placeholder="First Name" tabindex="41">
+                  <b id="errfirstname"  style="position: absolute;"></b>
+              </div>
+              <div>
+                  <input type="text" name="lastname" id="lastname" class="form-large"  style="width:402px;" placeholder="Last Name" tabindex="42">
+                <b id="errlastname" style="position: absolute;"></b>
+              </div>        
+                  <div>
+                  <input type="text" name="email" id="regemail" class="form-large"  style="width:402px;" placeholder="Email" tabindex="43">
+                  <b id="erremail" style="position: absolute;"></b>
+              </div>
+              <div>
+                  <input type="password" name="password" id="regpassword" class="form-large"  title="Must contain one number & eight characters"  placeholder="Create Password" style="width:190px;float:left;" tabindex="44">
+<b id="errpassword" style="position: absolute;"></b>
+                  <input type="password" name="passwordconf" id="regpasswordconf" class="form-large" placeholder="Re-type Password"  style="margin-left:20px; width:190px;float:left;"  tabindex="45">
+<b id="errpasswordconf" style="position: absolute;"></b>
+              </div>     
+               <div style="clear:both;" class="breakline"></div>  
+                  <div  style="float:left;margin-top: 3px;width:192px;" id="captcha"><img src="/captcha"></div>
+                  <div>
+                  <input type="text" name="norobotcode" id="robotdistorter" class="form-large" style="margin-left:20px; width:190px;float:left;"  placeholder="Enter Captcha"  tabindex="46">
+                  <b id="errrobotdistorter" style="position: absolute;"></b>
+              </div>
+               <div style="clear:both;" class="breakline"></div>  
+                  <button type="button" value="Sign me up" class="btn btn-blue btn-large"  style="width:405px;"  onclick="register()"  tabindex="47">Register</button>
+            <img src="/images/divider.png" style="margin-bottom:10px;margin-top: 14px;" alt=""> 
+        <div  style="width:388px;height: 65px;">
+        	<div class="facebookbg2" >
+              <a href=""  id="fb_register" class="facebookurl"  >Sign In with Facebook        </a>
+              </div>
+        </div>
+            </form>
+            
+    </div>   
+    </div>   
+
+    <!--Sign Up Modal-->
+    <div id="Signin_Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header registerModal">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h2 id="myModalLabel">Sign In!</h2>
+      </div>
+        <div style="width:89%;"  class="breakline"></div>       
+        <div style="padding-top: 0px;"  class="modal-body">
+          <p >Don't have an account? &nbsp;<a href="javascript:void(0);" onclick="registerpopup('')">Register Here!</a></p>
+            <form  id="loginform" action="javascript:void(0);" class="form-horizontal">
+            
+            		<input type="hidden" id="redirect" name="redirect" value="">
+					<input type="hidden" class="bbookmark" name="bbookmark" value="">
+					<input type="hidden" class="pbookmark" name="pbookmark" value="">
+					<input type="hidden" class="ebookmark" name="ebookmark" value="">
+
+            	<div id="LoginErrors"></div>
+                <div class="SignInField_m">
+                    <input id="poploginemail" name="email" style="width:256px;" type="text" class="squareCorners" placeholder="Email">
+                </div>
+                <div class="SignInField_m">
+                    <input id="poploginpasswd" name="password" style="width:256px;" type="password" class="squareCorners" placeholder="Password">
+                </div>
+                <div class="SignInField_m">
+                    <a style="cursor:pointer;" data-toggle="modal" onclick="logintoforget()">Forgot Your Password?</a>
+<!--                     <label class="checkbox">
+                    <input type="checkbox">Remember me
+                    </label>   -->
+                        <button  onclick="login()" class="btn btn-blue btn-large" type="submit" style="font-weight:bold;width:100%;margin-top:10px;">Sign In!</button>
+                      </div>
+
+                <div style="margin-bottom:14px;" class="breakline"></div> 
+
+              <div class="facebookbg">
+              <a href="" class="facebookurl" >
+                    <img style="height:30px;width:auto;padding-right:35px;" src="/images/facebook.png" alt="facebook">Sign In with Facebook
+                 </a>
+              </div>
+                  </form> 
+               </div>
+            </div> 
+
+<!--Forgot Password Modal-->
+    <div id="forgotModal" class="modal hide fade"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>        
+        <h2 id="myModalLabel">Forgot Password</h2>
+      </div>
+      <div class="breakline"></div>
+      <form  id="forgotpasswordform" action="javascript:void(0);" class="form-horizontal">
+      <div style="padding: 0px 35px 32px;" class="modal-body">
+        <h4>Enter your email address below to reset your password</h4>
+        <input class="form-large" type="text" id="forgotemail" placeholder="Email Address" value="">
+        <button style="padding:15px 33px 15px 33px; width: 100%;" type="submit" class="btn btn-blue btn-large" onclick="forgotpassword()">Reset Your Password!</button>
+      </div>
+      </form>
+    </div>    
+    
+<!-- Announcements Modal-->
+    <div id="announcementModal" class="modal hide fade"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>        
+        <h2 id="announcementLabel">Notification</h2>
+      </div>
+      <div class="breakline"></div>
+      <div style="padding: 0px 35px 32px;" class="modal-body">
+        <h4>Enter your email address below to reset your password</h4>
+      </div>
+    </div>    
 
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-tooltip.js"></script>
 <!--Carousel Javascript-->    
     <script type="text/javascript"> 
 
     
+      $('.carousel').carousel({
+        interval: 5000
+      });
       $(function(){
     	  $("#regpassword").tooltip();
       });

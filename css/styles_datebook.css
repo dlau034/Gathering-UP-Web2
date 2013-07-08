@@ -115,16 +115,18 @@
   text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
   text-align: center;
   color: white;
+  font-size: 1.3em!important;
 }
 
 .datebook li.pill_width a {
   background-color: #A3C86C;
+  margin-right: 0;
 }
 .datebook li.tab-pane a:hover {
   /*background-color: #FBB03B;*/
 }
 .datebook li.tab-pane {
-  width: 49%;  
+  width: 100%;  
 }
 .datebook li.tab-pane:nth-of-type(2) {
   float: right;
@@ -133,7 +135,9 @@
   border-top-color: white;
   margin-top: 0.56em;
 }
-
+.datebook .nav-pills {
+  margin-bottom: 0;
+}
 .pill_bookmarks ul{
   background-color: #f9f9f9;
 } 

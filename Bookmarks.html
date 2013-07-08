@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>GatheringUP - Homepage</title>
+	<title>GatheringUP - Bookmarks</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
     <meta name="description" content="Finding and Organizing Activities in New York City, such as Dining, Places and Events, is now Easy when you use GatheringUp's Datebook. Gathering Up made Simple.">
@@ -71,7 +71,7 @@
           <div id="collapse_content" class="nav-collapse collapse"> 
             <ul id="nav_items_group" class="nav">
               <li>
-                <a class="active_bar" href="/localize">Places
+                <a href="/localize">Places
                   <img src="http://siteimages.gatheringup.com/images/around.png" alt="">
                 </a>
               </li>                      
@@ -239,7 +239,7 @@ $( "#Nearby_Search" ).typeahead({
 });
  </script>
 
-    <div id="nearby_nav">
+<!--     <div id="nearby_nav">
     <div id="accordion" class="nav_features">
       <h3>Central Park</h3>
       <div class="navigation">
@@ -320,7 +320,7 @@ $( "#Nearby_Search" ).typeahead({
     <!-- Nav Listing Unit End -->          
     <!-- Mini Foooter -->
             
-      <div class="footer3">
+<!--       <div class="footer3">
         <p>
           <a href="https://www.facebook.com/GatheringUp">Facebook</a> -
           <a href="https://twitter.com/Gathering_UP">Twitter</a> -
@@ -331,7 +331,7 @@ $( "#Nearby_Search" ).typeahead({
           Images Provided by <a href="http://www.foursquare.com">Foursquare</a>
         </p>
       </div>  
-</div>    
+</div>      -->
 
 <script type="text/html" id='locations'>
 <% var max = (((page+1)*numentries)>outdata.length) ? outdata.length:((page+1)*numentries); %>
@@ -459,8 +459,16 @@ var bookmarks = {};
 </script>
 
      
-    <div class="bg_wrap"></div>
-    <div class="nearby_wrap">
+    <div class="bg_wrap_bookmark"></div>
+    <div class="bookmark_wrap">
+
+    <div class="bookmark_box">
+      <div class="btn-group  bookmark-tabs" data-toggle="buttons-radio">
+        <button type="button" class="btn btn-green btn-bookmark-tabs btn-primary">Places</button>
+        <button type="button" class="btn btn-green btn-bookmark-tabs btn-primary">Upcoming Events</button>
+        <button type="button" class="btn btn-green btn-bookmark-tabs active btn-primary">Past Events</button>
+      </div>      
+    </div>
 
     <!--  Detail Module   -->
 
@@ -558,19 +566,6 @@ var bookmarks = {};
             </div>                   
         </div>            
       </div>
-        
-    <!--  Detail Module Small  -->
-
-    <div class="nearby_item sm_mod">
-      <div class="item_text" id="42" gid="">
-        <h4><a href="javascript:void(0);" onclick="getnearbyid(22602835)">
-          <span>4</span>.&nbsp;World Parking Garage Lic</a></h4>
-          <p><span class="icon-map-marker"></span>1849 Broadway</p>
-          <div class="result_cat">
-            <span class="cat_tag_mini">Parking Garage</span>
-          </div>                          
-        </div>
-      </div>
 
 <!--  Detail Module   -->
 
@@ -608,7 +603,7 @@ var bookmarks = {};
     </div>
 
     <!-- Map Background -->
-    <div id="map_canvas" class="map_around"></div>  
+    <div id="map_canvas" class="map_bookmark"></div>  
 
     <!-- Place Detail Modal -->
     <div class="modal hide fade placesmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

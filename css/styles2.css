@@ -596,7 +596,7 @@ form {
 #nav_items_group a:hover {
     color: white;
 }
-.active {
+.active_bar {
     -webkit-box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.7);
     -moz-box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.7);
     box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.7);
@@ -1235,7 +1235,7 @@ form {
     padding: 5px 10px;
 }
 .placesmodal .accordion-group {
-    margin-top: 5px;
+    margin-top: 1.5em;
 }
 .placesmodal .comment_msg {
     width: 100%;
@@ -1504,11 +1504,11 @@ a.accordion-toggle.nav_cat {
 
 .cat_tag {
     font-family: ubuntu;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1em;
-    padding: 5px;
+    padding: 5px 10px;
     color: white;
-    background-color: #EFA759;
+    background-color: #777;
 
     margin-top: 3px;
     margin-bottom: 10px;
@@ -1522,7 +1522,7 @@ a.accordion-toggle.nav_cat {
     border-radius: 0;
     padding: 3px 5px;        
     color: white;
-    background-color: #EFA759!important;
+    background-color: #777!important;
     white-space: nowrap;
 }
     /* Hero Unit
@@ -2029,9 +2029,7 @@ select:focus {
     text-align: right;
 }
 .module_tag {
-    background-color: #f0f0f0;
-    padding: 0.8em;
-    border-top: 1px solid #ccc;
+    padding: 0em 0.8em 1em 0.8em;
 }
 
 
@@ -2806,7 +2804,56 @@ select:focus {
 .fb-comments span iframe {
     width: 100%!important;      
 }
-    /* Featured Page Tags
+    /* Bookmark Page 
     -------------------------------------------------- */
 
+.bg_wrap_bookmark {
+    background-color: rgba(255,255,255,0.5);
+    position: fixed;
+    height: 100%;
+    width: 31.5em;
+    margin-left: 1em;
+    z-index: 6;
+}
+.bookmark_wrap {
+    width: 29.5em;
+    margin-left: 2em;
+    position: relative;
+    z-index: 6;
+    height: 100%;
+    padding-top: 3em;
+}
+.map_bookmark {
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: block;
+    position: fixed!important;
+    bottom: 0;
+    z-index: 5;
+}
+.bookmark_box {
+    width: 29.5em;
+    height: 3em;
+    z-index: 7;
+    background-color: #555;
+    position: fixed;
+    padding: 1em;
+    margin-left: -1em;
+    padding-bottom: 0.7em;
+
+    -webkit-box-shadow:  0px 3px 6px rgba(0,0,0,0.4);
+    -moz-box-shadow:  0px 3px 6px rgba(0,0,0,0.4);
+    box-shadow:  0px 3px 6px rgba(0,0,0,0.4);
+
+    border-bottom: 1px solid #ccc;
+}
+.btn-bookmark-tabs {
+    padding: 10px 20px;
+    padding-bottom: 7px;    
+}
+.bookmark-tabs {
+
+
+}
 

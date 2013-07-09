@@ -572,7 +572,16 @@ form {
 }
 
 /* Styles Navigation Buttons */
-
+.nav_icons {
+    display: inline;
+    position: relative;
+    margin-left: 17em;
+    background-color: red;
+    /*width: 37em;*/
+}
+#loggedinuserspan {
+    float: right;
+}
 #nav_items_group a {
     color: #c5c5c5;
     text-shadow: none;
@@ -801,10 +810,9 @@ form {
     font-size: 1.1em;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
     text-decoration: none;
-    background-image: url("http://siteimages.gatheringup.com/images/flag_on.png");
+    background-image: url("../images/flag_on.png");
     background-repeat: no-repeat;
     background-position: center right;
-    right: 9em;
 }
 #note_off {
     position: absolute;
@@ -814,23 +822,77 @@ form {
     font-size: 1.1em;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
     text-decoration: none;
-    background-image: url("http://siteimages.gatheringup.com/images/flag_off.png");
+    background-image: url("../images/flag_off.png");
     background-repeat: no-repeat;
     background-position: center right;
 }    
+
+#datebook_on {
+    position: absolute;
+    margin-top: 10px;
+    width: 2em;
+    color: #F7931E;
+    font-size: 1.1em;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    text-decoration: none;
+    background-image: url("../images/datebook_on.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    margin-left: 2.6em;
+}
+#datebook_off {
+    position: absolute;
+    margin-top: 10px;
+    width: 2em;
+    color: #3D413D;
+    font-size: 1.1em;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    text-decoration: none;
+    background-image: url("../images/datebook_off.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    margin-left: 2.6em;
+}    
+
+#bookmark_on {
+    position: absolute;
+    margin-top: 10px;
+    width: 2em;
+    color: #F7931E;
+    font-size: 1.1em;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    text-decoration: none;
+    background-image: url("../images/bookmark_on.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    margin-left: 4.9em;
+}
+#bookmark_off {
+    position: absolute;
+    margin-top: 10px;
+    width: 2em;
+    color: #3D413D;
+    font-size: 1.1em;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    text-decoration: none;
+    background-image: url("../images/bookmark_off.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    margin-left: 4.9em;
+}   
 @media (min-width: 1350px) {
-    #note_off, #note_on {
-        margin-left: 10em;
+     {
+        /*margin-left: 10em;*/
     }
 }
 @media (max-width: 1349px) and (min-width: 980px) {
-    #note_off, #note_on {
-        margin-left: 2em;
+     .nav_icons {
+        margin-left: 6em!important;
     }
 }
 
 @media (max-width: 979px) {
-    #note_off, #note_on {
+    .nav_icons {
         display: none;
     }
 }
@@ -956,9 +1018,11 @@ form {
 .nearby_item {
     margin-top: 1em;
     background-color: #f5f5f5;
+
     -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.4);
     -moz-box-shadow: 0 0 8px rgba(0,0,0,0.4);
     box-shadow: 0 0 8px rgba(0,0,0,0.4);
+
     margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -980,13 +1044,13 @@ form {
     margin-left: 18em;
     z-index: 6;
 }
-
-
 .nearby_item:hover {
-    -webkit-box-shadow:0 0 15px #7CB02C;  
+/*    -webkit-box-shadow:0 0 15px #7CB02C;  
     -moz-box-shadow:0 0 15px #7CB02C;  
     box-shadow:0 0 15px #7CB02C;    
-    border: 1px solid #7CB02C; 
+    border: 1px solid #7CB02C; */
+
+    background-color: white;
 }
 .item_tab {
     background-color: #A3C86C;
@@ -1028,7 +1092,7 @@ form {
 .item_other {
     width: 8em;
     position: relative;
-    margin: 15px 15px 10px 15px;    
+    margin: 15px 15px 20px 15px;    
     float: left;
 }
 .item_other button.btn-mini {
@@ -1235,7 +1299,7 @@ form {
     padding: 5px 10px;
 }
 .placesmodal .accordion-group {
-    margin-top: 1.5em;
+    margin-top: 0.5em;
 }
 .placesmodal .comment_msg {
     width: 100%;
@@ -1268,6 +1332,9 @@ form {
 }
 .placesmodal .reviews .text_fields {
     margin-top: 1em;
+}
+.placesmodal .accordion {
+    clear: both;
 }
     /* Nav Listing Unit
     -------------------------------------------------- */
@@ -1524,6 +1591,7 @@ a.accordion-toggle.nav_cat {
     color: white;
     background-color: #777!important;
     white-space: nowrap;
+    line-height: 2em;
 }
     /* Hero Unit
     -------------------------------------------------- */
@@ -1540,7 +1608,7 @@ a.accordion-toggle.nav_cat {
 }
 
 @media (max-height: 710px) {
-    .featured_unit {
+    .featured_unit {©
         margin-top: -18px;
     }
     #featured_title h1 {
@@ -2836,24 +2904,175 @@ select:focus {
     width: 29.5em;
     height: 3em;
     z-index: 7;
-    background-color: #555;
     position: fixed;
     padding: 1em;
     margin-left: -1em;
     padding-bottom: 0.7em;
 
-    -webkit-box-shadow:  0px 3px 6px rgba(0,0,0,0.4);
-    -moz-box-shadow:  0px 3px 6px rgba(0,0,0,0.4);
-    box-shadow:  0px 3px 6px rgba(0,0,0,0.4);
+    /*background-color: #555;*/
+    background-image: -moz-linear-gradient(top, #666, #444);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#666), to(#444));
+    background-image: -webkit-linear-gradient(top, #666, #444);
+    background-image: -o-linear-gradient(top, #666, #444);
+    background-image: linear-gradient(to bottom, #666, #444);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 
-    border-bottom: 1px solid #ccc;
+    -webkit-box-shadow:  0px 2px 8px rgba(0,0,0,0.4);
+    -moz-box-shadow:  0px 2px 8px rgba(0,0,0,0.4);
+    box-shadow:  0px 2px 8px rgba(0,0,0,0.4);
 }
 .btn-bookmark-tabs {
-    padding: 10px 20px;
     padding-bottom: 7px;    
+    padding-top: 8px;
 }
-.bookmark-tabs {
+.btn-bookmark-tabs:nth-child(1) {
+    width: 6em;
+}
+.btn-bookmark-tabs:nth-child(2) {
+    width: 10em;
+}
+.btn-bookmark-tabs:nth-child(3) {
+    width: 8.35em;
+}
+.bookmark_item {
+    margin-top: 0.8em;
+    background-color: #f5f5f5;
 
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
 
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.35);
+    clear: both;
+}
+.bookmark_item:hover {
+    background-color: white!important;
+}
+.bookmark_item:nth-child(2) {
+    margin-top: 5.7em!important;
+}
+.bookmark_top_info {
+    margin-bottom: 0.8em;
+}
+.bookmark_other {
+    width: 8em;
+    position: relative;
+    margin: 0px 15px 5px 15px;
+    float: left;
+}
+.bookmark_text {
+    margin: 1em;
+}
+.bookmark_other .thumbnail_box {
+    display: block;
+    height: 7.5em;
+    overflow: hidden;
+    border: 4px solid white;
+    -webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+    -moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+}
+.bookmark_other img {
+    width: 100%;
+    float: right;
+}
+.bookmark_item p {
+    color: #444;
+    font-size: 0.85em;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin: 0.4em auto;
+}
+.bookmark_item h4 {
+    line-height: 1.3em;
+    font-weight: 700;
+    font-size: 1em;
+    text-shadow: 0px -1px 0px white;
+    margin-bottom: 0em;
+    font-family: arvo;
+}
+.bookmark_item h5 {
+    color: #666;
+    font-family: arvo;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 0.8em;
+}
+.bookmark_item span {
+    font-family: arvo;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.close_tag {
+    position: absolute;
+    right: 0;
+    margin-top: -20px;
+    margin-right: 5px;
+}
+.close_tag span {
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 8px;
+}
+.close_tag span:hover {
+    cursor: pointer;
 }
 
+    /* Homepage Modal Wall 
+    -------------------------------------------------- */
+
+.home_wall {
+    width: 400px;
+    background-color: #f9f9f9;
+    margin-left: -195px;
+    top: 24%!important;
+}
+.home_wall .modal-body h3{
+    text-align: center;
+    font-family: arvo;
+    font-weight: 100!important;
+    font-size: 1.6em;
+    line-height: 1.4em;
+    text-shadow: 0px 1px 0px white;
+    margin-top: 0;
+
+    color: #444;
+}
+.home_wall .modal-footer {
+    background-color: #eee;
+}
+.home_wall a.btn-facebook {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 12em;
+    text-align: left;
+}
+.home_wall img {
+    width: 18em;
+    display: block;
+    margin: 0 auto;
+}
+#fb_icon {
+    background-image: url("../images/fb.png");
+    width: 24px;
+    display: block;
+    height: 36px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    border-right: 1px solid rgba(255,255,255,0.4);
+    margin-left: -4px;
+    margin-top: -8px;
+    margin-right: 12px;
+
+    -webkit-box-shadow: inset -1px 0px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset -1px 0px 0px rgba(0,0,0,0.4);
+    box-shadow: inset -1px 0px 0px rgba(0,0,0,0.4);
+}

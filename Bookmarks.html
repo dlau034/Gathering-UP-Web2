@@ -10,7 +10,9 @@
   	<link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.css"/>
   	<link rel="stylesheet" href="css/bootstrap-mobile.css"/>
-  	<link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="css/styles_event2.css">
+
     <link rel="stylesheet" href="css/icomoon/icomoon.css">  
     <link rel="stylesheet" href="css/nav.css">  
     
@@ -86,8 +88,11 @@
               </a>
               </li>                      
             </ul>          
-
-            <a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
+            <div class="nav_icons">
+              <a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
+              <a id="datebook_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
+              <a id="bookmark_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a>
+            </div>
 
             <span id="loggedinuserspan">
               <ul id="nav_cta" class="nav pull-right">
@@ -193,6 +198,7 @@
      <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
 </a>
  </div>    
+
 
 
 
@@ -462,7 +468,7 @@ var bookmarks = {};
     <div class="bg_wrap_bookmark"></div>
     <div class="bookmark_wrap">
 
-    <div class="bookmark_box">
+    <div class="bookmark_box ">
       <div class="btn-group  bookmark-tabs" data-toggle="buttons-radio">
         <button type="button" class="btn btn-green btn-bookmark-tabs btn-primary">Places</button>
         <button type="button" class="btn btn-green btn-bookmark-tabs btn-primary">Upcoming Events</button>
@@ -472,14 +478,20 @@ var bookmarks = {};
 
     <!--  Detail Module   -->
 
-      <div class="nearby_item"> 
-        <div class="item_top_info clearfix">         
-            <div class="item_other">
+      <div class="bookmark_item"> 
+        <div class="bookmark_top_info"> 
+
+            <div class="bookmark_other">
               <div class="thumbnail_box">
                 <img src="https://irs2.4sqi.net/img/general/width320/5067488_ArV9SMSpTzVSFvZIjgryTc0O3d29VEUyim0KMObObp8.jpg" alt="thumbnail">
               </div>
               <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(869803, this)" style="display: none;"><i class="icon-bookmark icon-white"></i>Bookmark</button>
             </div>       
+
+            <div class="close_tag">
+              <span class="icon-remove icon-white"></span>
+              <img src="images/bookmark.png" alt="">  
+            </div>     
 
             <div class="item_text" id="1" gid="">
               <h4>
@@ -495,28 +507,66 @@ var bookmarks = {};
             </div>
 
             <div class="btn_group">
-              <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
+              <button class="CTA_button btn btn-green btn-mini btn-bookmark">Invite</button>                        
               <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
               <button href=".placesmodal" class="CTA_button btn btn-green btn-mini btn-readmore" data-toggle="modal">Read More</button>
             </div>                   
         </div>            
       </div>
 
-<!--  Detail Module   -->
+  <!-- Result Module -->     
 
-      <div class="nearby_item"> 
-        <div class="item_top_info clearfix">         
-            <div class="item_other">
+            <div class="bookmark_item">
+                <div class="bookmark_top_info">                
+
+                    <div class="bookmark_other">
+                      <div class="thumbnail_box">
+                        <img src="images/shakespeare.jpg" alt="thumbnail">
+                      </div>  
+                    </div>
+
+                    <div class="close_tag">
+                      <span class="icon-remove icon-white"></span>
+                      <img src="images/bookmark.png" alt="">  
+                    </div>                  
+
+                    <div class="bookmark_text">
+                      <h4><a href=""><span>2.&nbsp</span>Shakespeare in the Park Presents "The Comedy of Errors"</a></h4>
+                      <h5>June 26, 2013 at 08:30 PM - 12:30 AM</h5>
+                      <p>
+                      The Comedy of Errors, one of William Shakespeare's earliest plays, is a comical tale about two sets of twins who were at birth ...
+                      <br>                     
+                      </p>                
+                    </div>
+
+                    <div class="btn_group">
+                      <button class="CTA_button btn btn-green btn-mini btn-bookmark">Invite</button>                        
+                      <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
+                      <button href=".eventmodal" class="CTA_button btn btn-green btn-mini btn-readmore" data-toggle="modal">Read More</button>
+                    </div>     
+                </div>            
+            </div>   
+
+    <!--  Detail Module   -->
+
+      <div class="bookmark_item"> 
+        <div class="bookmark_top_info">         
+            <div class="bookmark_other">
               <div class="thumbnail_box">
                 <img src="https://irs2.4sqi.net/img/general/width320/5067488_ArV9SMSpTzVSFvZIjgryTc0O3d29VEUyim0KMObObp8.jpg" alt="thumbnail">
               </div>
               <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(869803, this)" style="display: none;"><i class="icon-bookmark icon-white"></i>Bookmark</button>
-            </div>       
+            </div>     
+
+            <div class="close_tag">
+              <span class="icon-remove icon-white"></span>
+              <img src="images/bookmark.png" alt="">  
+            </div>                   
 
             <div class="item_text" id="1" gid="">
               <h4>
               <a href="/localize?searchid=869803">
-                <span>2</span>.&nbsp;Columbus Circle</a>
+                <span>1</span>.&nbsp;Columbus Circle</a>
               </h4>
                 <span class="cat_tag_mini">Favorites</span>
                 <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City ...</p>
@@ -527,80 +577,14 @@ var bookmarks = {};
             </div>
 
             <div class="btn_group">
-              <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
+              <button class="CTA_button btn btn-green btn-mini btn-bookmark">Invite</button>                        
               <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
               <button href=".placesmodal" class="CTA_button btn btn-green btn-mini btn-readmore" data-toggle="modal">Read More</button>
             </div>                   
         </div>            
-      </div>
+      </div>             
 
-
-<!--  Detail Module   -->
-
-      <div class="nearby_item"> 
-        <div class="item_top_info clearfix">         
-            <div class="item_other">
-              <div class="thumbnail_box">
-                <img src="https://irs2.4sqi.net/img/general/width320/5067488_ArV9SMSpTzVSFvZIjgryTc0O3d29VEUyim0KMObObp8.jpg" alt="thumbnail">
-              </div>
-              <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(869803, this)" style="display: none;"><i class="icon-bookmark icon-white"></i>Bookmark</button>
-            </div>       
-
-            <div class="item_text" id="1" gid="">
-              <h4>
-              <a href="/localize?searchid=869803">
-                <span>3</span>.&nbsp;Columbus Circle</a>
-              </h4>
-                <span class="cat_tag_mini">Favorites</span>
-                <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City ...</p>
-                <p>
-                  <a href="http://www.theshopsatcolumbuscircle.com/" target="_blank"><span class="icon-globe"></span>&nbsp;Website</a>
-                  <span class="icon-asterisk"></span>&nbsp;(212)453-4534          
-                </p>                
-            </div>
-
-            <div class="btn_group">
-              <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
-              <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
-              <button href=".placesmodal" class="CTA_button btn btn-green btn-mini btn-readmore" data-toggle="modal">Read More</button>
-            </div>                   
-        </div>            
-      </div>
-
-<!--  Detail Module   -->
-
-      <div class="nearby_item"> 
-        <div class="item_top_info clearfix">         
-            <div class="item_other">
-              <div class="thumbnail_box">
-                <img src="https://irs2.4sqi.net/img/general/width320/5067488_ArV9SMSpTzVSFvZIjgryTc0O3d29VEUyim0KMObObp8.jpg" alt="thumbnail">
-              </div>
-              <button class="CTA_button btn btn-green btn-mini" onclick="toggleplace(869803, this)" style="display: none;"><i class="icon-bookmark icon-white"></i>Bookmark</button>
-            </div>       
-
-            <div class="item_text" id="1" gid="">
-              <h4>
-              <a href="/localize?searchid=869803">
-                <span>5</span>.&nbsp;Columbus Circle</a>
-              </h4>
-                <span class="cat_tag_mini">Favorites</span>
-                <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City ...</p>
-                <p>
-                  <a href="http://www.theshopsatcolumbuscircle.com/" target="_blank"><span class="icon-globe"></span>&nbsp;Website</a>
-                  <span class="icon-asterisk"></span>&nbsp;(212)453-4534          
-                </p>                
-            </div>
-
-            <div class="btn_group">
-              <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
-              <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
-              <button href=".placesmodal" class="CTA_button btn btn-green btn-mini btn-readmore" data-toggle="modal">Read More</button>
-            </div>                   
-        </div>            
-      </div>
-
-
-    </div>
+    </div>    <!-- Background Wrapper Ends -->
 
     <!-- Map Background -->
     <div id="map_canvas" class="map_bookmark"></div>  
@@ -608,98 +592,98 @@ var bookmarks = {};
     <!-- Place Detail Modal -->
     <div class="modal hide fade placesmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-        
-            <div class="item_top_info">  
-              <div class="item_other">
-                <div class="thumbnail_box">
-                  <img src="https://irs2.4sqi.net/img/general/width320/5067488_ArV9SMSpTzVSFvZIjgryTc0O3d29VEUyim0KMObObp8.jpg" alt="thumbnail">
-                </div>
-                <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
-                <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
-                <button class="CTA_button btn btn-green btn-mini btn-nearby">Feedback</button>
-              </div>  
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
 
-              <div class="item_text" id="1" gid="">
-                <h4>
-                  <a href="/localize?searchid=869803">
-                    <span>3</span>.&nbsp;Columbus Circle</a></h4>
-                    <span class="cat_tag_mini">Favorites</span>
-                    <p>
-                    1849 Broadway<br>
-                    New York, NY 10023<br>              
-                    </p>
-                    <p>
-                      <a href="http://www.theshopsatcolumbuscircle.com/" target="_blank"><span class="icon-globe"></span>&nbsp;Website</a>
-                      <span class="icon-asterisk"></span>&nbsp;(212)453-4534<br>   
-                      The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City — a complex of skyscrapers that was completed in 2003. It is located at Columbus Circle, next to the southwestern corner of Central Park. It includes mostly upscale stores selling luxury brands, including Armani, Davidoff, L'Occitane, Hugo Boss, Tumi, Coach, Cole Haan, Thomas Pink, Tourneau, and Stuart Weitzman. The mall also has several restaurants such as the Michelin 3-star Per Se, Masa, an outpost of A Voce, the East Coast flagship of Williams-Sonoma, and a Whole Foods Market.
-                      <br><br>
-                      <span class="icon-star"></span>&nbsp;Monday-Saturday: 10:00AM-9:00PM, Sunday: 11:00AM-7:00PM
-                    </p> 
-                  </div>
-                  
-                </div>            
-
-<div class="accordion" id="accordion2">
-  <div class="accordion-group reviews">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Reviews / Comments (2)
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-
-        <div class="message_area" name="164">
-          <div class="message_entry">
-   
-              <img class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/902555095/picture" alt="thumbnail"> 
-      
-              <div class="text_fields">
-                <h4>David Lau</h4>
-                <span>1st May - 2013</span>                
-                <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City — a complex of skyscrapers that was completed in 2003. It is located at Columbus Circle, next to the southwestern corner of Central </p>
-              </div> 
+      <div class="item_top_info">  
+        <div class="item_other">
+          <div class="thumbnail_box">
+            <img src="https://irs2.4sqi.net/img/general/width320/5067488_ArV9SMSpTzVSFvZIjgryTc0O3d29VEUyim0KMObObp8.jpg" alt="thumbnail">
           </div>
-        </div>
-
-        <div class="dividline"></div>
-
-        <div class="message_area" name="164">
-          <div class="message_entry">
-   
-              <img class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/902555095/picture" alt="thumbnail"> 
-      
-              <div class="text_fields">
-                <h4>David Lau</h4>
-                <span>4th June - 2013</span>
-                <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City — a complex of skyscrapers that was completed in 2003. It is located at Columbus Circle, next to the southwestern corner of Central </p>
-              </div> 
-          </div>
+          <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
+          <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>
+          <button class="CTA_button btn btn-green btn-mini btn-nearby">Feedback</button>
         </div>  
 
-        <div class="dividline"></div>              
+        <div class="item_text" id="1" gid="">
+          <h4>
+            <a href="/localize?searchid=869803">
+              <span>3</span>.&nbsp;Columbus Circle</a></h4>
+              <span class="cat_tag_mini">Favorites</span>
+              <p>
+                1849 Broadway<br>
+                New York, NY 10023<br>              
+              </p>
+              <p>
+                <a href="http://www.theshopsatcolumbuscircle.com/" target="_blank"><span class="icon-globe"></span>&nbsp;Website</a>
+                <span class="icon-asterisk"></span>&nbsp;(212)453-4534<br>   
+                The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City — a complex of skyscrapers that was completed in 2003. It is located at Columbus Circle, next to the southwestern corner of Central Park. It includes mostly upscale stores selling luxury brands, including Armani, Davidoff, L'Occitane, Hugo Boss, Tumi, Coach, Cole Haan, Thomas Pink, Tourneau, and Stuart Weitzman. The mall also has several restaurants such as the Michelin 3-star Per Se, Masa, an outpost of A Voce, the East Coast flagship of Williams-Sonoma, and a Whole Foods Market.
+                <br><br>
+                <span class="icon-star"></span>&nbsp;Monday-Saturday: 10:00AM-9:00PM, Sunday: 11:00AM-7:00PM
+              </p> 
+            </div>
 
-        <form accept-charset="UTF-8" id="formpostmessage" action="javascript:void(0);" method="POST">            
-            <textarea class="comment_msg" name="message" placeholder="Tell us what you think?" rows="5"></textarea>                                
-            <button class="btn btn-green" type="button" onclick="postactivitymessage(164)">Write Comment</button>                                             
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group menus">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Food Menu
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
+          </div>            
 
-              <div class="place_data">
-                <div id="menusContainer"></div>
-                <script type="text/javascript" src="http://menus.singleplatform.co/jsload?load=menus.2&apiKey=kpblfd23vcwwn5gue0zzrcl9s"></script>
-                <script>
+          <div class="accordion" id="accordion2">
+            <div class="accordion-group reviews">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  Reviews / Comments (2)
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                  <div class="message_area" name="164">
+                    <div class="message_entry">
+
+                      <img class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/902555095/picture" alt="thumbnail"> 
+                      
+                      <div class="text_fields">
+                        <h4>David Lau</h4>
+                        <span>1st May - 2013</span>                
+                        <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City — a complex of skyscrapers that was completed in 2003. It is located at Columbus Circle, next to the southwestern corner of Central </p>
+                      </div> 
+                    </div>
+                  </div>
+
+                  <div class="dividline"></div>
+
+                  <div class="message_area" name="164">
+                    <div class="message_entry">
+
+                      <img class="img-polaroid thumbnail_profile" src="http://graph.facebook.com/902555095/picture" alt="thumbnail"> 
+                      
+                      <div class="text_fields">
+                        <h4>David Lau</h4>
+                        <span>4th June - 2013</span>
+                        <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan, New York City — a complex of skyscrapers that was completed in 2003. It is located at Columbus Circle, next to the southwestern corner of Central </p>
+                      </div> 
+                    </div>
+                  </div>  
+
+                  <div class="dividline"></div>              
+
+                  <form accept-charset="UTF-8" id="formpostmessage" action="javascript:void(0);" method="POST">            
+                    <textarea class="comment_msg" name="message" placeholder="Tell us what you think?" rows="5"></textarea>                                
+                    <button class="btn btn-green" type="button" onclick="postactivitymessage(164)">Write Comment</button>                                             
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group menus">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                  Food Menu
+                </a>
+              </div>
+              <div id="collapseTwo" class="accordion-body collapse">
+                <div class="accordion-inner">
+
+                  <div class="place_data">
+                    <div id="menusContainer"></div>
+                    <script type="text/javascript" src="http://menus.singleplatform.co/jsload?load=menus.2&apiKey=kpblfd23vcwwn5gue0zzrcl9s"></script>
+                    <script>
                     var menuApi = new MenusApi("kpblfd23vcwwn5gue0zzrcl9s");
                     menuApi.setBaseFontSize("8pt");
                     menuApi.setPrimaryFontFamily("Arial");
@@ -707,15 +691,52 @@ var bookmarks = {};
                     menuApi.setSecondaryBackgroundColor("#fff");
                     menuApi.setSectionTitleFontColor("Black");
                     menuApi.loadMenusForLocation("sushiya-6", "menusContainer");
-                </script>
-               </div>
+                    </script>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
+    </div>      <!-- Place Detail Modal Ends -->
+
+    <!-- Event Detail Modal -->
+
+    <div class="modal hide fade eventmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- <div class="event-header"> -->
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+
+      <div class="event_item">
+        <div class="event_top_info clearfix">                
+          <div class="event_text">
+            <h4><a href=""><span>1.&nbsp</span>Elegance for All: A Pop-Up Shop by ModCloth</a></h4>
+            <h5>June 14, 2013 at 6:00 PM</h5>
+            <p>
+              Location05<br>                     
+              509 West 34th Street<br>                      
+              New York, NY 10001<br>    
+            </p>                
+          </div>
+
+
+          <div class="event_other">
+            <div class="thumbnail_box">
+              <img src="images/image1.jpg" alt="thumbnail">
+            </div>  
+            <button class="CTA_button btn btn-green btn-mini btn-bookmark">Bookmark</button>                        
+            <button class="CTA_button btn btn-green btn-mini btn-nearby">What's Nearby</button>                 
+          </div>                    
+        </div>            
       </div>
 
+      <div class="event_data">
+        <div class="dividline"></div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, enim ad in laboriosam voluptate cupiditate iure necessitatibus adipisci minima quo dicta incidunt atque excepturi inventore id repudiandae voluptatum? Quo eum accusantium hic minus facilis velit similique voluptate nesciunt reprehenderit consequatur. Sit itaque in maiores voluptatum quas non id quam earum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, enim ad in laboriosam voluptate cupiditate iure necessitatibus adipisci minima quo dicta incidunt atque excepturi inventore id repudiandae voluptatum? Quo eum accusantium hic minus facilis velit similique voluptate nesciunt reprehenderit consequatur. Sit itaque in maiores voluptatum quas non id quam earum.         
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, enim ad in laboriosam voluptate cupiditate iure necessitatibus adipisci minima quo dicta incidunt atque excepturi inventore id repudiandae voluptatum? Quo eum accusantium hic minus facilis velit similique voluptate nesciunt reprehenderit consequatur. Sit itaque in maiores voluptatum quas non id quam earum.      
+      </div>     
 
-</div>  
+    </div>     <!-- Event Detail Modal Ends -->
 
     
 

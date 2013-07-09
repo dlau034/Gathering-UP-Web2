@@ -143,6 +143,9 @@
     position: relative;
     border: 1px solid rgba(0,0,0,0.35);
 }
+.event_item:hover {
+    background-color: white;
+}
 .event_item h4 {
     float: left;
     line-height: 1.3em;

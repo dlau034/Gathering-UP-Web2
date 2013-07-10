@@ -125,7 +125,7 @@ $(function(){
         </a>
 
           <!-- Change Out the Logo -->          
-		<div class="brand_fix">
+		    <div class="brand_fix">
           <a class="brand" href="/">GatheringUP</a>
         </div> 
 
@@ -145,7 +145,15 @@ $(function(){
               </a>
               </li>                      
                    </ul>
+
+                    <!-- This is commented out or else the dropdown notifications does not work -->
+                    
+                    <!-- <div class="nav_icons"> -->  
  											<a id="note_on" class="dropdown-toggle"	data-toggle="dropdown"  href=""><b>1</b></a>
+                      <!-- <a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a> -->
+                      <a id="datebook_off" href="">&nbsp;</a>
+                      <a id="bookmark_off" href="">&nbsp;</a>                      
+                    <!-- </div> -->
 	
                       	<ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
                         <div style="max-height: 21em; overflow-y: auto;" class="note_box">
@@ -163,7 +171,7 @@ $(function(){
 						                            </div>                                    
                         </ul>
 											
-<span id="loggedinuserspan">
+              <span id="loggedinuserspan">
                                    <!-- Dropdown -->                
                   <div class="dropdown" id="loggedindropdown">
                     <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
@@ -1395,7 +1403,7 @@ eventstr = eventstr.replace(/'/g, "&#x27;");
 
           <ul class="nav nav-pills" id="nav-pill_box">
             <li class="tab-pane pill_width active">
-              <a id="Your_event" href="#home"  data-toggle="tab"><h4 style="font-size: 1.17em;">Your Events</h4></a>
+              <!-- <a id="Your_event" href="#home"  data-toggle="tab"><h4 style="font-size: 1.17em;">Your Events</h4></a> -->
             </li>
              
         </ul>

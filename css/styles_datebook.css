@@ -67,7 +67,7 @@
 .datebook .tab-content {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
-  /*border-top: none;*/
+  margin-top: 1em;
 }
 
 @media (max-height: 659px) {

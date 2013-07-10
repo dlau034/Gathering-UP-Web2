@@ -29,6 +29,7 @@ a:focus {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    outline: none;
 }
 p {
     font-size: 1em;
@@ -42,7 +43,9 @@ h4 {
 h6 {
     font-size: 0.9em;
 }
-
+button:focus {
+    outline: none!important;
+}
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
@@ -579,8 +582,15 @@ form {
     background-color: red;
     /*width: 37em;*/
 }
-#loggedinuserspan {
-    float: right;
+@media (min-width: 800px ) {
+    #loggedinuserspan {
+        float: right!important;
+    }    
+}
+@media (max-width: 799px ) {
+    #loggedinuserspan {
+        float: none!important;
+    }
 }
 #nav_items_group a {
     color: #c5c5c5;
@@ -597,7 +607,7 @@ form {
     margin-left: -36px;
     display: block;
 }
-@media (max-width: 979px) {
+@media (max-width: 799px) {
     #nav_items_group a img{
         display: none;
     }
@@ -723,16 +733,23 @@ form {
 }
 /* Responsive */
 
-@media (max-width: 979px) {
-    #dp_list {
-        margin-top: 10px;
-    }   
+@media (max-width: 799px) {
     #dp_label {
         border-top: 1px solid #555;
         -webkit-box-shadow: 0px -1px 0px #222;
          -moz-box-shadow: 0px -1px 0px #222;
-         box-shadow: 0px -1px 0px #222; : 
+         box-shadow: 0px -1px 0px #222;  
     }
+    #dp_list {
+        margin-top: 10px;
+    }       
+    #nav_items_group > li > a:hover {
+        background-color: #F7931E;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 979px) {
     .btn_nav_cta {
         color: white!important;
         text-shadow: none !important;
@@ -804,7 +821,7 @@ form {
 
 #note_on {
     position: absolute;
-    margin-top: 10px;
+    margin-top: 11px;
     width: 2em;
     color: #F7931E;
     font-size: 1.1em;
@@ -816,7 +833,7 @@ form {
 }
 #note_off {
     position: absolute;
-    margin-top: 10px;
+    margin-top: 11px;
     width: 2em;
     color: #3D413D;
     font-size: 1.1em;
@@ -896,7 +913,6 @@ form {
         display: none;
     }
 }
-
 .navbar .notifications {
     border-radius: 0;
     background-color: #f5f5f5;
@@ -907,6 +923,7 @@ form {
     top: 3em;
     right: 0;
     left: auto;
+    margin-right: 5em;
 }
 @media (min-width: 1350px){
     .navbar .notifications {
@@ -2183,9 +2200,13 @@ select:focus {
 
 .footer3 {
     border-top: 1px solid white;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+
     -webkit-box-shadow: 0 -1px 0 #ccc;
     -moz-box-shadow: 0 -1px 0 #ccc;
     box-shadow: 0 -1px 0 #ccc;
+
     padding-bottom: 0.1em;
     text-align: center;
     font-weight: 100;
@@ -2195,6 +2216,7 @@ select:focus {
     bottom: 0;
     font-size: 0.7em;
     line-height: 1.5em;
+
 } 
 .footer3 p {
     margin: 5px auto;
@@ -3024,6 +3046,32 @@ select:focus {
     cursor: pointer;
 }
 
+.footer_bookmark {
+    border-top: 1px solid white;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+
+    -webkit-box-shadow: 0 -1px 0 #ccc;
+    -moz-box-shadow: 0 -1px 0 #ccc;
+    box-shadow: 0 -1px 0 #ccc;
+
+    padding-bottom: 0.1em;
+    text-align: center;
+    font-weight: 100;
+    background-color: #e1e1e1;
+    position: fixed;
+    width: 45em;
+    bottom: 0;
+    font-size: 0.7em;
+    line-height: 1.5em;
+    z-index: 100;
+    margin-left: 13px;
+}
+.footer_bookmark p {
+    margin: 3px 0 3px 0;
+}
+
+
     /* Homepage Modal Wall 
     -------------------------------------------------- */
 
@@ -3075,4 +3123,12 @@ select:focus {
     -webkit-box-shadow: inset -1px 0px 0px rgba(0,0,0,0.4);
     -moz-box-shadow: inset -1px 0px 0px rgba(0,0,0,0.4);
     box-shadow: inset -1px 0px 0px rgba(0,0,0,0.4);
+}
+.date_break {
+    font-family: arvo;
+    color: #444;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+}
+h3.date_break:nth-of-type(1) {
+    margin-top: 3em;
 }

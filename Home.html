@@ -261,7 +261,11 @@
 	
 	<script type="text/javascript">
 	    $(window).load(function(){
-	        $('#myModal').modal('show');
+	        $('#myModal').modal({
+				backdrop: 'static',
+				keyboard: false ,
+				show: true
+	        });
 	    });
 	</script>
 

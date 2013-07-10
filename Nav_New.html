@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GatheringUP</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />  
+    <meta name="description" content="GatheringUP is about finding fun things to do in and around New York City's Central Park.">
+    <meta name="keywords" content="Central, Park, New, York, City, Upper, West, East, NYC, Museum, Lincoln, Center, Columbus, Circle, Side">
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="css/bootstrap-mobile.css"/>
+	<link rel="stylesheet" href="css/styles2.css">
+  <link rel="stylesheet" href="css/icomoon/icomoon.css">  
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="/js/underscore-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
+  <script src="/js/jquery.masonry.min.js"></script>
+  <script>
+
+  // $(document).ready(function(){
+  //   $('#module_wrap').masonry({
+  //     itemSelector: '.module_unit',
+  //     columnWidth: 0,
+  //     isFitWidth: true,       
+  //     isAnimated: true   
+  //   });    
+  // });
+
+    $(document).ready(function(){
+        var $container = $('#module_wrap');
+        $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.module_unit',
+              columnWidth: 0,
+              isFitWidth: true,       
+              isAnimated: true              
+            });
+        });       
+    });
+  </script>
+<script type="text/javascript" src="/js/gatheringup-registration-min.js"></script>
+<script type="text/javascript" src="/js/gatheringup-main-min.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+    <body>
+  
+  <script src="/js/jqBootstrapValidation.js"></script>
+<script type="text/javascript">
+function invitedecline(idinvite)
+{
+	$.get("/invitation/decline?idinvite="+idinvite);
+	$("#"+idinvite+"invl").remove();
+	$("#"+idinvite+"inv").remove();
+	$("#"+idinvite+"invn").remove();
+	$invites=$("#note_on>b").html();
+	$invites=$invites-1;
+	if($invites<=0){
+		$("#note_on").attr('id',"note_off");
+	}
+	$invites=$("#note_on>b").html($invites);
+}
+
+jQuery(document).ready(function() {
+
+$( "#header_search" ).typeahead({
+	source: function (query, process) {
+          return $.get('/bit/localize/search', { search: query }, function (data) {
+      		var name = jQuery.parseJSON(data);
+
+            return process(name);
+        });
+      },
+      updater: function(item) {
+          this.$element[0].value = item;
+          this.$element[0].form.submit();
+          return item;
+      },
+      minLength: 2});
+});
+      
+$(function(){ 
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); 
+  });
+
+  window.isloggedin = 1  ;
+  </script>
+
+<script type="text/html" id='loggedintemplate'>
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        <%=user["firstname"]%> <%=user["lastname"]%> 
+                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+</script>
+
+
+<!-- Header + Navbar -->
+
+
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+		<div class="brand_fix">
+          <a class="brand" href="/">GatheringUP</a>
+        </div> 
+
+          <!-- Elements inside will disappear when mobile -->          
+
+          <div id="collapse_content" class="nav-collapse collapse"> 
+            <ul id="nav_items_group" class="nav">
+              <li>
+                <a href="/localize">Places
+                  <img src="http://siteimages.gatheringup.com/images/around.png" alt="">
+                </a>
+              </li>                      
+              <li>
+                <a href="/localize">Events
+                  <img src="images/eventpin.png" alt="">
+                </a>
+              </li>                      
+              <li>
+                <a href="/localize">Stories
+                  <img src="images/storypin.png" alt="">
+              </a>
+              </li>                      
+            </ul>          
+            <div class="nav_icons">
+              <a id="note_on" class="dropdown-toggle" data-toggle="dropdown"  href=""><b>1</b></a>
+              <!-- <a id="note_off" class="dropdown-toggle" data-toggle="dropdown" href="">&nbsp;</a> -->
+              <a id="datebook_off" href="">&nbsp;</a>
+              <a id="bookmark_off" href="">&nbsp;</a>
+            </div>
+																	
+<span id="loggedinuserspan">
+                                   <!-- Dropdown -->                
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        David Lau                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/datebook">My Bookmarks/Datebook</a></li>
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/events">Park Events</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+
+                    <!-- Not logged In --> 
+               </span>
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+ <div class="modal hide fade" id="register_modal" tabindex="-1" role="dialog">
+
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Register with GatheringUP!</h1>
+     <div class="dividline"></div>
+       <form id="registerform">
+         <div class="clearfix">
+
+           <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>
+               <input name="firstname" id="firstname" class="form_reg" type="text" placeholder="First Name" required>                
+           </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">
+               <p class="help-block"></p>                  
+                 <input  name="lastname" id="lastname" class="form_reg" type="text" placeholder="Last Name" required>
+               </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <p class="help-block"></p>   
+                 <input  name="email" id="regemail" class="form_reg" type="email" placeholder="Email" required>
+             </div>
+         </div>
+
+         <div class="control-group">
+             <div class="control">    
+               <input id="password1st"  type="password" minlength="8" name="password" class="form_reg" placeholder="Password - Must be 8 Characters" required>  
+             </div>              
+         </div>              
+
+         <div class="control-group">
+             <div class="control">    
+
+               <input 
+                 id="password2nd"
+                 class="form_reg" 
+                 placeholder="Retype Password"
+                 type="password"
+                 name="passwordconf"
+                 data-validation-match-match="password1"    
+                 minlength="8" 
+                 data-validation-minlength-message="Minimum 8 Characters"              
+                 />
+               <p class="help-block"></p>    
+             </div>              
+         </div>       
+<div id="RegistrationErrors"></div>
+
+           <div class="control-group">
+             <div class="control">                  
+               <p class="help-block"></p>                                 
+               <input type="text" name="norobotcode"  id="catcha2" class="form_reg" placeholder="Enter Captcha" required>
+               <div ><img src="/captcha"></div>                
+             </div>
+           </div>
+
+         </div>
+
+         <div class="dividline"></div>
+         <button class="btn btn-large btn-green" >Register!</button>
+       </form>
+     <h4>OR</h4>
+<a href=""  id="fb_register" class="facebookurl"  >
+     <button href="#" class="btn btn-large btn-facebook"><span id="fb_reg" class="icon-datebookfacebook" aria-hidden="true"></span>Register with Facebook</button>      
+</a>
+ </div>    
+
+
+
+<!--Forgot Password Modal-->
+<div class="modal hide fade" id="forgotpw_modal" tabindex="-1" role="dialog">
+     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h1>Forgot Password?</h1>
+     <div class="dividline"></div>
+       <form  id="forgotpasswordform" class="forgot_fields clearfix">
+         <div class="control-group">
+           <div class="controls">
+              <p class="help-block"></p>
+               <input type="email" id="forgotemail" class="form_reg" placeholder="Enter Your Email" required>
+
+           </div>
+         </div>
+         <button type="submit" class="btn btn-green">Forgot Password!</button>  
+       </form>  
+  </div>
+  
+<script type="text/html" id="articletemplate">
+<% for(index=0; index<outdata.length; index++){ %>
+<% item=outdata[index] %>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=<%=item.idarticle%>">
+        <img src="<%= item.imagecdnurl%>/<%=item.imagethumbdir%><%=item.imagecdnname%>" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=<%=item.idarticle%>"><h5><%=item.summary%></h5></a>
+          <h6>by <%=item.firstname%> <%=item.lastname%></h6>
+          <div class="dividline"></div>
+          <p><%=item.description%></p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+		<%
+		if(item.audience){
+			var myarr = item.audience.split(",");
+			for(i=0; i<myarr.length; i++)
+			{
+			%>
+				<button class="btn btn-mini disabled cat_tag"><%=myarr[i]%></button>
+			<%
+			}
+		}%>
+        </div>   
+      </div>
+<% } %>
+</script>
+
+    <!-- Featured Unit -->
+    
+    <div class="featured_unit">
+      <div class="container-module">
+        <div id="featured_title">
+          <h1>Make a plan, Share your day</h1>
+        </div>
+      </div>
+      <div class="container-module">
+        <div class="featured_text">
+          <p>
+Central Park
+          </p>
+        </div>
+      </div>
+    </div>    
+
+<div class="navbar">
+  <div class="navbar-inner btn-filter-bg">
+     <div class="btn-group btn-full">
+      <!-- <button class="btn btn-filter">Latest Outings</button> -->
+      <!-- <button class="btn btn-filter">Most Popular</button> -->
+      <!-- <button class="btn btn-filter">Editor's Pick</button>     -->
+
+      <button class="btn btn-filter" onclick="window.location='/localize'">Places</button>
+      <button class="btn btn-filter" onclick="window.location='/events'">Events</button>     
+    </div>   
+  
+  </div>
+  </div>
+
+  <div class="Story_top">
+        <!-- <div class="container-module"> -->
+          <div id="filter_cat">
+            <h2>Browse&nbsp;</h2>
+              <select  name="category" onchange="refreshcategory(this)">
+              <option value="0">All</option>
+<option value="7">Local Residents</option>
+<option value="8">Visitors</option>
+              </select>                     
+            <h2>&nbsp; Stories</h2>
+            <h2>or</h2>
+            <button class="btn btn-share btn-large btn-green" onclick="checkloggedin('/storycreate')">Share your story!</button>
+          </div>
+        </div>    
+
+    <!-- Module Unit -->
+
+      <div id="module_wrap">
+      
+      <div class="module_unit">
+      
+        <a href="/story?articleid=385">
+        <img src="http://images.gatheringup.com/images/thumbnail/51b6a61c789b4.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=385"><h5>Tuned into the Balloon Parade</h5></a>
+          <h6>by Ashley Villarreal</h6>
+          <div class="dividline"></div>
+          <p>Hanif Bugg was standing at the end of a long line of colorful balloons with his fingers wrapped tightly around the end of the ropes supporting them. It was just another day on the job for him.</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=330">
+        <img src="http://images.gatheringup.com/images/thumbnail/51b66ae8e1613.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=330"><h5>Visiting from Chicago</h5></a>
+          <h6>by Ashley Villarreal</h6>
+          <div class="dividline"></div>
+          <p>Sharice and Gary were coming out of the American Museum of Natural History when a salesman for Central Park Guided Tours approached them. “Thank you, but not today,” said Sharice, smiling politely.</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Visitors</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=380">
+        <img src="http://images.gatheringup.com/images/thumbnail/51b4b2b556495.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=380"><h5>Yet Another Street Fair in UWS: June 9</h5></a>
+          <h6>by Kenneth Su</h6>
+          <div class="dividline"></div>
+          <p>Yet another street fair on uws. This time it's north of 72nd street and broadway.</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=379">
+        <img src="http://images.gatheringup.com/images/thumbnail/51b3902aebfb0.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=379"><h5>A Great Day in NYC</h5></a>
+          <h6>by Sahadeva  Hammari</h6>
+          <div class="dividline"></div>
+          <p>Quick game of soccer.</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+                </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=377">
+        <img src="http://images.gatheringup.com/images/thumbnail/51b141e04de43.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=377"><h5>Food Hunting at Street Fair</h5></a>
+          <h6>by Kenneth Su</h6>
+          <div class="dividline"></div>
+          <p>During the summer, it seems like there is street fair every weekend.  Even the most popular areas get blocked off( no pun intended) for the street fair.  Last weekend, it happened outside the Apple st...</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+<button class="btn btn-mini disabled cat_tag">Visitors</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=376">
+        <img src="http://images.gatheringup.com/images/thumbnail/51af67b6ca466.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=376"><h5>Weekday in Central Park after work</h5></a>
+          <h6>by David Lau</h6>
+          <div class="dividline"></div>
+          <p>So usually, i only go to Queensbridge Park cause its nice and close to my place in Astoria. But since i was with my girlfriend i made an exception. Check out these musician jamming it out together.</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+<button class="btn btn-mini disabled cat_tag">Visitors</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=366">
+        <img src="http://images.gatheringup.com/images/thumbnail/51ad643e3ba8b.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=366"><h5>Testing the Waters</h5></a>
+          <h6>by Ashley Villarreal</h6>
+          <div class="dividline"></div>
+          <p>The sun was beating down on two girls hunched over the southern edge of the Lake in Central Park fiddling with what looked like the remnants of used plastic bottles.</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+<button class="btn btn-mini disabled cat_tag">Visitors</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=328">
+        <img src="http://images.gatheringup.com/images/thumbnail/519d2fac54e86.JPG" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=328"><h5>Pedicab drivers are people too</h5></a>
+          <h6>by Jeremy Klein</h6>
+          <div class="dividline"></div>
+          <p>“My normal route is around the south side loop of the park, between 59th and 72nd street,” Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. “I can e...</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+<button class="btn btn-mini disabled cat_tag">Visitors</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=361">
+        <img src="http://images.gatheringup.com/images/thumbnail/51aa17bdeda38.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=361"><h5>A lazy day at the Central Park Zoo</h5></a>
+          <h6>by Jeremy Klein</h6>
+          <div class="dividline"></div>
+          <p>Central Park Zoo: a zoo, inside of a park, inside of a major city. Sometimes it’s hard to believe that not far from where a snow leopard roams, taxis are honking at pedestrians stepping trying to cros...</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+<button class="btn btn-mini disabled cat_tag">Visitors</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=360">
+        <img src="http://images.gatheringup.com/images/thumbnail/51a938d26cdaa.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=360"><h5>Poems on the spot</h5></a>
+          <h6>by Ashley Villarreal</h6>
+          <div class="dividline"></div>
+          <p>It’s easy to think the view from the balcony overlooking Bethesda Fountain is better than being in the plaza itself. At the bottom of the steps, it’s obvious this is not just a place to pass through, ...</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Visitors</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=339">
+        <img src="http://images.gatheringup.com/images/thumbnail/51a74947090bc.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=339"><h5>The many dimensions of Bethesda Terrace</h5></a>
+          <h6>by Jeremy Klein</h6>
+          <div class="dividline"></div>
+          <p>Enter Central Park at West 72nd street, wander through Strawberry Fields and climb over Cherry Hill, and you’ll be standing in Bethesda Terrace, one of the most iconic spots in all of Central Park. 
+
+...</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+<button class="btn btn-mini disabled cat_tag">Visitors</button>
+        </div>   
+      </div>
+      <div class="module_unit">
+      
+        <a href="/story?articleid=332">
+        <img src="http://images.gatheringup.com/images/thumbnail/51a1569bb7767.jpg" alt="">
+        </a>
+        <div class="module_text">
+          <a href="/story?articleid=332"><h5>Raccoon Rock</h5></a>
+          <h6>by Ashley Villarreal</h6>
+          <div class="dividline"></div>
+          <p>Leo Politan’s bright baby blue hat was visible from the base of an expansive rock just off the path from Cherry Hill fountain. He’d been lucky to find it at a store in Queens, where both he and his friend, Juan Vigoya, were from. The two had stopped to relax on their picnic mat and enjoy what felt like the first official day of summer in New York City. 
+
+In almost no time, I learned a good deal about them: Juan worked at Wigbar and Leo was currently scheduled to perform as Neopolitano at The Ritz, a bar and lounge in Hell’s Kitchen, known for its playful drag shows.</p>
+          <!-- <div class="dividline"></div> -->
+        </div>
+        <div class="module_tag">
+        <button class="btn btn-mini disabled cat_tag">Local Residents</button>
+        </div>   
+      </div>
+    </div>
+
+
+
+<div id="float_tab">
+  <p id="tab_head">Feedback</p>
+    <div class="float_box">
+      <h4>Help Make Us Better! </h4>
+      <div class="dividline"></div>
+<div id="Errors" class="submit_container"></div>
+      <form action="javascript:void(0);" id="contactusform" method="post">
+        <textarea name="" rows="8" id='message' name='message' placeholder="Tell Us What you think?"></textarea>
+        <input type="text" id='name' name='name' placeholder="Your Name">
+        <input type="text" id='email' name='email' placeholder="Your Email">
+        <input type="text" id="captcha" name="captcha" placeholder="Enter Code">
+        <img src="/captcha">
+        <input type="Submit" class="btn btn-green" onclick="contactus()">
+      </form>
+  </div>
+</div>    <!-- Footer -->
+      <div class="footer2">
+        <p class="footer_bold">Copyright Gathering Up Ltd 2013. All rights reserved.&nbsp;|
+          <a href="https://www.facebook.com/GatheringUp"><span class="icon-datebookfacebook"></span>Facebook</a>  |
+          <a href="https://twitter.com/Gathering_UP"><span class="icon-twitter"></span>Twitter</a>  |
+          <a href="http://gatheringup.wordpress.com"><span class="icon-wordpress"></span>Blog</a>  |
+          <a href="/about">About Us</a>  |
+          <a href="/about/termsofuse">Terms of Use</a>  |
+          <a href="/about/privacy">Privacy Policy</a> |
+        </p>
+      </div>
+    </div>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/bootstrap.min.js"></script>
+<!--Carousel Javascript-->    
+    <script type="text/javascript"> 
+
+    
+      $(function(){
+    	  $("#regpassword").tooltip();
+      });
+    </script>
+  </body>
+</html>

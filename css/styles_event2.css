@@ -91,10 +91,10 @@
     padding-top: 1.5em;
 }
 .event_wrap .event_item {
-    bottom: 6.8em;
+    /*bottom: 6.8em;*/
 }
 .event_wrap .event_item:nth-of-type(1) {
-    margin-top: 9em!important;
+    /*margin-top: 9em!important;*/
 }
 .item_tab {
     color: white;

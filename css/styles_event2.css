@@ -359,27 +359,3 @@ span.event_cat {
     border-radius: 2px!important;
 }
 
-.tag_featured {
-    font-family: arvo;
-    background-color: #FFD321;
-    color: white;
-    position: absolute;
-    right: -12px;
-    margin-top: 2px;
-    padding: 0.1em 0.4em;
-    font-size: 0.9em;
-    font-weight: 400;
-    z-index: 1;
-    -webkit-box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
-    -moz-box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
-    box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
-    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
-}
-.tag_event {
-    background-color: #EF4136;
-}
-.tag_featured img {
-    position: absolute;
-    right: 0;
-    top: 22px;
-}

@@ -60,7 +60,7 @@
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A3c86c), to(#8BB946));
     background-image: -webkit-linear-gradient(top, #A3c86c, #8BB946);
     background-image: -o-linear-gradient(top, #A3c86c, #8BB946);
-    background-image: linear-gradient(to bottom, #A3c86c, #8BB946);
+    background-image: linear-gradient(to© bottom, #A3c86c, #8BB946);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
@@ -161,6 +161,8 @@
     font-family: arvo;
     margin-bottom: 0;
     font-size: 0.8em;
+    float: left;
+    margin-top: 0;
 }
 .event_item h4 a {
     color: #333;
@@ -334,3 +336,27 @@ span.event_cat {
     border-radius: 2px!important;
 }
 
+.tag_featured {
+    font-family: arvo;
+    background-color: #FFD321;
+    color: white;
+    position: absolute;
+    right: -12px;
+    margin-top: 2px;
+    padding: 0.1em 0.4em;
+    font-size: 0.9em;
+    font-weight: 400;
+    z-index: 1;
+    -webkit-box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+    box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+}
+.tag_event {
+    background-color: #EF4136;
+}
+.tag_featured img {
+    position: absolute;
+    right: 0;
+    top: 22px;
+}

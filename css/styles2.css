@@ -180,6 +180,15 @@ form {
     -webkit-transform:rotate(180deg); /* Safari and Chrome */
     -o-transform:rotate(180deg); /* Opera */
 }
+    /* Styles to Leaflet Maps
+    -------------------------------------------------- */
+
+.leaflet-control-container {
+    position: relative;
+    margin-right: 250px;
+    margin-top: 40px;
+}
+
     /* Button Styling
     -------------------------------------------------- */
 
@@ -1213,7 +1222,7 @@ form {
     -------------------------------------------------- */
 
 .placesmodal {
-    background-color: #f5f5f5;
+    /*background-color: #f5f5f5;*/
     top: 5%!important;
     position: absolute;
 }    

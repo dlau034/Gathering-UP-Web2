@@ -1054,7 +1054,7 @@ form {
 }
 
 .bg_wrap {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.7);
     position: fixed;
     height: 100%;
     width: 31.5em;
@@ -1363,7 +1363,7 @@ form {
     height: 100%;
     background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");    
     border-collapse: collapse;
-    z-index: 6;
+    z-index: 7;
     -webkit-box-shadow: 0em 0em 1em #333;
     -moz-box-shadow: 0em 0em 1em #333;
     box-shadow: 0em 0em 1em #333;

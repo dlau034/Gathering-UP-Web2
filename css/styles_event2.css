@@ -144,7 +144,7 @@
     border: 1px solid rgba(0,0,0,0.35);
 }
 .event_item:hover {
-    background-color: white;
+    /*background-color: white;*/
 }
 .event_item h4 {
     float: left;
@@ -205,7 +205,7 @@ span.event_cat {
     float: right;
 }
 .bg_event {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.7);
     position: fixed;
     height: 100%;
     width: 31.5em;
@@ -233,7 +233,9 @@ span.event_cat {
     border: 1px solid #eee;
     padding: 1px;
 }
-
+.calender_full .ui-datepicker td span, .ui-datepicker td a {
+    text-align: center!important;
+}
 .calender_full .ui-datepicker-calendar thead {
     display: none;
 }
@@ -247,7 +249,13 @@ span.event_cat {
     cursor: pointer;
     background-position: 5px;
 }
-
+.calender_full .ui-datepicker-calendar td:hover {
+    background-color: #EE8A1D;
+    color: white;
+}
+.calender_full .ui-datepicker-calendar td a:hover {
+    color: inherit;
+}
 .calender_full .ui-datepicker-next {
     background-image: url("../images/left_right.png");   
     background-repeat: no-repeat;
@@ -258,6 +266,22 @@ span.event_cat {
 .calender_full .ui-datepicker-next-hover, .calender_full .ui-datepicker-prev-hover {
     right: 2px!important;
 }
+.calender_full .ui-datepicker-unselectable:hover {
+    background: none!important;
+}
+.calender_full .ui-datepicker-unselectable span {
+    color: #a1a1a1!important;
+}
+.calender_full .ui-datepicker-today {
+    background-color: #EE8A1D;
+
+}
+.calender_full .ui-datepicker-today a {
+    color: white!important;
+    font-weight: 700;    
+}
+
+
 .event_item .item_tab a{
     color: white;
 }

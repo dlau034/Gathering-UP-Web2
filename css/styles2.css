@@ -3127,7 +3127,7 @@ select:focus {
 .date_break {
     font-family: arvo;
     color: #444;
-    text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+    /*text-shadow: 0px 1px 0px rgba(0,0,0,0.3);*/
 }
 h3.date_break:nth-of-type(1) {
     margin-top: 1.5em;

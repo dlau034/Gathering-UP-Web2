@@ -694,6 +694,7 @@ ul.sub-level li {
 }
 ul.sub-level {
     /*overflow: scroll;*/
+}
 .newline {
     float: right;
 }

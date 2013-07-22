@@ -90,11 +90,11 @@
     height: 100%;
     padding-top: 1.5em;
 }
-.event_wrap .event_item {
+/*.event_wrap .event_item {
     /*bottom: 6.8em;*/
 }
-.event_wrap .event_item:nth-of-type(1) {
-    /*margin-top: 9em!important;*/
+.event_wrap .event_item:last-child {
+    margin-bottom: 3em!important;
 }
 .item_tab {
     color: white;
@@ -106,14 +106,7 @@
     position: relative;
     margin: 15px 15px 10px 15px;
 }
-@media (max-width: 480px) {
-    .eventmodal .event_other {
-        width: 6.5em;
-    }
-    .eventmodal .event_text {
-        /*width: 50%!important;*/
-    }
-}
+
 .event_other button.btn-mini {
     width: 100%;
     border-radius: 4px!important;    
@@ -180,6 +173,7 @@
     font-weight: 400;
     line-height: 1.3em;
     clear: both;
+    width: 95%;
 }
 .event_top_info.clearfix {
     padding-top: 1px;
@@ -211,6 +205,17 @@ span.event_cat {
     margin-left: 18em;
     z-index: 6;
 }
+#eventspan {
+    display: block;
+    float: left;
+    margin-top: 2em;
+}
+.event_item:last-child {
+    margin-bottom: 1em;
+}
+    /* Custom Side Calendar */
+    /* -------------------------------------------------- */
+
 .calender_full {
     padding:0;
 }
@@ -280,10 +285,13 @@ span.event_cat {
     font-weight: 700;    
 }
 
-
 .event_item .item_tab a{
     color: white;
 }
+
+    /* Event Modal */
+    /* -------------------------------------------------- */
+
 .modal-backdrop, .modal-backdrop.fade.in  {
     background-color: rgba(0,0,0,0.4);
 }
@@ -346,6 +354,17 @@ span.event_cat {
     background-color: transparent;
     margin-top: 2em;
 }
+@media (max-width: 480px) {
+    .eventmodal .event_other {
+        width: 6.5em;
+    }
+    .eventmodal .event_text {
+        /*width: 50%!important;*/
+    }
+}
+
+    /* Side Nav Button Filters */
+    /* -------------------------------------------------- */
 
 .filter_dates button {
     float: right;

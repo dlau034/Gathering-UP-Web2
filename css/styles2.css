@@ -10,7 +10,6 @@
 html {
     height:100%;
 }
-
 body { 
     height: 100%;
     font-size: 14px;    
@@ -1006,8 +1005,9 @@ form {
 .cat_tag {
     font-family: ubuntu;
     font-weight: 400;
-    font-size: 1em;
-    padding: 5px 10px;
+    font-size: 0.85em;
+
+    padding: 5px 8px;
     color: white;
     background-color: #777;
 
@@ -1320,71 +1320,79 @@ select:focus {
     }         
 }
 .module_unit {
-    background-color: white;
+    background-color: #f1f1f1;
     margin-bottom: 30px;
-    width: 300px;
+    width: 280px;
     float: left;
     border-radius:2px;
     border: 1px solid #999999;  
     position: relative;
+    height: 35.5em;
 }
 .module_unit:hover {
-    -webkit-box-shadow:0 0 6px #FF7F00; 
-      -moz-box-shadow:0 0 6px #FF7F00; 
-      box-shadow:0 0 6px #FF7F00;   
-    border: 1px solid #FF7F00;
+    /*border: 1px solid #619D00;*/
+    background-color: white;
 }
-.module_image {    
-    margin: 12px 10px 0px 10px;
-    border-radius: 2px;
-    background-repeat: no-repeat;
-    height: 230px;
-    box-shadow: 0 1px 0px rgba(255,255,255,.2), inset 0 5px 15px rgba(0,0,0,0.7), inset 0 -3px 15px rgba(0,0,0,0.3);
+.img_box {
+    overflow: hidden;
+    height: 280px;
+    display: block;
+    position: relative;
+    background-color: white;
+    border-bottom: 1px solid #aaa;
+
+    -webkit-box-shadow: : 0px 1px 0px white, inset 0px 2px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: : 0px 1px 0px white, inset 0px 2px 2px rgba(0,0,0,0.5);
+    box-shadow: : 0px 1px 0px white, inset 0px 2px 2px rgba(0,0,0,0.5);
+}
+.img_box img {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    width: auto!important;
+    max-width: none!important;
 }
 .module_text {
     padding: 0px 15px 15px 15px;
 }
 .module_text h5 {
-    text-align: center;
-    margin-bottom:0px; 
-    margin-top:10px;
-    font-weight: 700;
-    color: #444;
+    text-align: left;
+    margin-bottom:3px; 
+    margin-top: 10px;
+    font-weight: 500;
+    color: #333;
     font-family: "arvo";
-    font-size: 1.2em;
-    line-height: 1.4em;
+    font-size: 1.4em;
+    line-height: 1.2em;
+
+    text-shadow: 0px 1px 0px white!important;
+
 }
 .module_text h5:hover{
-    color: #F7931E;
+    /*color: #619D00;*/
 }
 .module_text p {
-    font-size: 0.90em;
-    line-height: 1.3em;
-    margin: 5px auto;
-    color: #666;
+    color: #444;
+    font-size: 0.95em;
+    font-weight: 400;
+    line-height: 1.4em;    
+    margin-bottom: 0;
 }
 .module_text h6 {
-    text-align: center;
-    margin: 5px auto;
+    margin: 0;
+    font-family: arvo;
     color: #666;
     font-weight: 400;
-    font-style: italic;
-}
-.module_unit > p {
-    float: right;
-    margin-right: 10px;
-    margin-top: 7px;
-    font-family: "handlee";
-    color: #777;
-    text-align: right;
+    text-shadow: 0px 1px 0px white!important;
 }
 .module_tag {
     padding: 0em 0.8em 1em 0.8em;
+    display: block; 
+    position: absolute;
+    bottom: 0;
 }
 
-
-
-    /* Footers
+ /* Footers
     -------------------------------------------------- */
 
 .footer {

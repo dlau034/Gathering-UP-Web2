@@ -1,6 +1,21 @@
+
+    /* GatheringUP Stylesheet - Home Page
+    -------------------------------------------------- */
+    /* styles_home.css */
+
+
+	/* Controls on start background overlay opacity 
+	-------------------------------------------------- */
+
+.modal-backdrop, .modal-backdrop.fade.in {
+	background-color: rgba(0,0,0,0.8);
+}
+
+	/* Home Styles 
+	-------------------------------------------------- */
+
 .home_main {
 	background-color: white;
-	/*height: 100%;*/
 	-webkit-box-shadow: 0em 0em 1.5em #555;
 	-moz-box-shadow: 0em 0em 1.5em #555;
 	box-shadow: 0em 0em 1.5em #555;
@@ -20,7 +35,6 @@
 .main_listing {
 	width: 104%;
 	background-color: #f1f1f1;
-	/*height: 11em;*/
 	display: block;
 	float: left;
 	margin-bottom: 1em;

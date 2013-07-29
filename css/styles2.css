@@ -499,6 +499,9 @@ form {
 
 .navbar_container {
     margin-bottom: 0px;
+/*    position: fixed;
+    z-index: 1;
+    width: 100%;*/
 }    
 
 /*Styles Navigation Bar*/
@@ -508,9 +511,12 @@ form {
   background-image: none;
   border: none;
   border-radius: 0px;
-  position: fixed;
+
+  /*position: relative!important;*/
+
   border-top: 3px solid #FBB03B;
-  /*height: 40px;*/
+
+  width: 100%;
 }
 .brand {
     background-image: url("http://siteimages.gatheringup.com/images/gu_logo.png");
@@ -641,9 +647,9 @@ form {
     display: block;
 }
 @media (max-width: 799px) {
-    #nav_items_group a img{
+/*    #nav_items_group a img{
         display: none;
-    }
+    }*/
 }
 #nav_items_group a:hover {
     color: white;
@@ -782,7 +788,9 @@ form {
     }
 }
 
-@media (max-width: 979px) {
+/* Uncomment to bring back collapse Responsive menu bar - mobile device menu */
+
+/*@media (max-width: 979px) {
     .btn_nav_cta {
         color: white!important;
         text-shadow: none !important;
@@ -832,7 +840,7 @@ form {
     #collapse_content.in {
         padding-top: 10px;
     }    
-}
+}*/
 
 .brand_fix {
     width: 230px;
@@ -930,20 +938,17 @@ form {
     background-position: center right;
     margin-left: 4.9em;
 }   
-@media (min-width: 1350px) {
-     {
-        /*margin-left: 10em;*/
-    }
-}
+
 @media (max-width: 1349px) and (min-width: 980px) {
-     .nav_icons {
+    .nav_icons {
         margin-left: 6em!important;
     }
 }
 
 @media (max-width: 979px) {
     .nav_icons {
-        display: none;
+        /*display: none;*/
+        margin-left: 6em!important;
     }
 }
 .navbar .notifications {
@@ -1892,7 +1897,7 @@ select:focus {
     width: 8.35em;
 }
 #bookmarkoutput {
-    margin-top: 5.7em;
+    margin-top: 5.4em;
     display: block;
     float: left;
 }
@@ -2071,6 +2076,6 @@ select:focus {
     color: #444;
     margin:0;
 }
-/*h3.date_break:nth-of-type(1) {
+.event_wrap h3.date_break:nth-of-type(1) {
     margin-top: 1.5em;
-}*/
+}

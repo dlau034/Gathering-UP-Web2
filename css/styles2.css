@@ -615,12 +615,14 @@ form {
 
 /* Styles Navigation Buttons */
 .nav_icons {
-    display: inline;
     position: relative;
     margin-left: 17em;
     background-color: red;
-    /*width: 37em;*/
+        display: block;
+    left: 7em;
 }
+
+
 @media (min-width: 800px ) {
     #loggedinuserspan {
         float: right!important;
@@ -646,11 +648,7 @@ form {
     margin-left: -36px;
     display: block;
 }
-@media (max-width: 799px) {
-/*    #nav_items_group a img{
-        display: none;
-    }*/
-}
+
 #nav_items_group a:hover {
     color: white;
 }
@@ -902,13 +900,6 @@ form {
         margin-left: 6em!important;
     }
 }
-
-@media (max-width: 979px) {
-    .nav_icons {
-        /*display: none;*/
-        margin-left: 6em!important;
-    }
-}
 .navbar .notifications {
     border-radius: 0;
     background-color: #f5f5f5;
@@ -918,17 +909,21 @@ form {
     padding: 1em 1em 0em 1em;
     top: 3em;
     right: 0;
-    left: auto;
-    margin-right: 5em;
+    left: auto; 
 }
+@media (max-width: 1349px) {
+    .navbar .notifications {
+       margin-right: 13em;
+   }
+}
+
 @media (min-width: 1350px){
     .navbar .notifications {
-        right: 0em;
+        margin-right: 28em;
     }
 }
 .navbar .notifications a {
     font-weight: 500;
-    /*color: #222;*/
 }
 .notifications .imagebox {
     width: 3.5em;
@@ -1290,7 +1285,7 @@ select:focus {
     border-radius:2px;
     border: 1px solid #999999;  
     position: relative;
-    height: 35.5em;
+    height: 30.5em;
 }
 .module_unit:hover {
     /*border: 1px solid #619D00;*/

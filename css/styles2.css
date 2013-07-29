@@ -910,8 +910,9 @@ form {
     top: 3em;
     right: 0;
     left: auto; 
+    margin-right: 14em;
 }
-@media (max-width: 1349px) {
+/*@media (max-width: 1349px) {
     .navbar .notifications {
        margin-right: 13em;
    }
@@ -921,7 +922,7 @@ form {
     .navbar .notifications {
         margin-right: 28em;
     }
-}
+}*/
 .navbar .notifications a {
     font-weight: 500;
 }

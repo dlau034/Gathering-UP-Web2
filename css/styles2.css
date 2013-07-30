@@ -1351,6 +1351,23 @@ select:focus {
     bottom: 0;
 }
 
+ /* My Stories Page
+    -------------------------------------------------- */
+
+.mystories .module_tag {
+    position: relative;
+}
+.mystories .module_unit {
+    height: 33em;
+}
+.mystories .module_text {
+    padding-bottom: 0.3em;
+}
+.mystories .publish_set {
+    position: absolute;
+    bottom: 0;
+}
+
  /* Footers
     -------------------------------------------------- */
 
@@ -1761,7 +1778,7 @@ select:focus {
 }
 .btn-publish:first-child {
     border-radius: 8px 0px 0px 8px!important;
-    margin-left: 0.8em!important;
+    margin-left: 0.4em!important;
 
     padding-left:2.3em; 
     padding-right:2.2em;
@@ -2009,7 +2026,8 @@ select:focus {
     margin: 0 auto;
 }
 #fb_icon {
-    background-image: url("../images/fb.png");
+    background-image: url("http://siteimages.gatheringup.com/images/fb.png");
+
     width: 24px;
     display: block;
     height: 36px;
@@ -2029,7 +2047,11 @@ select:focus {
     font-family: arvo;
     color: #444;
     margin:0;
+    margin-top: 0.2em;
 }
 .event_wrap h3.date_break:nth-of-type(1) {
     margin-top: 1.5em;
+}
+
+
 }

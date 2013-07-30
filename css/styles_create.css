@@ -3,11 +3,17 @@
     -------------------------------------------------- */    
     /* Create Outing Top */
 
+.create_bg {
+    background-color: white;
+    height: 100%;
+    width: 44.7em;
+    position: fixed;
+    box-shadow: 0em 0em 2em #333;
+}
+
 .create_frame {
     float: left;
-    background-color: white;
     margin: 0;
-    box-shadow: 0em 0em 2em #333;
     position: absolute;
 }
 .create_frame h1 {

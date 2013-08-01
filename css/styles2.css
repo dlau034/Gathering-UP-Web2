@@ -676,7 +676,7 @@ form {
 
 /*Styles Right Dropdown Nav*/
 #dp_list {
-    margin-top: 42px;
+    margin-top: 40px;
     border-radius: 0px; 
     padding: 0;
     border: none;
@@ -874,6 +874,7 @@ form {
     background-image: url("../images/flag_on.png");
     background-repeat: no-repeat;
     background-position: center right;
+    margin-left: 4.5em;
 }
 #note_off {
     position: absolute;
@@ -891,13 +892,13 @@ form {
 #datebook_on {
   position: absolute;
     margin-top: 5px;
-    margin-left: 2.6em;
+    margin-left: 2.3em;
 }
 
 #bookmark_on {
     position: absolute;
     margin-top: 5px;
-    margin-left: 4.9em;
+    margin-left: -0.1em;
 }
 
 @media (max-width: 1349px) and (min-width: 980px) {

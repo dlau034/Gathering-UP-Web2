@@ -887,6 +887,7 @@ form {
     background-image: url("../images/flag_off.png");
     background-repeat: no-repeat;
     background-position: center right;
+    margin-left: 4.5em;
 }    
 
 #datebook_on {

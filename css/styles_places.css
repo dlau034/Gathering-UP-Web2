@@ -28,6 +28,16 @@
     z-index: 6;
     height: 100%;
     padding-top: 1.5em;
+    /*margin-top: 1em;*/
+}
+
+.nearby_wrap::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: relative;
+    float: left;
 }
 
 #nearby_box {

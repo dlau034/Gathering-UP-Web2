@@ -93,9 +93,10 @@
     padding-top: 1.5em;
 }
 .event_wrap::after {
-    content:"<span></span>"
+    content: "";
+    display: block;
+    height: 1px;
 }
-
 
 .event_wrap .event_item:last-child {
     margin-bottom: 3em!important;

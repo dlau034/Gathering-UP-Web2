@@ -42,6 +42,7 @@
     -moz-box-shadow: none;
     box-shadow: none;
     border: 1px solid rgba(0,0,0,0.1);
+    float: left;
 } 
 .sm_mod img {
     width: 4em;
@@ -122,7 +123,9 @@
     width: 100%;
 }
 .item_text {
-    margin: 1em;
+    margin: 1em 1em 1em 0em;
+    float: right;
+    width: 61%;
 }
 .item_text h4 {
     font-family: arvo;
@@ -141,7 +144,7 @@
 }
 .item_other .thumbnail_box {
     display: block;
-    height: 7.5em;
+    
     overflow: hidden;
     border: 4px solid white;
 
@@ -196,6 +199,7 @@
     text-shadow: 0px -1px 0px white;
     font-family: arvo;
     margin-bottom: 0.2em;
+    margin-top: 0;
 }
 .nearby_item h4 a {
     color: #333;
@@ -259,7 +263,7 @@
     margin-left: 0;
 }
 .placesmodal .item_other {
-    margin: 0em 1em 0.5em 2em;    
+    margin: 1.5em 0em 0.5em 2em;
     float: left;
 }
 .placesmodal .nearby_item {
@@ -271,7 +275,7 @@
     margin-top: 2em;
 }
 .placesmodal .item_text {
-    margin: 2em 2em 1em 2em;
+    width: 66%
 }
 .placesmodal .item_text p {
     font-size: 0.9em;
@@ -631,7 +635,7 @@ ul.top-level li {
     background: -ms-linear-gradient(top, #c6c6c6 0%,#afafaf 100%); /* IE10+ */
     background: linear-gradient(to bottom, #c6c6c6 0%,#afafaf 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#afafaf',GradientType=0 ); /* IE6-9 */
-    }
+}
 .navigation a {
     color: white;
     cursor: pointer;
@@ -642,7 +646,7 @@ ul.top-level li {
     text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
     width: 100%;
     padding: 1px 0px;
-    font-weight: 100;
+    font-weight: 400;
     font-size: 0.9em;
     text-indent: 1.2em;
 }
@@ -713,12 +717,18 @@ ul.sub-level {
     background-color: #FFD321;
     color: white;
     position: absolute;
-    right: -12px;
-    margin-top: 2px;
-    padding: 0.1em 0.4em;
-    font-size: 0.9em;
+
+    left: 0;
+    bottom: 0;
+
+    
+    /*margin-left: -8px;*/
+    /*margin-bottom: 11px;*/
+    padding: 0.4em 0.7em;
+    font-size: 1.1em;
     font-weight: 400;
     z-index: 1;
+
     -webkit-box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
     -moz-box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
     box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
@@ -728,8 +738,23 @@ ul.sub-level {
     background-color: #EF4136;
 }
 .tag_featured img {
-    position: absolute;
-    right: 0;
-    top: 22px;
+    display: none; 
 }
 
+/* Targest the top event in in the place page when you click what's nearby */ 
+
+.top_event {
+    cursor: pointer;
+    border: 1px solid #EF4136;
+    
+    -webkit-box-shadow:  0 0 8px #EF4136;
+    -moz-box-shadow:  0 0 8px #EF4136;
+    box-shadow:  0 0 8px #EF4136;
+}
+.top_event .btn_group button {
+    float: right;
+    margin-right: 1.2em;
+}
+.top_event .item_text a {
+    font-weight: 700!important;
+}

@@ -78,7 +78,9 @@
 	float:  right;
 	height: auto!important;
 }
-
+#filter_unit h3 {
+    text-shadow: 0px 1px 0px white;
+}
 	/* Event Details */
 	/* -------------------------------------------------- */
 
@@ -90,9 +92,11 @@
     height: 100%;
     padding-top: 1.5em;
 }
-/*.event_wrap .event_item {
-    /*bottom: 6.8em;*/
+.event_wrap::after {
+    content:"<span></span>"
 }
+
+
 .event_wrap .event_item:last-child {
     margin-bottom: 3em!important;
 }
@@ -319,8 +323,17 @@ span.event_cat {
 .eventmodal .event_text {
     margin-top: 0;
     margin-right: 2em;
-    text-align: right;
+    text-align: left;
+    width: 67%
 }
+.eventmodal .event_text p a {
+    font-weight: 500;
+    margin-top: 0.3em;
+    position: relative;
+    display: block;
+    font-size: 1.1em;
+}
+
 @media (max-width: 590px) {
     .eventmodal .event_text {
         width: 50%;
@@ -345,7 +358,6 @@ span.event_cat {
 .eventmodal .event_item h4 {
     font-size: 1.3em;
     margin-bottom: 0.3em;
-    float: right;
 }
 .eventmodal .event_item p {
     font-size: 0.9em;

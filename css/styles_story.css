@@ -8,33 +8,6 @@
 .Outing_detail .twitter-share-button.twitter-count-horizontal {
     float: left;
 }    
-
-    /* TWITTER END*/
-
-#CTA_Create {
-    left:50%;
-    margin-left: ;
-}
-
-@media (min-width: 551px) {
-    .map_outing {
-        position: fixed!important;
-        margin-top: -24px;
-    }
-}
-@media (min-width: 551px) and (max-width: 767px) {
-    .map_outing {
-        margin-top: 0px;
-    }
-}
-@media (max-width: 550px) {
-    .map_outing {
-        position: relative!important;
-        height: 40%!important;
-        margin-top: 42px;        
-    }
-}
-
 #Outing_frame {   
     position: fixed;
     top: 0;
@@ -42,11 +15,16 @@
     height: 100%;
     background-color: white;
     border-collapse: collapse;
-    z-index: 2;
+    z-index: 4;
     -webkit-box-shadow:  0em 0em 2em #333;
     -moz-box-shadow:  0em 0em 2em #333;
     box-shadow:  0em 0em 2em #333;
     overflow: auto;
+}
+@media (max-width: 1199px) {
+    #Outing_frame {
+        width: 35em;
+    }
 }
 #Outing_wrap {
    margin: 60px 2em 4em 2em;
@@ -139,6 +117,12 @@
     padding-bottom: 1em;
     width: 21em;
 }
+@media (max-width: 850px) {
+    .Out_nearby_wrap {
+        margin-left: 38em;  
+        right: auto;
+    }    
+} 
 .mini_item img {
     width: 100%;
     height: auto; 
@@ -167,6 +151,7 @@
 .mini_item {
     /*min-height: 13em;*/
     padding-bottom: 0.5em;
+    width: 96%;
 }
 .mini_text {
     margin-right: 10px;    
@@ -251,81 +236,6 @@
 .sm_mod_2 {
     min-height: 7.8em;
     padding-bottom: 0.5em!important;
-}
-
-@media (max-width: 849px) and (min-width: 550px) {
-    .Out_nearby_wrap {
-        right: 0em!important;
-        position: relative;
-        background-image: url("http://siteimages.gatheringup.com/images/kindajean.png");
-        width: 60%;
-        margin: 0px;
-        padding-bottom: 3em;
-
-        -webkit-box-shadow: 0 0 2em black;
-         -moz-box-shadow: 0 0 2em black;
-         box-shadow: 0 0 2em black; 
-    }
-    #nearby_box_outing {
-        width: 20em;
-        margin: 0 auto;
-    }
-    #Outing_frame {
-        width: 60%!important;
-        position: relative;
-        height: auto!important;
-    }
-    .Outing_cat .cat_tag {
-        margin-left: 0px;
-    }    
-    #fb_outing {
-        float: left;
-        clear: both;
-    }    
-}    
-@media (max-width: 549px) {
-    .Out_nearby_wrap {
-        margin-top: :0em!important;
-        overflow: hidden;
-        position: relative;
-        right: 0;
-        margin: 1em 1em;
-        width: auto;
-    }
-    .mini_other {
-        max-width: 7em;
-    }
-    #Outing_frame {
-        width: 100%!important;
-        position: relative!important;
-        overflow: auto;
-        height: auto!important;
-    }
-    #Outing_wrap {
-        margin-top: 14px!important;
-        margin-right: 1em;
-        margin-left: 1em;
-    }
-    .alert-CTA {
-        display: none!important;
-    }
-    #Outing_wrap p {
-        font-size: 1.1em;
-    }
-    #Outing_wrap h1 {
-        font-size: 2.1em;
-    }    
-    #Outing_wrap h3 {
-        font-size: 1.4em;
-    }
-    .author h5 {
-        margin-left: 0;
-        margin-bottom: 0px;
-    }
-    #fb_outing {
-        float: left;
-        clear: both;
-    }
 }
 .btn_group_mini {
     text-align: center;

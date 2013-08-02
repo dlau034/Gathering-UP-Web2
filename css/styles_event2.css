@@ -152,7 +152,7 @@
 .event_item h5 {
     color: #666;
     font-family: arvo;
-    margin-bottom: 0;
+    margin-bottom: 0.5em;
     font-size: 0.8em;
     margin-top: 0;
 }
@@ -176,6 +176,11 @@
     width: 95%;
     margin-bottom: 0.2em;
 }
+.event_item p b {
+    font-weight: 500;
+    color: #222;
+}
+
 .event_top_info.clearfix {
     padding-top: 1px;
     margin-bottom: 0.8em;

@@ -3,6 +3,24 @@
     -------------------------------------------------- */
     /* admin_panel.css */
 
+    /* Global Style Overwrites to Admin Panels
+    -------------------------------------------------- */
+
+.container {
+	width: 1100px;
+}
+#dp_label {
+	margin-top: 0.6em;
+}
+#dp_list {
+	margin-top: 3em;
+}
+
+	/* -------------------------------------------------- */
+
+#neighbor_wrap form {
+	margin: 10px 0px;
+}
 .top_wrap {
 	margin-top: 60px;
 	width: 100%;

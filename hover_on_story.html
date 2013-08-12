@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GatheringUP</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />  
+    <meta name="description" content="GatheringUP is about finding fun things to do in and around New York City's Central Park.">
+    <meta name="keywords" content="Central, Park, New, York, City, Upper, West, East, NYC, Museum, Lincoln, Center, Columbus, Circle, Side">
+
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/bootstrap.css">
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles2.css">
+	<link rel="stylesheet" href="http://siteimages.gatheringup.com/css/styles_home.css">
+
+	<!-- Google Font -->
+
+     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>   	
+     <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="http://siteimages.gatheringup.com/js/underscore-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>    
+
+<script type="text/javascript" src="http://siteimages.gatheringup.com/js/gatheringup-stories.js"></script>
+
+  </head>
+    <body>
+
+
+<script type="text/javascript">
+/*
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38678718-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+*/
+</script>
+
+<script type="text/javascript">
+function invitedecline(idinvite)
+{
+	$.get("/invitation/decline?idinvite="+idinvite);
+	$("#"+idinvite+"invl").remove();
+	$("#"+idinvite+"inv").remove();
+	$("#"+idinvite+"invn").remove();
+	$invites=$("#note_on>b").html();
+	$invites=$invites-1;
+	if($invites<=0){
+		$("#note_on").attr('id',"note_off");
+	}
+	$invites=$("#note_on>b").html($invites);
+}
+
+  </script>
+<!-- Header + Navbar -->
+
+
+    <!-- Navigations Unit -->
+
+    <div class="navbar navbar_container">
+      <div class="navbar-inner nav_bar_style navbar-fixed-top">
+        <div class="container">
+
+          <!-- Controls the mobile menu button -->
+
+         <a class="btn btn-navbar btn-mini-menu" data-toggle="collapse" data-target=".nav-collapse"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+          <!-- Change Out the Logo -->          
+		<div class="brand_fix">
+          <a class="brand" href="/">GatheringUP</a>
+        </div> 
+           <!-- Elements inside will disappear when mobile -->          
+            <div id="collapse_content" class="nav-collapse collapse"> 
+                <ul id="nav_items_group" class="nav">
+                    <!--<li class="active nav_active"><a href="#">Modules</a></li> -->
+                  <li><a href="/localize" ><img src="http://siteimages.gatheringup.com/images/around.png" alt="">Places</a></li>                      
+              <li>
+                <a href="/" >Events
+                  <img src="http://siteimages.gatheringup.com/images/eventpin.png" alt="">
+                </a>
+              </li>                      
+              <li>
+                <a href="/stories" class="active_bar">Community
+                  <img src="http://siteimages.gatheringup.com/images/storypin.png" alt="">
+              </a>
+              </li>                      
+                   </ul>
+                <div class="nav_icons">
+                       <a id="bookmark_on" href="/bookmarks"><img src="http://siteimages.gatheringup.com/images/bookmark_on.png" alt=""></a>
+					   <a id="datebook_on" href="/datebook"><img src="http://siteimages.gatheringup.com/images/datebook_on.png" alt=""></a>
+ 											<a id="note_on" class="dropdown-toggle"	data-toggle="dropdown"  href=""><b>1</b></a>
+	
+                      	<ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
+                        <div style="max-height: 21em; overflow-y: auto;" class="note_box">
+																		<div class="roundedbox" id="345inv">
+                            <div class="breakline_note" id="345invl"></div>
+
+                                <div class="imagebox" >
+						<img class="img-polaroid" src="http://graph.facebook.com/kenneth.su.505/picture" title="Kenneth Su" width="37"><br>						                                </div>
+							<div class="note" id="345invn">Kenneth Su has invited you to join gathering( <a href="/datebook?idinvite=345">
+								Art Exhibit: Fish & Crushed Can Story- Mixed Media </a>)<br>
+								<a href="/invitation/accept?idinvite=345">Accept</a> | 
+								<a href="javascript:void(0);" onclick="invitedecline(345)">Decline</a>
+							</div>
+						</div>
+						                            </div>                                    
+                        </ul>
+										</div>
+                    <!-- Dropdown -->                
+                  <div class="dropdown" id="loggedindropdown">
+                    <form style="color:white;" id="dp_label" class="navbar-form pull-right">Hello &nbsp;
+                      <a href="#" class="dropdown-toggle" id="style_dp_text" data-toggle="dropdown">
+                        David Lau                        <b class="caret dp_caret"></b>
+                      </a>
+                      <ul class="dropdown-menu" id="dp_list">
+                        <li><a href="/storymine">My Stories</a></li>
+                        <li><a href="/preferences/changepasswd">Change Password</a></li>  
+                        <li><a href="/user/logout">Log Out</a></li>
+                      </ul>
+                    </form>                      
+                  </div>  
+
+            </div>
+         </div>
+      </div>
+    </div>    
+
+
+<script type="text/html" id="articletemplate">
+<% for(index=0; index<outdata.length; index++){ %>
+<% item=outdata[index] %>
+        <a href="<%=item.web_url%>" target="_blank">
+      <div class="module_unit">
+          <div class="img_box">
+        <img src="<%= item.imageurl%>" alt="">
+		</div>
+        <div class="module_text">
+          <h5><%=item.headline%></h5>
+          <h6><%=item.byline%></h6>
+          <h6><%=item.newsdate%></h6>
+		<p><%=item.abstract%>
+        </div>
+
+      </div>
+        </a>
+<% } %>
+</script>
+
+  <div class="Story_top">          
+  <div id="filter_cat">
+  <h3>Neighborhood News
+  </h3>
+  <img src="http://graphics8.nytimes.com/packages/images/developer/logos/poweredby_nytimes_150c.png">
+</div>
+</div>
+
+    <!-- Module Unit -->
+
+      <div id="module_wrap" class="container">
+      
+        <a href="http://www.nytimes.com/2013/08/14/dining/reviews/from-sicily-reds-worth-the-hunt.html" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/08/14/dining/14WINE_SPAN/14WINE_SPAN-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>From Sicily, Reds Worth the Hunt</h5>
+          <h6>By ERIC ASIMOV</h6>
+          <h6>August 14, 2013</h6>
+          <p>A terrific selection from one of the most exciting wine regions in the world shows off the grace and energy of wines that showcase the frappato grape.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://www.nytimes.com/2013/08/12/nyregion/to-film-forums-showman-new-york-city-is-worlds-greatest-movie-set.html" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/08/12/nyregion/12bread/12bread-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>To Film Forum’s Showman, New York City Is World’s Greatest Movie Set</h5>
+          <h6>By CLYDE HABERMAN</h6>
+          <h6>August 12, 2013</h6>
+          <p>Bruce Goldstein, director of repertory programming at the Film Forum, gives audiences not just what they want but what he feels they ought to see.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://cityroom.blogs.nytimes.com/2013/08/11/a-flashlights-peek-inside-a-sculptors-masterpiece/" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="images/nytimes.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>A Flashlight's Peek Inside a Sculptor's Masterpiece</h5>
+          <h6>By DAVID W. DUNLAP</h6>
+          <h6>August 12, 2013</h6>
+          <p>The interior of the Sherman Monument in Central Park, a 110-year-old sculpture undergoing its first significant restoration since 1990, was opened briefly for inspection, affording a rare view inside.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://cityroom.blogs.nytimes.com/2013/08/12/new-york-today-commute-interrupted/" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/08/12/nyregion/12NYTODAY2/12NYTODAY2-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>New York Today: Commute, Interrupted</h5>
+          <h6>By ANDY NEWMAN</h6>
+          <h6>August 12, 2013</h6>
+          <p>What you need to know for Monday: the impact of the R train disruption, more rain likely and a new low for one mayoral candidate.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://www.nytimes.com/2013/08/12/opinion/keller-the-anti-weiner.html" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2011/09/18/opinion/Keller_New/Keller_New-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>The Anti-Weiner</h5>
+          <h6>By BILL KELLER</h6>
+          <h6>August 12, 2013</h6>
+          <p>In the mayor’s race, Bill Thompson makes the case for safe-and-boring.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://www.nytimes.com/2013/08/12/nyregion/italian-americans-return-to-east-harlem-so-that-st-anthonys-tower-can-rise-again.html" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/08/12/nyregion/GIGLIO1/GIGLIO1-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>Italian-Americans Return to East Harlem So That St. Anthony’s Tower Can Rise Again</h5>
+          <h6>By ALAN FEUER</h6>
+          <h6>August 12, 2013</h6>
+          <p>Every year since the early 1900’s, a tower has been erected in a festival honoring St. Anthony of Padua, a tradition that has endured even as many Italians moved out of the neighborhood.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://cityroom.blogs.nytimes.com/2013/08/11/aug-11-where-the-candidates-are-today/" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>Aug. 11: Where the Candidates Are Today</h5>
+          <h6>By ALISON LEIGH COWAN</h6>
+          <h6>August 11, 2013</h6>
+          <p>The candidates’ daily campaign schedule at a glance.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://www.nytimes.com/2013/08/02/arts/design/for-fans-of-sendak-the-artist-keeps-giving.html" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/08/02/arts/02ANTIQUES2/ANTIQUES2-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>For Fans of Sendak, the Artist Keeps Giving</h5>
+          <h6>By EVE M. KAHN</h6>
+          <h6>August 11, 2013</h6>
+          <p>Maurice Sendak’s work, inspired by many things, continues to draw interest from museums and collectors.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://www.nytimes.com/2013/08/04/books/review/mathew-brady-by-robert-wilson.html" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/08/04/books/review/04SUBCRAIN2/04SUBCRAIN2-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>How Soon It May Be Too Late</h5>
+          <h6>By CALEB CRAIN</h6>
+          <h6>August 11, 2013</h6>
+          <p>Mathew Brady grew his business by making portraits of soldiers heading for the Civil War.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://opinionator.blogs.nytimes.com/2013/08/05/icons-of-cruelty/" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/07/23/opinion/disunion-gage/disunion-gage-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>Icons of Cruelty</h5>
+          <h6>By JOAN PAULSON GAGE</h6>
+          <h6>August 11, 2013</h6>
+          <p>The stories behind two unforgettable images of the Civil War.</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://cityroom.blogs.nytimes.com/2013/08/07/a-spelling-mistake-that-lincoln-himself-might-have-made/" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/08/08/nyregion/07cityroom-lincoln/07cityroom-lincoln-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>A Spelling Mistake That Lincoln Himself Might Have Made</h5>
+          <h6>By SAM ROBERTS</h6>
+          <h6>August 11, 2013</h6>
+          <p>Thomas Hurley III, an eighth grader from Newtown, Conn., lost a wager on“Jeopardy!” last week when he referred to Lincoln’s famous document as the “Emanciptation Proclamation.”</p>
+        </div>
+      </div>
+      </a>
+        <a href="http://www.nytimes.com/2013/08/09/arts/design/snap-noir-and-photo-brut-display-found-photographs.html" target="_blank">
+      <div class="module_unit">
+                <div class="img_box">
+      
+        <img src="http://www.nytimes.com/images/2013/08/09/arts/09BRUT_SPAN/0809BRUTjp02-articleLarge.jpg" alt="">
+        	</div>
+        <div class="module_text">
+          <h5>Not for the Family Album</h5>
+          <h6>By ROBERTA SMITH</h6>
+          <h6>August 11, 2013</h6>
+          <p>Two exhibitions of found photography — “Snap Noir” at the Pace/MacGill Gallery and “Photo Brut” at ZieherSmith — blur the line between art and document and between collector and artist.</p>
+        </div>
+      </div>
+      </a>
+    </div>
+
+    <!-- Footer -->
+      <div class="footer2">
+        <p class="footer_bold">Copyright Gathering Up Ltd 2013. All rights reserved.&nbsp;|
+          <a href="https://www.facebook.com/GatheringUp">Facebook</a>  |
+          <a href="https://twitter.com/Gathering_UP">Twitter</a>  |
+          <a href="http://gatheringup.wordpress.com">Blog</a>  |
+          <a href="/about">About Us</a>  |
+          <a href="/about/termsofuse">Terms of Use</a>  |
+          <a href="/about/privacy">Privacy Policy</a> |
+        </p>
+      </div>
+    </div>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://siteimages.gatheringup.com/js/bootstrap.min.js"></script>
+<!--Carousel Javascript-->    
+    <script type="text/javascript"> 
+
+    
+      $(function(){
+    	  $("#regpassword").tooltip();
+      });
+    </script>
+  </body>
+</html>

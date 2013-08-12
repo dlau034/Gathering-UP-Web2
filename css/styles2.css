@@ -1316,7 +1316,7 @@ select:focus {
     border-radius:2px;
     border: 1px solid #999999;  
     position: relative;
-    height: 30.5em;
+    overflow: hidden
 }
 .module_unit:hover {
     /*border: 1px solid #619D00;*/
@@ -1324,10 +1324,10 @@ select:focus {
 }
 .img_box {
     overflow: hidden;
-    height: 280px;
+    height: 310px;
     display: block;
     position: relative;
-    background-color: white;
+    background-color: #ccc;
     border-bottom: 1px solid #aaa;
 
     -webkit-box-shadow: : 0px 1px 0px white, inset 0px 2px 2px rgba(0,0,0,0.5);
@@ -1342,37 +1342,66 @@ select:focus {
     max-width: none!important;
 }
 .module_text {
-    padding: 0px 15px 15px 15px;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.95);
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    top: 14.8em;
+
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;    
+
+    -webkit-box-sizing:  border-box;
+    -moz-box-sizing:  border-box;
+    box-sizing:  border-box;
 }
+.module_text:hover {
+    top: 8em;
+
+}
+
+
+
 .module_text h5 {
     text-align: left;
-    margin-bottom:3px; 
-    margin-top: 10px;
+    margin-bottom: 4px!important;
+    margin-top: 0!important;
     font-weight: 500;
     color: #333;
     font-family: "arvo";
-    font-size: 1.4em;
+    font-size: 1.15em;
     line-height: 1.2em;
 
-    text-shadow: 0px 1px 0px white!important;
-
+    /*text-shadow: 0px 1px 0px white!important;*/
 }
 .module_text h5:hover{
     /*color: #619D00;*/
 }
 .module_text p {
     color: #444;
-    font-size: 0.95em;
-    font-weight: 400;
-    line-height: 1.4em;    
+    font-size: 0.90em;
+    font-weight: 100;
+    line-height: 1.4em;
     margin-bottom: 0;
+    position: absolute;
+    top: 8.2em;
 }
 .module_text h6 {
     margin: 0;
     font-family: arvo;
     color: #666;
     font-weight: 400;
-    text-shadow: 0px 1px 0px white!important;
+
+    line-height: 15px;
+    font-weight: 1em;
+    
+    font-size: 0.85em!important;
+
 }
 .module_tag {
     padding: 0em 0.8em 1em 0.8em;
@@ -1382,7 +1411,7 @@ select:focus {
 }
 
  /* My Stories Page
-    -------------------------------------------------- */
+    -------------------------------------------------- 
 
 .mystories .module_tag {
     position: relative;

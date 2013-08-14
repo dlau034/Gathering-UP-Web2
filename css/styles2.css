@@ -813,61 +813,6 @@ form {
         border-radius: 0;
     }
 }
-
-/* Uncomment to bring back collapse Responsive menu bar - mobile device menu */
-
-/*@media (max-width: 979px) {
-    .btn_nav_cta {
-        color: white!important;
-        text-shadow: none !important;
-        font-weight: 500;
-        border: none;
-        padding: 8px 13px 8px 13px!important;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 5px;
-    }
-    .btn_nav_cta:hover {
-        background-color: #F7931E!important;
-    }
-    .btn_nav_cta:focus {
-        background-color: transparent!important;
-    }
-    #signin_box {
-        background-color: #444;
-        padding: 10 10;
-        width: auto;
-        margin-left: 10px;
-        margin-right: 10px;
-        height: auto;
-    }
-    .nav-collapse .dropdown-menu {
-        margin: 0;
-    }
-    #signin_box .dividline {
-        background-color: #666;
-        border: none;    
-    }
-    #signin_box .btn-green{
-        width: 100%;
-        border-radius: 2px!important;
-    }
-    #signin_content {
-        margin-bottom: 0px;
-    }    
-    #signin_content a { 
-        padding:0 0 0 0!important;
-        color: white;
-    }    
-    #signin_content a:hover {
-        background-color: transparent!important;
-        color: #F7931E;
-    }
-    #collapse_content.in {
-        padding-top: 10px;
-    }    
-}*/
-
 .brand_fix {
     width: 230px;
     height: 40px;
@@ -1284,31 +1229,33 @@ select:focus {
 @media (max-width: 979px) and (min-width: 600px)   {
     .container-module {
         /*position: relative;        */
-    }
+    }/*
     .module_unit {
         margin-right:15px !important; 
         margin-left:15px !important;        
-    }    
+    }    */
 }
 @media (max-width: 1349px) and (min-width: 980px)   {
     .container-module {
         max-width: 1020px;
     }
-    .module_unit { 
+/*    .module_unit { 
         margin-right:15px !important; 
         margin-left:15px !important;        
-    }        
+    }        */
 }
 @media (min-width: 1350px)  {
     .container-module {
         max-width: 1350px;
     }    
-    .module_unit { 
+/*    .module_unit { 
         margin-right:15px !important; 
         margin-left:15px !important;        
-    }         
+    }         */
 }
 .module_unit {
+    margin-right:15px !important; 
+    margin-left:15px !important;      
     background-color: #f1f1f1;
     margin-bottom: 30px;
     width: 280px;
@@ -1319,7 +1266,6 @@ select:focus {
     overflow: hidden
 }
 .module_unit:hover {
-    /*border: 1px solid #619D00;*/
     background-color: white;
 }
 .img_box {
@@ -1334,7 +1280,14 @@ select:focus {
     -moz-box-shadow: : 0px 1px 0px white, inset 0px 2px 2px rgba(0,0,0,0.5);
     box-shadow: : 0px 1px 0px white, inset 0px 2px 2px rgba(0,0,0,0.5);
 }
-.img_box img {
+.img_box .img_portrait {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    height: auto!important;
+    max-width: none!important;
+}
+.img_box .img_landscape {
     display: block;
     height: 100%;
     margin: 0 auto;
@@ -1409,22 +1362,17 @@ select:focus {
     position: absolute;
     bottom: 0;
 }
-
- /* My Stories Page
-    -------------------------------------------------- 
-
-.mystories .module_tag {
-    position: relative;
-}
-.mystories .module_unit {
-    height: 33em;
-}
-.mystories .module_text {
-    padding-bottom: 0.3em;
-}
-.mystories .publish_set {
+.tag_text {
     position: absolute;
-    bottom: 0;
+    z-index: 2;
+    right: 0;
+    background-color: rgba(0,0,0,0.8);
+    padding: 3px 8px;
+    color: white;
+    font-weight: 400;
+    font-size: 0.9em!important;
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
  /* Footers
